@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service ecosystem — Doop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Overrides for this page only */
+    body{ background:#efefef; }                 /* flat grey background */
+    .brand img{ filter: invert(64%); }          /* make logo grey */
+    .nav{color:#151515}
+  </style>
+
+</head>
+<body class="theme-light">
+    
+  <!-- header con logo gris -->
+  <header class="container-wide">
+    <div class="row">
+      <div class="brand">  <a href="index.html"><img src="logo.png" alt="doop" /></a></div>
+      <nav class="nav">
+        <a href="solutions.html">Solutions</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+  <header class="eco-head">
+    <div class="eyebrow"><span class="dot">•</span> GET IN TOUCH <span class="dot">•</span></div>
+    <h1 id="eco-title" class="eco-title">Ideas coded into experiences</h1>
+  </header>
+
+
+  <section class="slice-light" id="contact">
+    <div class="container">
+      <form id="contactForm" class="contact-form"
+            action="https://submit-form.com/Po4c9Fm5U"
+            method="POST" novalidate>
+        
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your name" required />
+        </div>
+  
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="Enter your e-mail" required />
+        </div>
+  
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+        </div>
+  
+        <!-- honeypot -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px" aria-hidden="true" />
+  
+        <!-- acá guardamos el token -->
+        <input type="hidden" name="g-recaptcha-response" id="gRecaptcha" />
+  
+        <!-- botón que dispara el invisible -->
+        <button id="submitBtn"
+                class="btn-primary g-recaptcha"
+                data-sitekey="6LcbmsUrAAAAACiZb2V6lTMbNYZrtT279moKTdlO"
+                data-callback="onCaptchaVerified"
+                data-size="invisible"
+                type="submit">
+          SUBMIT
+        </button>
+  
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+  
+  <footer class="site-footer">
+    <div class="container-wide foot-wrap">
+      <img class="foot-logo" src="logocolor.png" alt="doop logo">
+  
+      <ul class="foot-locations" aria-label="Locations">
+        <li>
+          <img class="flag" src="6867993d18288f0870f30689_australia.png" alt="Australia">
+          <span>HQ North Sydney, NSW, Australia.</span>
+        </li>
+        <li>
+          <span class="flag-emoji" aria-hidden="true">🇩🇪</span>
+          <span>Berlin, Germany.</span>
+        </li>
+        <li>
+          <span class="flag-emoji" aria-hidden="true">🇦🇷</span>
+          <span>Buenos Aires, Argentina.</span>
+        </li>
+        <li class="foot-contact">
+          <a href="#contact">Get in touch</a>
+        </li>
+      </ul>
+  
+      <p class="foot-copy">Copyright © 2025</p>
+    </div>
+  </footer>
+  <script src="scripts.js" defer></script>
+
+</body>
+</html>
