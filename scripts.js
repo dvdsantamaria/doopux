@@ -199,15 +199,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const original = btn.textContent;
       btn.textContent = 'Sending...';
   
+      
+      
       try {
         const res = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { Accept: 'application/json' }
         });
-  
-        if (!res.ok) throw new Error('Request failed');
-  
+        let data = {};
+        try { data = await res.json(); } catch(e) {}
+        console.log('Formspark response:', res.status, data);
+        
+        if (!res.ok || data.success === false) {
+          throw new Error(data.message || 'Request failed');
+        }
         setNote('Thanks. We will contact you shortly.', true);
         form.reset();
       } catch (err) {
