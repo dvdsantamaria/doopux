@@ -155,96 +155,56 @@ document.addEventListener('DOMContentLoaded', () => {
     addEventListener('resize', () => setStageHeight(h(paneA)), { passive:true });
   });
 
+// UX simple de envío a Formspark (sin reCAPTCHA)
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
 
+  const note = document.getElementById('formNote');
+  const btn  = document.getElementById('submitBtn');
 
-   // UX simple de envío formspark
-   (function () {
-    const form       = document.getElementById('contactForm');
-    if (!form) return;
-  
-    const note       = document.getElementById('formNote');
-    const btn        = document.getElementById('submitBtn');
-    const tokenField = document.getElementById('gRecaptcha');
-  
-    function setNote(msg, ok){
-      if (!note) return;
-      note.textContent = msg || '';
-      if (ok == null) return;
-      note.style.color = ok ? '#198754' : '#c23b22';
-    }
-  
-    let widgetId = null;
-  
-    // Render explícito del v2 Invisible sobre el botón (evita el auto-bind por data-attrs)
-    function ensureRecaptchaReady(){
-      if (typeof grecaptcha === 'undefined') return false;
-      if (widgetId == null) {
-        widgetId = grecaptcha.render(btn, {
-          sitekey: btn.getAttribute('data-sitekey'),   // ya lo tenés en el botón
-          size: 'invisible',
-          callback: onCaptchaVerified                  // llamada cuando Google devuelve token
-        });
+  function setNote(msg, ok){
+    if (!note) return;
+    note.textContent = msg || '';
+    if (ok == null) return;
+    note.style.color = ok ? '#198754' : '#c23b22';
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    setNote('');
+
+    // honeypot
+    if (form._gotcha && form._gotcha.value.trim() !== '') return;
+
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      let data = {};
+      try { data = await res.json(); } catch(_) {}
+
+      console.log('Formspark response:', res.status, data);
+
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || 'Request failed');
       }
-      return true;
+
+      setNote('Thanks. We will contact you shortly.', true);
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setNote('Could not send your message. Please try again.', false);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = original;
     }
-  
-    // Google llama esto con el token válido
-    function onCaptchaVerified(token){
-      tokenField.value = token;                        // name = "g-recaptcha-response"
-      send();                                          // recién ahora hacemos el POST
-    }
-  
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      setNote('');
-      if (form._gotcha && form._gotcha.value.trim() !== '') return; // honeypot
-  
-      if (!ensureRecaptchaReady()){
-        setNote('Captcha not loaded. Try again.', false);
-        return;
-      }
-      grecaptcha.execute(widgetId);
-    });
-  
-    async function send(){
-      btn.disabled = true;
-      const original = btn.textContent;
-      btn.textContent = 'Sending...';
-  
-      try {
-        // Construimos el FormData explicitamente y garantizamos el token
-        const fd = new FormData(form);
-        // por si acaso, forzamos la clave en el payload:
-        fd.set('g-recaptcha-response', tokenField.value || '');
-  
-        // (Debug opcional) loguea si está y su largo
-        console.log('Recaptcha token length:', (tokenField.value || '').length);
-  
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: fd,
-          headers: { Accept: 'application/json' }
-        });
-  
-        let data = {};
-        try { data = await res.json(); } catch (_) {}
-  
-        console.log('Formspark response:', res.status, data);
-  
-        if (!res.ok || data.success === false) {
-          throw new Error(data.message || 'Request failed');
-        }
-  
-        setNote('Thanks. We will contact you shortly.', true);
-        form.reset();
-      } catch (err) {
-        console.error(err);
-        setNote('Could not send your message. Please try again.', false);
-      } finally {
-        btn.disabled = false;
-        btn.textContent = original;
-        if (typeof grecaptcha !== 'undefined') grecaptcha.reset(widgetId);
-        tokenField.value = ''; // limpiamos el hidden
-      }
-    }
-  })();
+  });
+})();
