@@ -41,7 +41,6 @@ body{
   background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
   overflow-x:hidden;
 }
-body { padding-bottom: 30px; }
 
    /* Grid pattern overlay */
    .bg-grid{

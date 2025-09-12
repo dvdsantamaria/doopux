@@ -6,8 +6,35 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+<!-- CANONICAL -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Doop UX">
+<meta property="og:description" content="UX, estrategia y desarrollo limpio para marcas que quieren crecer sin humo.">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+<meta property="og:image" content="{{ '/assets/og.jpg' | relative_url }}">
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Doop UX">
+<meta name="twitter:description" content="UX, estrategia y desarrollo limpio para marcas que quieren crecer sin humo.">
+<meta name="twitter:image" content="{{ '/assets/og.jpg' | relative_url }}">
+
+<!-- ROBOTS -->
+<meta name="robots" content="index,follow">
 
 <title>Doop UX</title>
+
+<!-- FAVICONS -->
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml"> <!-- vector, moderno -->
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">   <!-- fallback clásico -->
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">  <!-- 180x180 -->
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#151515">
+<meta name="theme-color" content="#151515">
+
 
 </head>
 <body>
