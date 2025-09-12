@@ -254,3 +254,14 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
     slot.outerHTML = '<footer class="site-footer"><div class="container-wide foot-wrap"><p class="foot-copy">© 2025</p></div></footer>';
   }
 })();
+
+
+  // Toggle aria-expanded for hamburguesa
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
