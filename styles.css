@@ -456,6 +456,10 @@ figure{margin:0}
     display:flex;                /* clave */
     flex-direction:column;       /* stack vertical */
   }
+
+  /* fijar footer al bottom de la card */
+.tst-card > .tst-meta{ margin-top:auto; }
+.tst-quote{ flex:1 0 auto; min-height:0; } /* rellena el espacio libre */
   .tst-card.is-active{ display:flex; }       /* NO grid: mantiene el layout correcto */
   
   .tst-bodyStage{
@@ -566,19 +570,6 @@ figure{margin:0}
 .field input:focus, .field textarea:focus{ border-bottom-color:#111; }
 .form-note{ margin:6px 0 0; font-size:14px; color:rgba(17,17,17,.7) }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark){
-  body:not(.theme-light) .field label{ color:#e9eef5 }
-  body:not(.theme-light) .field input, 
-  body:not(.theme-light) .field textarea{
-    color:#e9eef5; border-bottom:1px solid #ffffff24; background:transparent;
-  }
-  body:not(.theme-light) .field input::placeholder, 
-  body:not(.theme-light) .field textarea::placeholder{ color:#c7cfdb99 }
-  body:not(.theme-light) .field input:focus, 
-  body:not(.theme-light) .field textarea:focus{ border-bottom-color:#e9eef5; }
-  body:not(.theme-light) .form-note{ color:#c7cfdbb3 }
-}
 
 
 /* Toast centered success */
@@ -611,6 +602,25 @@ figure{margin:0}
   color: #ffe3e3;
   border-color: #3f1010;
 }
+
+
+
+
+/* Dark mode */
+@media (prefers-color-scheme: dark){
+  body:not(.theme-light) .field label{ color:#e9eef5 }
+  body:not(.theme-light) .field input, 
+  body:not(.theme-light) .field textarea{
+    color:#e9eef5; border-bottom:1px solid #ffffff24; background:transparent;
+  }
+  body:not(.theme-light) .field input::placeholder, 
+  body:not(.theme-light) .field textarea::placeholder{ color:#c7cfdb99 }
+  body:not(.theme-light) .field input:focus, 
+  body:not(.theme-light) .field textarea:focus{ border-bottom-color:#e9eef5; }
+  body:not(.theme-light) .form-note{ color:#c7cfdbb3 }
+}
+
+
 
 /* Dark mode SOLO si el sistema lo pide */
 @media (prefers-color-scheme: dark){
