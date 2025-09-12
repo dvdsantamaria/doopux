@@ -1011,6 +1011,8 @@ body.theme-light .nav-toggle{
     justify-content:center;
     gap:10px;
     padding:12px 16px;
+    border:1px solid #ffffff33;
+    border-radius:12px;
     background:transparent;
     color:#fff;
     font-size:18px;
@@ -1056,4 +1058,43 @@ body.theme-light .nav-toggle{
   body.theme-light header.container-wide.nav-open .nav-toggle{
     color:#fff; border-color:#ffffff40;
   }
+}
+
+/* ocultar el botón Close en desktop */
+.nav-close{ display:none; }
+
+/* mobile: mostrarlo sin borde ni fondo */
+@media (max-width:768px){
+  .nav-close{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:12px 16px;
+    border:0;                 /* sin borde */
+    background:transparent;   /* sin fondo */
+    box-shadow:none;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-close:hover,
+  .nav-close:active{
+    background:transparent;   /* no cambia al hover */
+    border:0;
+  }
+  .nav-close:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+
+  .nav-close .x{
+    position:relative; width:22px; height:22px; display:inline-block;
+  }
+  .nav-close .x::before,
+  .nav-close .x::after{
+    content:""; position:absolute; left:50%; top:50%;
+    width:22px; height:2px; background:currentColor; transform-origin:center;
+  }
+  .nav-close .x::before{ transform:translate(-50%,-50%) rotate(45deg); }
+  .nav-close .x::after { transform:translate(-50%,-50%) rotate(-45deg); }
 }
