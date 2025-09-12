@@ -690,6 +690,13 @@ figure{margin:0}
     box-shadow:0 20px 48px rgba(0,0,0,.33);
   }
 
+
+  body:not(.theme-light)  .foot-contact a{
+    color:#000;
+  
+  }
+
+
   /* textos secundarios */
   body:not(.theme-light) .eco-copy,
   body:not(.theme-light) .solutions-subtitle,
