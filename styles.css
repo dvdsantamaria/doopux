@@ -103,6 +103,10 @@ a{color:inherit; text-decoration:none}
   }
   
   /* Locations en una línea en desktop, columna en mobile */
+
+  .footer{
+    margin: 30px auto;
+  }
   .foot-locations{
     list-style:none;
     margin:0;
