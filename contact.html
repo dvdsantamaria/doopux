@@ -38,39 +38,27 @@
 
   <section class="slice-light" id="contact">
     <div class="container">
-      <form id="contactForm" class="contact-form"
-            action="https://submit-form.com/Po4c9Fm5U"
-            method="POST" novalidate>
-        
+      <form id="contactForm" class="contact-form" action="https://submit-form.com/Po4c9Fm5U" method="POST" novalidate>
         <div class="field">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Enter your name" required />
         </div>
-  
+      
         <div class="field">
           <label for="email">E-mail</label>
           <input id="email" name="email" type="email" placeholder="Enter your e-mail" required />
         </div>
-  
+      
         <div class="field">
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
         </div>
-  
-        <!-- honeypot -->
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
-               style="position:absolute;left:-9999px" aria-hidden="true" />
-  
-        <!-- acá guardamos el token -->
-        <input type="hidden" name="g-recaptcha-response" id="gRecaptcha" />
-  
-        <!-- botón que dispara el invisible -->
-        <button id="submitBtn"
-            
-                type="submit">
-          SUBMIT
-        </button>
-  
+      
+        <!-- honeypot opcional -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+      
+        <button id="submitBtn" class="btn-primary" type="submit">SUBMIT</button>
+      
         <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
       </form>
     </div>
