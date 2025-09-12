@@ -16,6 +16,8 @@
   </style>
 </head>
 <body >
+  <div class="bg-grid" aria-hidden="true"></div>
+
   <!-- header con logo gris -->
   <header class="container-wide">
     <div class="row">
@@ -103,7 +105,7 @@
       </div>
     </div>
   </section>
-  <div id="footer-slot" data-src="/partials/footer.html"></div>
+  {% include_relative partials/footer.html %}
 
 
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
