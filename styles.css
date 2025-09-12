@@ -582,6 +582,39 @@ figure{margin:0}
 }
 
 
+/* Toast centered success */
+#toast{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+  z-index: 9999;
+}
+#toast.show{ opacity: 1; }
+#toast .card{
+  pointer-events: auto;
+  background: #0f5132;            /* dark green */
+  color: #d1f7e2;                  /* soft mint */
+  border: 1px solid #0a3e26;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  font-size: 15px;
+  line-height: 1.4;
+  max-width: min(520px, 92vw);
+  text-align: center;
+}
+#toast .card.error{
+  background: #5c1a1a;
+  color: #ffe3e3;
+  border-color: #3f1010;
+}
+
+
+
   /* Dark mode SOLO si el sistema lo pide */
   @media (prefers-color-scheme: dark){
     body:not(.theme-light){  /* <<< agrega esta línea */

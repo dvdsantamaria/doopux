@@ -155,3 +155,58 @@ document.addEventListener('DOMContentLoaded', () => {
     addEventListener('resize', () => setStageHeight(h(paneA)), { passive:true });
   });
 
+  
+  // Formspark AJAX submit with centered toast
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const submitURL = form.getAttribute('action');
+  const toastEl = document.getElementById('toast');
+  const btn = form.querySelector('[type="submit"]');
+
+  // Optional: if you had _redirect, ignore it since we stay on-page
+  const redirectInput = form.querySelector('input[name="_redirect"]');
+  if (redirectInput) redirectInput.remove();
+
+  async function showToast(message, isError = false, timeoutMs = 4000){
+    toastEl.innerHTML = `<div class="card${isError ? ' error' : ''}">${message}</div>`;
+    toastEl.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // basic bot trap
+    const hp = form.querySelector('input[name="_gotcha"]');
+    if (hp && hp.value) return; // do nothing if honeypot filled
+
+    try {
+      btn?.setAttribute('disabled', 'true');
+      const fd = new FormData(form);
+
+      // ask JSON to avoid default redirect page
+      const res = await fetch(submitURL, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        const msg = data.message || 'Submission failed. Please try again.';
+        await showToast(msg, true, 5500);
+        return;
+      }
+
+      form.reset();
+      await showToast('Your message was sent successfully.', false, 3500);
+    } catch (err) {
+      await showToast('Network error. Please try again.', true, 5500);
+    } finally {
+      btn?.removeAttribute('disabled');
+    }
+  });
+});
