@@ -265,3 +265,27 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
+
+  // close menu
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.nav-toggle');
+    const header = document.querySelector('header.container-wide');
+    const closeBtn = document.querySelector('.nav-close');
+    if (!btn || !header) return;
+  
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      header.classList.toggle('nav-open', open);
+      document.body.classList.toggle('nav-open', open);
+    };
+  
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      setOpen(!open);
+    });
+  
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => setOpen(false));
+    }
+  });
