@@ -613,106 +613,95 @@ figure{margin:0}
   border-color: #3f1010;
 }
 
+/* Dark mode SOLO si el sistema lo pide */
+@media (prefers-color-scheme: dark){
 
+  /* scrollbars y formularios nativos */
+  html{ color-scheme: dark; }
 
-  /* Dark mode SOLO si el sistema lo pide */
-  @media (prefers-color-scheme: dark){
-    body:not(.theme-light){  /* <<< agrega esta línea */
-  
-      html{ color-scheme: dark; }               /* scrollbars y formularios nativos */
-                   /* scrollbars y formularios nativos */
-    
-    /* fondo y texto */
-    body{ background:#0f1115; color:#e9eef5; }
-    .bg-grid{ display:none; }                 /* si no querés grid en dark */
-  
-    /* header y logo */
-    .nav{ color:#e9eef5; opacity:.95; }
-    .brand img{ filter: invert(0%) brightness(80%); }
-  
-    /* secciones claras pasan a dark */
-    .slice-light,
-    .service-eco,
-    .solutions,
-    .process-card,
-    .testimonials,
-    .slice-light.process{
-      background:#0f1115;
-      color:#e9eef5;
-    }
+  /* fondo y texto */
+  body:not(.theme-light){ background:#0f1115; color:#e9eef5; }
+  .bg-grid{ display:none; }
 
-    .step-number{
-      background:rgba(255,255,255,.7);
-      color:#e9eef5;
-    }
+  /* header y logo */
+  body:not(.theme-light) .nav{ color:#e9eef5; opacity:.95; }
+  body:not(.theme-light) .brand img{ filter: invert(0%) brightness(80%); }
 
-    .tst-nav{
-      background-color: #e9e9e99e;
-    }
-  
-    /* cards y contenedores */
-    .eco-card,
-    .solution,
-    .tst-card{
-      background:#151821;
-      border:1px solid #ffffff24;
-      box-shadow:0 20px 48px rgba(0,0,0,.33);
-    }
-  
-    /* textos secundarios */
-    .eco-copy,
-    .solutions-subtitle,
-    .tst-subtitle,
-    .card-copy{ color:#c7cfdbb3; }
-  
-    /* botón */
-    .btn-primary{ background:#ffffff; color:#0f1115; }
+  /* secciones claras pasan a dark */
+  body:not(.theme-light) .slice-light,
+  body:not(.theme-light) .service-eco,
+  body:not(.theme-light) .solutions,
+  body:not(.theme-light) .process-card,
+  body:not(.theme-light) .testimonials,
+  body:not(.theme-light) .slice-light.process{
+    background:#0f1115;
+    color:#e9eef5;
+  }
 
+  body:not(.theme-light) .process-card .step-number{
+    color:#979da7;
+    transition: color 1.2s ease;
+  }
+  body:not(.theme-light) .process-card:hover .step-number{
+    color:#e9eef5;
+  }
 
+  body:not(.theme-light) .tst-nav{
+    background-color:#e9e9e99e;
+  }
 
+  /* cards y contenedores */
+  body:not(.theme-light) .eco-card,
+  body:not(.theme-light) .solution,
+  body:not(.theme-light) .tst-card{
+    background:#151821;
+    border:1px solid #ffffff24;
+    box-shadow:0 20px 48px rgba(0,0,0,.33);
+  }
 
-    /* Contact form dark override */
-/* paste after your current styles */
+  /* textos secundarios */
+  body:not(.theme-light) .eco-copy,
+  body:not(.theme-light) .solutions-subtitle,
+  body:not(.theme-light) .tst-subtitle,
+  body:not(.theme-light) .card-copy{ color:#c7cfdbb3; }
 
-/* layout stays the same */
-.contact-form{ max-width:760px; margin:0 auto; display:grid; gap:28px; }
-.field{ display:grid; gap:10px; }
+  /* botón */
+  body:not(.theme-light) .btn-primary{ background:#ffffff; color:#0f1115; }
 
-/* labels */
-.field label{
-  font-family:"Satoshi",sans-serif; font-weight:500; color:#f5f5f5;
-  font-size:clamp(16px,1.6vw,22px);
+  /* Contact form dark override */
+  body:not(.theme-light) .contact-form{ max-width:760px; margin:0 auto; display:grid; gap:28px; color-scheme: dark; }
+  body:not(.theme-light) .field{ display:grid; gap:10px; }
+
+  body:not(.theme-light) .field label{
+    font-family:"Satoshi",sans-serif; font-weight:500; color:#f5f5f5;
+    font-size:clamp(16px,1.6vw,22px);
+  }
+
+  body:not(.theme-light) .field input,
+  body:not(.theme-light) .field textarea{
+    font:inherit; color:#f5f5f5; caret-color:#fff;
+    background:transparent; border:0; border-bottom:1px solid rgba(255,255,255,.22);
+    padding:16px 0; outline:none;
+    transition:border-color .2s ease, background-color .2s ease;
+  }
+
+  body:not(.theme-light) .field textarea{ resize:vertical; }
+
+  body:not(.theme-light) .field input::placeholder,
+  body:not(.theme-light) .field textarea::placeholder{ color:rgba(255,255,255,.55); }
+
+  body:not(.theme-light) .field input:focus,
+  body:not(.theme-light) .field textarea:focus{
+    border-bottom-color:#fff; background-color:rgba(255,255,255,.04);
+  }
+
+  body:not(.theme-light) .form-note{ margin:6px 0 0; font-size:14px; color:rgba(255,255,255,.72) }
+
+  /* autofill */
+  body:not(.theme-light) input:-webkit-autofill,
+  body:not(.theme-light) textarea:-webkit-autofill{
+    -webkit-box-shadow:0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color:#f5f5f5;
+    caret-color:#fff;
+  }
 }
-
-/* inputs and textarea */
-.field input,
-.field textarea{
-  font:inherit; color:#f5f5f5; caret-color:#fff;
-  background:transparent; border:0; border-bottom:1px solid rgba(255,255,255,.22);
-  padding:16px 0; outline:none;
-  transition:border-color .2s ease, background-color .2s ease;
-}
-
-/* focus and placeholder */
-.field textarea{ resize:vertical; }
-.field input::placeholder,
-.field textarea::placeholder{ color:rgba(255,255,255,.55); }
-.field input:focus,
-.field textarea:focus{
-  border-bottom-color:#fff; background-color:rgba(255,255,255,.04);
-}
-
-/* helper text */
-.form-note{ margin:6px 0 0; font-size:14px; color:rgba(255,255,255,.72) }
-
-/* optional: tame webkit autofill in dark */
-input:-webkit-autofill,
-textarea:-webkit-autofill{
-  -webkit-box-shadow:0 0 0px 1000px transparent inset;
-  -webkit-text-fill-color:#f5f5f5;
-  caret-color:#fff;
-}
-
-/* suggest dark background for the section */
-.contact-form:where(:not(.noop)){ color-scheme:dark; }
-  }  }
