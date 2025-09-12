@@ -156,57 +156,68 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   
-  // Formspark AJAX submit with centered toast
+  // Minimal AJAX submit to Formspark with centered toast. No redirect.
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const submitURL = form.getAttribute('action');
-  const toastEl = document.getElementById('toast');
-  const btn = form.querySelector('[type="submit"]');
+  // Use a fixed endpoint so the form action cannot trigger navigation
+  const FORMSPARK_URL = 'https://submit-form.com/Po4c9Fm5U';
 
-  // Optional: if you had _redirect, ignore it since we stay on-page
-  const redirectInput = form.querySelector('input[name="_redirect"]');
-  if (redirectInput) redirectInput.remove();
+  // Optional: nuke any _redirect field if exists
+  form.querySelector('input[name="_redirect"]')?.remove();
 
-  async function showToast(message, isError = false, timeoutMs = 4000){
-    toastEl.innerHTML = `<div class="card${isError ? ' error' : ''}">${message}</div>`;
-    toastEl.classList.add('show');
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
-  }
-
+  // Prevent default and any other handlers from submitting the page
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    e.stopImmediatePropagation();
 
-    // basic bot trap
+    const submitBtn = form.querySelector('[type="submit"]');
     const hp = form.querySelector('input[name="_gotcha"]');
-    if (hp && hp.value) return; // do nothing if honeypot filled
+    if (hp && hp.value) return; // bot trap
 
     try {
-      btn?.setAttribute('disabled', 'true');
+      submitBtn?.setAttribute('disabled', 'true');
       const fd = new FormData(form);
 
-      // ask JSON to avoid default redirect page
-      const res = await fetch(submitURL, {
+      const res = await fetch(FORMSPARK_URL, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
+        headers: { 'Accept': 'application/json' }, // avoids Formspark redirect
         body: fd
       });
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        const msg = data.message || 'Submission failed. Please try again.';
-        await showToast(msg, true, 5500);
+        showToast(data.message || 'Submission failed. Please try again.', true, 5500);
         return;
       }
 
       form.reset();
-      await showToast('Your message was sent successfully.', false, 3500);
+      showToast('Your message was sent successfully.', false, 3500);
     } catch (err) {
-      await showToast('Network error. Please try again.', true, 5500);
+      showToast('Network error. Please try again.', true, 5500);
     } finally {
-      btn?.removeAttribute('disabled');
+      submitBtn?.removeAttribute('disabled');
     }
-  });
+  }, { capture: true }); // capture helps beat other listeners
+
+  // Toast tiny helper
+  const toastEl = document.getElementById('toast') || (() => {
+    const t = document.createElement('div');
+    t.id = 'toast';
+    t.setAttribute('role','status');
+    t.setAttribute('aria-live','polite');
+    t.setAttribute('aria-atomic','true');
+    document.body.appendChild(t);
+    return t;
+  })();
+
+  window.showToast = function(message, isError = false, timeoutMs = 4000){
+    toastEl.innerHTML = `<div class="card${isError ? ' error' : ''}">${message}</div>`;
+    toastEl.classList.add('show');
+    clearTimeout(window.showToast._t);
+    window.showToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
+  };
 });
+
+  // Toast tiny helper
