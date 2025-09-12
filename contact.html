@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Service ecosystem — Doop</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
   <style>
     /* Overrides solo para esta página */
     body{ background:#efefef; }
@@ -18,11 +18,11 @@
   <!-- header con logo gris -->
   <header class="container-wide">
     <div class="row">
-      <div class="brand"><a href="index.html"><img src="assets/logo.png" alt="doop" /></a></div>
+      <div class="brand"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/logo.png" alt="doop" /></a></div>
       <nav class="nav">
-        <a href="solutions.html">Solutions</a>
-        <a href="showcase.html">Showcase</a>
-        <a href="contact.html">Contact</a>
+        <a href="{{ site.baseurl }}/solutions">Solutions</a>
+        <a href="{{ site.baseurl }}/showcase">Showcase</a>
+        <a href="{{ site.baseurl }}/contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -68,7 +68,7 @@
   <div id="footer-slot" data-src="/partials/footer.html"></div>
 
 
-  <script src="scripts.js" defer></script>
+  <script src="{{ site.baseurl }}/scripts.js" defer></script>
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>
