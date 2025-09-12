@@ -634,6 +634,7 @@ figure{margin:0}
     .slice-light,
     .service-eco,
     .solutions,
+    .process-card,
     .testimonials,
     .slice-light.process{
       background:#0f1115;
@@ -666,4 +667,52 @@ figure{margin:0}
   
     /* botón */
     .btn-primary{ background:#ffffff; color:#0f1115; }
+
+
+
+
+    /* Contact form dark override */
+/* paste after your current styles */
+
+/* layout stays the same */
+.contact-form{ max-width:760px; margin:0 auto; display:grid; gap:28px; }
+.field{ display:grid; gap:10px; }
+
+/* labels */
+.field label{
+  font-family:"Satoshi",sans-serif; font-weight:500; color:#f5f5f5;
+  font-size:clamp(16px,1.6vw,22px);
+}
+
+/* inputs and textarea */
+.field input,
+.field textarea{
+  font:inherit; color:#f5f5f5; caret-color:#fff;
+  background:transparent; border:0; border-bottom:1px solid rgba(255,255,255,.22);
+  padding:16px 0; outline:none;
+  transition:border-color .2s ease, background-color .2s ease;
+}
+
+/* focus and placeholder */
+.field textarea{ resize:vertical; }
+.field input::placeholder,
+.field textarea::placeholder{ color:rgba(255,255,255,.55); }
+.field input:focus,
+.field textarea:focus{
+  border-bottom-color:#fff; background-color:rgba(255,255,255,.04);
+}
+
+/* helper text */
+.form-note{ margin:6px 0 0; font-size:14px; color:rgba(255,255,255,.72) }
+
+/* optional: tame webkit autofill in dark */
+input:-webkit-autofill,
+textarea:-webkit-autofill{
+  -webkit-box-shadow:0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color:#f5f5f5;
+  caret-color:#fff;
+}
+
+/* suggest dark background for the section */
+.contact-form:where(:not(.noop)){ color-scheme:dark; }
   }  }
