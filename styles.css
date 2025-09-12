@@ -974,7 +974,6 @@ body:not(.theme-light) .footer{
 @media (prefers-color-scheme: dark){
   body:not(.theme-light) .nav{
     background:rgba(8,10,14,.92);
-    border-top:1px solid #ffffff24;
   }
   body:not(.theme-light) .nav-toggle{ border-color:#ffffff24; }
 }
