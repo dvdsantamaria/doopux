@@ -75,7 +75,7 @@ body { padding-bottom: 30px; }
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
   }
-  
+
 /* =============== HEADER (sólo el del sitio) =============== */
 header.container-wide{
   position:relative; z-index:2;
@@ -875,5 +875,90 @@ body:not(.theme-light) .footer{
   /* por si algún browser hereda color del figure */
   body:not(.theme-light) .solution figcaption{
     color:#e9eef5;
+  }
+}
+
+/* ==== HAMBURGER MENU ≤768px ==== */
+
+/* botón oculto en desktop */
+.nav-toggle{ display:none; }
+
+@media (max-width:768px){
+
+  /* muestra botón y prepara icono */
+  .nav-toggle{
+    display:inline-grid;
+    place-items:center;
+    width:44px; height:44px;
+    border:1px solid #ffffff2a;
+    border-radius:10px;
+    background:transparent;
+    color:inherit;
+    cursor:pointer;
+  }
+  .nav-toggle:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
+
+  /* icono (3 líneas) */
+  .nav-toggle .bars{
+    position:relative; width:22px; height:2px; background:currentColor;
+  }
+  .nav-toggle .bars::before,
+  .nav-toggle .bars::after{
+    content:""; position:absolute; left:0; width:22px; height:2px; background:currentColor;
+    transition: transform .2s ease, top .2s ease, opacity .2s ease;
+  }
+  .nav-toggle .bars::before{ top:-7px; }
+  .nav-toggle .bars::after { top: 7px; }
+
+  /* panel mobile (cerrado por defecto) */
+  .nav{
+    position:fixed;
+    inset:auto 0 0 0;
+    top:0;
+    padding:calc(var(--header-h) + 12px) clamp(16px,6vw,28px) 24px;
+    display:grid;
+    gap:14px;
+    background:rgba(17,17,17,.92);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    transform: translateY(-8%);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    z-index:10;
+    font-size:18px;
+  }
+  .nav a{ display:block; padding:12px 2px; }
+
+  /* estado abierto cuando el botón está expandido */
+  header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav{
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+
+  /* anima icono a "X" cuando abierto */
+  .nav-toggle[aria-expanded="true"] .bars{ background:transparent; }
+  .nav-toggle[aria-expanded="true"] .bars::before{
+    top:0; transform:rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .bars::after{
+    top:0; transform:rotate(-45deg);
+  }
+
+  /* oculta links inline del header original en mobile */
+  header .nav{ gap:0; }
+  header .row{ gap:10px; }
+}
+
+/* dark scheme del panel si usás theme-light */
+@media (prefers-color-scheme: dark){
+  body:not(.theme-light) .nav{
+    background:rgba(8,10,14,.92);
+    border-top:1px solid #ffffff24;
+  }
+  body:not(.theme-light) .nav-toggle{
+    border-color:#ffffff24;
   }
 }
