@@ -6,6 +6,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+
+
+<!-- FAVICONS -->
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml"> <!-- vector, moderno -->
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">   <!-- fallback clásico -->
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">  <!-- 180x180 -->
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#151515">
+<meta name="theme-color" content="#151515">
+
+
+
 <!-- CANONICAL -->
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
@@ -27,13 +39,26 @@
 
 <title>Doop UX</title>
 
-<!-- FAVICONS -->
-<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml"> <!-- vector, moderno -->
-<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">   <!-- fallback clásico -->
-<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">  <!-- 180x180 -->
-<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
-<link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#151515">
-<meta name="theme-color" content="#151515">
+
+
+<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+  <title>Doop UX</title>
+
+  <!-- favicons y metas acá -->
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Doop UX",
+    "url":"{{ site.url }}{{ site.baseurl }}/",
+    "logo":"{{ '/assets/logo.png' | relative_url }}",
+    "sameAs":[]
+  }
+  </script>
 
 
 </head>
