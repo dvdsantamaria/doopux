@@ -298,8 +298,10 @@ figure{margin:0}
 
 .process-cta{ display:flex; justify-content:center }
 .btn-primary{
-  display:inline-block; padding:14px 28px; border-radius:6px;
-  background:#111; color:#fff; text-decoration:none; font-size:14px; letter-spacing:.3px;
+  width:20ch;
+  display:block;            /* allows auto margins to center */
+  margin-inline:auto;       /* centers in its container */
+  text-align:center;        /* centers the label inside */
 }
 @media (max-width:960px){
   .process-grid{grid-template-columns:1fr}
