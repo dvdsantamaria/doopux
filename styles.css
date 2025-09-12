@@ -691,10 +691,6 @@ figure{margin:0}
   }
 
 
-  body:not(.theme-light) .foot-contact a{
-    color:#000;
-  
-  }
 
 
   /* textos secundarios */
@@ -768,6 +764,12 @@ figure{margin:0}
   body:not(.theme-light) .foot-contact::before{
     background: rgba(255,255,255,.28);
 }
+
+body:not(.theme-light) .foot-contact a{
+  color:#000;
+
+}
+
 
 }
 
