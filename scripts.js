@@ -171,27 +171,35 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     e.stopImmediatePropagation();
-
+  
     const submitBtn = form.querySelector('[type="submit"]');
     const hp = form.querySelector('input[name="_gotcha"]');
     if (hp && hp.value) return; // bot trap
-
+  
     try {
       submitBtn?.setAttribute('disabled', 'true');
-      const fd = new FormData(form);
-
-      const res = await fetch(FORMSPARK_URL, {
+  
+      // Serialize exactly like a normal HTML form post
+      const params = new URLSearchParams();
+      for (const [k, v] of new FormData(form).entries()) {
+        params.append(k, typeof v === 'string' ? v : String(v));
+      }
+  
+      const res = await fetch('https://submit-form.com/Po4c9Fm5U', {
         method: 'POST',
-        headers: { 'Accept': 'application/json' }, // avoids Formspark redirect
-        body: fd
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: params.toString()
       });
-
+  
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         showToast(data.message || 'Submission failed. Please try again.', true, 5500);
         return;
       }
-
+  
       form.reset();
       showToast('Your message was sent successfully.', false, 3500);
     } catch (err) {
@@ -199,25 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } finally {
       submitBtn?.removeAttribute('disabled');
     }
-  }, { capture: true }); // capture helps beat other listeners
-
-  // Toast tiny helper
-  const toastEl = document.getElementById('toast') || (() => {
-    const t = document.createElement('div');
-    t.id = 'toast';
-    t.setAttribute('role','status');
-    t.setAttribute('aria-live','polite');
-    t.setAttribute('aria-atomic','true');
-    document.body.appendChild(t);
-    return t;
-  })();
-
-  window.showToast = function(message, isError = false, timeoutMs = 4000){
-    toastEl.innerHTML = `<div class="card${isError ? ' error' : ''}">${message}</div>`;
-    toastEl.classList.add('show');
-    clearTimeout(window.showToast._t);
-    window.showToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
-  };
+  });
 });
 
   // Toast tiny helper
