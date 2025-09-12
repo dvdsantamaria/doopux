@@ -20,8 +20,18 @@
   <!-- header con logo gris -->
   <header class="container-wide">
     <div class="row">
-      <div class="brand">  <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/logo.png" alt="doop" /></a></div>
-      <nav class="nav">
+      <div class="brand">
+        <a href="{{ site.baseurl }}/">
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="doop" />
+        </a>
+      </div>
+
+      <!-- Hamburguesa -->
+      <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="bars"></span>
+      </button>
+
+      <nav id="siteNav" class="nav">
         <a href="{{ site.baseurl }}/solutions">Solutions</a>
         <a href="{{ site.baseurl }}/showcase">Showcase</a>
         <a href="{{ site.baseurl }}/contact">Contact</a>
