@@ -297,12 +297,29 @@ figure{margin:0}
 .process-card:hover .step-number{ color:#111 }
 
 .process-cta{ display:flex; justify-content:center }
+/* nicer button shape */
 .btn-primary{
   width:20ch;
-  display:block;            /* allows auto margins to center */
-  margin-inline:auto;       /* centers in its container */
-  text-align:center;        /* centers the label inside */
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  margin-inline:auto;
+  padding:16px 22px;          /* más alto */
+  border-radius:999px;        /* pill */
+  line-height:1;
+  font-weight:600;
+
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;                   /* saca bevel nativo */
+  text-align:center;
+
+  box-shadow:0 2px 12px rgba(0,0,0,.16);
+  transition:transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease;
 }
+.btn-primary:hover{ transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.22); }
+.btn-primary:active{ transform:translateY(0); box-shadow:0 3px 10px rgba(0,0,0,.14); }
+.btn-primary:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
 @media (max-width:960px){
   .process-grid{grid-template-columns:1fr}
   .card-copy{max-width:none}
