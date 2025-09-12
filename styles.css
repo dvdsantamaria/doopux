@@ -481,8 +481,8 @@ figure{margin:0}
     letter-spacing:.1px;
   }
   
-  /* Footer SIEMPRE al bottom en la card */
   .tst-meta{
+    margin-top:auto; 
     display:flex;
     align-items:flex-end;
     justify-content:space-between;
@@ -645,6 +645,9 @@ figure{margin:0}
   body:not(.theme-light) .process-card:hover .step-number{
     color:#e9eef5;
   }
+
+  body:not(.theme-light) .tst-project{ color:#c7cfdb99; }
+
 
   body:not(.theme-light) .tst-nav{
     background-color:#e9e9e99e;
