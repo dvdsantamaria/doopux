@@ -256,36 +256,36 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
 })();
 
 
-  // Toggle aria-expanded for hamburguesa
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.nav-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!isOpen));
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header.container-wide');
+  const btn = header?.querySelector('.nav-toggle');
+  const nav = header?.querySelector('.nav');
+  const closeBtn = header?.querySelector('.nav-close');
+  if (!header || !btn || !nav) return;
+
+  const setOpen = (open) => {
+    btn.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('nav-open', open);     // fallback para CSS sin :has()
+    document.body.classList.toggle('nav-open', open);
+  };
+
+  // toggle con un solo handler
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    setOpen(!open);
   });
 
-  // close menu
+  // cerrar con el botón X
+  closeBtn?.addEventListener('click', () => setOpen(false));
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.nav-toggle');
-    const header = document.querySelector('header.container-wide');
-    const closeBtn = document.querySelector('.nav-close');
-    if (!btn || !header) return;
-  
-    const setOpen = (open) => {
-      btn.setAttribute('aria-expanded', String(open));
-      header.classList.toggle('nav-open', open);
-      document.body.classList.toggle('nav-open', open);
-    };
-  
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      setOpen(!open);
-    });
-  
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => setOpen(false));
-    }
+  // cerrar al clickear cualquier link del menú
+  nav.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a) setOpen(false);
   });
+
+  // cerrar con Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+});

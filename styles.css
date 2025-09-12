@@ -1040,3 +1040,22 @@ body.theme-light .nav-toggle{
 
   .nav-close .nav-close-label{ letter-spacing:.2px; }
 }
+
+@media (max-width:768px){
+  header.container-wide.nav-open .nav{
+    transform:none; opacity:1; visibility:visible; pointer-events:auto;
+  }
+  body.nav-open{ overflow:hidden; touch-action:none; }
+}
+
+/* gris en theme light para la hamburguesa cerrada */
+body.theme-light .nav-toggle{
+  color:#555; border-color:#00000026; background:transparent;
+}
+
+/* cuando se abre, que se vea blanca sobre el overlay */
+@media (max-width:768px){
+  body.theme-light header.container-wide.nav-open .nav-toggle{
+    color:#fff; border-color:#ffffff40;
+  }
+}
