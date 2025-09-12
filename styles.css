@@ -883,6 +883,21 @@ body:not(.theme-light) .footer{
 
 /* oculto en desktop */
 .nav-toggle{ display:none; }
+/* close oculto en desktop */
+.nav-close{ display:none; }
+
+/* theme light: hamburguesa gris por defecto */
+body.theme-light .nav-toggle{
+  color:#555;
+  border-color:#00000026;
+  background:transparent;
+}
+
+/* dark scheme del panel */
+@media (prefers-color-scheme: dark){
+  body:not(.theme-light) .nav{ background:rgba(8,10,14,.92); }
+  body:not(.theme-light) .nav-toggle{ border-color:#ffffff24; }
+}
 
 @media (max-width:768px){
 
@@ -914,31 +929,24 @@ body:not(.theme-light) .footer{
   /* panel mobile (cerrado por defecto) */
   .nav{
     position:fixed;
-    inset:0 0 0 0;
+    inset:0;
     padding: calc(var(--header-h) + env(safe-area-inset-top, 0px)) clamp(20px,6vw,40px)
              calc(18px + env(safe-area-inset-bottom, 0px));
-    display:flex;                       /* centrado absoluto */
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
     text-align:center;
-    gap: clamp(36px, 10vh, 84px);       /* más separación */
+    gap: clamp(36px, 10vh, 84px);
     background:rgba(17,17,17,.92);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-    min-height:100dvh;                  /* viewport real iOS */
+    min-height:100dvh;
     transform: translateY(-8%);
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+    opacity:0; visibility:hidden; pointer-events:none;
     z-index:10;
   }
 
-  /* links grandes y cómodos */
+  /* links grandes */
   .nav a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display:flex; align-items:center; justify-content:center;
     gap:12px;
     font-size: clamp(34px, 10vw, 56px);
     line-height:1.15;
@@ -947,12 +955,18 @@ body:not(.theme-light) .footer{
     letter-spacing:.2px;
   }
 
-  /* abierto cuando el botón está expandido */
+  /* abrir usando :has */
   header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav{
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
+    transform:none; opacity:1; visibility:visible; pointer-events:auto;
+  }
+  /* fallback abrir por clase .nav-open */
+  header.container-wide.nav-open .nav{
+    transform:none; opacity:1; visibility:visible; pointer-events:auto;
+  }
+
+  /* bloquear scroll al abrir (ambos métodos) */
+  body:has(.nav-toggle[aria-expanded="true"]), body.nav-open{
+    overflow:hidden; touch-action:none;
   }
 
   /* anima icono a X */
@@ -960,136 +974,30 @@ body:not(.theme-light) .footer{
   .nav-toggle[aria-expanded="true"] .bars::before{ top:0; transform:rotate(45deg); }
   .nav-toggle[aria-expanded="true"] .bars::after { top:0; transform:rotate(-45deg); }
 
-  /* bloquea scroll del body al abrir */
-  body:has(.nav-toggle[aria-expanded="true"]){
-    overflow:hidden;
-    touch-action:none;
-  }
-
-  /* limpia layout del header en mobile */
-  header .row{ gap:10px; }
-}
-
-/* dark scheme del panel si usás theme-light */
-@media (prefers-color-scheme: dark){
-  body:not(.theme-light) .nav{
-    background:rgba(8,10,14,.92);
-  }
-  body:not(.theme-light) .nav-toggle{ border-color:#ffffff24; }
-}
-
-
-/* Light theme: hamburger grey by default */
-body.theme-light .nav-toggle{
-  color:#555;                      /* icon color */
-  border-color:#00000026;          /* subtle grey border */
-  background:transparent;
-}
-
-/* When menu is open, make the button visible over dark overlay */
-@media (max-width:768px){
-  body.theme-light header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle{
-    color:#fff;
-    border-color:#ffffff40;
-  }
-  /* fallback if :has() is not supported */
-  body.theme-light header.container-wide.nav-open .nav-toggle{
-    color:#fff;
-    border-color:#ffffff40;
-  }
-}
-
-/* Mobile "Close" button at bottom of panel */
-@media (max-width:768px){
-  .nav{
-    /* already flex column centered in tu CSS */
-  }
-  .nav-close{
-    margin-top:auto;                      /* pushes to bottom */
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:12px 16px;
-    border:1px solid #ffffff33;
-    border-radius:12px;
-    background:transparent;
-    color:#fff;
-    font-size:18px;
-    line-height:1;
-    cursor:pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .nav-close:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
-  .nav-close:hover{ background:rgba(255,255,255,.06); border-color:#ffffff55; }
-
-  /* X icon */
-  .nav-close .x{
-    position:relative;
-    width:22px; height:22px; display:inline-block;
-  }
-  .nav-close .x::before,
-  .nav-close .x::after{
-    content:"";
-    position:absolute; left:50%; top:50%;
-    width:22px; height:2px; background:currentColor;
-    transform-origin:center;
-  }
-  .nav-close .x::before{ transform:translate(-50%,-50%) rotate(45deg); }
-  .nav-close .x::after { transform:translate(-50%,-50%) rotate(-45deg); }
-
-  .nav-close .nav-close-label{ letter-spacing:.2px; }
-}
-
-@media (max-width:768px){
-  header.container-wide.nav-open .nav{
-    transform:none; opacity:1; visibility:visible; pointer-events:auto;
-  }
-  body.nav-open{ overflow:hidden; touch-action:none; }
-}
-
-/* gris en theme light para la hamburguesa cerrada */
-body.theme-light .nav-toggle{
-  color:#555; border-color:#00000026; background:transparent;
-}
-
-/* cuando se abre, que se vea blanca sobre el overlay */
-@media (max-width:768px){
+  /* theme light: al abrir que se vea blanca sobre overlay */
+  body.theme-light header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
   body.theme-light header.container-wide.nav-open .nav-toggle{
     color:#fff; border-color:#ffffff40;
   }
-}
 
-/* ocultar el botón Close en desktop */
-.nav-close{ display:none; }
+  /* layout header en mobile */
+  header .row{ gap:10px; }
 
-/* mobile: mostrarlo sin borde ni fondo */
-@media (max-width:768px){
+  /* botón Close solo en mobile, sin borde ni fondo */
   .nav-close{
     display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:12px 16px;
-    border:0;                 /* sin borde */
-    background:transparent;   /* sin fondo */
-    box-shadow:none;
-    color:#fff;
-    font-size:18px;
-    line-height:1;
-    cursor:pointer;
+    align-items:center; justify-content:center;
+    gap:10px; padding:12px 16px;
+    border:0; background:transparent; box-shadow:none;
+    color:#fff; font-size:18px; line-height:1; cursor:pointer;
     -webkit-tap-highlight-color: transparent;
+    margin-top:auto;                 /* al fondo del panel */
   }
-  .nav-close:hover,
-  .nav-close:active{
-    background:transparent;   /* no cambia al hover */
-    border:0;
-  }
+  .nav-close:hover, .nav-close:active{ background:transparent; }
   .nav-close:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
 
-  .nav-close .x{
-    position:relative; width:22px; height:22px; display:inline-block;
-  }
+  /* X del botón Close */
+  .nav-close .x{ position:relative; width:22px; height:22px; display:inline-block; }
   .nav-close .x::before,
   .nav-close .x::after{
     content:""; position:absolute; left:50%; top:50%;
