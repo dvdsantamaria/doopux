@@ -231,3 +231,26 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
   clearTimeout(showErrorToast._t);
   showErrorToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
 }
+
+
+(async () => {
+  const slot = document.getElementById('footer-slot');
+  if (!slot) return;
+
+  // resolve URL (use absolute path or data-src)
+  const url = slot.getAttribute('data-src') || '/partials/footer.html';
+
+  try {
+    const res = await fetch(url, { cache: 'no-cache' }); // avoid stale during dev
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const html = await res.text();
+
+    // replace the slot with the loaded footer markup
+    slot.insertAdjacentHTML('afterend', html);
+    slot.remove();
+  } catch (err) {
+    console.error('Footer load failed:', err);
+    // optional minimal fallback so the page is not empty
+    slot.outerHTML = '<footer class="site-footer"><div class="container-wide foot-wrap"><p class="foot-copy">© 2025</p></div></footer>';
+  }
+})();
