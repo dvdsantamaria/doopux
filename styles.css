@@ -778,3 +778,18 @@ figure{margin:0}
     z-index: 3;
   }
 }
+
+.eco-card,
+.process-card,
+.solution,
+.tst-card{
+  position: relative; /* crea stacking context */
+  z-index: 1;
+}
+
+/* si querés todo el bloque encima (texto+títulos) */
+.service-eco .container,
+.slice-light .container{
+  position: relative;
+  z-index: 1;
+}
