@@ -628,7 +628,7 @@ figure{margin:0}
   
     /* header y logo */
     .nav{ color:#e9eef5; opacity:.95; }
-    .brand img{ filter: invert(100%) brightness(92%); }
+    .brand img{ filter: invert(0%) brightness(80%); }
   
     /* secciones claras pasan a dark */
     .slice-light,
@@ -639,10 +639,18 @@ figure{margin:0}
       background:#0f1115;
       color:#e9eef5;
     }
+
+    .step-number{
+      background:rgba(255,255,255,.7);
+      color:#e9eef5;
+    }
+
+    .tst-nav{
+      background-color: #e9e9e99e;
+    }
   
     /* cards y contenedores */
     .eco-card,
-    .process-card,
     .solution,
     .tst-card{
       background:#151821;
