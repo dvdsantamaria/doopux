@@ -833,3 +833,21 @@ figure{margin:0}
   position: relative;
   z-index: 1;
 }
+
+/* Fix dark theme: Solutions */
+@media (prefers-color-scheme: dark){
+  body:not(.theme-light) .solution {
+    background:#151821;                   /* ya lo tenías, lo reafirmo por claridad */
+    border:1px solid #ffffff24;
+  }
+  body:not(.theme-light) .solution h3{
+    color:#e9eef5;                        /* título claro en dark */
+  }
+  body:not(.theme-light) .solution p{
+    color:#c7cfdbb3;                      /* copy secundaria en dark */
+  }
+  /* por si algún browser hereda color del figure */
+  body:not(.theme-light) .solution figcaption{
+    color:#e9eef5;
+  }
+}
