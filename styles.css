@@ -71,7 +71,7 @@ header.container-wide{
   position:relative; z-index:2;
   block-size:var(--header-h);
   display:flex; align-items:center;
-  padding-top:6px;
+  padding-top:16px;
 }
 .row{display:flex; align-items:center; justify-content:space-between; width:100%}
 .brand img{display:block; width:120px; height:auto}
