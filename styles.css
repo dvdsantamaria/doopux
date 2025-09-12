@@ -714,7 +714,16 @@ body:not(.theme-light) .site-footer{
 }
 body:not(.theme-light) .site-footer a{ color:#c7cfdb; }
 body:not(.theme-light) .site-footer a:hover{ color:#ffffff; }
+}
 
-
-
+@media (prefers-color-scheme: dark){
+  /* Footer override fuerte */
+  body:not(.theme-light) footer.site-footer{
+    background:#0f1115 !important;
+    color:#e9eef5 !important;
+    border-top:1px solid rgba(255,255,255,.18) !important;
+  }
+  body:not(.theme-light) footer.site-footer a{ color:#c7cfdb }
+  body:not(.theme-light) footer.site-footer a:hover{ color:#fff }
+  body:not(.theme-light) .foot-locations{ color:#c7cfdbb3 }
 }
