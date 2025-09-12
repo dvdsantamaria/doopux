@@ -3,50 +3,38 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
-
-
-<!-- FAVICONS -->
-<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml"> <!-- vector, moderno -->
-<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">   <!-- fallback clásico -->
-<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">  <!-- 180x180 -->
-<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
-<link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#151515">
-<meta name="theme-color" content="#151515">
-
-
-
-<!-- CANONICAL -->
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
-<!-- OPEN GRAPH -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Doop UX">
-<meta property="og:description" content="UX, estrategia y desarrollo limpio para marcas que quieren crecer sin humo.">
-<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
-<meta property="og:image" content="{{ '/assets/og.jpg' | relative_url }}">
-
-<!-- TWITTER -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Doop UX">
-<meta name="twitter:description" content="UX, estrategia y desarrollo limpio para marcas que quieren crecer sin humo.">
-<meta name="twitter:image" content="{{ '/assets/og.jpg' | relative_url }}">
-
-<!-- ROBOTS -->
-<meta name="robots" content="index,follow">
-
-<title>Doop UX</title>
-
-
-
-<meta charset="utf-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
-  <title>Doop UX</title>
 
-  <!-- favicons y metas acá -->
+  <!-- FAVICONS -->
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#151515">
+  <meta name="theme-color" content="#151515">
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Doop UX">
+  <meta property="og:description" content="UX, estrategia y desarrollo limpio para marcas que quieren crecer sin humo.">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+  <meta property="og:image" content="{{ '/assets/og.jpg' | relative_url }}">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Doop UX">
+  <meta name="twitter:description" content="UX, estrategia y desarrollo limpio para marcas que quieren crecer sin humo.">
+  <meta name="twitter:image" content="{{ '/assets/og.jpg' | relative_url }}">
+
+  <!-- ROBOTS -->
+  <meta name="robots" content="index,follow">
+
+  <title>Doop UX</title>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -59,29 +47,38 @@
     "sameAs":[]
   }
   </script>
-
-
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
 
   <header class="container-wide">
     <div class="row">
-      <div class="brand">  <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/logo.png" alt="doop" /></a></div>
-      <nav class="nav">
+      <div class="brand">
+        <a href="{{ site.baseurl }}/">
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="doop" />
+        </a>
+      </div>
+
+      <!-- Hamburguesa -->
+      <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="bars"></span>
+      </button>
+
+      <nav id="siteNav" class="nav">
         <a href="{{ site.baseurl }}/solutions">Solutions</a>
         <a href="{{ site.baseurl }}/showcase">Showcase</a>
         <a href="{{ site.baseurl }}/contact">Contact</a>
       </nav>
     </div>
   </header>
+
   <section class="container hero">
-    <div></div> <!-- top spacer -->
+    <div></div>
     <div class="copy">
       <div class="eyebrow"><span class="dot">•</span> Clarity over hype <span class="dot">•</span></div>
       <h1>Enterprise Level Expertise for Growing your Business</h1>
     </div>
-    <div></div> <!-- bottom spacer -->
+    <div></div>
 
     <div class="projects-inline" aria-label="Featured projects">
       <div class="projects-clip">
@@ -107,7 +104,6 @@
     </div>
   </section>
 
-
   <section class="slice-light">
     <div class="container about-block">
       <p class="about-lede">
@@ -115,7 +111,7 @@
         Our focus is on providing user-centered strategies, efficient project management, and
         budget-friendly options that align with your goals.
       </p>
-  
+
       <div class="about-stats">
         <div class="stat">
           <div class="stat-value">15+</div>
@@ -133,14 +129,11 @@
     </div>
   </section>
 
-
-
   <section class="slice-light process">
     <div class="container">
       <h2 class="process-title">Our process</h2>
-  
+
       <div class="process-grid">
-        <!-- Card 1 -->
         <article class="process-card">
           <h3 class="card-title">Cut through the noise</h3>
           <p class="card-copy">
@@ -149,8 +142,7 @@
           </p>
           <span class="step-number strong">01</span>
         </article>
-  
-        <!-- Card 2 -->
+
         <article class="process-card">
           <h3 class="card-title">Structure with purpose</h3>
           <p class="card-copy">
@@ -159,8 +151,7 @@
           </p>
           <span class="step-number soft">02</span>
         </article>
-  
-        <!-- Card 3 -->
+
         <article class="process-card">
           <h3 class="card-title">Build lean, launch smart</h3>
           <p class="card-copy">
@@ -170,13 +161,12 @@
           <span class="step-number softer">03</span>
         </article>
       </div>
-  
+
       <div class="process-cta">
         <a class="btn-primary" href="#">Get started</a>
       </div>
     </div>
   </section>
-
 
   <section class="slice-light solutions">
     <div class="container-wide">
@@ -187,9 +177,8 @@
           Clear direction, better service and measurable impact.
         </p>
       </header>
-  
+
       <div class="solutions-grid">
-        <!-- usa portfolio1,3,4,6,7,8,9,10 -->
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio1.jpg" alt="Project 1">
           <figcaption>
@@ -197,7 +186,7 @@
             <p>Landing page to present the product, capture leads and highlight value quickly.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio3.jpg" alt="Project 3">
           <figcaption>
@@ -205,7 +194,7 @@
             <p>Site redesign improving structure, readability and perceived quality.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio4.jpg" alt="Project 4">
           <figcaption>
@@ -213,7 +202,7 @@
             <p>Modular content system to scale fast while keeping consistency.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio6.jpg" alt="Project 6">
           <figcaption>
@@ -221,7 +210,7 @@
             <p>Core flows and UI patterns focused on clarity and conversion.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio7.jpg" alt="Project 7">
           <figcaption>
@@ -229,7 +218,7 @@
             <p>Luxury service website with performance and accessibility in mind.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio8.jpg" alt="Project 8">
           <figcaption>
@@ -237,7 +226,7 @@
             <p>Donation funnel simplified to reduce friction and increase completion.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio9.jpg" alt="Project 9">
           <figcaption>
@@ -245,7 +234,7 @@
             <p>Calm visual language and scalable content for new programs.</p>
           </figcaption>
         </figure>
-  
+
         <figure class="solution">
           <img src="{{ site.baseurl }}/assets/portfolio10.jpg" alt="Project 10">
           <figcaption>
@@ -257,14 +246,12 @@
     </div>
   </section>
 
-
-
   <section class="slice-logos">
     <div class="container-wide">
       <div class="logos-head">
         <h2 class="logos-title">WE ARE EXPERTS</h2>
       </div>
-  
+
       <div class="logos-grid">
         <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Platform 1"></div>
         <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Platform 2"></div>
@@ -275,7 +262,6 @@
     </div>
   </section>
 
-
   <section class="slice-light testimonials" aria-labelledby="tst-title">
     <div class="container">
       <header class="tst-head">
@@ -284,18 +270,16 @@
           We take pride in building lasting partnerships and delivering solutions that exceed expectations.
         </p>
       </header>
-  
+
       <div class="tst-carousel" id="tstCarousel">
         <button class="tst-nav tst-prev" aria-label="Previous testimonial">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-  
+
         <div class="tst-viewport" aria-live="polite">
-          <!-- NUEVO WRAPPER -->
           <div class="tst-track">
-            <!-- slide 1 -->
             <article class="tst-card is-active">
               <blockquote class="tst-quote">
                 We came to David for a website, but he quickly showed us we were missing big opportunities beyond that. He guided us through a smarter marketing strategy, both online and offline. His leadership and clarity made a real difference.
@@ -310,8 +294,7 @@
                 </div>
               </footer>
             </article>
-  
-            <!-- slide 2 -->
+
             <article class="tst-card">
               <blockquote class="tst-quote">
                 Clear roadmap, clean execution and no fluff. We launched on time with better results than expected. Communication was crisp and decisions were data driven.
@@ -326,8 +309,7 @@
                 </div>
               </footer>
             </article>
-  
-            <!-- slide 3 -->
+
             <article class="tst-card">
               <blockquote class="tst-quote">
                 The team focused us on what truly moves the needle. Faster flows, better conversions and a stack that our people can maintain.
@@ -342,9 +324,9 @@
                 </div>
               </footer>
             </article>
-          </div><!-- /.tst-track -->
-        </div><!-- /.tst-viewport -->
-  
+          </div>
+        </div>
+
         <button class="tst-nav tst-next" aria-label="Next testimonial">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -353,8 +335,20 @@
       </div>
     </div>
   </section>
+
   {% include_relative partials/footer.html %}
 
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
+  <script>
+    // Toggle aria-expanded for hamburguesa
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('.nav-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
 </body>
 </html>
