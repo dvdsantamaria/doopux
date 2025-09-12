@@ -726,4 +726,9 @@ body:not(.theme-light) .site-footer a:hover{ color:#ffffff; }
   body:not(.theme-light) footer.site-footer a{ color:#c7cfdb }
   body:not(.theme-light) footer.site-footer a:hover{ color:#fff }
   body:not(.theme-light) .foot-locations{ color:#c7cfdbb3 }
+
+  body:not(.theme-light) .foot-contact::before{
+    background: rgba(255,255,255,.28);
+}
+
 }
