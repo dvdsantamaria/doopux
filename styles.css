@@ -764,6 +764,39 @@ figure{margin:0}
 
 }
 
+/* ==== HEADERS DE SECCIÓN UNIFICADOS ==== */
+
+/* 1) Utilidad para el “bloque” de la sección (si querés usarla) */
+.section { padding-block: var(--section-pad); }
+
+/* 2) Header, título y bajada estándar */
+.section-head{
+  text-align:center;
+  margin:0 auto var(--section-gap);
+  max-width:90ch;
+}
+.section-title{
+  font-family:"Satoshi",sans-serif;
+  font-weight:400;
+  font-size:clamp(28px, 3.2vw, 44px);
+  line-height:1.15;
+  margin:0 0 clamp(12px, 1.6vw, 16px);
+  max-width:72ch;
+  margin-inline:auto;
+}
+.section-subtitle{
+  margin:0;
+  max-width:72ch;
+  margin-inline:auto;
+  font-size:14px;
+  line-height:1.6;
+  color:rgba(17,17,17,.72);
+}
+
+/* 3) Alias: mapea lo que ya existe a las clases nuevas (no hace falta cambiar HTML) */
+.section-head, .eco-head, .solutions-head, .tst-head, .logos-head { /* reglas arriba */ }
+.section-title, .eco-title, .solutions-title, .tst-title { /* reglas arriba */ }
+.section-subtitle, .eco-subtitle, .solutions-subtitle, .tst-subtitle { /* reglas arriba */ }
 
 /* Footer arriba del grid */
 .site-footer{
