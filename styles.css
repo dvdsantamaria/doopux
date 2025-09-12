@@ -987,3 +987,38 @@ body:not(.theme-light) .footer{
     border-color:#ffffff24;
   }
 }
+
+/* === Mobile menu centrado y legible === */
+@media (max-width:768px){
+  /* overlay full con centrado absoluto */
+  .nav{
+    display:flex;                 /* en lugar de grid */
+    flex-direction:column;
+    align-items:center;           /* centra horizontal */
+    justify-content:center;       /* centra vertical */
+    gap: clamp(20px, 6vh, 44px);  /* espacio entre items */
+    top:0;
+    min-height:100dvh;            /* cubre viewport real en iOS */
+    padding: calc(var(--header-h) + env(safe-area-inset-top, 0px))
+             clamp(20px, 6vw, 40px)
+             calc(18px + env(safe-area-inset-bottom, 0px));
+    text-align:center;
+  }
+
+  /* links grandes y fáciles de tocar */
+  .nav a{
+    display:flex;                 /* por si sumás iconos */
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    font-size: clamp(22px, 6.2vw, 34px);
+    line-height:1.2;
+    padding:12px 6px;
+  }
+
+  /* bloquea scroll del body cuando está abierto */
+  body:has(.nav-toggle[aria-expanded="true"]){
+    overflow:hidden;
+    touch-action:none;
+  }
+}
