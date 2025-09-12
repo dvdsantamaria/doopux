@@ -20,16 +20,20 @@
   width: min(100% - 32px, var(--content-max));
   margin-inline: auto;
 }
+/* fix: 90vw + padding podía pasar los 100vw en mobile y crear scroll horizontal */
 .container-wide{
-  width: 90vw;
+  width: min(100%, var(--header-max));
   margin-inline: auto;
-  padding-inline: min(5vw, 40px);
+  padding-inline: clamp(16px, 5vw, 40px);
 }
 
 /* =============== BASE =============== */
 html,body{min-height: 100%;}
 h1, h2, h3, h4, h5, h6{ font-weight:400; font-synthesis:none; }
 *{ box-sizing:border-box }
+
+/* hardening anti overflow por imágenes sueltas */
+img, svg, video{max-width:100%; height:auto; display:block}
 
 body{
   margin:0; color:var(--text);
@@ -209,9 +213,10 @@ a{color:inherit; text-decoration:none}
 }
 
 /* marquee */
+/* fix: 100vw en iOS incluye scrollbar y puede generar overflow. usar svw. */
 .projects-inline{
-  grid-row:4; position:relative; width:100vw; height:100%;
-  margin-left:calc(50% - 50vw); overflow:hidden; align-self:end;
+  grid-row:4; position:relative; width:100svw; height:100%;
+  margin-left:calc(50% - 50svw); overflow:hidden; align-self:end;
 }
 .projects-clip{position:absolute; inset:0; overflow:hidden}
 .sheet{width:100%; height:100%; filter:drop-shadow(0 24px 48px rgba(0,0,0,.28))}
@@ -223,6 +228,7 @@ a{color:inherit; text-decoration:none}
 @keyframes scrollX{from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)}}
 figure{margin:0}
 .project{flex:0 0 auto; display:block}
+/* fix defensivo: evita que algún alto obligue a crecer ancho */
 .project img{height:100%; width:auto; max-width:none; object-fit:cover; display:block}
 
 /* =============== ABOUT =============== */
