@@ -7,7 +7,7 @@
   window.setMarqueeSpeed = s => marquee.style.animationDuration = s + 's';
 })();
 
-/* ============ TESTIMONIALS (contenido sube dentro de la misma card fija) ============ */
+/* ============ TESTIMONIALS (single fixed card, content slides) ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const wrap = document.getElementById('tstCarousel');
   if (!wrap) return;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let index = slides.findIndex(s => s.classList.contains('is-active'));
   if (index < 0) index = 0;
 
-  // limpiar y crear tarjeta fija
+  // build fixed card
   viewport.innerHTML = '';
   const shell = document.createElement('article');
   shell.className = 'tst-card is-active';
@@ -35,12 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
   stage.style.position = 'relative';
 
   const strip = document.createElement('div');
-  strip.style.display = 'grid';
-  strip.style.gridAutoRows = 'min-content';
+  // make vertical strip so each pane acts like a full card
+  strip.style.display = 'flex';
+  strip.style.flexDirection = 'column';
   strip.style.willChange = 'transform';
 
   const paneA = document.createElement('div');
   const paneB = document.createElement('div');
+
+  // panes must be flex columns so .tst-quote grows and .tst-meta queda abajo
+  [paneA, paneB].forEach(p => {
+    p.style.display = 'flex';
+    p.style.flexDirection = 'column';
+    p.style.minHeight = '0';
+  });
 
   paneA.innerHTML = contents[index];
   paneB.innerHTML = '';
@@ -59,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timer = null;
   let animating = false;
 
-  // measure height and restore inline styles
+  // measure height safely
   function h(el){
     const prev = {
       position: el.style.position,
@@ -150,14 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListener('resize', () => setStageHeight(h(paneA)), { passive:true });
 });
 
-/* ============ CONTACT FORM: submit via fetch y toast post envio ============ */
+/* ============ CONTACT FORM: submit via fetch con toast ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
   const FORMSPARK_URL = 'https://submit-form.com/Po4c9Fm5U';
 
-  // remover redirect si existiera
+  // remove redirect if present
   form.querySelector('input[name="_redirect"]')?.remove();
 
   form.addEventListener('submit', async (e) => {
@@ -171,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       submitBtn?.setAttribute('disabled', 'true');
 
-      // serialize como form clásico
+      // serialize like a classic form
       const params = new URLSearchParams();
       for (const [k, v] of new FormData(form).entries()) {
         params.append(k, typeof v === 'string' ? v : String(v));
@@ -232,30 +240,27 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
   showErrorToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
 }
 
-
+/* ============ LOAD FOOTER PARTIAL ============ */
 (async () => {
   const slot = document.getElementById('footer-slot');
   if (!slot) return;
 
-  // resolve URL (use absolute path or data-src)
   const url = slot.getAttribute('data-src') || '/partials/footer.html';
 
   try {
-    const res = await fetch(url, { cache: 'no-cache' }); // avoid stale during dev
+    const res = await fetch(url, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();
 
-    // replace the slot with the loaded footer markup
     slot.insertAdjacentHTML('afterend', html);
     slot.remove();
   } catch (err) {
     console.error('Footer load failed:', err);
-    // optional minimal fallback so the page is not empty
     slot.outerHTML = '<footer class="site-footer"><div class="container-wide foot-wrap"><p class="foot-copy">© 2025</p></div></footer>';
   }
 })();
 
-
+/* ============ MOBILE NAV ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('header.container-wide');
   const btn = header?.querySelector('.nav-toggle');
@@ -265,26 +270,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const setOpen = (open) => {
     btn.setAttribute('aria-expanded', String(open));
-    header.classList.toggle('nav-open', open);     // fallback para CSS sin :has()
+    header.classList.toggle('nav-open', open);   // CSS fallback for no :has()
     document.body.classList.toggle('nav-open', open);
   };
 
-  // toggle con un solo handler
   btn.addEventListener('click', () => {
     const open = btn.getAttribute('aria-expanded') === 'true';
     setOpen(!open);
   });
 
-  // cerrar con el botón X
   closeBtn?.addEventListener('click', () => setOpen(false));
 
-  // cerrar al clickear cualquier link del menú
   nav.addEventListener('click', (e) => {
     const a = e.target.closest('a');
     if (a) setOpen(false);
   });
 
-  // cerrar con Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setOpen(false);
   });
