@@ -885,10 +885,9 @@ body.theme-light .nav-toggle{
     display:inline-grid;
     place-items:center;
     width:44px; height:44px;
-    border:1px solid #ffffff2a;
-    border-radius:10px;
+    border:1px solid #00000026;
+    color:#555;    border-radius:10px;
     background:transparent;
-    color:inherit;
     cursor:pointer;
   }
   .nav-toggle:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
@@ -940,8 +939,8 @@ body.theme-light .nav-toggle{
     display:flex; align-items:center; justify-content:center;
     font-size: clamp(34px, 10vw, 56px);
     line-height:1.15;
-    padding:16px 8px;
-    font-weight:400;
+    padding:8px 4px;
+        font-weight:400;
     letter-spacing:.2px;
   }
 
