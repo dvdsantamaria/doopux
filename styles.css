@@ -506,11 +506,10 @@ figure{margin:0}
   padding: clamp(24px,5vw,44px);
   margin-inline:auto;
   max-width:1060px;
-
   height: var(--tst-card-h);
-  display: flex;                 /* clave */
-  flex-direction: column;        /* apila vertical */
-  min-height: 0;                 /* permite a los hijos flex encoger si hace falta */
+  display: flex;              /* importante */
+  flex-direction: column;     /* apila contenido arriba y footer abajo */
+  min-height: 0;
 }
 
 .tst-card.is-active{ display:flex; }
@@ -526,18 +525,26 @@ figure{margin:0}
   min-height: 0;                 /* evita overflow raro en algunos navegadores */
 }
 
-/* footer al bottom de la card */
+/* footer abajo de la card */
 .tst-meta{
-  margin-top: auto !important;   /* ancla al borde inferior interno */
+  margin-top: auto;           /* clave para pegar al bottom */
   padding-top: clamp(10px, 1.6vw, 16px);
-  display:flex;
-  align-items: flex-end;
+  display: flex;
+  align-items: flex-end;       /* alinea nombre y estrellas por la base */
   justify-content: space-between;
-  gap:20px;
+  gap: 20px;
 }
+
+/* bloque izquierdo del footer */
 .tst-name{ font-size:18px; font-weight:500; }
 .tst-project{ font-size:15px; color:rgba(17,17,17,.6); }
-.tst-stars{ display:flex; align-items:flex-end; }
+
+/* estrellas abajo a la derecha */
+.tst-stars{
+  display:flex;
+  align-items:flex-end;        /* asegura la base alineada */
+  margin-left:auto;            /* las empuja a la derecha */
+}
 .tst-stars span{ color:#ee64ff; font-size:22px; }
 
 /* micro-animaciones del contenido (opcional) */
@@ -573,6 +580,7 @@ figure{margin:0}
     border-radius:16px;
     height:auto;                 /* dinámica en mobile */
   }
+
 }
   /* =============== SERVICE ECOSYSTEM =============== */
 
