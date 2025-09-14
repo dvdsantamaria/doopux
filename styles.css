@@ -793,9 +793,10 @@ body:not(.theme-light) .foot-contact a{
 body:not(.theme-light) .footer{
   background:none;
 }
-
-
 }
+
+
+
 /* ==== HEADERS DE SECCIÓN UNIFICADOS ==== */
 
 /* 1) Section block utility */
@@ -874,7 +875,7 @@ body.theme-light .nav-toggle{
 
 /* dark scheme tweaks for toggle (closed state) */
 @media (prefers-color-scheme: dark){
-  body:not(.theme-light) .nav-toggle{ border-color:#ffffff24; }
+  body:not(.theme-light) .nav-toggle{ color:#fff; border-color:#ffffff40; }
 }
 
 @media (max-width:768px){
@@ -1004,8 +1005,9 @@ body.theme-light .nav-toggle{
   .nav-close .x::after { transform:translate(-50%,-50%) rotate(-45deg); }
 }
 
-/* white toggle only on home when closed */
+/* white toggle only on home when closed (both themes) */
 body.home .nav-toggle{
   color:#fff;
   border-color:#ffffff40;
 }
+
