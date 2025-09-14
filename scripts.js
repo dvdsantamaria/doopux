@@ -7,8 +7,7 @@
   window.setMarqueeSpeed = s => marquee.style.animationDuration = s + 's';
 })();
 
-
-/* ============ TESTIMONIALS (single fixed card, content slides + fade) ============ */
+/* ============ TESTIMONIALS (single fixed card, content slides + cross-fade, mobile-safe) ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const wrap = document.getElementById('tstCarousel');
   if (!wrap) return;
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!viewport) return;
 
   const slides = Array.from(viewport.querySelectorAll('.tst-card'));
-  if (slides.length === 0) return;
+  if (!slides.length) return;
 
   const prevBtn = wrap.querySelector('.tst-prev');
   const nextBtn = wrap.querySelector('.tst-next');
@@ -64,16 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
   shell.appendChild(stage);
   viewport.appendChild(shell);
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const DURATION = reduced ? 0 : 380;
-  const EASE = 'cubic-bezier(.22,.61,.36,1)';
-  const AUTOPLAY_MS = 5000;
+  // timings
+  const reduced       = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile      = () => matchMedia('(max-width:760px)').matches;
+  const DURATION      = reduced ? 0 : 700;   // movimiento más lento
+  const FADE_OUT_MS   = reduced ? 0 : 800;   // fade out un poco más largo
+  const FADE_IN_MS    = reduced ? 0 : 650;   // fade in
+  const FADE_IN_DELAY = reduced ? 0 : 120;   // entra apenas después
+  const EASE          = 'cubic-bezier(.22,.61,.36,1)';
+  const AUTOPLAY_MS   = 6000;
 
   let timer = null;
   let animating = false;
 
-  // measure (kept for compatibility)
-  function h(el){
+  // safe height measure
+  function measure(el){
     const prev = {
       position: el.style.position,
       visibility: el.style.visibility,
@@ -85,34 +89,31 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.transform = 'none';
     el.style.opacity = '1';
     const r = el.getBoundingClientRect().height;
-    el.style.position = prev.position;
-    el.style.visibility = prev.visibility;
-    el.style.transform = prev.transform;
-    el.style.opacity = prev.opacity;
+    Object.assign(el.style, prev);
     return r;
   }
 
-  function setStageHeight(){ stage.style.height = ''; }
+  const lockStageHeight   = px => stage.style.height = px + 'px';
+  const unlockStageHeight = ()  => stage.style.height = '';
 
-  function prepareHeights(nextHTML){
+  function prepare(nextHTML){
     paneA.innerHTML = contents[index];
     paneB.innerHTML = nextHTML;
 
-    // reset transforms & transitions
+    // reset strip
     strip.style.transition = 'none';
-    strip.style.transform = 'translateY(0)';
+    strip.style.transform  = 'translateY(0)';
 
-    // initial fade states
+    // reset fades
     paneA.style.transition = 'none';
     paneB.style.transition = 'none';
-    paneA.style.opacity = '1';
-    paneB.style.opacity = '0';
+    paneA.style.opacity    = '1';
+    paneB.style.opacity    = '0';
 
-    // (measuring only for legacy browsers that might need it)
-    const a = h(paneA);
-    const b = h(paneB);
-    setStageHeight(Math.max(a, b));
-    return { a, b };
+    // lock height on mobile to avoid jump
+    const hA = measure(paneA);
+    if (isMobile()) lockStageHeight(hA);
+    else unlockStageHeight();
   }
 
   function goTo(newIdx){
@@ -122,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animating = true;
 
     const nextHTML = contents[safeIdx];
-    prepareHeights(nextHTML);
+    prepare(nextHTML);
 
     requestAnimationFrame(() => {
       if (DURATION === 0) {
@@ -130,34 +131,39 @@ document.addEventListener('DOMContentLoaded', () => {
         paneB.style.opacity = '1';
         strip.style.transform = 'translateY(-100%)';
         finish();
-      } else {
-        // animate slide + cross-fade
-        strip.style.transition = `transform ${DURATION}ms ${EASE}`;
-        paneA.style.transition  = `opacity ${DURATION}ms ${EASE}`;
-        paneB.style.transition  = `opacity ${DURATION}ms ${EASE}`;
-
-        // trigger
-        paneA.style.opacity = '0';
-        paneB.style.opacity = '1';
-        strip.style.transform = 'translateY(-100%)';
-
-        const end = () => { strip.removeEventListener('transitionend', end); finish(); };
-        strip.addEventListener('transitionend', end);
-        setTimeout(finish, DURATION + 60);
+        return;
       }
+
+      // animate slide + cross-fade
+      strip.style.transition = `transform ${DURATION}ms ${EASE}`;
+      paneA.style.transition  = `opacity ${FADE_OUT_MS}ms ${EASE}`;
+      paneB.style.transition  = `opacity ${FADE_IN_MS}ms ${EASE} ${FADE_IN_DELAY}ms`;
+
+      // triggers
+      paneA.style.opacity = '0';
+      paneB.style.opacity = '1';
+      strip.style.transform = 'translateY(-100%)';
+
+      const end = () => { strip.removeEventListener('transitionend', end); finish(); };
+      strip.addEventListener('transitionend', end);
+      setTimeout(finish, Math.max(DURATION, FADE_OUT_MS, FADE_IN_MS + FADE_IN_DELAY) + 80);
     });
 
     function finish(){
       index = safeIdx;
       paneA.innerHTML = contents[index];
       paneB.innerHTML = '';
+
       // cleanup
       strip.style.transition = 'none';
-      strip.style.transform = 'translateY(0)';
+      strip.style.transform  = 'translateY(0)';
       paneA.style.transition = paneB.style.transition = 'none';
-      paneA.style.opacity = '1';
-      paneB.style.opacity = '';
-      setStageHeight(h(paneA));
+      paneA.style.opacity    = '1';
+      paneB.style.opacity    = '';
+
+      // release lock after swap (mobile)
+      if (isMobile()) unlockStageHeight();
+
       animating = false;
     }
   }
@@ -166,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function play(){ stop(); if (!reduced) timer = setInterval(() => next(1), AUTOPLAY_MS); }
   function stop(){ if (timer) { clearInterval(timer); timer = null; } }
 
-  setStageHeight(h(paneA));
+  // init
   play();
 
   prevBtn?.addEventListener('click', () => { next(-1); play(); });
@@ -182,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') { next( 1); play(); }
   });
 
-  addEventListener('resize', () => setStageHeight(h(paneA)), { passive:true });
+  // on resize, just release any lock so the layout can settle
+  addEventListener('resize', () => { if (!animating) unlockStageHeight(); }, { passive:true });
 });
 
 /* ============ CONTACT FORM: submit via fetch con toast ============ */
