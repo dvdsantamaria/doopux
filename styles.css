@@ -796,13 +796,12 @@ body:not(.theme-light) .footer{
 
 
 }
-
 /* ==== HEADERS DE SECCIÓN UNIFICADOS ==== */
 
-/* 1) Utilidad para el “bloque” de la sección (si querés usarla) */
+/* 1) Section block utility */
 .section { padding-block: var(--section-pad); }
 
-/* 2) Header, título y bajada estándar */
+/* 2) Head, title, subtitle */
 .section-head{
   text-align:center;
   margin:0 auto var(--section-gap);
@@ -826,80 +825,61 @@ body:not(.theme-light) .footer{
   color:rgba(17,17,17,.72);
 }
 
-/* 3) Alias: mapea lo que ya existe a las clases nuevas (no hace falta cambiar HTML) */
-.section-head, .eco-head, .solutions-head, .tst-head, .logos-head { /* reglas arriba */ }
-.section-title, .eco-title, .solutions-title, .tst-title { /* reglas arriba */ }
-.section-subtitle, .eco-subtitle, .solutions-subtitle, .tst-subtitle { /* reglas arriba */ }
+/* 3) Aliases (keep existing HTML) */
+.section-head, .eco-head, .solutions-head, .tst-head, .logos-head { /* uses rules above */ }
+.section-title, .eco-title, .solutions-title, .tst-title { /* uses rules above */ }
+.section-subtitle, .eco-subtitle, .solutions-subtitle, .tst-subtitle { /* uses rules above */ }
 
-/* Footer arriba del grid */
-.site-footer{
-  position: relative;   /* crea stacking context */
-  z-index: 3;           /* mayor que .bg-grid (0) */
-}
+/* Footer above bg grid */
+.site-footer{ position:relative; z-index:3; }
 
-/* si usás dark */
+/* Dark footer stacking */
 @media (prefers-color-scheme: dark){
-  body:not(.theme-light) .site-footer{
-    position: relative;
-    z-index: 3;
-  }
+  body:not(.theme-light) .site-footer{ position:relative; z-index:3; }
 }
 
+/* Card stacking */
 .eco-card,
 .process-card,
 .solution,
-.tst-card{
-  position: relative; /* crea stacking context */
-  z-index: 1;
-}
+.tst-card{ position:relative; z-index:1; }
 
-/* si querés todo el bloque encima (texto+títulos) */
+/* Sections above bg grid */
 .service-eco .container,
-.slice-light .container{
-  position: relative;
-  z-index: 1;
-}
+.slice-light .container{ position:relative; z-index:1; }
 
 /* Fix dark theme: Solutions */
 @media (prefers-color-scheme: dark){
-  body:not(.theme-light) .solution {
-    background:#151821;                   /* ya lo tenías, lo reafirmo por claridad */
+  body:not(.theme-light) .solution{
+    background:#151821;
     border:1px solid #ffffff24;
   }
-  body:not(.theme-light) .solution h3{
-    color:#e9eef5;                        /* título claro en dark */
-  }
-  body:not(.theme-light) .solution p{
-    color:#c7cfdbb3;                      /* copy secundaria en dark */
-  }
-  /* por si algún browser hereda color del figure */
-  body:not(.theme-light) .solution figcaption{
-    color:#e9eef5;
-  }
+  body:not(.theme-light) .solution h3{ color:#e9eef5; }
+  body:not(.theme-light) .solution p{ color:#c7cfdbb3; }
+  body:not(.theme-light) .solution figcaption{ color:#e9eef5; }
 }
 
 
 /* ==== HAMBURGER MENU ≤768px ==== */
-/* oculto en desktop */
+/* hide on desktop */
 .nav-toggle{ display:none; }
 .nav-close{ display:none; }
 
-/* theme light: ícono gris por defecto */
+/* light theme default (all pages, closed state) */
 body.theme-light .nav-toggle{
   color:#555;
   border-color:#00000026;
   background:transparent;
 }
 
-/* dark scheme del panel */
+/* dark scheme tweaks for toggle (closed state) */
 @media (prefers-color-scheme: dark){
-  body:not(.theme-light) .nav{ background:rgba(8,10,14,.92); }
   body:not(.theme-light) .nav-toggle{ border-color:#ffffff24; }
 }
 
 @media (max-width:768px){
 
-  /* botón hamburguesa */
+  /* trigger button */
   .nav-toggle{
     display:inline-grid;
     place-items:center;
@@ -912,7 +892,7 @@ body.theme-light .nav-toggle{
   }
   .nav-toggle:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
 
-  /* ícono 3 líneas */
+  /* three bars icon */
   .nav-toggle .bars{ position:relative; width:22px; height:2px; background:currentColor; }
   .nav-toggle .bars::before,
   .nav-toggle .bars::after{
@@ -922,17 +902,16 @@ body.theme-light .nav-toggle{
   .nav-toggle .bars::before{ top:-7px; }
   .nav-toggle .bars::after { top: 7px; }
 
-  /* panel mobile */
+  /* full screen panel (base) */
   .nav{
-    --nav-gap: clamp(32px, 8vh, 72px);           /* separación entre links */
+    --nav-gap: clamp(32px, 8vh, 72px);
     position:fixed;
     inset:0;
     padding: calc(var(--header-h) + env(safe-area-inset-top,0px))
              clamp(20px,6vw,40px)
              calc(18px + env(safe-area-inset-bottom,0px));
-    display:flex; flex-direction:column; align-items:center; /* sin gap global */
+    display:flex; flex-direction:column; align-items:center;
     text-align:center;
-    background:rgba(17,17,17,.92);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
     min-height:100dvh;
@@ -941,7 +920,21 @@ body.theme-light .nav-toggle{
     z-index:10;
   }
 
-  /* links grandes */
+  /* panel colors by theme */
+  body.theme-light .nav{
+    background: rgba(245,245,247,.92);
+    color:#151515;
+  }
+  body:not(.theme-light) .nav{
+    background: rgba(8,10,14,.92);
+    color:#fff;
+  }
+
+  /* links inherit panel color */
+  .nav a,
+  .nav-close{ color:inherit; }
+
+  /* big links */
   .nav a{
     display:flex; align-items:center; justify-content:center;
     font-size: clamp(34px, 10vw, 56px);
@@ -951,50 +944,56 @@ body.theme-light .nav-toggle{
     letter-spacing:.2px;
   }
 
-  /* centrar el bloque de links en el viewport */
-  .nav a:first-of-type{ margin-top:auto; }          /* empuja hacia el centro por arriba */
-  .nav a + a{ margin-top: var(--nav-gap); }         /* gap uniforme entre links */
-  .nav a:last-of-type{ margin-bottom:auto; }        /* empuja hacia el centro por abajo */
+  /* vertically center the group of links */
+  .nav a:first-of-type{ margin-top:auto; }
+  .nav a + a{ margin-top: var(--nav-gap); }
+  .nav a:last-of-type{ margin-bottom:auto; }
 
-  /* abrir */
+  /* open states */
   header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav,
   header.container-wide.nav-open .nav{
     transform:none; opacity:1; visibility:visible; pointer-events:auto;
   }
 
-  /* bloquear scroll al abrir */
+  /* lock scroll when open */
   body:has(.nav-toggle[aria-expanded="true"]), body.nav-open{
     overflow:hidden; touch-action:none;
   }
 
-  /* anima icono a X */
+  /* morph to X */
   .nav-toggle[aria-expanded="true"] .bars{ background:transparent; }
   .nav-toggle[aria-expanded="true"] .bars::before{ top:0; transform:rotate(45deg); }
   .nav-toggle[aria-expanded="true"] .bars::after { top:0; transform:rotate(-45deg); }
 
-  /* theme light: nav-toggle visible sobre overlay */
+  /* toggle color when panel is open (by theme) */
   body.theme-light header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
   body.theme-light header.container-wide.nav-open .nav-toggle{
-    color:#fff; border-color:#ffffff40;
+    color:#151515;
+    border-color:#00000033;
+  }
+  body:not(.theme-light) header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
+  body:not(.theme-light) header.container-wide.nav-open .nav-toggle{
+    color:#fff;
+    border-color:#ffffff40;
   }
 
-  /* layout header en mobile */
+  /* header layout on mobile */
   header .row{ gap:10px; }
 
-  /* botón Close en mobile, pegado abajo */
+  /* Close button at bottom */
   .nav-close{
     display:inline-flex;
     align-items:center; justify-content:center;
     gap:10px; padding:12px 16px;
     border:0; background:transparent; box-shadow:none;
-    color:#fff; font-size:18px; line-height:1; cursor:pointer;
+    font-size:18px; line-height:1; cursor:pointer;
     -webkit-tap-highlight-color: transparent;
-    margin-top:auto;                               /* mantiene Close abajo */
+    margin-top:auto;
   }
   .nav-close:hover, .nav-close:active{ background:transparent; }
-  .nav-close:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+  .nav-close:focus-visible{ outline:2px solid currentColor; outline-offset:3px; }
 
-  /* ícono X del Close */
+  /* X icon for Close */
   .nav-close .x{ position:relative; width:22px; height:22px; display:inline-block; }
   .nav-close .x::before,
   .nav-close .x::after{
@@ -1005,21 +1004,8 @@ body.theme-light .nav-toggle{
   .nav-close .x::after { transform:translate(-50%,-50%) rotate(-45deg); }
 }
 
-/* gris por defecto en todo el sitio */
-body.theme-light .nav-toggle{
-  color:#555;
-  border-color:#00000026;
-}
-
-/* blanco solo en la home */
+/* white toggle only on home when closed */
 body.home .nav-toggle{
   color:#fff;
-  border-color:#ffffff40;
-}
-
-/* cuando el panel está abierto ya lo dejás blanco (queda igual) */
-body.theme-light header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
-body.theme-light header.container-wide.nav-open .nav-toggle{
-  color:#fff; 
   border-color:#ffffff40;
 }
