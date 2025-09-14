@@ -6,7 +6,9 @@
   marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
   window.setMarqueeSpeed = s => marquee.style.animationDuration = s + 's';
 })();
-/* ============ TESTIMONIALS (single fixed card, content slides) ============ */
+
+
+/* ============ TESTIMONIALS (single fixed card, content slides + fade) ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const wrap = document.getElementById('tstCarousel');
   if (!wrap) return;
@@ -30,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   shell.className = 'tst-card is-active';
 
   const stage = document.createElement('div');
-  // make the stage fill the card so the footer can stick to the bottom
   stage.style.overflow   = 'hidden';
   stage.style.position   = 'relative';
   stage.style.display    = 'flex';
@@ -38,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   stage.style.minHeight  = '0';
 
   const strip = document.createElement('div');
-  // vertical strip: each pane behaves like a full card stacked vertically
   strip.style.display       = 'flex';
   strip.style.flexDirection = 'column';
   strip.style.willChange    = 'transform';
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const paneA = document.createElement('div');
   const paneB = document.createElement('div');
 
-  // panes are full-height flex columns so .tst-quote grows and .tst-meta queda abajo
   [paneA, paneB].forEach(p => {
     p.style.display = 'flex';
     p.style.flexDirection = 'column';
     p.style.minHeight = '100%';
+    p.style.willChange = 'opacity'; // for fade
   });
 
   paneA.innerHTML = contents[index];
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timer = null;
   let animating = false;
 
-  // measure height safely (kept for compatibility though we no longer fix heights)
+  // measure (kept for compatibility)
   function h(el){
     const prev = {
       position: el.style.position,
@@ -92,17 +92,26 @@ document.addEventListener('DOMContentLoaded', () => {
     return r;
   }
 
-  // no-op: let flex layout decide the height
   function setStageHeight(){ stage.style.height = ''; }
 
   function prepareHeights(nextHTML){
     paneA.innerHTML = contents[index];
     paneB.innerHTML = nextHTML;
+
+    // reset transforms & transitions
     strip.style.transition = 'none';
     strip.style.transform = 'translateY(0)';
+
+    // initial fade states
+    paneA.style.transition = 'none';
+    paneB.style.transition = 'none';
+    paneA.style.opacity = '1';
+    paneB.style.opacity = '0';
+
+    // (measuring only for legacy browsers that might need it)
     const a = h(paneA);
     const b = h(paneB);
-    setStageHeight(Math.max(a, b)); // harmless now
+    setStageHeight(Math.max(a, b));
     return { a, b };
   }
 
@@ -117,14 +126,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(() => {
       if (DURATION === 0) {
+        paneA.style.opacity = '0';
+        paneB.style.opacity = '1';
         strip.style.transform = 'translateY(-100%)';
         finish();
       } else {
+        // animate slide + cross-fade
         strip.style.transition = `transform ${DURATION}ms ${EASE}`;
+        paneA.style.transition  = `opacity ${DURATION}ms ${EASE}`;
+        paneB.style.transition  = `opacity ${DURATION}ms ${EASE}`;
+
+        // trigger
+        paneA.style.opacity = '0';
+        paneB.style.opacity = '1';
         strip.style.transform = 'translateY(-100%)';
+
         const end = () => { strip.removeEventListener('transitionend', end); finish(); };
         strip.addEventListener('transitionend', end);
-        setTimeout(finish, DURATION + 50);
+        setTimeout(finish, DURATION + 60);
       }
     });
 
@@ -132,9 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
       index = safeIdx;
       paneA.innerHTML = contents[index];
       paneB.innerHTML = '';
+      // cleanup
       strip.style.transition = 'none';
       strip.style.transform = 'translateY(0)';
-      setStageHeight(h(paneA)); // harmless now
+      paneA.style.transition = paneB.style.transition = 'none';
+      paneA.style.opacity = '1';
+      paneB.style.opacity = '';
+      setStageHeight(h(paneA));
       animating = false;
     }
   }
