@@ -1004,3 +1004,22 @@ body.theme-light .nav-toggle{
   .nav-close .x::before{ transform:translate(-50%,-50%) rotate(45deg); }
   .nav-close .x::after { transform:translate(-50%,-50%) rotate(-45deg); }
 }
+
+/* gris por defecto en todo el sitio */
+body.theme-light .nav-toggle{
+  color:#555;
+  border-color:#00000026;
+}
+
+/* blanco solo en la home */
+body.home .nav-toggle{
+  color:#fff;
+  border-color:#ffffff40;
+}
+
+/* cuando el panel está abierto ya lo dejás blanco (queda igual) */
+body.theme-light header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
+body.theme-light header.container-wide.nav-open .nav-toggle{
+  color:#fff; 
+  border-color:#ffffff40;
+}
