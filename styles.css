@@ -1018,3 +1018,27 @@ body.home .nav-toggle{
   border-color:#ffffff40;
 }
 
+
+
+/* Testimonios: que el stage llene la card y permita pegar el footer abajo */
+.tst-stage{
+  flex: 1 1 auto;      /* ocupa todo el alto disponible dentro de .tst-card */
+  min-height: 0;
+  display: flex;       /* contiene al strip */
+}
+
+/* el strip también debe poder crecer/encoger */
+.tst-stage > div{
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* los panes (contenido de cada testimonio) ocupan el 100% y apilan quote+footer */
+.tst-pane{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* ya lo tenías, pero lo aclaro: el footer se pega al bottom del pane */
+.tst-meta{ margin-top:auto; }

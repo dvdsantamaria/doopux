@@ -6,7 +6,6 @@
   marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
   window.setMarqueeSpeed = s => marquee.style.animationDuration = s + 's';
 })();
-
 /* ============ TESTIMONIALS (single fixed card, content slides) ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const wrap = document.getElementById('tstCarousel');
@@ -31,23 +30,29 @@ document.addEventListener('DOMContentLoaded', () => {
   shell.className = 'tst-card is-active';
 
   const stage = document.createElement('div');
-  stage.style.overflow = 'hidden';
-  stage.style.position = 'relative';
+  // make the stage fill the card so the footer can stick to the bottom
+  stage.style.overflow   = 'hidden';
+  stage.style.position   = 'relative';
+  stage.style.display    = 'flex';
+  stage.style.flex       = '1 1 auto';
+  stage.style.minHeight  = '0';
 
   const strip = document.createElement('div');
-  // make vertical strip so each pane acts like a full card
-  strip.style.display = 'flex';
+  // vertical strip: each pane behaves like a full card stacked vertically
+  strip.style.display       = 'flex';
   strip.style.flexDirection = 'column';
-  strip.style.willChange = 'transform';
+  strip.style.willChange    = 'transform';
+  strip.style.flex          = '1 1 auto';
+  strip.style.minHeight     = '0';
 
   const paneA = document.createElement('div');
   const paneB = document.createElement('div');
 
-  // panes must be flex columns so .tst-quote grows and .tst-meta queda abajo
+  // panes are full-height flex columns so .tst-quote grows and .tst-meta queda abajo
   [paneA, paneB].forEach(p => {
     p.style.display = 'flex';
     p.style.flexDirection = 'column';
-    p.style.minHeight = '0';
+    p.style.minHeight = '100%';
   });
 
   paneA.innerHTML = contents[index];
@@ -67,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timer = null;
   let animating = false;
 
-  // measure height safely
+  // measure height safely (kept for compatibility though we no longer fix heights)
   function h(el){
     const prev = {
       position: el.style.position,
@@ -87,9 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return r;
   }
 
-  function setStageHeight(px){
-    stage.style.height = px + 'px';
-  }
+  // no-op: let flex layout decide the height
+  function setStageHeight(){ stage.style.height = ''; }
 
   function prepareHeights(nextHTML){
     paneA.innerHTML = contents[index];
@@ -98,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     strip.style.transform = 'translateY(0)';
     const a = h(paneA);
     const b = h(paneB);
-    setStageHeight(Math.max(a, b));
+    setStageHeight(Math.max(a, b)); // harmless now
     return { a, b };
   }
 
@@ -130,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       paneB.innerHTML = '';
       strip.style.transition = 'none';
       strip.style.transform = 'translateY(0)';
-      setStageHeight(h(paneA));
+      setStageHeight(h(paneA)); // harmless now
       animating = false;
     }
   }
