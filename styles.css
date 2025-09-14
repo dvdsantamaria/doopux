@@ -905,7 +905,7 @@ body.theme-light .nav-toggle{
 
   /* full screen panel (base) */
   .nav{
-    --nav-gap: clamp(32px, 8vh, 72px);
+    --nav-gap: clamp(18px, 4.8vh, 40px);
     position:fixed;
     inset:0;
     padding: calc(var(--header-h) + env(safe-area-inset-top,0px))
