@@ -1,11 +1,11 @@
 ---
 ---
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Service ecosystem — Doop</title>
+  <title>Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
   <style>
     /* Overrides for this page only */
@@ -13,6 +13,127 @@
     .brand img{ filter: invert(64%); }          /* make logo grey */
     .nav{color:#151515}
   </style>
+
+  <!-- === SEO (added) === -->
+  <meta name="title" content="Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX" />
+  <meta name="description" content="Doop UX’s service ecosystem: Website Development, UX Consultation, AI automation, SEO, content systems, process optimization and growth strategies—fast MVPs and measurable outcomes." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:title" content="Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX" />
+  <meta property="og:description" content="Doop UX’s service ecosystem: Website Development, UX Consultation, AI automation, SEO, content systems, process optimization and growth strategies—fast MVPs and measurable outcomes." />
+  <meta property="og:image" content="{{ '/assets/logo.png' | absolute_url }}" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX" />
+  <meta name="twitter:description" content="Doop UX’s service ecosystem: Website Development, UX Consultation, AI automation, SEO, content systems, process optimization and growth strategies—fast MVPs and measurable outcomes." />
+  <meta name="twitter:image" content="{{ '/assets/logo.png' | absolute_url }}" />
+
+  <!-- JSON-LD Schema (WebSite + WebPage + Breadcrumbs + Services list) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ '/' | absolute_url }}#website",
+        "name": "Doop UX",
+        "url": "{{ '/' | absolute_url }}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Doop UX",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ '/assets/logo.png' | absolute_url }}"
+          }
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}#webpage",
+        "url": "{{ page.url | absolute_url }}",
+        "name": "Service Ecosystem — Doop UX",
+        "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" },
+        "description": "Doop UX’s service ecosystem covering Website Development, UX Consultation, AI automation, SEO, content systems, process optimization and growth strategies."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ page.url | absolute_url }}#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ '/' | absolute_url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Service Ecosystem",
+            "item": "{{ page.url | absolute_url }}"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "{{ page.url | absolute_url }}#services",
+        "name": "Service Ecosystem",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "name": "Website Development",
+            "description": "Websites built for outcomes: clean architecture, performance, accessibility and SEO baked in."
+          },
+          {
+            "@type": "Service",
+            "name": "UX Consultation",
+            "description": "Research, flows and usability to align product decisions with business goals."
+          },
+          {
+            "@type": "Service",
+            "name": "Idea to Project",
+            "description": "From idea to MVP: scoped, lean builds that launch fast and scale safely."
+          },
+          {
+            "@type": "Service",
+            "name": "AI Automation",
+            "description": "Agents and workflows to cut busywork and integrate with your existing tools."
+          },
+          {
+            "@type": "Service",
+            "name": "SEO",
+            "description": "Technical SEO, content strategy and structured data to win intent-led traffic."
+          },
+          {
+            "@type": "Service",
+            "name": "Comprehensive Digital Marketing",
+            "description": "Full-funnel campaigns: ads, email, analytics and CRO tied to revenue."
+          },
+          {
+            "@type": "Service",
+            "name": "Business Process Optimization",
+            "description": "SOPs, integrations and dashboards that reduce errors and delays."
+          },
+          {
+            "@type": "Service",
+            "name": "Content Systems",
+            "description": "Notion + CMS pipelines, templates and approvals for consistent publishing."
+          },
+          {
+            "@type": "Service",
+            "name": "Growth Strategies",
+            "description": "Positioning, offers and experiments to find traction and scale what works."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- === /SEO (added) === -->
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
