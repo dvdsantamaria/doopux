@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Service ecosystem — Doop</title>
+  <title>Contact | Work with Doop UX — Websites, UX & Automation</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
   <style>
     /* Overrides solo para esta página */
@@ -13,6 +13,69 @@
     .brand img{ filter: invert(64%); }
     .nav{color:#151515}
   </style>
+
+  <!-- === SEO (added) === -->
+  <meta name="title" content="Contact | Work with Doop UX — Websites, UX & Automation" />
+  <meta name="description" content="Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:title" content="Contact | Work with Doop UX — Websites, UX & Automation" />
+  <meta property="og:description" content="Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery." />
+  <meta property="og:image" content="{{ '/assets/logo.png' | absolute_url }}" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact | Work with Doop UX — Websites, UX & Automation" />
+  <meta name="twitter:description" content="Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery." />
+  <meta name="twitter:image" content="{{ '/assets/logo.png' | absolute_url }}" />
+
+  <!-- JSON-LD Schema: WebSite + ContactPage + Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ '/' | absolute_url }}#website",
+        "name": "Doop UX",
+        "url": "{{ '/' | absolute_url }}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Doop UX",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ '/assets/logo.png' | absolute_url }}"
+          }
+        }
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "{{ page.url | absolute_url }}#contactpage",
+        "url": "{{ page.url | absolute_url }}",
+        "name": "Contact — Doop UX",
+        "description": "Get in touch with Doop UX about websites, UX consulting, AI automation and growth.",
+        "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" },
+        "potentialAction": {
+          "@type": "ContactAction",
+          "target": "https://submit-form.com/Po4c9Fm5U"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ page.url | absolute_url }}#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "{{ page.url | absolute_url }}" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- === /SEO (added) === -->
 </head>
 <body>
   <!-- header con logo gris -->
@@ -70,12 +133,10 @@
           <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
         </div>
 
-        <!-- opcionales pero útiles -->
         <input type="hidden" name="_redirect" value="thanks.html" />
         <input type="hidden" name="_email.subject" value="New contact from DoopUX" />
         <input type="hidden" name="_email.from" value="DoopUX Website" />
 
-        <!-- honeypot aceptado por Formspark -->
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
 
         <button id="submitBtn" class="btn-primary" type="submit">SUBMIT</button>
