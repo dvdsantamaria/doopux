@@ -3,7 +3,7 @@ layout: service
 title: SEO for AI Answers
 intro: "Make your brand the trusted source AI answer engines pull into responses."
 meta_description: "SEO for AI Answers to align content, structure, and signals so AI Overviews, ChatGPT, and Perplexity cite your business."
-hero_image: "https://images.unsplash.com/photo-1555255707-4532d84bcb63?auto=format&fit=crop&w=2000&q=80"
+hero_image: "https://images.unsplash.com/photo-1745674684463-62f62cb88d4c?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ### Understanding AEO: what it is and why hacks fail
