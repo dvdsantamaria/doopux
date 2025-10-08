@@ -590,7 +590,12 @@ figure{margin:0}
   .eco-title{ margin:0 0 clamp(12px, 1.6vw, 16px); font-family:"Satoshi",sans-serif; font-weight:400; font-size:clamp(28px,3.4vw,48px); line-height:1.12; }
   .eco-subtitle{ margin:0; font-size:14px; line-height:1.6; color:rgba(17,17,17,.72); }
   .eco-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,2.8vw,32px); }
-  .eco-card{ background:#fff; border:1px solid #e9e9e9; border-radius:12px; padding:clamp(24px,3.2vw,40px); display:flex; flex-direction:column; gap:16px; min-height:clamp(260px,28vw,360px); box-shadow:0 20px 48px rgba(0,0,0,.06); }
+  .eco-card-link{ display:block; height:100%; text-decoration:none; color:inherit; }
+  .eco-card{ background:#fff; border:1px solid #e9e9e9; border-radius:12px; padding:clamp(24px,3.2vw,40px); display:flex; flex-direction:column; gap:16px; min-height:clamp(260px,28vw,360px); box-shadow:0 20px 48px rgba(0,0,0,.06); height:100%; transition:transform .2s ease, box-shadow .25s ease, border-color .2s ease; }
+  .eco-card-link:hover .eco-card,
+  .eco-card-link:focus-visible .eco-card{ transform:translateY(-4px); box-shadow:0 28px 56px rgba(0,0,0,.12); border-color:#d8d8d8; }
+  .eco-card-link:focus-visible .eco-card{ outline:2px solid rgba(17,17,17,.8); outline-offset:-2px; }
+  .eco-card-link:focus-visible{ outline:none; }
   .eco-title-3{ margin:0; font-family:"Satoshi",sans-serif; font-weight:500; font-size:clamp(18px,1.8vw,22px); }
   .eco-copy{ margin:0; font-size:14px; line-height:1.65; color:rgba(17,17,17,.78); max-width:48ch; }
   .eco-figure{ margin-top:auto; display:flex; justify-content:center; align-items:center; }
@@ -599,6 +604,25 @@ figure{margin:0}
   @media (max-width:720px){ .eco-grid{ grid-template-columns:1fr } }
 
 
+
+  /* =============== SERVICE DETAIL PAGE =============== */
+  body.service-detail-page{ background:#fff; color:#111; }
+  .service-detail{ padding-block:clamp(80px,12vw,140px); }
+  .service-detail__header{ max-width:840px; margin:0 auto clamp(40px,4vw,64px); text-align:center; display:grid; gap:16px; }
+  .service-detail__eyebrow{ margin:0; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:rgba(17,17,17,.55); font-weight:600; }
+  .service-detail__title{ margin:0; font-family:"Satoshi",sans-serif; font-weight:500; font-size:clamp(32px,4vw,54px); line-height:1.05; }
+  .service-detail__intro{ margin:0; font-size:16px; line-height:1.6; color:rgba(17,17,17,.7); }
+  .service-detail__content{ max-width:900px; margin:0 auto; display:grid; gap:24px; font-size:16px; line-height:1.7; color:#202020; }
+  .service-detail__content h2{ font-size:clamp(22px,2.2vw,30px); margin:32px 0 12px; font-family:"Satoshi",sans-serif; font-weight:500; line-height:1.15; }
+  .service-detail__content h3{ font-size:clamp(18px,1.8vw,24px); margin:24px 0 12px; font-family:"Satoshi",sans-serif; font-weight:500; line-height:1.2; }
+  .service-detail__content h4{ font-size:clamp(16px,1.6vw,20px); margin:20px 0 10px; font-family:"Satoshi",sans-serif; font-weight:500; line-height:1.3; }
+  .service-detail__content p{ margin:0; }
+  .service-detail__content ul{ margin:0; padding-left:24px; display:grid; gap:8px; }
+  .service-detail__content li{ line-height:1.6; }
+  .service-detail__content strong{ font-weight:600; }
+  .service-detail__content a{ color:inherit; text-decoration:underline; text-decoration-thickness:2px; text-decoration-color:rgba(17,17,17,.4); }
+  .service-detail__content a:hover{ text-decoration-color:rgba(17,17,17,.8); }
+  .service-detail__content > :first-child{ margin-top:0; }
 
 
   /* Contact form */
