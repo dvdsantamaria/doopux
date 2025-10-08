@@ -25,7 +25,7 @@ We manage your presence where it matters — and we make sure your message feels
 
 ### What’s included
 
-### 📱 Social Media Management
+### Social Media Management
 
 - Editorial planning and content calendars
 
@@ -37,7 +37,7 @@ We manage your presence where it matters — and we make sure your message feels
 
 • Analytics tracking and reporting
 
-### 🪧 Offline Marketing & Brand Presence
+### Offline Marketing & Brand Presence
 
 - Design of flyers, cards, signage, and promotional materials
 
@@ -47,7 +47,7 @@ We manage your presence where it matters — and we make sure your message feels
 
 • In-store branding and ambient messaging
 
-### 🔄 Customer Experience & Loyalty
+### Customer Experience & Loyalty
 
 - Mapping of the full customer journey (online + in-person)
 
@@ -57,7 +57,7 @@ We manage your presence where it matters — and we make sure your message feels
 
 • Scripts and templates for DM/email responses and service recovery
 
-### 💡 Innovation at the service of your customer
+### Innovation at the service of your customer
 
 - Implementation of smart tools like AI-based responders, booking automations, or customer feedback systems
 
