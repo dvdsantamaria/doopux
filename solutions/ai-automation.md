@@ -18,7 +18,7 @@ Larger businesses rely on ERP systems, integrated CRMs, dedicated teams, and pro
 
 **Content and marketing**
 
-Writing product descriptions, social posts, or newsletters is time-consuming. AI tools like ChatGPT and Jasper can generate consistent copy fast, cutting content production time by up to 60 %  [oai_citation:0‡instant.so](https://instant.so/blog/ai-use-cases-in-ecommerce?utm_source=chatgpt.com).
+Writing product descriptions, social posts, or newsletters is time-consuming. AI tools like ChatGPT and Jasper can generate consistent copy fast, cutting content production time by up to 60 %.
 
 **Customer support**
 
@@ -26,16 +26,15 @@ Chatbots and AI assistants can handle FAQs and basic inquiries 24/7, offloading 
 
 **Inventory & demand forecasting**
 
-AI tools predict demand trends to avoid overstock or stockouts. A small retailer reported a 20 % reduction in inventory costs using AI forecasting  [oai_citation:1‡rising-tide.ai](https://rising-tide.ai/news-insights/ai-reducing-operational-costs/?utm_source=chatgpt.com).
+AI tools predict demand trends to avoid overstock or stockouts. A small retailer reported a 20 % reduction in inventory costs using AI forecasting.
 
 **Price and promotion optimization**
 
-Dynamic pricing tools analyze demand and competition to adjust prices in real-time, improving margins and sales velocity  [oai_citation:2‡bintime.com](https://bintime.com/artificial-intelligence/ai-use-cases-in-ecommerce/?utm_source=chatgpt.com).
+Dynamic pricing tools analyze demand and competition to adjust prices in real-time, improving margins and sales velocity.
 
 **Operations & logistics**
 
-AI-powered tools can optimize staff rosters, predict delivery routes, or automate reorder alerts — boosting productivity by up to 133 %  [oai_citation:3‡thetimes.co.uk](https://www.thetimes.co.uk/article/small-companies-are-using-ai-to-improve-efficiency-enterprise-network-jhvssm2zm?utm_source=chatgpt.com).
-
+AI-powered tools can optimize staff rosters, predict delivery routes, or automate reorder alerts — boosting productivity by up to 133 %.
 ---
 
 ### How this fits with process creation
