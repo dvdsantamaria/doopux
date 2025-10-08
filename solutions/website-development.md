@@ -3,6 +3,7 @@ layout: service
 title: Website Development
 intro: "Clean architecture, fast performance, and SEO baked in from day one."
 meta_description: "Websites built for outcomes — performance, accessibility, and SEO foundations with design systems you can scale."
+hero_image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Webflow

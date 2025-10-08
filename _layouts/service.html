@@ -37,15 +37,19 @@
   </header>
 
   <main class="service-detail" aria-labelledby="service-title">
-    <div class="container">
-      <header class="service-detail__header">
-        <p class="service-detail__eyebrow">Solutions</p>
-        <h1 id="service-title" class="service-detail__title">{{ page.title }}</h1>
-        {% if page.intro %}
-        <p class="service-detail__intro">{{ page.intro }}</p>
-        {% endif %}
-      </header>
+    <section class="service-detail__hero"{% if page.hero_image %} style="--service-hero:url('{{ page.hero_image | escape }}');"{% endif %}>
+      <div class="container">
+        <header class="service-detail__header">
+          <p class="service-detail__eyebrow">Solutions</p>
+          <h1 id="service-title" class="service-detail__title">{{ page.title }}</h1>
+          {% if page.intro %}
+          <p class="service-detail__intro">{{ page.intro }}</p>
+          {% endif %}
+        </header>
+      </div>
+    </section>
 
+    <div class="container">
       <article class="service-detail__content">
         {{ content }}
       </article>

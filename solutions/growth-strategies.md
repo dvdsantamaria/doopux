@@ -3,6 +3,7 @@ layout: service
 title: Growth Strategies
 intro: "Positioning, offers, and experimentation designed to find traction and scale what works."
 meta_description: "Growth strategy engagements covering research, experimentation, and go-to-market iteration."
+hero_image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Overview

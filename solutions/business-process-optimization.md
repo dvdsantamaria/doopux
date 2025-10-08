@@ -3,6 +3,7 @@ layout: service
 title: Business Process Optimization
 intro: "Systems, SOPs, and integrations that reduce errors, delays, and operational drag."
 meta_description: "Business process optimization that maps your workflows, automates the repeatable, and keeps teams accountable."
+hero_image: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Overview

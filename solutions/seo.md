@@ -3,6 +3,7 @@ layout: service
 title: SEO
 intro: "Technical SEO, content strategy, and structured data that help you own intent-led traffic."
 meta_description: "SEO sprints covering audits, architecture, content, and measurement so you rank and stay there."
+hero_image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Overview

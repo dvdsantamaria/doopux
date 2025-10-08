@@ -3,6 +3,7 @@ layout: service
 title: Idea to Project
 intro: "From idea to MVP — scoped, lean builds that launch fast and stay adaptable."
 meta_description: "Validate your idea with lean UX, rapid prototyping, and production-ready MVPs built to grow."
+hero_image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Overview

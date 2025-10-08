@@ -609,12 +609,42 @@ figure{margin:0}
   body.service-detail-page{ background:#fff; color:#111; }
   .service-detail-page .nav{ color:#151515; }
   .service-detail-page .brand img{ filter: invert(64%); }
-  .service-detail{ padding-block:clamp(80px,12vw,140px); }
-  .service-detail__header{ max-width:840px; margin:0 auto clamp(40px,4vw,64px); text-align:center; display:grid; gap:16px; }
+
+  .service-detail{ padding-bottom:clamp(80px,12vw,140px); }
+
+  .service-detail__hero{
+    position:relative;
+    background-image: var(--service-hero, linear-gradient(135deg,#1b2333,#0e121c));
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    isolation:isolate;
+    padding-block:clamp(160px,22vw,240px) clamp(96px,14vw,160px);
+    margin:0;
+  }
+  .service-detail__hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(6,9,16,.72) 0%, rgba(6,9,16,.6) 45%, rgba(6,9,16,.45) 100%);
+    z-index:0;
+  }
+  .service-detail__hero .container{
+    position:relative;
+    z-index:1;
+  }
+
+  .service-detail__header{ max-width:840px; margin:0 auto; text-align:center; display:grid; gap:16px; }
   .service-detail__eyebrow{ margin:0; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:rgba(17,17,17,.55); font-weight:600; }
   .service-detail__title{ margin:0; font-family:"Satoshi",sans-serif; font-weight:500; font-size:clamp(32px,4vw,54px); line-height:1.05; }
   .service-detail__intro{ margin:0; font-size:16px; line-height:1.6; color:rgba(17,17,17,.7); }
-  .service-detail__content{ max-width:900px; margin:0 auto; display:grid; gap:24px; font-size:16px; line-height:1.7; color:#202020; }
+
+  .service-detail__hero .service-detail__header{ color:#fff; }
+  .service-detail__hero .service-detail__eyebrow{ color:rgba(255,255,255,.7); }
+  .service-detail__hero .service-detail__title{ color:#fff; }
+  .service-detail__hero .service-detail__intro{ color:rgba(255,255,255,.82); }
+
+  .service-detail__content{ max-width:900px; margin:clamp(48px,8vw,96px) auto 0; display:grid; gap:24px; font-size:16px; line-height:1.7; color:#202020; }
   .service-detail__content h2{ font-size:clamp(22px,2.2vw,30px); margin:32px 0 12px; font-family:"Satoshi",sans-serif; font-weight:500; line-height:1.15; }
   .service-detail__content h3{ font-size:clamp(18px,1.8vw,24px); margin:24px 0 12px; font-family:"Satoshi",sans-serif; font-weight:500; line-height:1.2; }
   .service-detail__content h4{ font-size:clamp(16px,1.6vw,20px); margin:20px 0 10px; font-family:"Satoshi",sans-serif; font-weight:500; line-height:1.3; }
@@ -625,6 +655,11 @@ figure{margin:0}
   .service-detail__content a{ color:inherit; text-decoration:underline; text-decoration-thickness:2px; text-decoration-color:rgba(17,17,17,.4); }
   .service-detail__content a:hover{ text-decoration-color:rgba(17,17,17,.8); }
   .service-detail__content > :first-child{ margin-top:0; }
+
+  @media (max-width:720px){
+    .service-detail__hero{ padding-block:clamp(120px,32vw,200px) clamp(72px,18vw,128px); }
+    .service-detail__content{ margin:clamp(32px,12vw,64px) auto 0; }
+  }
 
 
   /* Contact form */

@@ -3,6 +3,7 @@ layout: service
 title: Content Systems
 intro: "Content pipelines that keep strategy, production, and publishing in sync."
 meta_description: "Design content systems with Notion, headless CMS, and automation so ideas become consistent output."
+hero_image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Overview

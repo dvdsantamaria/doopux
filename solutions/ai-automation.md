@@ -3,6 +3,7 @@ layout: service
 title: AI Automation
 intro: "AI agents and workflows that automate busywork without compromising control."
 meta_description: "Design and deploy AI automations that plug into your stack, save time, and stay accountable."
+hero_image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2000&q=80"
 ---
 
 ## Overview
