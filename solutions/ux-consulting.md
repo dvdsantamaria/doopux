@@ -1,12 +1,12 @@
 ---
 layout: service
-title: UX Consultation
+title: UX Consulting
 intro: "Research, flows, and usability work that keeps your product aligned with business goals."
-meta_description: "UX consultation to uncover friction, validate decisions, and design flows that scale with your team."
+meta_description: "UX consulting to uncover friction, validate decisions, and design flows that scale with your team."
 hero_image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80"
 ---
 
-## UX Consultation & Reports
+## UX Consulting & Reports
 
 *We analyse your website and deliver actionable recommendations to improve usability, engagement, and conversions.*
 
