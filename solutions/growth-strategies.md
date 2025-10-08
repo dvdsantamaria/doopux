@@ -6,17 +6,65 @@ meta_description: "Growth strategy engagements covering research, experimentatio
 hero_image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2000&q=80"
 ---
 
-## Overview
+### Growth starts with understanding
 
-Growth isn’t a single tactic — it’s a process. We align product, marketing, and sales around the same goals and run disciplined experiments that deliver learning cycles instead of vanity metrics.
+Before we suggest any channel, campaign, or tool — we do the work:
 
-## Key Activities
+We research your industry, competitors, and current positioning.
 
-- Market and customer research that validates positioning and messaging.
-- Offer architecture with pricing, packaging, and value props tested in-market.
-- Experiment design across funnels (acquisition, activation, retention, referral).
-- Analytics readouts that connect experiment results to pipeline and revenue.
+We listen to your customers (and potential customers).
 
-## Collaboration Model
+We identify where your message connects — and where it gets lost.
 
-We embed with your team through stand-ups and async updates, sharing playbooks and frameworks so you can continue iterating after the engagement ends.
+Only then do we build a plan.
+
+---
+
+### Our approach: close to your business, closer to your clients
+
+Growth doesn’t come from throwing money at ads or posting blindly on social.
+
+We build strategies that are **realistic, measurable, and always aligned with your customer’s journey**.
+
+**How we work:**
+
+- Map your brand’s current perception (vs. what you want it to be)
+- Clarify who your best customers are and where they hang out
+- Set achievable goals based on your budget and stage
+- Design campaigns or tactics tailored to your channels (online or offline)
+- Launch fast, learn faster — every test brings insights
+- Gather structured feedback and optimize continuously
+
+We don’t work from theory — we co-create with you, test ideas in-market, and adapt based on **real results**.
+
+---
+
+### What’s included
+
+- Customer & market research
+
+• Messaging refinement and content direction
+
+• Channel strategy (email, paid, organic, partnerships, local presence, etc.)
+
+• Feedback collection and customer interviews
+
+• Funnel setup and campaign execution
+
+• Continuous performance review and iteration
+
+---
+
+### Why 3 months?
+
+Because growth takes rhythm.
+
+Each cycle includes planning, action, learning, and adjustment. One-off campaigns can spike awareness — but solid growth comes from repeatable actions and steady optimization.
+
+Our **minimum engagement is 3 months**, so we can track patterns, build momentum, and start turning insights into traction.
+
+---
+
+**Let’s build not just visibility — but traction that sticks.**
+
+Your brand, your pace, real results.

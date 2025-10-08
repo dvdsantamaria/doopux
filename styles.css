@@ -7,7 +7,7 @@
 
   --content-max:1220px;
   --header-max:1320px;
-  --header-h:clamp(56px,8vh,88px);
+  --header-h: clamp(88px, 11vh, 144px);
 
   /* === Ritmo vertical unificado === */
   --section-pad: clamp(56px, 9vw, 140px);
@@ -78,9 +78,9 @@ body{
 /* =============== HEADER (sólo el del sitio) =============== */
 header.container-wide{
   position:relative; z-index:2;
-  block-size:var(--header-h);
+  min-height:var(--header-h);
   display:flex; align-items:center;
-  padding-top:16px;
+  padding-block: clamp(18px, 3vw, 40px);
 }
 .row{display:flex; align-items:center; justify-content:space-between; width:100%}
 .brand img{display:block; width:120px; height:auto}
@@ -620,7 +620,7 @@ figure{margin:0}
     background-repeat:no-repeat;
     isolation:isolate;
     padding-block:clamp(160px,22vw,240px) clamp(96px,14vw,160px);
-    margin:0;
+    margin: clamp(16px, 3vw, 40px) 0 0;
   }
   .service-detail__hero::before{
     content:"";
