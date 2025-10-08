@@ -80,7 +80,7 @@ header.container-wide{
   position:relative; z-index:2;
   min-height:var(--header-h);
   display:flex; align-items:center;
-  padding-block: clamp(18px, 3vw, 40px);
+  padding-block: clamp(16px, 2.6vw, 34px);
 }
 .row{display:flex; align-items:center; justify-content:space-between; width:100%}
 .brand img{display:block; width:120px; height:auto}
@@ -620,7 +620,6 @@ figure{margin:0}
     background-repeat:no-repeat;
     isolation:isolate;
     padding-block:clamp(160px,22vw,240px) clamp(96px,14vw,160px);
-    margin: clamp(16px, 3vw, 40px) 0 0;
   }
   .service-detail__hero::before{
     content:"";
