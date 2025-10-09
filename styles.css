@@ -725,6 +725,24 @@ figure{margin:0}
   body:not(.theme-light) .field input:focus, 
   body:not(.theme-light) .field textarea:focus{ border-bottom-color:#e9eef5; }
   body:not(.theme-light) .form-note{ color:#c7cfdbb3 }
+
+  body:not(.theme-light).service-detail-page .service-detail__content,
+  body:not(.theme-light).service-detail-page .service-detail__content p,
+  body:not(.theme-light).service-detail-page .service-detail__content li{
+    color:#e9eef5;
+  }
+  body:not(.theme-light).service-detail-page .service-detail__content h2,
+  body:not(.theme-light).service-detail-page .service-detail__content h3,
+  body:not(.theme-light).service-detail-page .service-detail__content h4{
+    color:#ffffff;
+  }
+  body:not(.theme-light).service-detail-page .service-detail__content a{
+    color:#e9eef5;
+    text-decoration-color:rgba(233,238,245,.65);
+  }
+  body:not(.theme-light).service-detail-page .service-detail__content a:hover{
+    text-decoration-color:#ffffff;
+  }
 }
 
 
