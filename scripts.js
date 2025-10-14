@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // timings
   const reduced       = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile      = () => matchMedia('(max-width:760px)').matches;
-  const DURATION      = reduced ? 0 : 700;   // movimiento más lento
-  const FADE_OUT_MS   = reduced ? 0 : 800;   // fade out un poco más largo
+  const DURATION      = reduced ? 0 : 700;   // slower movement
+  const FADE_OUT_MS   = reduced ? 0 : 800;   // slightly longer fade out
   const FADE_IN_MS    = reduced ? 0 : 650;   // fade in
-  const FADE_IN_DELAY = reduced ? 0 : 120;   // entra apenas después
+  const FADE_IN_DELAY = reduced ? 0 : 120;   // enters shortly after
   const EASE          = 'cubic-bezier(.22,.61,.36,1)';
   const AUTOPLAY_MS   = 6000;
 
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListener('resize', () => { if (!animating) unlockStageHeight(); }, { passive:true });
 });
 
-/* ============ CONTACT FORM: submit via fetch con toast ============ */
+/* ============ CONTACT FORM: submit via fetch with toast ============ */
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   if (!form) return;

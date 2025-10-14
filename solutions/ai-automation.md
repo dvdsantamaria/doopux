@@ -8,7 +8,7 @@ hero_image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=form
 
 ### Why small businesses struggle with efficiency
 
-Small shops, cafés, or e-commerce stores often handle repetitive tasks manually — from content creation to inventory management or customer support. These manual workflows consume time and money, slow down growth, and require constant human oversight. Without a structured process, errors and delays become the norm.
+Small shops, cafes, or e-commerce stores often handle repetitive tasks manually — from content creation to inventory management or customer support. These manual workflows consume time and money, slow down growth, and require constant human oversight. Without a structured process, errors and delays become the norm.
 
 Larger businesses rely on ERP systems, integrated CRMs, dedicated teams, and process experts. For small teams, those solutions feel too complex or expensive — yet the need for efficiency is the same.
 

@@ -1,7 +1,7 @@
 :root{
-  --bg-start:#be4fc1; /* nuevo top-left */
-  --bg-middle:#8c62d6; /* reserva */
-  --bg-end:#77b5d6;   /* nuevo bottom-right */
+  --bg-start:#be4fc1; /* new top-left */
+  --bg-middle:#8c62d6; /* reserve */
+  --bg-end:#77b5d6;   /* new bottom-right */
   --grid-color:255,255,255; --grid-opacity:.06; --grid-size:48px;
   --text:#fff; --accent:#f09cff;
 
@@ -9,7 +9,7 @@
   --header-max:1320px;
   --header-h: clamp(88px, 11vh, 144px);
 
-  /* === Ritmo vertical unificado === */
+  /* === Unified vertical rhythm === */
   --section-pad: clamp(56px, 9vw, 140px);
   --section-gap: clamp(28px, 4vw, 56px);
   --section-gap-lg: clamp(40px, 6vw, 72px);
@@ -20,7 +20,7 @@
   width: min(100% - 32px, var(--content-max));
   margin-inline: auto;
 }
-/* fix: 90vw + padding podía pasar los 100vw en mobile y crear scroll horizontal */
+/* fix: 90vw + padding could exceed 100vw on mobile and create horizontal scroll */
 .container-wide{
   width: min(100%, var(--header-max));
   margin-inline: auto;
@@ -32,7 +32,7 @@ html,body{min-height: 100%;}
 h1, h2, h3, h4, h5, h6{ font-weight:400; font-synthesis:none; }
 *{ box-sizing:border-box }
 
-/* hardening anti overflow por imágenes sueltas */
+/* anti-overflow hardening for loose images */
 img, svg, video{max-width:100%; height:auto; display:block}
 
 body{
@@ -64,7 +64,7 @@ body{
         transparent var(--grid-size)
       );
   
-    /* centro más arriba y corte fuerte al fondo */
+    /* center higher and sharply crop at the bottom */
     -webkit-mask-image:
       radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
       linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
@@ -75,7 +75,7 @@ body{
     mask-repeat: no-repeat;
   }
 
-/* =============== HEADER (sólo el del sitio) =============== */
+/* =============== HEADER (site header only) =============== */
 header.container-wide{
   position:relative; z-index:2;
   min-height:var(--header-h);
@@ -95,7 +95,7 @@ a{color:inherit; text-decoration:none}
 }
 
 .site-footer{
-    background:#efefef;                 /* combina con secciones claras */
+    background:#efefef;                 /* matches light sections */
     color:#111;
     padding-block: clamp(28px, 5vw, 56px);
     border-top: 1px solid rgba(0,0,0,.06);
@@ -109,15 +109,15 @@ a{color:inherit; text-decoration:none}
     padding: 30px 0;
   }
   
-  /* Logo centrado */
+  /* Centered logo */
   .foot-logo{
     display:block;
     width: clamp(96px, 14vw, 140px);
     height:auto;
-    filter: drop-shadow(0 0 0 rgba(0,0,0,0)); /* nítido, sin sombras raras */
+    filter: drop-shadow(0 0 0 rgba(0,0,0,0)); /* sharp, no odd shadows */
   }
   
-  /* Locations en una línea en desktop, columna en mobile */
+  /* Locations in one line on desktop, column on mobile */
 
 
   .foot-locations{
@@ -137,7 +137,7 @@ a{color:inherit; text-decoration:none}
     color: rgba(17,17,17,.85);
   }
   
-  /* Cada item */
+  /* Each item */
   .foot-locations li{
     display:inline-flex;
     align-items:center;
@@ -145,7 +145,7 @@ a{color:inherit; text-decoration:none}
     white-space:nowrap;
   }
   
-  /* Bandera como imagen (Australia) */
+  /* Flag as image (Australia) */
   .flag{
     width: 18px;
     height: 12px;
@@ -154,7 +154,7 @@ a{color:inherit; text-decoration:none}
     box-shadow: 0 0 0 1px rgba(0,0,0,.08);
   }
   
-  /* Banderas como emoji (DE/AR) para no pedir más assets */
+  /* Flags as emoji (DE/AR) to avoid extra assets */
   .flag-emoji{
     font-size: 16px;
     line-height: 1;
@@ -162,7 +162,7 @@ a{color:inherit; text-decoration:none}
     transform: translateY(1px);
   }
   
-  /* Separador vertical suave para el link en pantallas grandes */
+  /* Soft vertical divider for the link on large screens */
   .foot-contact{
     position:relative;
     padding-left: clamp(10px, 2vw, 18px);
@@ -179,7 +179,7 @@ a{color:inherit; text-decoration:none}
     }
   }
   
-  /* Link de contacto */
+  /* Contact link */
   .foot-contact a{
     color:#111;
     text-decoration:none;
@@ -217,7 +217,7 @@ a{color:inherit; text-decoration:none}
 }
 
 /* marquee */
-/* fix: 100vw en iOS incluye scrollbar y puede generar overflow. usar svw. */
+/* fix: 100vw on iOS includes the scrollbar and can create overflow; use svw instead. */
 .projects-inline{
   grid-row:4; position:relative; width:100svw; height:100%;
   margin-left:calc(50% - 50svw); overflow:hidden; align-self:end;
@@ -232,7 +232,7 @@ a{color:inherit; text-decoration:none}
 @keyframes scrollX{from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)}}
 figure{margin:0}
 .project{flex:0 0 auto; display:block}
-/* fix defensivo: evita que algún alto obligue a crecer ancho */
+/* defensive fix: prevents any height from forcing width growth */
 .project img{height:100%; width:auto; max-width:none; object-fit:cover; display:block}
 
 /* =============== ABOUT =============== */
@@ -298,20 +298,20 @@ figure{margin:0}
   margin:0; font-size:14px; line-height:1.6;
   color:rgba(17,17,17,.78); max-width:42ch;
 }
-/* número grande */
+/* large number */
 .step-number{
   position:absolute;
   left:clamp(24px, 3vw, 40px);
   bottom:clamp(20px, 3vw, 36px);
   font-family:"Satoshi", sans-serif;
-  line-height:.9; font-size:clamp(88px, 10vw, 180px); /* desktop más contenido */
+  line-height:.9; font-size:clamp(88px, 10vw, 180px); /* more breathing room on desktop */
   user-select:none; pointer-events:none;
 }
 .step-number.strong{ color:rgba(0,0,0,.85) }
 .step-number.soft  { color:rgba(0,0,0,.22) }
 .step-number.softer{ color:rgba(0,0,0,.14) }
 
-/* hover: gris a negro */
+/* hover: grey to black */
 .process-card .step-number{ color:rgba(0,0,0,.22); transition:color 1.2s ease; }
 .process-card:hover .step-number{ color:#111 }
 
@@ -323,14 +323,14 @@ figure{margin:0}
   justify-content:center;
   align-items:center;
   margin-inline:auto;
-  padding:16px 22px;          /* más alto */
+  padding:16px 22px;          /* taller */
   border-radius:999px;        /* pill */
   line-height:1;
   font-weight:600;
 
   appearance:none;
   -webkit-appearance:none;
-  border:0;                   /* saca bevel nativo */
+  border:0;                   /* removes native bevel */
   text-align:center;
 
   box-shadow:0 2px 12px rgba(0,0,0,.16);
@@ -344,13 +344,13 @@ figure{margin:0}
   .card-copy{max-width:none}
 }
 
-/* =============== SOLUTIONS (usa container-wide) =============== */
+/* =============== SOLUTIONS (uses container-wide) =============== */
 .solutions{
   background:#efefef;
   color:#111;
   padding-block: var(--section-pad);
 }
-/* ==== SOLUTIONS: header centrado y mismo ancho para título + bajada ==== */
+/* ==== SOLUTIONS: centered header with matching title and subhead width ==== */
 .solutions-head{
     text-align:center;
     margin:0 auto var(--section-gap);
@@ -363,20 +363,20 @@ figure{margin:0}
     line-height:1.15;
     margin:0 0 clamp(12px, 1.6vw, 16px);
   
-    /* mismo ancho que la bajada */
+    /* same width as the subhead */
     max-width:72ch;
     margin-inline:auto;
   }
   .solutions-subtitle{
     margin:0;               /* el gap con la grilla lo da .solutions-head */
-    max-width:72ch;         /* mismo ancho que el título */
+    max-width:72ch;         /* same width as the title */
     margin-inline:auto;
     font-size:14px;
     line-height:1.6;
     color:rgba(17,17,17,.72);
   }
 
-/* Grilla 2 columnas dentro del wide */
+/* Two-column grid inside the wide container */
 .solutions-grid{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
@@ -399,14 +399,14 @@ figure{margin:0}
   .solutions-grid{ grid-template-columns:1fr; }
 }
 
-/* =============== LOGOS (wide, fondo blanco) =============== */
+/* =============== LOGOS (wide, white background) =============== */
 .slice-logos{
   background:#fff;
   color:#111;
   padding-block: var(--section-gap-lg);
-  --logo-h: clamp(22px, 6vw, 44px);          /* altura de logo por defecto (mobile/tablet) */
-  --logo-cell-min: clamp(120px, 42vw, 180px); /* ancho mínimo de celda responsiva */
-  --logo-gap: clamp(14px, 4vw, 40px);         /* gap fluido */
+  --logo-h: clamp(22px, 6vw, 44px);          /* default logo height (mobile/tablet) */
+  --logo-cell-min: clamp(120px, 42vw, 180px); /* minimum responsive cell width */
+  --logo-gap: clamp(14px, 4vw, 40px);         /* fluid gap */
 }
 
 .logos-head{ text-align:center; margin:0 0 var(--section-gap); }
@@ -419,18 +419,18 @@ figure{margin:0}
   text-transform:uppercase;
 }
 
-/* grid auto-fit para llenar filas sin huecos en mobile */
-/* LOGOS responsive: centra la última fila en mobile y tablet */
+/* grid auto-fit to fill rows without gaps on mobile */
+/* LOGOS responsive: center the last row on mobile and tablet */
 .logos-grid{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;                 /* clave: centra la fila incompleta */
+  justify-content:center;                 /* key: center the incomplete row */
   gap: clamp(14px, 4vw, 40px);
 }
 
 .logo{
-  flex: 1 1 clamp(140px, 42vw, 200px);    /* ancho base de cada celda */
-  max-width: 280px;                       /* evita celdas gigantes en pantallas medianas */
+  flex: 1 1 clamp(140px, 42vw, 200px);    /* base width of each cell */
+  max-width: 280px;                       /* prevents oversized cells on medium screens */
   display:grid;
   place-items:center;
   padding: clamp(12px, 3.2vw, 18px);
@@ -446,7 +446,7 @@ figure{margin:0}
   width:auto;
 }
 
-/* Desktop: volvemos a grid de 5 columnas */
+/* Desktop: switch back to a 5-column grid */
 @media (min-width:1025px){
   .logos-grid{
     display:grid;
@@ -461,7 +461,7 @@ figure{margin:0}
     border-color:#eee;
   }
 }
-/* =============== TESTIMONIOS =============== */
+/* =============== TESTIMONIALS =============== */
 .testimonials{
   background:#efefef;
   color:#111;
@@ -492,12 +492,12 @@ figure{margin:0}
   color:rgba(17,17,17,.72);
 }
 
-/* carrusel */
+/* carousel */
 .tst-carousel{ position:relative; }
 .tst-viewport{ position:relative; }
 .tst-track{ display:grid; gap:0; }
 
-/* card fija (desktop) con footer pegado al bottom */
+/* fixed card (desktop) with footer pinned to the bottom */
 .tst-card{
   background:#fff;
   border:1px solid #ececec;
@@ -507,8 +507,8 @@ figure{margin:0}
   margin-inline:auto;
   max-width:1060px;
   height: var(--tst-card-h);
-  display: flex;              /* importante */
-  flex-direction: column;     /* apila contenido arriba y footer abajo */
+  display: flex;              /* important */
+  flex-direction: column;     /* stacks content up top with the footer anchored below */
   min-height: 0;
 }
 
@@ -521,11 +521,11 @@ figure{margin:0}
   font-style:italic;
   letter-spacing:.1px;
 
-  flex: 1 1 auto;                /* ocupa todo lo libre */
-  min-height: 0;                 /* evita overflow raro en algunos navegadores */
+  flex: 1 1 auto;                /* takes all available space */
+  min-height: 0;                 /* prevents odd overflow in some browsers */
 }
 
-/* footer abajo de la card */
+/* footer at the bottom of the card */
 .tst-meta{
   margin-top: auto;           /* clave para pegar al bottom */
   padding-top: clamp(10px, 1.6vw, 16px);
@@ -535,25 +535,25 @@ figure{margin:0}
   gap: 20px;
 }
 
-/* bloque izquierdo del footer */
+/* left block of the footer */
 .tst-name{ font-size:18px; font-weight:500; }
 .tst-project{ font-size:15px; color:rgba(17,17,17,.6); }
 
-/* estrellas abajo a la derecha */
+/* stars anchored bottom-right */
 .tst-stars{
   display:flex;
-  align-items:flex-end;        /* asegura la base alineada */
-  margin-left:auto;            /* las empuja a la derecha */
+  align-items:flex-end;        /* keeps the base aligned */
+  margin-left:auto;            /* pushes them to the right */
 }
 .tst-stars span{ color:#ee64ff; font-size:22px; }
 
-/* micro-animaciones del contenido (opcional) */
+/* optional micro animations for the content */
 .tst-card.is-entering .tst-strip{ animation: tstIn .34s ease both; }
 .tst-card.is-leaving  .tst-strip{ animation: tstOut .34s ease both; }
 @keyframes tstIn{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
 @keyframes tstOut{ from{opacity:1; transform:translateY(0)} to{opacity:0; transform:translateY(-10px)} }
 
-/* flechas */
+/* arrows */
 .tst-nav{
   position:absolute; top:50%; transform:translateY(-50%);
   width:52px; height:52px; border-radius:999px;
@@ -572,13 +572,13 @@ figure{margin:0}
 }
 .tst-nav:focus-visible{ outline:2px solid #111; outline-offset:2px; }
 
-/* Mobile: card auto-height y sin flechas, footer sigue abajo */
+/* Mobile: card auto-height without arrows, footer stays at the bottom */
 @media (max-width:760px){
   .tst-nav{ display:none; }
   .tst-card{
     max-width:100%;
     border-radius:16px;
-    height:auto;                 /* dinámica en mobile */
+    height:auto;                 /* dynamic on mobile */
   }
 
 }
@@ -747,21 +747,21 @@ figure{margin:0}
 
 
 
-/* Dark mode SOLO si el sistema lo pide */
+/* Dark mode ONLY if the system requests it */
 @media (prefers-color-scheme: dark){
 
-  /* scrollbars y formularios nativos */
+  /* scrollbars and native form controls */
   html{ color-scheme: dark; }
 
-  /* fondo y texto */
+  /* background and text */
   body:not(.theme-light){ background:#0f1115; color:#e9eef5; }
   .bg-grid{ display:none; }
 
-  /* header y logo */
+  /* header and logo */
   body:not(.theme-light) .nav{ color:#e9eef5; opacity:.95; }
   body:not(.theme-light) .brand img{ filter: invert(0%) brightness(80%); }
 
-  /* secciones claras pasan a dark */
+  /* light sections switch to dark */
   body:not(.theme-light) .slice-light,
   body:not(.theme-light) .service-eco,
   body:not(.theme-light) .solutions,
@@ -787,7 +787,7 @@ figure{margin:0}
     background-color:#e9e9e99e;
   }
 
-  /* cards y contenedores */
+  /* cards and containers */
   body:not(.theme-light) .eco-card,
   body:not(.theme-light) .solution,
   body:not(.theme-light) .tst-card{
@@ -805,7 +805,7 @@ figure{margin:0}
   body:not(.theme-light) .tst-subtitle,
   body:not(.theme-light) .card-copy{ color:#c7cfdbb3; }
 
-  /* botón */
+  /* button */
   body:not(.theme-light) .btn-primary{ background:#ffffff; color:#0f1115; }
 
   /* Contact form dark override */
@@ -847,17 +847,17 @@ figure{margin:0}
 
 
   body:not(.theme-light){
-    --grid-color: 208,214,224;   /* gris frío suave */
-    --grid-opacity: .05;         /* más sutil que en light */
+    --grid-color: 208,214,224;   /* soft cool gray */
+    --grid-opacity: .05;         /* subtler than in light */
   }
   body:not(.theme-light) .bg-grid{
-    display:block;               /* reactivar si antes lo ocultaste */
-    /* opcional: suavizar el fade en dark */
+    display:block;               /* re-enable if it was hidden before */
+    /* optional: soften the fade in dark mode */
     -webkit-mask-image: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 36%, rgba(0,0,0,0) 78%);
     mask-image: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 36%, rgba(0,0,0,0) 78%);
   }
   
-  /* Footer override fuerte */
+  /* Strong footer override */
   body:not(.theme-light) footer.site-footer{
     background:#0f1115 !important;
     color:#e9eef5 !important;
@@ -883,7 +883,7 @@ body:not(.theme-light) .footer{
 
 
 
-/* ==== HEADERS DE SECCIÓN UNIFICADOS ==== */
+/* ==== UNIFIED SECTION HEADERS ==== */
 
 /* 1) Section block utility */
 .section { padding-block: var(--section-pad); }
@@ -1098,14 +1098,14 @@ body.home .nav-toggle{
 
 
 
-/* Testimonios: que el stage llene la card y permita pegar el footer abajo */
+/* Testimonials: let the stage fill the card so the footer can sit at the bottom */
 .tst-stage{
   flex: 1 1 auto;      /* ocupa todo el alto disponible dentro de .tst-card */
   min-height: 0;
   display: flex;       /* contiene al strip */
 }
 
-/* el strip también debe poder crecer/encoger */
+/* the strip also needs to stretch and shrink */
 .tst-stage > div{
   flex: 1 1 auto;
   min-height: 0;
@@ -1118,5 +1118,5 @@ body.home .nav-toggle{
   min-height: 100%;
 }
 
-/* ya lo tenías, pero lo aclaro: el footer se pega al bottom del pane */
+/* already covered, but clarifying: the footer sticks to the bottom of the pane */
 .tst-meta{ margin-top:auto; }

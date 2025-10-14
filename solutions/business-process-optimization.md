@@ -26,7 +26,7 @@ A checklist in Notion or Airtable triggers welcome emails, contract signatures, 
 
 - **Inventory & Reorder Cycle**
 
-For cafés, boutiques, or micro-warehouses: simple low-stock alerts and supplier templates keep shelves full without overbuying.
+For cafes, boutiques, or micro-warehouses: simple low-stock alerts and supplier templates keep shelves full without overbuying.
 
 - **Invoicing & Cash-Flow Rhythm**
 

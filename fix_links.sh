@@ -1,5 +1,5 @@
 #!/bin/bash
-# fix_links.sh — reescribe href/src a {{ site.baseurl }} y pretty URLs
+# fix_links.sh — rewrites href/src to {{ site.baseurl }} and pretty URLs
 
 set -euo pipefail
 
@@ -23,12 +23,12 @@ re_local_html = re.compile(
 def rewrite(content: str) -> str:
     # index.html -> /
     content = re_index_html.sub(f'href="{BASEURL}/"', content)
-    # styles/scripts en raíz
+    # styles/scripts at the root
     content = re_styles.sub(lambda m: f'{m.group("attr")}="{BASEURL}/styles.css"', content)
     content = re_scripts.sub(lambda m: f'{m.group("attr")}="{BASEURL}/scripts.js"', content)
     # assets/
     content = re_attr_assets.sub(lambda m: f'{m.group("attr")}="{BASEURL}/assets/', content)
-    # foo.html -> /foo  (respeta fragmentos #...)
+    # foo.html -> /foo  (respects # fragments)
     def repl_local(m):
         path = m.group('path')
         frag = m.group('hash') or ''
@@ -37,7 +37,7 @@ def rewrite(content: str) -> str:
     return content
 
 for root, dirs, files in os.walk('.'):
-    # saltar _site
+    # skip _site
     if '/_site' in root or root.startswith('./_site'):
         continue
     for name in files:
