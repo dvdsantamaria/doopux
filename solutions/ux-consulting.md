@@ -3,6 +3,21 @@ layout: service
 title: UX Consulting
 intro: "Research, flows, and usability work that keeps your product aligned with business goals."
 meta_description: "UX consulting to uncover friction, validate decisions, and design flows that scale with your team."
+meta_title: "UX Consulting & Audits — Doop UX"
+meta_keywords: "ux consulting, ux audit, usability testing, user research, conversion optimisation, digital experience"
+service_type: "UX consulting services"
+service_audience: "Product and marketing teams that need clarity on usability and conversion issues"
+service_offers:
+  - "UX audit and prioritised roadmap"
+  - "User research and behaviour analysis"
+  - "Prototype and flow optimisation support"
+faq:
+  - question: "What do I receive with a UX consulting engagement?"
+    answer: "You receive a prioritised UX report, annotated screens or prototypes, recommended experiments, and a clear backlog your team can execute."
+  - question: "Which tools and data sources do you use to diagnose issues?"
+    answer: "We combine analytics, heatmaps, user recordings, interviews, and heuristic reviews to understand both qualitative and quantitative pain points."
+  - question: "How long does a typical UX consulting sprint last?"
+    answer: "Most sprints run 2–4 weeks depending on scope. We can extend for implementation support or ongoing UX leadership as needed."
 hero_image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -114,3 +129,16 @@ Yes, it takes time and effort — but it’s one of the most effective investmen
 - We **prioritise** the fixes that deliver results quickly while setting you up for scalable, lasting growth.
 
 Let’s turn your website into a real business asset — together.
+
+---
+
+### Frequently asked questions
+
+**What do I receive with a UX consulting engagement?**  
+You receive a prioritised UX report, annotated screens or prototypes, recommended experiments, and a clear backlog your team can execute.
+
+**Which tools and data sources do you use to diagnose issues?**  
+We combine analytics, heatmaps, user recordings, interviews, and heuristic reviews to understand both qualitative and quantitative pain points.
+
+**How long does a typical UX consulting sprint last?**  
+Most sprints run 2–4 weeks depending on scope. We can extend for implementation support or ongoing UX leadership as needed.

@@ -3,6 +3,21 @@ layout: service
 title: Website Development
 intro: "Clean architecture, fast performance, and SEO baked in from day one."
 meta_description: "Websites built for outcomes — performance, accessibility, and SEO foundations with design systems you can scale."
+meta_title: "Website Development & Platform Selection — Doop UX"
+meta_keywords: "website development, webflow, shopify, ecommerce development, headless cms, website migration"
+service_type: "Website development and platform consulting"
+service_audience: "Brands that need scalable, high-performance websites and commerce experiences"
+service_offers:
+  - "Platform and architecture discovery"
+  - "Design system creation and build"
+  - "Performance, SEO, and launch readiness"
+faq:
+  - question: "How do you decide which platform or CMS we should use?"
+    answer: "We evaluate your content model, integrations, growth goals, and internal capabilities to recommend the platform that balances control, cost, and speed."
+  - question: "Can you migrate my existing site without losing SEO?"
+    answer: "Yes. We plan redirects, preserve structured data, rebuild information architecture, and test before launch so rankings and analytics carry over."
+  - question: "Do you offer support after the new site goes live?"
+    answer: "We provide training, documentation, and optional retainers for iterative improvements, performance monitoring, and new feature rollouts."
 hero_image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -201,3 +216,16 @@ Depending on your business needs, we recommend migrating to:
 - **Strapi or even Laravel** – if you need a fully custom backend and total technical freedom.
 
 We handle your migration carefully: preserving your content, maintaining your SEO ranking, and improving the overall user experience. You won’t just get a “copy” of your old site — you’ll get a cleaner, more efficient, and future-proof version.
+
+---
+
+### Frequently asked questions
+
+**How do you decide which platform or CMS we should use?**  
+We evaluate your content model, integrations, growth goals, and internal capabilities to recommend the platform that balances control, cost, and speed.
+
+**Can you migrate my existing site without losing SEO?**  
+Yes. We plan redirects, preserve structured data, rebuild information architecture, and test before launch so rankings and analytics carry over.
+
+**Do you offer support after the new site goes live?**  
+We provide training, documentation, and optional retainers for iterative improvements, performance monitoring, and new feature rollouts.

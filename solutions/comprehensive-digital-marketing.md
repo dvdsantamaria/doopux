@@ -3,6 +3,21 @@ layout: service
 title: Comprehensive Digital Marketing
 intro: "Full-funnel campaigns that connect ads, email, content, and analytics to revenue."
 meta_description: "Integrated digital marketing programs with strategy, execution, and measurement handled end-to-end."
+meta_title: "Comprehensive Digital Marketing Programs — Doop UX"
+meta_keywords: "digital marketing, full funnel marketing, social media management, marketing automation, campaign strategy, brand experience"
+service_type: "Digital marketing services"
+service_audience: "Service-led brands that need unified marketing across channels"
+service_offers:
+  - "Marketing and channel audit with roadmap"
+  - "Content, ads, and email execution"
+  - "Analytics and optimization sprints"
+faq:
+  - question: "How do you decide which marketing channels to prioritize?"
+    answer: "We audit your existing presence, study audience behavior, and align channels with your goals and resources. The plan focuses on the mix that can be executed consistently and measured."
+  - question: "Do you require a minimum engagement length?"
+    answer: "Yes. We recommend a three-month minimum so we can build momentum, collect data, and iterate campaigns with enough signal to prove ROI."
+  - question: "How do you report on marketing performance?"
+    answer: "You receive dashboards and narrative summaries every 30 days covering reach, engagement, leads, revenue attribution, and next steps so stakeholders know exactly what is working."
 hero_image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -86,3 +101,16 @@ We build a rhythm, measure impact, and adapt every 30 days to make sure your mes
 **Want marketing that works with your business — not just for it?**
 
 Let’s build a presence your customers will remember.
+
+---
+
+### Frequently asked questions
+
+**How do you decide which marketing channels to prioritize?**  
+We audit your existing presence, study audience behavior, and align channels with your goals and resources. The plan focuses on the mix that can be executed consistently and measured.
+
+**Do you require a minimum engagement length?**  
+Yes. We recommend a three-month minimum so we can build momentum, collect data, and iterate campaigns with enough signal to prove ROI.
+
+**How do you report on marketing performance?**  
+You receive dashboards and narrative summaries every 30 days covering reach, engagement, leads, revenue attribution, and next steps so stakeholders know exactly what is working.

@@ -1095,6 +1095,27 @@ body.home .nav-toggle{
   color:#fff;
   border-color:#ffffff40;
 }
+ 
+.faq-grid{
+  display:grid;
+  gap:32px;
+  margin-top:32px;
+}
+@media (min-width:900px){
+  .faq-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+.faq-item h3{
+  font-size:20px;
+  line-height:1.35;
+  margin-bottom:12px;
+}
+.faq-item p{
+  font-size:16px;
+  line-height:1.7;
+  color:rgba(17,17,17,.75);
+}
 
 
 

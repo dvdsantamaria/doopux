@@ -3,6 +3,21 @@ layout: service
 title: SEO
 intro: "Technical SEO, content strategy, and structured data that help you own intent-led traffic."
 meta_description: "SEO sprints covering audits, architecture, content, and measurement so you rank and stay there."
+meta_title: "Technical SEO & Content Strategy Sprints — Doop UX"
+meta_keywords: "technical seo, content strategy, seo audits, structured data, link building, search engine optimization"
+service_type: "SEO services"
+service_audience: "Founders and marketing teams focused on sustainable organic growth"
+service_offers:
+  - "Technical and content audit"
+  - "On-page and structured data implementation"
+  - "Authority development and reporting"
+faq:
+  - question: "What is included in your SEO audit?"
+    answer: "We review technical health, crawl depth, site speed, structured data, internal linking, content gaps, and backlink profile to produce a prioritized roadmap."
+  - question: "How long does it take to see results from SEO?"
+    answer: "Most sites begin to see movement in 8–12 weeks, with significant gains accruing over 6–12 months as improvements compound and authority grows."
+  - question: "Can you work alongside our in-house content or dev team?"
+    answer: "Absolutely. We collaborate with internal teams, provide implementation guides, and stay involved to QA changes so the strategy lands accurately."
 hero_image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -94,3 +109,16 @@ Great SEO = Consistency + Patience + Expertise.
 We guide you clearly, honestly, and transparently. No shortcuts, just steady growth.
 
 Ready to grow step by step?
+
+---
+
+### Frequently asked questions
+
+**What is included in your SEO audit?**  
+We review technical health, crawl depth, site speed, structured data, internal linking, content gaps, and backlink profile to produce a prioritized roadmap.
+
+**How long does it take to see results from SEO?**  
+Most sites begin to see movement in 8–12 weeks, with significant gains accruing over 6–12 months as improvements compound and authority grows.
+
+**Can you work alongside our in-house content or dev team?**  
+Absolutely. We collaborate with internal teams, provide implementation guides, and stay involved to QA changes so the strategy lands accurately.

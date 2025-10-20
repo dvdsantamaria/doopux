@@ -3,6 +3,21 @@ layout: service
 title: Idea to Project
 intro: "From idea to MVP — scoped, lean builds that launch fast and stay adaptable."
 meta_description: "Validate your idea with lean UX, rapid prototyping, and production-ready MVPs built to grow."
+meta_title: "Idea to MVP in Weeks — Doop UX"
+meta_keywords: "mvp development, product sprint, lean startup, rapid prototyping, idea validation, product roadmap"
+service_type: "Product discovery and MVP development"
+service_audience: "Founders and product teams launching new digital or hybrid concepts"
+service_offers:
+  - "Discovery and scoping sprint"
+  - "Design and prototype production"
+  - "MVP build with launch support"
+faq:
+  - question: "How long does the Idea to Project sprint take?"
+    answer: "Most engagements run 4–6 weeks from kickoff to launch-ready MVP, followed by a support window to refine based on live feedback."
+  - question: "What stack do you use to build MVPs?"
+    answer: "We pick tools that balance speed and scalability—often React/Next.js, Supabase, Firebase, Stripe, Airtable, or Webflow—so you keep ownership and can iterate after hand-off."
+  - question: "What do I receive at the end of the engagement?"
+    answer: "You get a deployed MVP, access to your code or no-code workspace, documented decisions in Notion, analytics instrumentation, and a prioritized backlog for the next iteration."
 hero_image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -85,3 +100,16 @@ Great ideas don’t always live on screens. We can help you carry your concept i
 - Introducing a **wellness clinic** with printed guides and community outreach workshops
 
 From print assets to on-premise experiences, our lean framework adapts to the real world just as fast as it does online.
+
+---
+
+### Frequently asked questions
+
+**How long does the Idea to Project sprint take?**  
+Most engagements run 4–6 weeks from kickoff to launch-ready MVP, followed by a support window to refine based on live feedback.
+
+**What stack do you use to build MVPs?**  
+We pick tools that balance speed and scalability—often React/Next.js, Supabase, Firebase, Stripe, Airtable, or Webflow—so you keep ownership and can iterate after hand-off.
+
+**What do I receive at the end of the engagement?**  
+You get a deployed MVP, access to your code or no-code workspace, documented decisions in Notion, analytics instrumentation, and a prioritized backlog for the next iteration.

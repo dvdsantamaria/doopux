@@ -1,11 +1,14 @@
 ---
+meta_title: "Contact | Work with Doop UX — Websites, UX & Automation"
+meta_description: "Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery."
+meta_keywords: "contact doop ux, web design inquiry, ux consulting contact, ai automation partners"
+meta_image: "/assets/doop-website-design.png"
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Work with Doop UX — Websites, UX & Automation</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
   <style>
     /* Overrides for this page only */
@@ -14,68 +17,116 @@
     .nav{color:#151515}
   </style>
 
-  <!-- === SEO (added) === -->
-  <meta name="title" content="Contact | Work with Doop UX — Websites, UX & Automation" />
-  <meta name="description" content="Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  {% assign meta_title = page.meta_title | default: site.title %}
+  {% assign meta_description = page.meta_description | default: site.description %}
+  {% assign keywords = page.meta_keywords %}
+  {% assign canonical = page.url | absolute_url %}
+  {% assign robots = page.meta_robots | default: site.seo_defaults.robots | default: 'index,follow' %}
+  {% assign raw_meta_image = page.meta_image | default: site.default_meta_image %}
+  {% if raw_meta_image %}
+    {% if raw_meta_image contains '://' %}
+      {% assign meta_image = raw_meta_image %}
+    {% else %}
+      {% assign meta_image = raw_meta_image | absolute_url %}
+    {% endif %}
+  {% endif %}
+  {% assign site_logo_path = site.organization.logo | default: '/assets/logo.png' %}
+  {% if site_logo_path contains '://' %}
+    {% assign site_logo = site_logo_path %}
+  {% else %}
+    {% assign site_logo = site_logo_path | absolute_url %}
+  {% endif %}
+  {% assign site_root = '/' | absolute_url %}
+  {% assign locale = site.locale | default: 'en_US' %}
+
+  <title>{{ meta_title }}</title>
+  <meta name="title" content="{{ meta_title }}">
+  <meta name="description" content="{{ meta_description }}">
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  <meta name="robots" content="{{ robots }}">
+  <meta name="googlebot" content="{{ robots }}">
+  <meta name="bingbot" content="{{ robots }}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="{{ canonical }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
-  <meta property="og:title" content="Contact | Work with Doop UX — Websites, UX & Automation" />
-  <meta property="og:description" content="Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery." />
-  <meta property="og:image" content="{{ '/assets/doop-website-design.png' | absolute_url }}" />
+  <meta property="og:title" content="{{ meta_title }}" />
+  <meta property="og:description" content="{{ meta_description }}" />
+  <meta property="og:url" content="{{ canonical }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:locale" content="{{ locale }}" />
+  {% if meta_image %}
+  <meta property="og:image" content="{{ meta_image }}" />
+  <meta property="og:image:secure_url" content="{{ meta_image }}" />
+  <meta property="og:image:alt" content="{{ meta_title }}" />
+  {% endif %}
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Contact | Work with Doop UX — Websites, UX & Automation" />
-  <meta name="twitter:description" content="Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery." />
-  <meta name="twitter:image" content="{{ '/assets/doop-website-design.png' | absolute_url }}" />
+  <meta name="twitter:card" content="{{ site.seo_defaults.twitter_card | default: 'summary_large_image' }}" />
+  <meta name="twitter:title" content="{{ meta_title }}" />
+  <meta name="twitter:description" content="{{ meta_description }}" />
+  {% if site.twitter_username %}
+  <meta name="twitter:site" content="@{{ site.twitter_username | replace:'@','' }}" />
+  {% endif %}
+  {% if meta_image %}
+  <meta name="twitter:image" content="{{ meta_image }}" />
+  <meta name="twitter:image:alt" content="{{ meta_title }}" />
+  {% endif %}
 
-  <!-- JSON-LD Schema: WebSite + ContactPage + Breadcrumbs -->
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "{{ site_root }}#organization",
+        "name": {{ site.organization.name | default: site.title | jsonify }},
+        "legalName": {{ site.organization.legal_name | default: site.organization.name | jsonify }},
+        "url": {{ site.organization.url | default: site_root | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ site_logo | jsonify }}
+        },
+        "sameAs": {{ site.organization.same_as | jsonify }}
+      },
+      {
         "@type": "WebSite",
-        "@id": "{{ '/' | absolute_url }}#website",
-        "name": "Doop UX",
-        "url": "{{ '/' | absolute_url }}",
+        "@id": "{{ site_root }}#website",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site_root | jsonify }},
+        "description": {{ site.description | jsonify }},
         "publisher": {
-          "@type": "Organization",
-          "name": "Doop UX",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "{{ '/assets/logo.png' | absolute_url }}"
-          }
-        }
+          "@id": "{{ site_root }}#organization"
+        },
+        "inLanguage": "{{ locale }}"
       },
       {
         "@type": "ContactPage",
-        "@id": "{{ page.url | absolute_url }}#contactpage",
-        "url": "{{ page.url | absolute_url }}",
-        "name": "Contact — Doop UX",
-        "description": "Get in touch with Doop UX about websites, UX consulting, AI automation and growth.",
-        "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" },
+        "@id": "{{ canonical }}#contactpage",
+        "url": {{ canonical | jsonify }},
+        "name": {{ meta_title | jsonify }},
+        "description": {{ meta_description | jsonify }},
+        "isPartOf": { "@id": "{{ site_root }}#website" },
         "potentialAction": {
           "@type": "ContactAction",
           "target": "https://submit-form.com/Po4c9Fm5U"
-        }
+        },
+        "inLanguage": "{{ locale }}"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "{{ page.url | absolute_url }}#breadcrumbs",
+        "@id": "{{ canonical }}#breadcrumbs",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
-          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "{{ page.url | absolute_url }}" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site_root }}" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "{{ canonical }}" }
         ]
       }
     ]
   }
   </script>
-  <!-- === /SEO (added) === -->
 </head>
 <body>
   <!-- Header with grey logo -->

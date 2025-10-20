@@ -3,6 +3,21 @@ layout: service
 title: SEO for AI Answers
 intro: "Make your brand the trusted source AI answer engines pull into responses."
 meta_description: "SEO for AI Answers to align content, structure, and signals so AI Overviews, ChatGPT, and Perplexity cite your business."
+meta_title: "SEO for AI Answers (AEO) Programs — Doop UX"
+meta_keywords: "seo for ai answers, answer engine optimization, aeO, ai seo, structured data, llms.txt, citation strategy"
+service_type: "Answer engine optimization"
+service_audience: "Marketing and product teams that want consistent citations from AI assistants and answer engines"
+service_offers:
+  - "Answer intent and entity audit"
+  - "Content and schema refactor"
+  - "Measurement and reporting setup"
+faq:
+  - question: "How is SEO for AI Answers different from traditional SEO?"
+    answer: "Traditional SEO focuses on ranking pages for keywords. AEO optimises for question clusters, structured answers, entity clarity, and citation signals so AI systems trust and quote your content."
+  - question: "How long does it take to see results from an AEO program?"
+    answer: "Expect the first improvements within 4–6 weeks as crawlers reprocess your updates. Durable inclusion usually follows after 2–3 refresh cycles as signals compound."
+  - question: "What deliverables do you hand over at the end of an AEO sprint?"
+    answer: "You receive an answer map, updated content and schema recommendations, llms.txt guidance, measurement dashboard templates, and an off-site plan to keep authority growing."
 hero_image: "https://images.unsplash.com/photo-1745674684463-62f62cb88d4c?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -121,3 +136,16 @@ Great AEO = clear answers, strong evidence, clean structure, repeatable signals.
 No shortcuts. Just honest work that earns inclusion and keeps it.
 
 Ready to become the source that answers get built on?
+
+---
+
+### Frequently asked questions
+
+**How is SEO for AI Answers different from traditional SEO?**  
+Traditional SEO focuses on ranking pages for keywords. AEO optimises for question clusters, structured answers, entity clarity, and citation signals so AI systems trust and quote your content.
+
+**How long does it take to see results from an AEO program?**  
+Expect the first improvements within 4–6 weeks as crawlers reprocess your updates. Durable inclusion usually follows after 2–3 refresh cycles as signals compound.
+
+**What deliverables do you hand over at the end of an AEO sprint?**  
+You receive an answer map, updated content and schema recommendations, llms.txt guidance, measurement dashboard templates, and an off-site plan to keep authority growing.

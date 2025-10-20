@@ -3,6 +3,21 @@ layout: service
 title: Business Process Optimization
 intro: "Systems, SOPs, and integrations that reduce errors, delays, and operational drag."
 meta_description: "Business process optimization that maps your workflows, automates the repeatable, and keeps teams accountable."
+meta_title: "Business Process Optimization for Lean Teams — Doop UX"
+meta_keywords: "business process optimization, sop design, workflow automation, process mapping, operations consulting, team enablement"
+service_type: "Business process optimization"
+service_audience: "Owners and operations leaders in small and mid-size teams"
+service_offers:
+  - "Workflow and SOP audit"
+  - "Automation and integration blueprint"
+  - "Implementation support with training"
+faq:
+  - question: "What does your business process audit include?"
+    answer: "We document every step of your current workflow, collect timing and ownership data, surface bottlenecks, and highlight places where automation or clearer SOPs will unlock throughput."
+  - question: "Which tools do you typically use to implement new processes?"
+    answer: "We tailor the stack to your comfort—often using Notion, Airtable, Google Workspace, Zapier, Make, or Slack automations—so your team does not inherit more software than it can handle."
+  - question: "How do you help teams adopt the new processes?"
+    answer: "We deliver clear SOPs, train the people responsible for each stage, and stay available during the first weeks to adjust flows, dashboards, and automations until the process sticks."
 hero_image: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -73,3 +88,16 @@ We act as your **strategic partner**, staying at your side until every team memb
 **Ready to replace chaos with clarity?**
 
 Let’s design processes that let your business scale smoothly, one workflow at a time.
+
+---
+
+### Frequently asked questions
+
+**What does your business process audit include?**  
+We document every step of your current workflow, collect timing and ownership data, surface bottlenecks, and highlight places where automation or clearer SOPs will unlock throughput.
+
+**Which tools do you typically use to implement new processes?**  
+We tailor the stack to your comfort—often using Notion, Airtable, Google Workspace, Zapier, Make, or Slack automations—so your team does not inherit more software than it can handle.
+
+**How do you help teams adopt the new processes?**  
+We deliver clear SOPs, train the people responsible for each stage, and stay available during the first weeks to adjust flows, dashboards, and automations until the process sticks.

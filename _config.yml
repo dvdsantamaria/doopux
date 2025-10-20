@@ -1,3 +1,23 @@
 permalink: pretty
 baseurl: ""
 includes_dir: partials
+
+title: "Doop UX"
+description: "Doop UX blends UX strategy, performant web development, AI automation and growth execution so brands launch faster and scale smarter."
+url: "https://doopux.com"
+locale: "en_US"
+
+default_meta_image: "/assets/doop-website-design.png"
+default_hero_image: "/assets/doop-website-design.png"
+
+organization:
+  name: "Doop UX"
+  legal_name: "Doop UX"
+  url: "https://doopux.com"
+  logo: "/assets/logo.png"
+  same_as: []
+  area_served: "Global"
+
+seo_defaults:
+  robots: "index,follow"
+  twitter_card: "summary_large_image"

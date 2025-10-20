@@ -1,11 +1,31 @@
 ---
+meta_title: "Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX"
+meta_description: "Doop UX’s service ecosystem: website development, UX consulting, AI automation, SEO for AI answers, business process optimization and growth strategy executed end-to-end."
+meta_keywords: "website development, ux consulting, ai automation, seo for ai answers, business process optimization, growth strategy"
+meta_image: "/assets/doop-website-design.png"
+schema_services:
+  - name: "Website Development"
+    description: "Architecture, performance, and CMS builds that keep your site fast and editable."
+  - name: "UX Consulting"
+    description: "Research, flows, and usability reviews tied directly to business outcomes."
+  - name: "AI Automation"
+    description: "AI agents and workflow automation that connect across your stack."
+  - name: "SEO"
+    description: "Technical SEO and content programs that compound organic reach."
+  - name: "SEO for AI Answers"
+    description: "Answer engine optimisation so AI summaries cite your brand."
+  - name: "Comprehensive Digital Marketing"
+    description: "Full-funnel campaigns linking ads, email, content, and analytics."
+  - name: "Business Process Optimization"
+    description: "SOPs, dashboards, and automation that remove operational drag."
+  - name: "Growth Strategies"
+    description: "Positioning and experiment roadmaps to find traction faster."
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
   <style>
     /* Overrides for this page only */
@@ -14,131 +34,149 @@
     .nav{color:#151515}
   </style>
 
-  <!-- === SEO (added) === -->
-  <meta name="title" content="Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX" />
-  <meta name="description" content="Doop UX’s service ecosystem: Website Development, UX Consulting, AI automation, SEO for AI Answers, process optimization and growth strategies—fast MVPs and measurable outcomes." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  {% assign meta_title = page.meta_title | default: site.title %}
+  {% assign meta_description = page.meta_description | default: site.description %}
+  {% assign keywords = page.meta_keywords %}
+  {% assign canonical = page.url | absolute_url %}
+  {% assign robots = page.meta_robots | default: site.seo_defaults.robots | default: 'index,follow' %}
+  {% assign raw_meta_image = page.meta_image | default: site.default_meta_image %}
+  {% if raw_meta_image %}
+    {% if raw_meta_image contains '://' %}
+      {% assign meta_image = raw_meta_image %}
+    {% else %}
+      {% assign meta_image = raw_meta_image | absolute_url %}
+    {% endif %}
+  {% endif %}
+  {% assign site_logo_path = site.organization.logo | default: '/assets/logo.png' %}
+  {% if site_logo_path contains '://' %}
+    {% assign site_logo = site_logo_path %}
+  {% else %}
+    {% assign site_logo = site_logo_path | absolute_url %}
+  {% endif %}
+  {% assign site_root = '/' | absolute_url %}
+  {% assign locale = site.locale | default: 'en_US' %}
+
+  <title>{{ meta_title }}</title>
+  <meta name="title" content="{{ meta_title }}">
+  <meta name="description" content="{{ meta_description }}">
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  <meta name="robots" content="{{ robots }}">
+  <meta name="googlebot" content="{{ robots }}">
+  <meta name="bingbot" content="{{ robots }}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="{{ canonical }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
-  <meta property="og:title" content="Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX" />
-  <meta property="og:description" content="Doop UX’s service ecosystem: Website Development, UX Consulting, AI automation, SEO for AI Answers, process optimization and growth strategies—fast MVPs and measurable outcomes." />
-  <meta property="og:image" content="{{ '/assets/doop-website-design.png' | absolute_url }}" />
+  <meta property="og:title" content="{{ meta_title }}" />
+  <meta property="og:description" content="{{ meta_description }}" />
+  <meta property="og:url" content="{{ canonical }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:locale" content="{{ locale }}" />
+  {% if meta_image %}
+  <meta property="og:image" content="{{ meta_image }}" />
+  <meta property="og:image:secure_url" content="{{ meta_image }}" />
+  <meta property="og:image:alt" content="{{ meta_title }}" />
+  {% endif %}
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX" />
-  <meta name="twitter:description" content="Doop UX’s service ecosystem: Website Development, UX Consulting, AI automation, SEO for AI Answers, process optimization and growth strategies—fast MVPs and measurable outcomes." />
-  <meta name="twitter:image" content="{{ '/assets/doop-website-design.png' | absolute_url }}" />
+  <meta name="twitter:card" content="{{ site.seo_defaults.twitter_card | default: 'summary_large_image' }}" />
+  <meta name="twitter:title" content="{{ meta_title }}" />
+  <meta name="twitter:description" content="{{ meta_description }}" />
+  {% if site.twitter_username %}
+  <meta name="twitter:site" content="@{{ site.twitter_username | replace:'@','' }}" />
+  {% endif %}
+  {% if meta_image %}
+  <meta name="twitter:image" content="{{ meta_image }}" />
+  <meta name="twitter:image:alt" content="{{ meta_title }}" />
+  {% endif %}
 
-  <!-- JSON-LD Schema (WebSite + WebPage + Breadcrumbs + Services list) -->
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "{{ site_root }}#organization",
+        "name": {{ site.organization.name | default: site.title | jsonify }},
+        "legalName": {{ site.organization.legal_name | default: site.organization.name | jsonify }},
+        "url": {{ site.organization.url | default: site_root | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ site_logo | jsonify }}
+        },
+        "sameAs": {{ site.organization.same_as | jsonify }}
+      },
+      {
         "@type": "WebSite",
-        "@id": "{{ '/' | absolute_url }}#website",
-        "name": "Doop UX",
-        "url": "{{ '/' | absolute_url }}",
+        "@id": "{{ site_root }}#website",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site_root | jsonify }},
+        "description": {{ site.description | jsonify }},
         "publisher": {
-          "@type": "Organization",
-          "name": "Doop UX",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "{{ '/assets/logo.png' | absolute_url }}"
-          }
-        }
+          "@id": "{{ site_root }}#organization"
+        },
+        "inLanguage": "{{ locale }}"
       },
       {
         "@type": "WebPage",
-        "@id": "{{ page.url | absolute_url }}#webpage",
-        "url": "{{ page.url | absolute_url }}",
-        "name": "Service Ecosystem — Doop UX",
-        "isPartOf": { "@id": "{{ '/' | absolute_url }}#website" },
-        "description": "Doop UX’s service ecosystem covering Website Development, UX Consulting, AI automation, SEO for AI Answers, process optimization and growth strategies."
+        "@id": "{{ canonical }}#webpage",
+        "url": {{ canonical | jsonify }},
+        "name": {{ meta_title | jsonify }},
+        "description": {{ meta_description | jsonify }},
+        "isPartOf": { "@id": "{{ site_root }}#website" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": {{ meta_image | jsonify }}
+        },
+        "inLanguage": "{{ locale }}"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "{{ page.url | absolute_url }}#breadcrumbs",
+        "@id": "{{ canonical }}#breadcrumbs",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "{{ '/' | absolute_url }}"
+            "item": "{{ site_root }}"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Service Ecosystem",
-            "item": "{{ page.url | absolute_url }}"
+            "item": "{{ canonical }}"
           }
         ]
-      },
+      }{% if page.schema_services %},
       {
         "@type": "ItemList",
-        "@id": "{{ page.url | absolute_url }}#services",
-        "name": "Service Ecosystem",
+        "@id": "{{ canonical }}#services",
+        "name": "Doop UX Services",
         "itemListElement": [
-          {
-            "@type": "Service",
-            "name": "Website Development",
-            "description": "Websites built for outcomes: clean architecture, performance, accessibility and SEO baked in."
-          },
-          {
-            "@type": "Service",
-            "name": "UX Consulting",
-            "description": "Research, flows and usability to align product decisions with business goals."
-          },
-          {
-            "@type": "Service",
-            "name": "Idea to Project",
-            "description": "From idea to MVP: scoped, lean builds that launch fast and scale safely."
-          },
-          {
-            "@type": "Service",
-            "name": "AI Automation",
-            "description": "Agents and workflows to cut busywork and integrate with your existing tools."
-          },
-          {
-            "@type": "Service",
-            "name": "SEO",
-            "description": "Technical SEO, content strategy and structured data to win intent-led traffic."
-          },
-          {
-            "@type": "Service",
-            "name": "Comprehensive Digital Marketing",
-            "description": "Full-funnel campaigns: ads, email, analytics and CRO tied to revenue."
-          },
-          {
-            "@type": "Service",
-            "name": "Business Process Optimization",
-            "description": "SOPs, integrations and dashboards that reduce errors and delays."
-          },
-          {
-            "@type": "Service",
-            "name": "SEO for AI Answers",
-            "description": "Structured SEO to win answer boxes, featured snippets and AI summaries."
-          },
-          {
-            "@type": "Service",
-            "name": "Growth Strategies",
-            "description": "Positioning, offers and experiments to find traction and scale what works."
-          }
+          {% for service in page.schema_services %}{
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "item": {
+              "@type": "Service",
+              "name": {{ service.name | jsonify }},
+              "description": {{ service.description | jsonify }},
+              "provider": {
+                "@id": "{{ site_root }}#organization"
+              }
+            }
+          }{% unless forloop.last %},{% endunless %}{% endfor %}
         ]
-      }
+      }{% endif %}
     ]
   }
   </script>
-  <!-- === /SEO (added) === -->
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
 
-  <!-- Header with grey logo -->
   <header class="container-wide">
     <div class="row">
       <div class="brand">

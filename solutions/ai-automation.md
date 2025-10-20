@@ -3,6 +3,21 @@ layout: service
 title: AI Automation
 intro: "AI agents and workflows that automate busywork without compromising control."
 meta_description: "Design and deploy AI automations that plug into your stack, save time, and stay accountable."
+meta_title: "AI Automation Services for Lean Teams — Doop UX"
+meta_keywords: "ai automation, workflow automation, process automation, ai agents, automation consulting, small business automation"
+service_type: "AI automation services"
+service_audience: "Operations and marketing teams in growing companies"
+service_offers:
+  - "Automation and process mapping workshop"
+  - "AI tooling and integration plan"
+  - "Pilot build with training and documentation"
+faq:
+  - question: "How do you decide which processes to automate with AI?"
+    answer: "We start with a discovery workshop to map your current workflows, quantify the effort involved, and rank tasks by impact and risk. Only the steps that show measurable gains and can be monitored safely move into automation."
+  - question: "What tools do you work with for AI automation?"
+    answer: "We are platform agnostic. Depending on your stack we combine GPT models, Zapier, Make, n8n, custom APIs, or RPA tools—and document everything so your team retains control."
+  - question: "How do you measure success for AI automation projects?"
+    answer: "Each pilot includes baseline metrics—time saved, error rate, response speed or cost per task—so we can verify impact before scaling the automation across your business."
 hero_image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2000&q=80"
 ---
 
@@ -92,3 +107,16 @@ With Doop UX you get:
 – A scalable, tech-forward business foundation
 
 Let’s stop trading hours for effort — and start automating profit and productivity.
+
+---
+
+### Frequently asked questions
+
+**How do you decide which processes to automate with AI?**  
+We start with a discovery workshop to map your current workflows, quantify the effort involved, and rank tasks by impact and risk. Only the steps that show measurable gains and can be monitored safely move into automation.
+
+**What tools do you work with for AI automation?**  
+We are platform agnostic. Depending on your stack we combine GPT models, Zapier, Make, n8n, custom APIs, or RPA tools—and document everything so your team retains control.
+
+**How do you measure success for AI automation projects?**  
+Each pilot includes baseline metrics—time saved, error rate, response speed or cost per task—so we can verify impact before scaling the automation across your business.
