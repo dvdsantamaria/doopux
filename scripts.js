@@ -258,20 +258,38 @@ function ensureToast(){
   return t;
 }
 
-function showSuccessToast(msg = 'Your message was sent successfully.', timeoutMs = 3500){
+const TOAST_RESERVE_VAR = '--toast-min-height';
+const TOAST_RESERVE_VALUE = '48px';
+const docEl = document.documentElement;
+let toastTimer = null;
+
+function reserveToastSpace(active){
+  docEl.style.setProperty(TOAST_RESERVE_VAR, active ? TOAST_RESERVE_VALUE : '');
+}
+
+function hideToastAfterDelay(toastEl, timeoutMs){
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toastEl.classList.remove('show');
+    reserveToastSpace(false);
+  }, timeoutMs);
+}
+
+function showToast(msg, { variant = 'success', timeoutMs = 3500 } = {}){
   const toastEl = ensureToast();
-  toastEl.innerHTML = `<div class="card">${msg}</div>`;
+  const isError = variant === 'error';
+  toastEl.innerHTML = `<div class="card${isError ? ' error' : ''}">${msg}</div>`;
   toastEl.classList.add('show');
-  clearTimeout(showSuccessToast._t);
-  showSuccessToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
+  reserveToastSpace(true);
+  hideToastAfterDelay(toastEl, timeoutMs);
+}
+
+function showSuccessToast(msg = 'Your message was sent successfully.', timeoutMs = 3500){
+  showToast(msg, { variant: 'success', timeoutMs });
 }
 
 function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs = 5500){
-  const toastEl = ensureToast();
-  toastEl.innerHTML = `<div class="card error">${msg}</div>`;
-  toastEl.classList.add('show');
-  clearTimeout(showErrorToast._t);
-  showErrorToast._t = setTimeout(() => toastEl.classList.remove('show'), timeoutMs);
+  showToast(msg, { variant: 'error', timeoutMs });
 }
 
 /* ============ LOAD FOOTER PARTIAL ============ */

@@ -1,0 +1,442 @@
+{
+  "portfolio1": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio1.jpg",
+    "placeholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABQBQCdASoYABoAPxmAtVSsqCSjKAqpkCMJYwDI1BGQPvHKLJ318E3sLfYSUK6Nlr57u0AA/ryWluG3+ERmkRBOGx7FhoPsfc7/K0QrapTo2i3i5blPxM59VaAtKClEac3jirhSuVQcqF18xHWxVLIWjUfhjTnwluU9cFsbYegbmZWQrp8NtIiHKzHUZ4F0+U9RxT/i3YrB07ZSQPXsRcHWZFl4BOnAl7Hq0k0GoN4anR9NHTLybOD9cykAAAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio1/portfolio1-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio1/portfolio1-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio1/portfolio1-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio1/portfolio1-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio1/portfolio1-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio1/portfolio1-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio1/portfolio1-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio1/portfolio1-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio2": {
+    "width": 1932,
+    "height": 1288,
+    "fallback": "/assets/portfolio2.jpg",
+    "placeholder": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAAAQBQCdASoYABAAPxl2slEspySisAgBkCMJZACdAdwMYVzWnaAijEMllH3Yv3VbfyrAAP7X6XR5pWAqenkISmOIMe9h8SzKVmFiwuXLSMHib8lY+ev24OaQzmNMET5sKxX7MAV/sfB3A7RJki7tZCKtbEKwZen/54tTZy2U72XtumM5f/S259fC0zMbKJ1rkNK6obecwfjUomG8SJfz9sPZnXr6ScGNEFZ08OjwNw5DDroVLUxN/7G1THTruvIGg2ggLPRBAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio2/portfolio2-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio2/portfolio2-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio2/portfolio2-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio2/portfolio2-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio2/portfolio2-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio2/portfolio2-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio2/portfolio2-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio2/portfolio2-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio3": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio3.jpg",
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoYABoAPxmEulYsqKWjqAgBkCMJZwDL4BEhr6wF3mV/Z7lQkP+PDUt5/1mEAAD+zJhSO/ty9BpHzEkvovXKCI6MkINoIgAN2stWpY8KfkBEBtQu7gzMhtWk7EsoDXlTWFGSHEbod/ebemZF7XT5ZdwVNv3PdukwQqwxM7hUFuHxJPe9weFsHKQ2S69pVHaDITBHhPa7hMG9PEyD2qwBWW5JMpIudFHAAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio3/portfolio3-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio3/portfolio3-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio3/portfolio3-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio3/portfolio3-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio3/portfolio3-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio3/portfolio3-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio3/portfolio3-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio3/portfolio3-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio4": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio4.jpg",
+    "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADwBACdASoYABoAPxl+t1Ssp6UjKAqpkCMJQAAFzaJvyurkFUF40AUx7wi19HY4KEAA/nk95sx13ucsLNyxV33Xqg/gowI+WKwCNHMt/EW2Twe+jaey/kj3v3jAPucZsfEH0srriZ9OXVP+chuN4P4llN4KWjVsq803ixsIoYNaZRcY039MiBeIejB+36wHlSTZ6Zd55PN37qTgxElTiWYnOK3GVN8eq8MAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio4/portfolio4-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio4/portfolio4-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio4/portfolio4-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio4/portfolio4-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio4/portfolio4-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio4/portfolio4-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio4/portfolio4-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio4/portfolio4-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio5": {
+    "width": 2418,
+    "height": 1614,
+    "fallback": "/assets/portfolio5.jpg",
+    "placeholder": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACwBACdASoYABAAPxl0slCspqSisAgBkCMJbAC7BagxgKncYAriOcYn9Zj2jfkgAP5ekhjg4F8myhtkNpwLeoezk1TFAhnRwUPJJQ2aTveqlixYbSz6phrXfs+3FNn0htNNpKQQ76TX51GHaCMFSJmBuSbYljFfH25irzoQswO/TY0Rk8HIBW9DRHWwm2EG8QHBTRW47aOpBtO5iY+qaFfq0P3+ZfeWuHcm1n/BFb/guEAA7EIEygAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio5/portfolio5-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio5/portfolio5-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio5/portfolio5-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio5/portfolio5-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio5/portfolio5-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio5/portfolio5-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio5/portfolio5-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio5/portfolio5-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio6": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio6.jpg",
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAwBQCdASoYABoAPxl0tVOspiSisBgIAZAjCWMAy6QQWFyVw44rIOBEj9UAKmvhNAHqOADyc5OZs5cNG1r1C0cCPYlYKMn5BjnCN401YVOKqhtDHASC5Uj0nzom6ZhAgZb+4mwYFW97nm+oN+h70r6m59wClye+Zx5Aescl9c6y/LZ1PuMssar+591F8u6PcUUAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio6/portfolio6-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio6/portfolio6-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio6/portfolio6-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio6/portfolio6-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio6/portfolio6-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio6/portfolio6-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio6/portfolio6-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio6/portfolio6-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio7": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio7.jpg",
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADQBACdASoYABoAPxmAtFSsqCSjKAqpkCMJZgDO7BEhtxVpoCANzJy7q9fPYXvgAAD+ZtKdfPgyaFKScsuadbTG/39Z7Lu0HAbMSvTD9wmTDPCguo/9q6MNsNvjighQSw9k3ULa6xQpSysRFs2AUexgPrp9U5M99k4pliV51h6Ig4Vh2NBV/z5tR2q5XLufiKYFGoGdYjCAgUjEAQtAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio7/portfolio7-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio7/portfolio7-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio7/portfolio7-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio7/portfolio7-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio7/portfolio7-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio7/portfolio7-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio7/portfolio7-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio7/portfolio7-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio8": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio8.jpg",
+    "placeholder": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAADwBQCdASoYABoAPxl4rlEspyQisBgMAZAjCWYAvzwIEeAEknA9gZPOttff2HeUJX95ISQxSIRZgAD+48mXwb1X0KijDWj8y9z3PPXYwtGJxD3H3MaI+AiovXLieJHfoaytkG+J9HuCxB0HftSE7Wleaj9M0uJrZ93DM7kCF/fSTPBXGlMep4sDZL2Jml3fUsPNn/LdaC24Xzz9ezMbfi39lAXnqQ7DHifMGoafQReWfz8iEOmcEYRB9RLxyHltC3gmecO8nukqjew5pVq2qqGP+16u2NN4SGAAAAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio8/portfolio8-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio8/portfolio8-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio8/portfolio8-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio8/portfolio8-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio8/portfolio8-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio8/portfolio8-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio8/portfolio8-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio8/portfolio8-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio9": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio9.jpg",
+    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBACdASoYABoAPxmCuFYsqCUjqAgBkCMJZwAALlqy5hZQsj+HJfQYAr5cEm/gAP7GBXMaGRwJQkNSGUw+OTxR6MbPc0uQOM5puzyLGRnrFmnXVZZgFBCiohO2XepEAIp9bt4wBjqGJUHU/JmQehxOMe8DzqP6nR9cJMXtucm1NTapjmAh/bNcWp4iBX8z7cRrok+YBI4VcDBDgcmq45TS8HBb6hrpf7u9B4If5upFQCuFSeSfoyPLlNCH1fczJRAgAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio9/portfolio9-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio9/portfolio9-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio9/portfolio9-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio9/portfolio9-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio9/portfolio9-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio9/portfolio9-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio9/portfolio9-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio9/portfolio9-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio10": {
+    "width": 1614,
+    "height": 1850,
+    "fallback": "/assets/portfolio10.jpg",
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQBACdASoYABwAPxl+uFQsqCWjKAqpkCMJZwAALcNs0oi0eT853JNE6OjxK1skAAD+3tr1tt4519G9Q6qLvCRTwjcih7Br5gU5GXlfOMePlNd37XdhY6NrUBP4y3Xw0jy/rNwGJRObN/BBxiM7XCO08GssPjhNoBQJ5aFJ491mjezaYlM0OSzAbvndAkgPGkAAAA==",
+    "sources": {
+      "avif": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio10/portfolio10-360.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio10/portfolio10-640.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio10/portfolio10-960.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio10/portfolio10-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio10/portfolio10-360.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio10/portfolio10-640.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio10/portfolio10-960.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio10/portfolio10-1280.webp"
+        }
+      ]
+    }
+  }
+}

@@ -34,7 +34,10 @@ schema_projects:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
   <style>
     /* Overrides for this page only */
     body{ background:#efefef; }                 /* flat grey background */
@@ -172,13 +175,14 @@ schema_projects:
   </script>
 </head>
 <body>
+  <div id="toast-anchor" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
 
   <header class="container-wide">
     <div class="row">
       <div class="brand">
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/logo.png" alt="doop" />
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
         </a>
       </div>
 
@@ -209,7 +213,7 @@ schema_projects:
       <div class="solutions-grid">
         <!-- uses portfolio1,3,4,6,7,8,9,10 -->
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio1.jpg" alt="Boatique Marine website">
+          {% include partials/picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Boatique Marine</h3>
             <p>Luxury marine charter site built for speed, clarity, and effortless enquiries.</p>
@@ -217,7 +221,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio3.jpg" alt="Prana Ecotherapy website">
+          {% include partials/picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Prana Ecotherapy</h3>
             <p>Site redesign improving structure, readability and perceived quality.</p>
@@ -225,7 +229,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio4.jpg" alt="Northgate platform">
+          {% include partials/picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Northgate</h3>
             <p>Modular content system to scale fast while keeping consistency.</p>
@@ -233,7 +237,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio6.jpg" alt="Beyond Limits Children's Foundation site">
+          {% include partials/picture.html id="portfolio6" alt="Beyond Limits Children's Foundation site" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Beyond Limits Children's Foundation</h3>
             <p>Donation journey rebuilt to make giving effortless for families and sponsors.</p>
@@ -241,7 +245,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio7.jpg" alt="Calida Ellora brand">
+          {% include partials/picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Calida Ellora</h3>
             <p>Warm wellness brand system with calming visuals and expandable programs.</p>
@@ -249,7 +253,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio8.jpg" alt="Electric Vibes experience">
+          {% include partials/picture.html id="portfolio8" alt="Electric Vibes experience" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Electric Vibes</h3>
             <p>Immersive ecommerce experience for festival gear with dynamic merchandising.</p>
@@ -257,7 +261,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio9.jpg" alt="NTT Pilates platform">
+          {% include partials/picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>NTT Pilates</h3>
             <p>Membership flows and scheduling tools tailored for a boutique Pilates studio.</p>
@@ -265,7 +269,7 @@ schema_projects:
         </figure>
   
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio10.jpg" alt="The One landing page">
+          {% include partials/picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>The One</h3>
             <p>Landing page to present the product, capture leads and highlight value quickly.</p>

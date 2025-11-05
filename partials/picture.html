@@ -1,0 +1,30 @@
+{% assign manifest = site.data['image-manifest'] %}
+{% assign media = manifest[include.id] %}
+{% assign img_width = include.width | default: media.width %}
+{% assign img_height = include.height | default: media.height %}
+{% assign loading = include.loading | default: 'lazy' %}
+{% assign decoding = include.decoding | default: 'async' %}
+{% assign picture_class = include.picture_class %}
+{% assign img_class = include.img_class %}
+{% assign sizes_attr = include.sizes | default: '100vw' %}
+
+{% if media %}
+  {% capture avif_srcset %}
+  {% for source in media.sources.avif %}
+  {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  {% endcapture %}
+  {% capture webp_srcset %}
+  {% for source in media.sources.webp %}
+  {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  {% endcapture %}
+  <picture{% if picture_class %} class="{{ picture_class }}"{% endif %}>
+    <source type="image/avif" srcset="{{ avif_srcset | strip }}" sizes="{{ sizes_attr }}">
+    <source type="image/webp" srcset="{{ webp_srcset | strip }}" sizes="{{ sizes_attr }}">
+    <img src="{{ site.baseurl }}{{ media.fallback }}" alt="{{ include.alt }}" width="{{ img_width }}" height="{{ img_height }}" loading="{{ loading }}" decoding="{{ decoding }}"{% if include.fetchpriority %} fetchpriority="{{ include.fetchpriority }}"{% endif %}{% if img_class %} class="{{ img_class }}"{% endif %}>
+  </picture>
+{% else %}
+  {% assign fallback_src = include.src | default: include.fallback %}
+  <img src="{{ fallback_src }}" alt="{{ include.alt }}" width="{{ img_width }}" height="{{ img_height }}" loading="{{ loading }}" decoding="{{ decoding }}"{% if include.fetchpriority %} fetchpriority="{{ include.fetchpriority }}"{% endif %}{% if img_class %} class="{{ img_class }}"{% endif %}>
+{% endif %}

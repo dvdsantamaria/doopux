@@ -26,7 +26,10 @@ schema_services:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
   <style>
     /* Overrides for this page only */
     body{ background:#efefef; }                 /* flat grey background */
@@ -175,13 +178,14 @@ schema_services:
   </script>
 </head>
 <body>
+  <div id="toast-anchor" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
 
   <header class="container-wide">
     <div class="row">
       <div class="brand">
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/logo.png" alt="doop" />
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
         </a>
       </div>
 
@@ -220,7 +224,7 @@ schema_services:
             </p>
             <figure class="eco-figure">
               <!-- use the file with the exact name -->
-              <img src="{{ site.baseurl }}/assets/icons_0001_Layer-7.png" alt="Website Development icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0001_Layer-7.png" alt="Website Development icon" width="1011" height="1011" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -234,7 +238,7 @@ schema_services:
               Every element has a reason behind it.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0000_Layer-8.png" alt="UX Consulting icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0000_Layer-8.png" alt="UX Consulting icon" width="1003" height="1003" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -247,7 +251,7 @@ schema_services:
               We develop only what is necessary to move forward. Whether it is a full site or a simple MVP, we launch fast, clean and ready to grow.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Idea to Project icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Idea to Project icon" width="1011" height="1011" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -260,7 +264,7 @@ schema_services:
               Build AI agents and workflows that automate busywork, integrate with your stack, and deliver real time savings safely without breaking quality or control.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0007_Layer-1.png" alt="AI Automation icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0007_Layer-1.png" alt="AI Automation icon" width="1024" height="944" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -272,7 +276,7 @@ schema_services:
               Technical SEO that compounds: site architecture, speed, structured data, content strategy, backlinks—so you rank for intent, not keywords, and stay there.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0002_Layer-6.png" alt="SEO icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0002_Layer-6.png" alt="SEO icon" width="1005" height="1005" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -284,7 +288,7 @@ schema_services:
               From ads to email to analytics, we plan and run full-funnel campaigns that attract, nurture and convert—measured, iterated, and aligned to revenue goals. 
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0006_Layer-2.png" alt="Digital Marketing icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0006_Layer-2.png" alt="Digital Marketing icon" width="1020" height="1020" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -297,7 +301,7 @@ schema_services:
               Map, simplify and automate operations at: SOPs, integrations, dashboards and hand-offs that cut delays and errors, keeping teams accountable and informed.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0005_Layer-3.png" alt="Business Process icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0005_Layer-3.png" alt="Business Process icon" width="1010" height="1009" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -309,7 +313,7 @@ schema_services:
               Align your content for answer engines so AI summaries, featured snippets, and overviews cite your brand first.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0003_Layer-5.png" alt="SEO for AI Answers icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0003_Layer-5.png" alt="SEO for AI Answers icon" width="1013" height="948" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -321,7 +325,7 @@ schema_services:
               Plan and test smart bets: positioning, offers, price, landing pages and funnels—experiments backed by analytics to find traction and scale what works up. 
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Growth Strategies icon" />
+              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Growth Strategies icon" width="1011" height="1011" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>

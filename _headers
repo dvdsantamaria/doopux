@@ -1,0 +1,17 @@
+/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/generated/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/scripts.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles.css
+  Cache-Control: public, max-age=31536000, immutable

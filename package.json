@@ -1,0 +1,14 @@
+{
+  "name": "doopux-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "optimize:images": "node tools/prepare-images.mjs",
+    "perf:check": "node tools/perf-guard.mjs"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.12.0",
+    "lighthouse": "^12.8.2",
+    "sharp": "^0.33.2"
+  }
+}

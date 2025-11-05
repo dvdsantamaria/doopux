@@ -30,7 +30,177 @@ faq:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" />
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  {% assign lcp_media = site.data['image-manifest'].portfolio1 %}
+  {% if lcp_media %}
+    {% capture lcp_avif_srcset %}
+    {% for source in lcp_media.sources.avif %}
+    {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+    {% endcapture %}
+    {% assign lcp_primary = lcp_media.sources.avif | last %}
+    <link rel="preload" as="image" href="{{ site.baseurl }}{{ lcp_primary.path }}" imagesrcset="{{ lcp_avif_srcset | strip }}" imagesizes="(max-width: 640px) 72vw, 360px" type="image/avif" fetchpriority="high">
+  {% endif %}
+  <style>
+    :root{
+      --bg-start:#be4fc1;
+      --bg-middle:#8c62d6;
+      --bg-end:#77b5d6;
+      --grid-color:255,255,255;
+      --grid-opacity:.06;
+      --grid-size:48px;
+      --text:#fff;
+      --accent:#f09cff;
+      --toast-min-height:48px;
+      --content-max:1220px;
+      --header-max:1320px;
+      --header-h:clamp(88px, 11vh, 144px);
+      --section-pad:clamp(56px, 9vw, 140px);
+    }
+    *,*::before,*::after{box-sizing:border-box;}
+    html,body{min-height:100%;}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:"Satoshi",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;
+      background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none;}
+    .bg-grid{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(var(--grid-color), var(--grid-opacity)) 0,
+          rgba(var(--grid-color), var(--grid-opacity)) 1px,
+          transparent 1px,
+          transparent var(--grid-size)
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(var(--grid-color), var(--grid-opacity)) 0,
+          rgba(var(--grid-color), var(--grid-opacity)) 1px,
+          transparent 1px,
+          transparent var(--grid-size)
+        );
+      -webkit-mask-image:
+        radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
+        linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
+      mask-image:
+        radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
+        linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
+      -webkit-mask-repeat:no-repeat;
+      mask-repeat:no-repeat;
+    }
+    header.container-wide{
+      position:relative;
+      z-index:2;
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
+      padding-block:clamp(16px, 2.6vw, 34px);
+    }
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+    }
+    .brand img{display:block;width:120px;height:auto;}
+    .nav{display:flex;gap:28px;align-items:center;font-size:16px;opacity:.95;}
+    .hero{
+      position:relative;
+      z-index:1;
+      padding:0;
+      min-height:calc(100dvh - var(--header-h));
+      display:grid;
+      grid-template-rows:1fr auto 1fr 40dvh;
+      gap:0;
+    }
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:18px;
+      letter-spacing:1.4px;
+      text-transform:uppercase;
+      opacity:.95;
+    }
+    .eyebrow .dot{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      line-height:1;
+      color:#ee64ff;
+    }
+    .copy{grid-row:2;}
+    .copy h1{
+      margin:0.5ch auto;
+      text-align:center;
+      line-height:1.06;
+      font-size:clamp(42px, 5.3vw, 89px);
+      max-width:22ch;
+    }
+    .projects-inline{
+      grid-row:4;
+      position:relative;
+      width:100svw;
+      height:100%;
+      margin-left:calc(50% - 50svw);
+      overflow:hidden;
+      align-self:end;
+      min-height:clamp(220px, 40svh, 420px);
+    }
+    .projects-clip{position:absolute;inset:0;overflow:hidden;}
+    .sheet{width:100%;height:100%;filter:drop-shadow(0 24px 48px rgba(0,0,0,.28));}
+    .marquee{
+      display:flex;
+      gap:0;
+      height:100%;
+      width:max-content;
+      animation:scrollX 60s linear infinite;
+      will-change:transform;
+      line-height:0;
+    }
+    @media (prefers-reduced-motion:reduce){.marquee{animation:none;}}
+    @keyframes scrollX{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
+    .project{
+      flex:0 0 auto;
+      display:block;
+      width:clamp(200px, 32vw, 360px);
+      aspect-ratio:var(--project-aspect, 3 / 4);
+      overflow:hidden;
+      border-radius:clamp(16px, 4vw, 28px);
+      background-color:rgba(255,255,255,.08);
+      background-image:var(--project-placeholder, none);
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:center;
+    }
+    .project img{
+      width:100%;
+      height:100%;
+      max-width:none;
+      object-fit:cover;
+      display:block;
+    }
+    @media (max-width:640px){
+      .project{width:clamp(180px, 72vw, 280px);}
+    }
+    #toast-anchor{
+      min-height:var(--toast-min-height);
+      pointer-events:none;
+    }
+  </style>
+  <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
 
   <!-- FAVICONS -->
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
@@ -186,13 +356,15 @@ faq:
   }
   </script>
 </head>
-<body class="{{ page.body_class }}">  <div class="bg-grid" aria-hidden="true"></div>
+<body class="{{ page.body_class }}">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div id="toast-anchor" aria-hidden="true"></div>
 
   <header class="container-wide">
     <div class="row">
       <div class="brand">
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/logo.png" alt="doop" />
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
         </a>
       </div>
 
@@ -225,20 +397,45 @@ faq:
       <div class="projects-clip">
         <div class="sheet">
           <div class="marquee" id="marquee">
+            {% assign manifest = site.data['image-manifest'] %}
             <!-- Set A -->
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio1.jpg" alt="Boatique Marine homepage preview"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio2.jpg" alt="eFlow App product screens"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio3.jpg" alt="Prana Ecotherapy website redesign"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio4.jpg" alt="Northgate modular content system"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio5.jpg" alt="SAMPP digital platform preview"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio6.jpg" alt="Beyond Limits Children's Foundation donation journey"></figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px) 72vw, 360px" loading="eager" fetchpriority="high" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
             <!-- Set B (dup) -->
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio1.jpg" alt="Boatique Marine homepage preview"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio2.jpg" alt="eFlow App product screens"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio3.jpg" alt="Prana Ecotherapy website redesign"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio4.jpg" alt="Northgate modular content system"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio5.jpg" alt="SAMPP digital platform preview"></figure>
-            <figure class="project"><img src="{{ site.baseurl }}/assets/portfolio6.jpg" alt="Beyond Limits Children's Foundation donation journey"></figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
+            <figure class="project" style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
+              {% include partials/picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey" sizes="(max-width: 640px) 72vw, 360px" %}
+            </figure>
           </div>
         </div>
       </div>
@@ -322,7 +519,7 @@ faq:
 
       <div class="solutions-grid">
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio1.jpg" alt="Boatique Marine website">
+          {% include partials/picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Boatique Marine</h3>
             <p>Luxury marine charter site built for speed, clarity, and effortless enquiries.</p>
@@ -330,7 +527,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio3.jpg" alt="Prana Ecotherapy website">
+          {% include partials/picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Prana Ecotherapy</h3>
             <p>Site redesign improving structure, readability and perceived quality.</p>
@@ -338,7 +535,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio4.jpg" alt="Northgate platform">
+          {% include partials/picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Northgate</h3>
             <p>Modular content system to scale fast while keeping consistency.</p>
@@ -346,7 +543,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio6.jpg" alt="Beyond Limits Children's Foundation site">
+          {% include partials/picture.html id="portfolio6" alt="Beyond Limits Children's Foundation site" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Beyond Limits Children's Foundation</h3>
             <p>Donation journey rebuilt to make giving effortless for families and sponsors.</p>
@@ -354,7 +551,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio7.jpg" alt="Calida Ellora brand">
+          {% include partials/picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Calida Ellora</h3>
             <p>Warm wellness brand system with calming visuals and expandable programs.</p>
@@ -362,7 +559,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio8.jpg" alt="Electric Vibes experience">
+          {% include partials/picture.html id="portfolio8" alt="Electric Vibes experience" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Electric Vibes</h3>
             <p>Immersive ecommerce experience for festival gear with dynamic merchandising.</p>
@@ -370,7 +567,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio9.jpg" alt="NTT Pilates platform">
+          {% include partials/picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>NTT Pilates</h3>
             <p>Membership flows and scheduling tools tailored for a boutique Pilates studio.</p>
@@ -378,7 +575,7 @@ faq:
         </figure>
 
         <figure class="solution">
-          <img src="{{ site.baseurl }}/assets/portfolio10.jpg" alt="The One landing page">
+          {% include partials/picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>The One</h3>
             <p>Landing page to present the product, capture leads and highlight value quickly.</p>
@@ -396,11 +593,11 @@ faq:
       </header>
   
       <div class="logos-grid" aria-label="Expert platforms">
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace" width="592" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce" width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589" height="128" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </section>
