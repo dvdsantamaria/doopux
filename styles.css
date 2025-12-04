@@ -495,17 +495,14 @@ figure{margin:0}
   max-height:clamp(24px, 6vw, 56px);
 }
 
-/* Desktop: switch back to a 5-column grid */
+/* Desktop: keep generous tile width so logos don't shrink */
 @media (min-width:1025px){
   .logos-grid{
-    display:grid;
-    grid-template-columns: repeat(5, minmax(160px, 1fr));
-    gap: 3rem;
-    align-items:stretch;
-    justify-items:center;
+    gap: clamp(24px, 3vw, 48px);
   }
   .logo{
-    max-width:none;
+    flex: 1 1 clamp(220px, 20vw, 320px);
+    max-width: 360px;
     min-block-size: 110px;
     border-color:#eee;
   }
