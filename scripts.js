@@ -31,18 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
   shell.className = 'tst-card is-active';
 
   const stage = document.createElement('div');
-  stage.style.overflow   = 'hidden';
-  stage.style.position   = 'relative';
-  stage.style.display    = 'flex';
-  stage.style.flex       = '1 1 auto';
-  stage.style.minHeight  = '0';
+  stage.style.overflow = 'hidden';
+  stage.style.position = 'relative';
+  stage.style.display = 'flex';
+  stage.style.flex = '1 1 auto';
+  stage.style.minHeight = '0';
 
   const strip = document.createElement('div');
-  strip.style.display       = 'flex';
+  strip.style.display = 'flex';
   strip.style.flexDirection = 'column';
-  strip.style.willChange    = 'transform';
-  strip.style.flex          = '1 1 auto';
-  strip.style.minHeight     = '0';
+  strip.style.willChange = 'transform';
+  strip.style.flex = '1 1 auto';
+  strip.style.minHeight = '0';
 
   const paneA = document.createElement('div');
   const paneB = document.createElement('div');
@@ -64,20 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
   viewport.appendChild(shell);
 
   // timings
-  const reduced       = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isMobile      = () => matchMedia('(max-width:760px)').matches;
-  const DURATION      = reduced ? 0 : 700;   // slower movement
-  const FADE_OUT_MS   = reduced ? 0 : 800;   // slightly longer fade out
-  const FADE_IN_MS    = reduced ? 0 : 650;   // fade in
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = () => matchMedia('(max-width:760px)').matches;
+  const DURATION = reduced ? 0 : 700;   // slower movement
+  const FADE_OUT_MS = reduced ? 0 : 800;   // slightly longer fade out
+  const FADE_IN_MS = reduced ? 0 : 650;   // fade in
   const FADE_IN_DELAY = reduced ? 0 : 120;   // enters shortly after
-  const EASE          = 'cubic-bezier(.22,.61,.36,1)';
-  const AUTOPLAY_MS   = 6000;
+  const EASE = 'cubic-bezier(.22,.61,.36,1)';
+  const AUTOPLAY_MS = 6000;
 
   let timer = null;
   let animating = false;
 
   // safe height measure
-  function measure(el){
+  function measure(el) {
     const prev = {
       position: el.style.position,
       visibility: el.style.visibility,
@@ -93,22 +93,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return r;
   }
 
-  const lockStageHeight   = px => stage.style.height = px + 'px';
-  const unlockStageHeight = ()  => stage.style.height = '';
+  const lockStageHeight = px => stage.style.height = px + 'px';
+  const unlockStageHeight = () => stage.style.height = '';
 
-  function prepare(nextHTML){
+  function prepare(nextHTML) {
     paneA.innerHTML = contents[index];
     paneB.innerHTML = nextHTML;
 
     // reset strip
     strip.style.transition = 'none';
-    strip.style.transform  = 'translateY(0)';
+    strip.style.transform = 'translateY(0)';
 
     // reset fades
     paneA.style.transition = 'none';
     paneB.style.transition = 'none';
-    paneA.style.opacity    = '1';
-    paneB.style.opacity    = '0';
+    paneA.style.opacity = '1';
+    paneB.style.opacity = '0';
 
     // lock height on mobile to avoid jump
     const hA = measure(paneA);
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else unlockStageHeight();
   }
 
-  function goTo(newIdx){
+  function goTo(newIdx) {
     if (animating) return;
     const safeIdx = (newIdx + contents.length) % contents.length;
     if (safeIdx === index) return;
@@ -136,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // animate slide + cross-fade
       strip.style.transition = `transform ${DURATION}ms ${EASE}`;
-      paneA.style.transition  = `opacity ${FADE_OUT_MS}ms ${EASE}`;
-      paneB.style.transition  = `opacity ${FADE_IN_MS}ms ${EASE} ${FADE_IN_DELAY}ms`;
+      paneA.style.transition = `opacity ${FADE_OUT_MS}ms ${EASE}`;
+      paneB.style.transition = `opacity ${FADE_IN_MS}ms ${EASE} ${FADE_IN_DELAY}ms`;
 
       // triggers
       paneA.style.opacity = '0';
@@ -149,17 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(finish, Math.max(DURATION, FADE_OUT_MS, FADE_IN_MS + FADE_IN_DELAY) + 80);
     });
 
-    function finish(){
+    function finish() {
       index = safeIdx;
       paneA.innerHTML = contents[index];
       paneB.innerHTML = '';
 
       // cleanup
       strip.style.transition = 'none';
-      strip.style.transform  = 'translateY(0)';
+      strip.style.transform = 'translateY(0)';
       paneA.style.transition = paneB.style.transition = 'none';
-      paneA.style.opacity    = '1';
-      paneB.style.opacity    = '';
+      paneA.style.opacity = '1';
+      paneB.style.opacity = '';
 
       // release lock after swap (mobile)
       if (isMobile()) unlockStageHeight();
@@ -168,28 +168,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function next(n = 1){ goTo(index + n); }
-  function play(){ stop(); if (!reduced) timer = setInterval(() => next(1), AUTOPLAY_MS); }
-  function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+  function next(n = 1) { goTo(index + n); }
+  function play() { stop(); if (!reduced) timer = setInterval(() => next(1), AUTOPLAY_MS); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
   // init
   play();
 
   prevBtn?.addEventListener('click', () => { next(-1); play(); });
-  nextBtn?.addEventListener('click', () => { next( 1); play(); });
+  nextBtn?.addEventListener('click', () => { next(1); play(); });
 
   wrap.addEventListener('mouseenter', stop);
   wrap.addEventListener('mouseleave', play);
-  wrap.addEventListener('focusin',  stop);
+  wrap.addEventListener('focusin', stop);
   wrap.addEventListener('focusout', play);
 
   wrap.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft')  { next(-1); play(); }
-    if (e.key === 'ArrowRight') { next( 1); play(); }
+    if (e.key === 'ArrowLeft') { next(-1); play(); }
+    if (e.key === 'ArrowRight') { next(1); play(); }
   });
 
   // on resize, just release any lock so the layout can settle
-  addEventListener('resize', () => { if (!animating) unlockStageHeight(); }, { passive:true });
+  addEventListener('resize', () => { if (!animating) unlockStageHeight(); }, { passive: true });
 });
 
 /* ============ CONTACT FORM: submit via fetch with toast ============ */
@@ -245,50 +245,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============ TOAST HELPERS ============ */
-function ensureToast(){
+function ensureToast() {
   let t = document.getElementById('toast');
-  if (!t){
+  if (!t) {
     t = document.createElement('div');
     t.id = 'toast';
-    t.setAttribute('role','status');
-    t.setAttribute('aria-live','polite');
-    t.setAttribute('aria-atomic','true');
+    t.setAttribute('role', 'status');
+    t.setAttribute('aria-live', 'polite');
+    t.setAttribute('aria-atomic', 'true');
     document.body.appendChild(t);
   }
   return t;
 }
 
-const TOAST_RESERVE_VAR = '--toast-min-height';
-const TOAST_RESERVE_VALUE = '48px';
 const docEl = document.documentElement;
 let toastTimer = null;
 
-function reserveToastSpace(active){
-  docEl.style.setProperty(TOAST_RESERVE_VAR, active ? TOAST_RESERVE_VALUE : '');
-}
-
-function hideToastAfterDelay(toastEl, timeoutMs){
+function hideToastAfterDelay(toastEl, timeoutMs) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
     toastEl.classList.remove('show');
-    reserveToastSpace(false);
   }, timeoutMs);
 }
 
-function showToast(msg, { variant = 'success', timeoutMs = 3500 } = {}){
+function showToast(msg, { variant = 'success', timeoutMs = 3500 } = {}) {
   const toastEl = ensureToast();
   const isError = variant === 'error';
   toastEl.innerHTML = `<div class="card${isError ? ' error' : ''}">${msg}</div>`;
   toastEl.classList.add('show');
-  reserveToastSpace(true);
   hideToastAfterDelay(toastEl, timeoutMs);
 }
 
-function showSuccessToast(msg = 'Your message was sent successfully.', timeoutMs = 3500){
+function showSuccessToast(msg = 'Your message was sent successfully.', timeoutMs = 3500) {
   showToast(msg, { variant: 'success', timeoutMs });
 }
 
-function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs = 5500){
+function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs = 5500) {
   showToast(msg, { variant: 'error', timeoutMs });
 }
 
