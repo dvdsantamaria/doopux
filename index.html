@@ -2,205 +2,279 @@
 layout: null
 body_class: home
 meta_title: "UX, Web Development, SEO & Growth — Doop UX"
-meta_description: "Doop UX combines UX strategy, fast web development, AI automation and compound SEO to build digital products that grow your business."
-meta_keywords: "ux design, web development, ai automation, seo, growth strategy, product strategy, conversion optimization"
+meta_description: "Doop UX combines UX strategy, fast web development, AI automation and compound SEO to build digital
+products that grow your business."
+meta_keywords: "ux design, web development, ai automation, seo, growth strategy, product strategy, conversion
+optimization"
 schema_services:
-  - name: "Website Development"
-    description: "High-performing sites engineered for speed, accessibility, CRO and technical SEO."
-    service_type: "Web development"
-  - name: "UX Consulting"
-    description: "Customer research, UX audits and product strategy to guide confident decisions."
-    service_type: "UX consulting"
-  - name: "AI Automation"
-    description: "Agents and workflows that connect your stack, eliminate busywork and surface insights."
-    service_type: "AI automation"
-  - name: "SEO for AI Answers"
-    description: "Content and structured data tuned for search engines, AI overviews and answer engines."
-    service_type: "SEO for AI answers"
+- name: "Website Development"
+description: "High-performing sites engineered for speed, accessibility, CRO and technical SEO."
+service_type: "Web development"
+- name: "UX Consulting"
+description: "Customer research, UX audits and product strategy to guide confident decisions."
+service_type: "UX consulting"
+- name: "AI Automation"
+description: "Agents and workflows that connect your stack, eliminate busywork and surface insights."
+service_type: "AI automation"
+- name: "SEO for AI Answers"
+description: "Content and structured data tuned for search engines, AI overviews and answer engines."
+service_type: "SEO for AI answers"
 faq:
-  - question: "What kind of teams does Doop UX partner with?"
-    answer: "We work with founders, marketing leaders, and product teams that need enterprise-level execution without bulky agency layers—especially when speed, clarity, and measurable outcomes matter."
-  - question: "How fast can a new project launch with Doop UX?"
-    answer: "Typical engagements move from discovery to launch in 4–6 weeks, with lean sprints that validate direction quickly and keep momentum high."
-  - question: "Can Doop UX integrate AI automation into our existing stack?"
-    answer: "Yes. We map your workflows and integrate AI agents, automations, and data pipelines with tools like Zapier, Make, n8n, and custom APIs so you stay in control."
+- question: "What kind of teams does Doop UX partner with?"
+answer: "We work with founders, marketing leaders, and product teams that need enterprise-level execution without bulky
+agency layers—especially when speed, clarity, and measurable outcomes matter."
+- question: "How fast can a new project launch with Doop UX?"
+answer: "Typical engagements move from discovery to launch in 4–6 weeks, with lean sprints that validate direction
+quickly and keep momentum high."
+- question: "Can Doop UX integrate AI automation into our existing stack?"
+answer: "Yes. We map your workflows and integrate AI agents, automations, and data pipelines with tools like Zapier,
+Make, n8n, and custom APIs so you stay in control."
 ---
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
   {% assign lcp_media = site.data['image-manifest'].portfolio1 %}
   {% if lcp_media %}
-    {% capture lcp_avif_srcset %}
-    {% for source in lcp_media.sources.avif %}
-    {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-    {% endcapture %}
-    {% assign lcp_primary = lcp_media.sources.avif | last %}
-    <link rel="preload" as="image" href="{{ site.baseurl }}{{ lcp_primary.path }}" imagesrcset="{{ lcp_avif_srcset | strip }}" imagesizes="(max-width: 640px) 72vw, 360px" type="image/avif" fetchpriority="high">
+  {% capture lcp_avif_srcset %}
+  {% for source in lcp_media.sources.avif %}
+  {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  {% endcapture %}
+  {% assign lcp_primary = lcp_media.sources.avif | last %}
+  <link rel="preload" as="image" href="{{ site.baseurl }}{{ lcp_primary.path }}"
+    imagesrcset="{{ lcp_avif_srcset | strip }}" imagesizes="(max-width: 640px) 72vw, 360px" type="image/avif"
+    fetchpriority="high">
   {% endif %}
   <style>
-    :root{
-      --bg-start:#be4fc1;
-      --bg-middle:#8c62d6;
-      --bg-end:#77b5d6;
-      --grid-color:255,255,255;
-      --grid-opacity:.06;
-      --grid-size:48px;
-      --text:#fff;
-      --accent:#f09cff;
-      --toast-min-height:48px;
-      --content-max:1220px;
-      --header-max:1320px;
-      --header-h:clamp(88px, 11vh, 144px);
-      --section-pad:clamp(56px, 9vw, 140px);
+    :root {
+      --bg-start: #be4fc1;
+      --bg-middle: #8c62d6;
+      --bg-end: #77b5d6;
+      --grid-color: 255, 255, 255;
+      --grid-opacity: .06;
+      --grid-size: 48px;
+      --text: #fff;
+      --accent: #f09cff;
+      --toast-min-height: 48px;
+      --content-max: 1220px;
+      --header-max: 1320px;
+      --header-h: clamp(88px, 11vh, 144px);
+      --section-pad: clamp(56px, 9vw, 140px);
     }
-    *,*::before,*::after{box-sizing:border-box;}
-    html,body{min-height:100%;}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family:"Satoshi",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial;
-      background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
-      overflow-x:hidden;
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
-    a{color:inherit;text-decoration:none;}
-    .bg-grid{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      z-index:0;
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Satoshi", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
       background-image:
-        repeating-linear-gradient(
-          0deg,
+        repeating-linear-gradient(0deg,
           rgba(var(--grid-color), var(--grid-opacity)) 0,
           rgba(var(--grid-color), var(--grid-opacity)) 1px,
           transparent 1px,
-          transparent var(--grid-size)
-        ),
-        repeating-linear-gradient(
-          90deg,
+          transparent var(--grid-size)),
+        repeating-linear-gradient(90deg,
           rgba(var(--grid-color), var(--grid-opacity)) 0,
           rgba(var(--grid-color), var(--grid-opacity)) 1px,
           transparent 1px,
-          transparent var(--grid-size)
-        );
+          transparent var(--grid-size));
       -webkit-mask-image:
         radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
         linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
       mask-image:
         radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
         linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
-      -webkit-mask-repeat:no-repeat;
-      mask-repeat:no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
     }
-    header.container-wide{
-      position:relative;
-      z-index:2;
-      min-height:var(--header-h);
-      display:flex;
-      align-items:center;
-      padding-block:clamp(16px, 2.6vw, 34px);
+
+    header.container-wide {
+      position: relative;
+      z-index: 2;
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding-block: clamp(16px, 2.6vw, 34px);
     }
-    .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      width:100%;
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
     }
-    .brand img{display:block;width:120px;height:auto;}
-    .nav{display:flex;gap:28px;align-items:center;font-size:16px;opacity:.95;}
-    .hero{
-      position:relative;
-      z-index:1;
-      padding:0;
-      min-height:calc(100dvh - var(--header-h));
-      display:grid;
-      grid-template-rows:1fr auto 1fr 40dvh;
-      gap:0;
+
+    .brand img {
+      display: block;
+      width: 120px;
+      height: auto;
     }
-    .eyebrow{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      font-size:18px;
-      letter-spacing:1.4px;
-      text-transform:uppercase;
-      opacity:.95;
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 16px;
+      opacity: .95;
     }
-    .eyebrow .dot{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:16px;
-      line-height:1;
-      color:#ee64ff;
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      min-height: calc(100dvh - var(--header-h));
+      display: grid;
+      grid-template-rows: 1fr auto 1fr 40dvh;
+      gap: 0;
     }
-    .copy{grid-row:2;}
-    .copy h1{
-      margin:0.5ch auto;
-      text-align:center;
-      line-height:1.06;
-      font-size:clamp(42px, 5.3vw, 89px);
-      max-width:22ch;
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 18px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      opacity: .95;
     }
-    .projects-inline{
-      grid-row:4;
-      position:relative;
-      width:100svw;
-      height:100%;
-      margin-left:calc(50% - 50svw);
-      overflow:hidden;
-      align-self:end;
-      min-height:clamp(220px, 40svh, 420px);
+
+    .eyebrow .dot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1;
+      color: #ee64ff;
     }
-    .projects-clip{position:absolute;inset:0;overflow:hidden;}
-    .sheet{width:100%;height:100%;filter:drop-shadow(0 24px 48px rgba(0,0,0,.28));}
-    .marquee{
-      display:flex;
-      gap:0;
-      height:100%;
-      width:max-content;
-      animation:scrollX 60s linear infinite;
-      will-change:transform;
-      line-height:0;
+
+    .copy {
+      grid-row: 2;
     }
-    @media (prefers-reduced-motion:reduce){.marquee{animation:none;}}
-    @keyframes scrollX{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
-    .project{
-      flex:0 0 auto;
-      display:block;
-      width:clamp(200px, 32vw, 360px);
-      aspect-ratio:var(--project-aspect, 3 / 4);
-      overflow:hidden;
-      border-radius:clamp(16px, 4vw, 28px);
-      background-color:rgba(255,255,255,.08);
-      background-image:var(--project-placeholder, none);
-      background-size:cover;
-      background-repeat:no-repeat;
-      background-position:center;
+
+    .copy h1 {
+      margin: 0.5ch auto;
+      text-align: center;
+      line-height: 1.06;
+      font-size: clamp(42px, 5.3vw, 89px);
+      max-width: 22ch;
     }
-    .project img{
-      width:100%;
-      height:100%;
-      max-width:none;
-      object-fit:cover;
-      display:block;
+
+    .projects-inline {
+      grid-row: 4;
+      position: relative;
+      width: 100svw;
+      height: 100%;
+      margin-left: calc(50% - 50svw);
+      overflow: hidden;
+      align-self: end;
+      min-height: clamp(220px, 40svh, 420px);
     }
-    @media (max-width:640px){
-      .project{width:clamp(180px, 72vw, 280px);}
+
+    .projects-clip {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
     }
-    #toast-anchor{
-      min-height:var(--toast-min-height);
-      pointer-events:none;
+
+    .sheet {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
+    }
+
+    .marquee {
+      display: flex;
+      gap: 0;
+      height: 100%;
+      width: max-content;
+      animation: scrollX 60s linear infinite;
+      will-change: transform;
+      line-height: 0;
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .marquee {
+        animation: none;
+      }
+    }
+
+    @keyframes scrollX {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .project {
+      flex: 0 0 auto;
+      display: block;
+      width: clamp(200px, 32vw, 360px);
+      aspect-ratio: var(--project-aspect, 3 / 4);
+      overflow: hidden;
+      border-radius: clamp(16px, 4vw, 28px);
+      background-color: rgba(255, 255, 255, .08);
+      background-image: var(--project-placeholder, none);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width:640px) {
+      .project {
+        width: clamp(180px, 72vw, 280px);
+      }
+    }
+
+    #toast-anchor {
+      min-height: var(--toast-min-height);
+      pointer-events: none;
     }
   </style>
   <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  </noscript>
 
   <!-- FAVICONS -->
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
@@ -217,17 +291,17 @@ faq:
   {% assign keywords = page.meta_keywords %}
   {% assign raw_meta_image = page.meta_image | default: site.default_meta_image %}
   {% if raw_meta_image %}
-    {% if raw_meta_image contains '://' %}
-      {% assign meta_image = raw_meta_image %}
-    {% else %}
-      {% assign meta_image = raw_meta_image | absolute_url %}
-    {% endif %}
+  {% if raw_meta_image contains '://' %}
+  {% assign meta_image = raw_meta_image %}
+  {% else %}
+  {% assign meta_image = raw_meta_image | absolute_url %}
+  {% endif %}
   {% endif %}
   {% assign site_logo_path = site.organization.logo | default: '/assets/logo.png' %}
   {% if site_logo_path contains '://' %}
-    {% assign site_logo = site_logo_path %}
+  {% assign site_logo = site_logo_path %}
   {% else %}
-    {% assign site_logo = site_logo_path | absolute_url %}
+  {% assign site_logo = site_logo_path | absolute_url %}
   {% endif %}
   {% assign site_root = '/' | absolute_url %}
   {% assign locale = site.locale | default: 'en_US' %}
@@ -235,7 +309,8 @@ faq:
   <title>{{ meta_title }}</title>
   <meta name="title" content="{{ meta_title }}">
   <meta name="description" content="{{ meta_description }}">
-  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  {% if keywords %}
+  <meta name="keywords" content="{{ keywords }}">{% endif %}
   <meta name="robots" content="{{ robots }}">
   <meta name="googlebot" content="{{ robots }}">
   <meta name="bingbot" content="{{ robots }}">
@@ -356,6 +431,7 @@ faq:
   }
   </script>
 </head>
+
 <body class="{{ page.body_class }}">
   <div class="bg-grid" aria-hidden="true"></div>
   <div id="toast-anchor" aria-hidden="true"></div>
@@ -364,7 +440,16 @@ faq:
     <div class="row">
       <div class="brand">
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
+          <picture>
+            <source
+              srcset="{{ site.baseurl }}/assets/generated/logo/logo-200.webp 200w, {{ site.baseurl }}/assets/generated/logo/logo-320.webp 320w, {{ site.baseurl }}/assets/generated/logo/logo-480.webp 480w, {{ site.baseurl }}/assets/generated/logo/logo-640.webp 640w"
+              type="image/webp" sizes="120px">
+            <source
+              srcset="{{ site.baseurl }}/assets/generated/logo/logo-200.png 200w, {{ site.baseurl }}/assets/generated/logo/logo-320.png 320w, {{ site.baseurl }}/assets/generated/logo/logo-480.png 480w, {{ site.baseurl }}/assets/generated/logo/logo-640.png 640w"
+              type="image/png" sizes="120px">
+            <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="120" height="59" decoding="async"
+              loading="eager" />
+          </picture>
         </a>
       </div>
 
@@ -399,42 +484,66 @@ faq:
           <div class="marquee" id="marquee">
             {% assign manifest = site.data['image-manifest'] %}
             <!-- Set A -->
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px) 72vw, 360px" loading="eager" fetchpriority="high" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" loading="eager" fetchpriority="high" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw,
+              (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
+              sizes="(max-width: 640px) 72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
             <!-- Set B (dup) -->
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw,
+              (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
-            <figure class="project" style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey" sizes="(max-width: 640px) 72vw, 360px" %}
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
+              sizes="(max-width: 640px) 72vw, (max-width: 1125px) 32vw, 360px" %}
             </figure>
           </div>
         </div>
@@ -501,7 +610,7 @@ faq:
       </div>
 
       <div class="process-cta">
-       
+
         <a class="btn-primary" href="{{ site.baseurl }}/contact">Get started</a>
       </div>
     </div>
@@ -519,7 +628,8 @@ faq:
 
       <div class="solutions-grid">
         <figure class="solution">
-          {% include picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Boatique Marine</h3>
             <p>Luxury marine charter site built for speed, clarity, and effortless enquiries.</p>
@@ -527,7 +637,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Prana Ecotherapy</h3>
             <p>Site redesign improving structure, readability and perceived quality.</p>
@@ -535,7 +646,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, (max-width:
+          1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Northgate</h3>
             <p>Modular content system to scale fast while keeping consistency.</p>
@@ -543,7 +655,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation site" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation site" sizes="(max-width:
+          960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Beyond Limits Children's Foundation</h3>
             <p>Donation journey rebuilt to make giving effortless for families and sponsors.</p>
@@ -551,7 +664,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, (max-width:
+          1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Calida Ellora</h3>
             <p>Warm wellness brand system with calming visuals and expandable programs.</p>
@@ -559,7 +673,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio8" alt="Electric Vibes experience" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio8" alt="Electric Vibes experience" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>Electric Vibes</h3>
             <p>Immersive ecommerce experience for festival gear with dynamic merchandising.</p>
@@ -567,7 +682,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, (max-width:
+          1440px) 45vw, 560px" %}
           <figcaption>
             <h3>NTT Pilates</h3>
             <p>Membership flows and scheduling tools tailored for a boutique Pilates studio.</p>
@@ -575,7 +691,8 @@ faq:
         </figure>
 
         <figure class="solution">
-          {% include picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          {% include picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
           <figcaption>
             <h3>The One</h3>
             <p>Landing page to present the product, capture leads and highlight value quickly.</p>
@@ -591,13 +708,18 @@ faq:
       <header class="logos-head section-head">
         <h2 class="logos-title section-title">WE ARE EXPERTS</h2>
       </header>
-  
+
       <div class="logos-grid" aria-label="Expert platforms">
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589" height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace" width="592" height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589" height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce" width="589" height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace"
+            width="592" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce"
+            width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589"
+            height="128" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </section>
@@ -614,7 +736,8 @@ faq:
       <div class="tst-carousel" id="tstCarousel">
         <button class="tst-nav tst-prev" aria-label="Previous testimonial">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
         </button>
 
@@ -622,7 +745,9 @@ faq:
           <div class="tst-track">
             <article class="tst-card is-active">
               <blockquote class="tst-quote">
-                We came to David for a website, but he quickly showed us we were missing big opportunities beyond that. He guided us through a smarter marketing strategy, both online and offline. His leadership and clarity made a real difference.
+                We came to David for a website, but he quickly showed us we were missing big opportunities beyond that.
+                He guided us through a smarter marketing strategy, both online and offline. His leadership and clarity
+                made a real difference.
               </blockquote>
               <footer class="tst-meta">
                 <div>
@@ -637,7 +762,8 @@ faq:
 
             <article class="tst-card">
               <blockquote class="tst-quote">
-                Clear roadmap, clean execution and no fluff. We launched on time with better results than expected. Communication was crisp and decisions were data driven.
+                Clear roadmap, clean execution and no fluff. We launched on time with better results than expected.
+                Communication was crisp and decisions were data driven.
               </blockquote>
               <footer class="tst-meta">
                 <div>
@@ -652,7 +778,8 @@ faq:
 
             <article class="tst-card">
               <blockquote class="tst-quote">
-                The team focused us on what truly moves the needle. Faster flows, better conversions and a stack that our people can maintain.
+                The team focused us on what truly moves the needle. Faster flows, better conversions and a stack that
+                our people can maintain.
               </blockquote>
               <footer class="tst-meta">
                 <div>
@@ -669,7 +796,8 @@ faq:
 
         <button class="tst-nav tst-next" aria-label="Next testimonial">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
         </button>
       </div>
@@ -687,31 +815,36 @@ faq:
         <details class="faq-panel" open>
           <summary><span>What kind of teams does Doop UX partner with?</span></summary>
           <div class="faq-panel__content">
-            We collaborate with founders, marketing leaders, and product squads that want enterprise-level execution without the layers of a traditional agency.
+            We collaborate with founders, marketing leaders, and product squads that want enterprise-level execution
+            without the layers of a traditional agency.
           </div>
         </details>
         <details class="faq-panel">
           <summary><span>How fast can a new project launch with Doop UX?</span></summary>
           <div class="faq-panel__content">
-            Discovery to launch typically happens in four to six weeks thanks to lean sprints that validate direction quickly and keep momentum visible for stakeholders.
+            Discovery to launch typically happens in four to six weeks thanks to lean sprints that validate direction
+            quickly and keep momentum visible for stakeholders.
           </div>
         </details>
         <details class="faq-panel">
           <summary><span>Can you integrate AI automation into our existing stack?</span></summary>
           <div class="faq-panel__content">
-            Yes, we map current workflows and deploy AI agents, automation, and data bridges across tools like Zapier, Make, n8n, and custom APIs while keeping governance intact.
+            Yes, we map current workflows and deploy AI agents, automation, and data bridges across tools like Zapier,
+            Make, n8n, and custom APIs while keeping governance intact.
           </div>
         </details>
         <details class="faq-panel">
           <summary><span>What results should we expect from a typical engagement?</span></summary>
           <div class="faq-panel__content">
-            Clients see faster user journeys, measurable lift in qualified conversions, and a maintainable design system that scales without technical debt collecting in the background.
+            Clients see faster user journeys, measurable lift in qualified conversions, and a maintainable design system
+            that scales without technical debt collecting in the background.
           </div>
         </details>
         <details class="faq-panel">
           <summary><span>How do you keep communication clear once the project is underway?</span></summary>
           <div class="faq-panel__content">
-            We operate with transparent weekly readouts, async Loom recaps, and shared dashboards so decisions, blockers, and next steps remain obvious to every stakeholder.
+            We operate with transparent weekly readouts, async Loom recaps, and shared dashboards so decisions,
+            blockers, and next steps remain obvious to every stakeholder.
           </div>
         </details>
       </div>
@@ -723,4 +856,5 @@ faq:
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
 
 </body>
+
 </html>

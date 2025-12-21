@@ -7,16 +7,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio1/portfolio1-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio1/portfolio1-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio1/portfolio1-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio1/portfolio1-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio1/portfolio1-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio1/portfolio1-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio1/portfolio1-1080.avif"
         },
         {
           "width": 1280,
@@ -25,16 +41,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio1/portfolio1-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio1/portfolio1-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio1/portfolio1-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio1/portfolio1-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio1/portfolio1-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio1/portfolio1-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio1/portfolio1-1080.webp"
         },
         {
           "width": 1280,
@@ -51,16 +83,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio2/portfolio2-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio2/portfolio2-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio2/portfolio2-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio2/portfolio2-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio2/portfolio2-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio2/portfolio2-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio2/portfolio2-1080.avif"
         },
         {
           "width": 1280,
@@ -69,16 +117,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio2/portfolio2-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio2/portfolio2-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio2/portfolio2-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio2/portfolio2-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio2/portfolio2-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio2/portfolio2-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio2/portfolio2-1080.webp"
         },
         {
           "width": 1280,
@@ -95,16 +159,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio3/portfolio3-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio3/portfolio3-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio3/portfolio3-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio3/portfolio3-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio3/portfolio3-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio3/portfolio3-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio3/portfolio3-1080.avif"
         },
         {
           "width": 1280,
@@ -113,16 +193,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio3/portfolio3-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio3/portfolio3-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio3/portfolio3-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio3/portfolio3-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio3/portfolio3-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio3/portfolio3-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio3/portfolio3-1080.webp"
         },
         {
           "width": 1280,
@@ -139,16 +235,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio4/portfolio4-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio4/portfolio4-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio4/portfolio4-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio4/portfolio4-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio4/portfolio4-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio4/portfolio4-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio4/portfolio4-1080.avif"
         },
         {
           "width": 1280,
@@ -157,16 +269,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio4/portfolio4-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio4/portfolio4-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio4/portfolio4-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio4/portfolio4-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio4/portfolio4-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio4/portfolio4-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio4/portfolio4-1080.webp"
         },
         {
           "width": 1280,
@@ -183,16 +311,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio5/portfolio5-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio5/portfolio5-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio5/portfolio5-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio5/portfolio5-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio5/portfolio5-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio5/portfolio5-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio5/portfolio5-1080.avif"
         },
         {
           "width": 1280,
@@ -201,16 +345,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio5/portfolio5-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio5/portfolio5-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio5/portfolio5-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio5/portfolio5-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio5/portfolio5-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio5/portfolio5-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio5/portfolio5-1080.webp"
         },
         {
           "width": 1280,
@@ -227,16 +387,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio6/portfolio6-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio6/portfolio6-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio6/portfolio6-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio6/portfolio6-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio6/portfolio6-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio6/portfolio6-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio6/portfolio6-1080.avif"
         },
         {
           "width": 1280,
@@ -245,16 +421,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio6/portfolio6-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio6/portfolio6-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio6/portfolio6-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio6/portfolio6-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio6/portfolio6-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio6/portfolio6-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio6/portfolio6-1080.webp"
         },
         {
           "width": 1280,
@@ -271,16 +463,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio7/portfolio7-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio7/portfolio7-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio7/portfolio7-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio7/portfolio7-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio7/portfolio7-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio7/portfolio7-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio7/portfolio7-1080.avif"
         },
         {
           "width": 1280,
@@ -289,16 +497,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio7/portfolio7-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio7/portfolio7-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio7/portfolio7-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio7/portfolio7-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio7/portfolio7-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio7/portfolio7-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio7/portfolio7-1080.webp"
         },
         {
           "width": 1280,
@@ -315,16 +539,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio8/portfolio8-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio8/portfolio8-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio8/portfolio8-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio8/portfolio8-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio8/portfolio8-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio8/portfolio8-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio8/portfolio8-1080.avif"
         },
         {
           "width": 1280,
@@ -333,16 +573,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio8/portfolio8-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio8/portfolio8-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio8/portfolio8-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio8/portfolio8-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio8/portfolio8-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio8/portfolio8-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio8/portfolio8-1080.webp"
         },
         {
           "width": 1280,
@@ -359,16 +615,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio9/portfolio9-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio9/portfolio9-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio9/portfolio9-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio9/portfolio9-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio9/portfolio9-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio9/portfolio9-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio9/portfolio9-1080.avif"
         },
         {
           "width": 1280,
@@ -377,16 +649,32 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio9/portfolio9-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio9/portfolio9-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio9/portfolio9-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio9/portfolio9-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio9/portfolio9-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio9/portfolio9-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio9/portfolio9-1080.webp"
         },
         {
           "width": 1280,
@@ -403,16 +691,32 @@
     "sources": {
       "avif": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio10/portfolio10-200.avif"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio10/portfolio10-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio10/portfolio10-540.avif"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio10/portfolio10-640.avif"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio10/portfolio10-720.avif"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio10/portfolio10-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio10/portfolio10-1080.avif"
         },
         {
           "width": 1280,
@@ -421,20 +725,264 @@
       ],
       "webp": [
         {
+          "width": 200,
+          "path": "/assets/generated/portfolio10/portfolio10-200.webp"
+        },
+        {
           "width": 360,
           "path": "/assets/generated/portfolio10/portfolio10-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio10/portfolio10-540.webp"
         },
         {
           "width": 640,
           "path": "/assets/generated/portfolio10/portfolio10-640.webp"
         },
         {
+          "width": 720,
+          "path": "/assets/generated/portfolio10/portfolio10-720.webp"
+        },
+        {
           "width": 960,
           "path": "/assets/generated/portfolio10/portfolio10-960.webp"
         },
         {
+          "width": 1080,
+          "path": "/assets/generated/portfolio10/portfolio10-1080.webp"
+        },
+        {
           "width": 1280,
           "path": "/assets/generated/portfolio10/portfolio10-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio11": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio11.jpg",
+    "placeholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABQBQCdASoYABoAPxmCt1asqCUjqAgBkCMJQBgbgiHxcdWxXHYOytnuEAmbhqBD99epoAAA/e9aLwpg5Tz4lhcAWKKDyXaoBIO7TL6+85cEj9F8fr6fBGQt3wlAPt2WvZc3AOX+eNW3f2upTgnmCN2sMiJgKZmO3t+T1dq4eyXs6Zsz2bJyZVFNzQaw5gFBqOQEEivR3RDolTbq+7fgsDNs9cEJjy4L5/1AivXAZm7n7IK9iKEtn8XJL8313iYQ9xgQcAAA",
+    "sources": {
+      "avif": [
+        {
+          "width": 200,
+          "path": "/assets/generated/portfolio11/portfolio11-200.avif"
+        },
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio11/portfolio11-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio11/portfolio11-540.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio11/portfolio11-640.avif"
+        },
+        {
+          "width": 720,
+          "path": "/assets/generated/portfolio11/portfolio11-720.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio11/portfolio11-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio11/portfolio11-1080.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio11/portfolio11-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 200,
+          "path": "/assets/generated/portfolio11/portfolio11-200.webp"
+        },
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio11/portfolio11-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio11/portfolio11-540.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio11/portfolio11-640.webp"
+        },
+        {
+          "width": 720,
+          "path": "/assets/generated/portfolio11/portfolio11-720.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio11/portfolio11-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio11/portfolio11-1080.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio11/portfolio11-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio12": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio12.jpg",
+    "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAACwBACdASoYABoAPxmCuFYsqCUjqAgBkCMJZQAALk5Dsmi8KeViph50HdB081uAAPKlWZpjtFfIs567Ze+xZWEqFsDxEE7oea54e7ZBvlO4yApfdWGZ5G0gMhxwhkC9F/YHOkRj72khMGDDubNW/nxIP9PwZOJWRPyr13m+Kt6g4h2tiqdYrcGVaewiGP5Zi1yNW6yx7vSPbyIeF7usfeNgAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 200,
+          "path": "/assets/generated/portfolio12/portfolio12-200.avif"
+        },
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio12/portfolio12-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio12/portfolio12-540.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio12/portfolio12-640.avif"
+        },
+        {
+          "width": 720,
+          "path": "/assets/generated/portfolio12/portfolio12-720.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio12/portfolio12-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio12/portfolio12-1080.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio12/portfolio12-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 200,
+          "path": "/assets/generated/portfolio12/portfolio12-200.webp"
+        },
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio12/portfolio12-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio12/portfolio12-540.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio12/portfolio12-640.webp"
+        },
+        {
+          "width": 720,
+          "path": "/assets/generated/portfolio12/portfolio12-720.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio12/portfolio12-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio12/portfolio12-1080.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio12/portfolio12-1280.webp"
+        }
+      ]
+    }
+  },
+  "portfolio13": {
+    "width": 2000,
+    "height": 2167,
+    "fallback": "/assets/portfolio13.jpg",
+    "placeholder": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAQBQCdASoYABoAPxl+uFQsp6WjKAqpkCMJYwAOequpPO1SiCl0s27D0Vcpma3WD1KAAMtP8XkeiJU4JufuOxS8emBblX9OWp9jNfzHTMhHMPzbpgpAnfWyRwv1ltUbCsxmZC6JiDbeUDo09LVrsaR8cD0QjdnkWQHZ/Ysoe1JBKgzDPytOHzQKc8jNaGkgcWiqXyv/xOZZVgogbYw6lO9LcxXP0SeKU7rmd1lCJaio5gDaEm3NH+fBdpdwU/wNOBkJHg1BbzSO8NgvSZ+UXd0AAAA=",
+    "sources": {
+      "avif": [
+        {
+          "width": 200,
+          "path": "/assets/generated/portfolio13/portfolio13-200.avif"
+        },
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio13/portfolio13-360.avif"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio13/portfolio13-540.avif"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio13/portfolio13-640.avif"
+        },
+        {
+          "width": 720,
+          "path": "/assets/generated/portfolio13/portfolio13-720.avif"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio13/portfolio13-960.avif"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio13/portfolio13-1080.avif"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio13/portfolio13-1280.avif"
+        }
+      ],
+      "webp": [
+        {
+          "width": 200,
+          "path": "/assets/generated/portfolio13/portfolio13-200.webp"
+        },
+        {
+          "width": 360,
+          "path": "/assets/generated/portfolio13/portfolio13-360.webp"
+        },
+        {
+          "width": 540,
+          "path": "/assets/generated/portfolio13/portfolio13-540.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/generated/portfolio13/portfolio13-640.webp"
+        },
+        {
+          "width": 720,
+          "path": "/assets/generated/portfolio13/portfolio13-720.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/generated/portfolio13/portfolio13-960.webp"
+        },
+        {
+          "width": 1080,
+          "path": "/assets/generated/portfolio13/portfolio13-1080.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/generated/portfolio13/portfolio13-1280.webp"
         }
       ]
     }

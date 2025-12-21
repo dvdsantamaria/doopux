@@ -8,7 +8,7 @@ const OUTPUT_DIR = path.join(ASSETS_DIR, 'generated');
 const DATA_DIR = path.join(ROOT, '_data');
 const MANIFEST_PATH = path.join(DATA_DIR, 'image-manifest.json');
 
-const TARGET_WIDTHS = [360, 640, 960, 1280];
+const TARGET_WIDTHS = [200, 360, 540, 640, 720, 960, 1080, 1280];
 const PORTFOLIO_SOURCES = [
   'portfolio1.jpg',
   'portfolio2.jpg',
@@ -19,8 +19,10 @@ const PORTFOLIO_SOURCES = [
   'portfolio7.jpg',
   'portfolio8.jpg',
   'portfolio9.jpg',
-  'portfolio10.jpg'
-];
+  'portfolio10.jpg',
+  'portfolio11.jpg',
+  'portfolio12.jpg',
+  'portfolio13.jpg'];
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
@@ -96,6 +98,30 @@ async function buildManifest() {
   await fs.writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
 
   console.log(`Generated responsive sources for ${entries.length} images.`);
+
+  // Generate Logo variants
+  console.log('Generating logo variants...');
+  const logoInputParams = {
+    filename: 'logo.png',
+    widths: [200, 320, 480, 640], // Custom widths for logo
+    targetDir: path.join(ASSETS_DIR, 'generated', 'logo')
+  };
+
+  await ensureDir(logoInputParams.targetDir);
+  const logoInputPath = path.join(ASSETS_DIR, logoInputParams.filename);
+
+  for (const w of logoInputParams.widths) {
+    await sharp(logoInputPath)
+      .resize({ width: w })
+      .toFile(path.join(logoInputParams.targetDir, `logo-${w}.png`));
+
+    // Also generate WebP for logo
+    await sharp(logoInputPath)
+      .resize({ width: w })
+      .webp()
+      .toFile(path.join(logoInputParams.targetDir, `logo-${w}.webp`));
+  }
+  console.log('Logo variants generated.');
 }
 
 buildManifest().catch(err => {
