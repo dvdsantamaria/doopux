@@ -1,23 +1,35 @@
 ---
 meta_title: "Contact | Work with Doop UX — Websites, UX & Automation"
-meta_description: "Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick replies, clear scope, and outcomes-focused delivery."
+meta_description: "Contact Doop UX to plan your next website, UX audit, AI automation or growth initiative. Quick
+replies, clear scope, and outcomes-focused delivery."
 meta_keywords: "contact doop ux, web design inquiry, ux consulting contact, ai automation partners"
 meta_image: "/assets/doop-website-design.png"
 ---
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  </noscript>
   <style>
     /* Overrides for this page only */
-    body{ background:#efefef; }
-    .brand img{ filter: invert(64%); }
-    .nav{color:#151515}
+    body {
+      background: #efefef;
+    }
+
+    .brand img {
+      filter: invert(64%);
+    }
+
+    .nav {
+      color: #151515
+    }
   </style>
 
   {% assign meta_title = page.meta_title | default: site.title %}
@@ -27,17 +39,17 @@ meta_image: "/assets/doop-website-design.png"
   {% assign robots = page.meta_robots | default: site.seo_defaults.robots | default: 'index,follow' %}
   {% assign raw_meta_image = page.meta_image | default: site.default_meta_image %}
   {% if raw_meta_image %}
-    {% if raw_meta_image contains '://' %}
-      {% assign meta_image = raw_meta_image %}
-    {% else %}
-      {% assign meta_image = raw_meta_image | absolute_url %}
-    {% endif %}
+  {% if raw_meta_image contains '://' %}
+  {% assign meta_image = raw_meta_image %}
+  {% else %}
+  {% assign meta_image = raw_meta_image | absolute_url %}
+  {% endif %}
   {% endif %}
   {% assign site_logo_path = site.organization.logo | default: '/assets/logo.png' %}
   {% if site_logo_path contains '://' %}
-    {% assign site_logo = site_logo_path %}
+  {% assign site_logo = site_logo_path %}
   {% else %}
-    {% assign site_logo = site_logo_path | absolute_url %}
+  {% assign site_logo = site_logo_path | absolute_url %}
   {% endif %}
   {% assign site_root = '/' | absolute_url %}
   {% assign locale = site.locale | default: 'en_US' %}
@@ -45,7 +57,8 @@ meta_image: "/assets/doop-website-design.png"
   <title>{{ meta_title }}</title>
   <meta name="title" content="{{ meta_title }}">
   <meta name="description" content="{{ meta_description }}">
-  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  {% if keywords %}
+  <meta name="keywords" content="{{ keywords }}">{% endif %}
   <meta name="robots" content="{{ robots }}">
   <meta name="googlebot" content="{{ robots }}">
   <meta name="bingbot" content="{{ robots }}">
@@ -131,14 +144,16 @@ meta_image: "/assets/doop-website-design.png"
   }
   </script>
 </head>
+
 <body>
-  <div id="toast-anchor" aria-hidden="true"></div>
+
   <!-- Header with grey logo -->
   <header class="container-wide">
     <div class="row">
       <div class="brand">
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async"
+            loading="eager" />
         </a>
       </div>
 
@@ -161,8 +176,8 @@ meta_image: "/assets/doop-website-design.png"
 
 
   <section class="slice-light" id="contact">
- 
-  
+
+
     <div class="container">
 
       <header class="eco-head">
@@ -192,7 +207,8 @@ meta_image: "/assets/doop-website-design.png"
         <input type="hidden" name="_email.subject" value="New contact from DoopUX" />
         <input type="hidden" name="_email.from" value="DoopUX Website" />
 
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px"
+          aria-hidden="true" />
 
         <button id="submitBtn" class="btn-primary" type="submit">SUBMIT</button>
         <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
@@ -206,4 +222,5 @@ meta_image: "/assets/doop-website-design.png"
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 </body>
+
 </html>

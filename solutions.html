@@ -1,40 +1,55 @@
 ---
 meta_title: "Service Ecosystem | UX, Web Development, SEO & Growth — Doop UX"
-meta_description: "Doop UX’s service ecosystem: website development, UX consulting, AI automation, SEO for AI answers, business process optimization and growth strategy executed end-to-end."
-meta_keywords: "website development, ux consulting, ai automation, seo for ai answers, business process optimization, growth strategy"
+meta_description: "Doop UX’s service ecosystem: website development, UX consulting, AI automation, SEO for AI answers,
+business process optimization and growth strategy executed end-to-end."
+meta_keywords: "website development, ux consulting, ai automation, seo for ai answers, business process optimization,
+growth strategy"
 meta_image: "/assets/doop-website-design.png"
 schema_services:
-  - name: "Website Development"
-    description: "Architecture, performance, and CMS builds that keep your site fast and editable."
-  - name: "UX Consulting"
-    description: "Research, flows, and usability reviews tied directly to business outcomes."
-  - name: "AI Automation"
-    description: "AI agents and workflow automation that connect across your stack."
-  - name: "SEO"
-    description: "Technical SEO and content programs that compound organic reach."
-  - name: "SEO for AI Answers"
-    description: "Answer engine optimisation so AI summaries cite your brand."
-  - name: "Comprehensive Digital Marketing"
-    description: "Full-funnel campaigns linking ads, email, content, and analytics."
-  - name: "Business Process Optimization"
-    description: "SOPs, dashboards, and automation that remove operational drag."
-  - name: "Growth Strategies"
-    description: "Positioning and experiment roadmaps to find traction faster."
+- name: "Website Development"
+description: "Architecture, performance, and CMS builds that keep your site fast and editable."
+- name: "UX Consulting"
+description: "Research, flows, and usability reviews tied directly to business outcomes."
+- name: "AI Automation"
+description: "AI agents and workflow automation that connect across your stack."
+- name: "SEO"
+description: "Technical SEO and content programs that compound organic reach."
+- name: "SEO for AI Answers"
+description: "Answer engine optimisation so AI summaries cite your brand."
+- name: "Comprehensive Digital Marketing"
+description: "Full-funnel campaigns linking ads, email, content, and analytics."
+- name: "Business Process Optimization"
+description: "SOPs, dashboards, and automation that remove operational drag."
+- name: "Growth Strategies"
+description: "Positioning and experiment roadmaps to find traction faster."
 ---
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  </noscript>
   <style>
     /* Overrides for this page only */
-    body{ background:#efefef; }                 /* flat grey background */
-    .brand img{ filter: invert(64%); }          /* make logo grey */
-    .nav{color:#151515}
+    body {
+      background: #efefef;
+    }
+
+    /* flat grey background */
+    .brand img {
+      filter: invert(64%);
+    }
+
+    /* make logo grey */
+    .nav {
+      color: #151515
+    }
   </style>
 
   {% assign meta_title = page.meta_title | default: site.title %}
@@ -44,17 +59,17 @@ schema_services:
   {% assign robots = page.meta_robots | default: site.seo_defaults.robots | default: 'index,follow' %}
   {% assign raw_meta_image = page.meta_image | default: site.default_meta_image %}
   {% if raw_meta_image %}
-    {% if raw_meta_image contains '://' %}
-      {% assign meta_image = raw_meta_image %}
-    {% else %}
-      {% assign meta_image = raw_meta_image | absolute_url %}
-    {% endif %}
+  {% if raw_meta_image contains '://' %}
+  {% assign meta_image = raw_meta_image %}
+  {% else %}
+  {% assign meta_image = raw_meta_image | absolute_url %}
+  {% endif %}
   {% endif %}
   {% assign site_logo_path = site.organization.logo | default: '/assets/logo.png' %}
   {% if site_logo_path contains '://' %}
-    {% assign site_logo = site_logo_path %}
+  {% assign site_logo = site_logo_path %}
   {% else %}
-    {% assign site_logo = site_logo_path | absolute_url %}
+  {% assign site_logo = site_logo_path | absolute_url %}
   {% endif %}
   {% assign site_root = '/' | absolute_url %}
   {% assign locale = site.locale | default: 'en_US' %}
@@ -62,7 +77,8 @@ schema_services:
   <title>{{ meta_title }}</title>
   <meta name="title" content="{{ meta_title }}">
   <meta name="description" content="{{ meta_description }}">
-  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  {% if keywords %}
+  <meta name="keywords" content="{{ keywords }}">{% endif %}
   <meta name="robots" content="{{ robots }}">
   <meta name="googlebot" content="{{ robots }}">
   <meta name="bingbot" content="{{ robots }}">
@@ -177,15 +193,17 @@ schema_services:
   }
   </script>
 </head>
+
 <body>
-  <div id="toast-anchor" aria-hidden="true"></div>
+
   <div class="bg-grid" aria-hidden="true"></div>
 
   <header class="container-wide">
     <div class="row">
       <div class="brand">
         <a href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async"
+            loading="eager" />
         </a>
       </div>
 
@@ -209,7 +227,8 @@ schema_services:
   <section class="service-eco" aria-labelledby="eco-title">
     <div class="container">
       <header class="eco-head">
-        <div class="eyebrow"><span class="dot">•</span> WE UNDERSTAND YOUR SYSTEM INSIDE OUT <span class="dot">•</span></div>
+        <div class="eyebrow"><span class="dot">•</span> WE UNDERSTAND YOUR SYSTEM INSIDE OUT <span class="dot">•</span>
+        </div>
         <h1 id="eco-title" class="eco-title">Service ecosystem</h1>
       </header>
 
@@ -224,7 +243,8 @@ schema_services:
             </p>
             <figure class="eco-figure">
               <!-- use the file with the exact name -->
-              <img src="{{ site.baseurl }}/assets/icons_0001_Layer-7.png" alt="Website Development icon" width="1011" height="1011" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0001_Layer-7.png" alt="Website Development icon" width="1011"
+                height="1011" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -238,7 +258,8 @@ schema_services:
               Every element has a reason behind it.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0000_Layer-8.png" alt="UX Consulting icon" width="1003" height="1003" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0000_Layer-8.png" alt="UX Consulting icon" width="1003"
+                height="1003" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -248,10 +269,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">Idea to Project</h3>
             <p class="eco-copy">
-              We develop only what is necessary to move forward. Whether it is a full site or a simple MVP, we launch fast, clean and ready to grow.
+              We develop only what is necessary to move forward. Whether it is a full site or a simple MVP, we launch
+              fast, clean and ready to grow.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Idea to Project icon" width="1011" height="1011" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Idea to Project icon" width="1011"
+                height="1011" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -261,10 +284,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">AI Automation</h3>
             <p class="eco-copy">
-              Build AI agents and workflows that automate busywork, integrate with your stack, and deliver real time savings safely without breaking quality or control.
+              Build AI agents and workflows that automate busywork, integrate with your stack, and deliver real time
+              savings safely without breaking quality or control.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0007_Layer-1.png" alt="AI Automation icon" width="1024" height="944" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0007_Layer-1.png" alt="AI Automation icon" width="1024"
+                height="944" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -273,10 +298,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">SEO</h3>
             <p class="eco-copy">
-              Technical SEO that compounds: site architecture, speed, structured data, content strategy, backlinks—so you rank for intent, not keywords, and stay there.
+              Technical SEO that compounds: site architecture, speed, structured data, content strategy, backlinks—so
+              you rank for intent, not keywords, and stay there.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0002_Layer-6.png" alt="SEO icon" width="1005" height="1005" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0002_Layer-6.png" alt="SEO icon" width="1005" height="1005"
+                loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -285,10 +312,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">Comprehensive Digital Marketing</h3>
             <p class="eco-copy">
-              From ads to email to analytics, we plan and run full-funnel campaigns that attract, nurture and convert—measured, iterated, and aligned to revenue goals. 
+              From ads to email to analytics, we plan and run full-funnel campaigns that attract, nurture and
+              convert—measured, iterated, and aligned to revenue goals.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0006_Layer-2.png" alt="Digital Marketing icon" width="1020" height="1020" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0006_Layer-2.png" alt="Digital Marketing icon" width="1020"
+                height="1020" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -298,10 +327,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">Business Process Optimization</h3>
             <p class="eco-copy">
-              Map, simplify and automate operations at: SOPs, integrations, dashboards and hand-offs that cut delays and errors, keeping teams accountable and informed.
+              Map, simplify and automate operations at: SOPs, integrations, dashboards and hand-offs that cut delays and
+              errors, keeping teams accountable and informed.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0005_Layer-3.png" alt="Business Process icon" width="1010" height="1009" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0005_Layer-3.png" alt="Business Process icon" width="1010"
+                height="1009" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -310,10 +341,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">SEO for AI Answers</h3>
             <p class="eco-copy">
-              Align your content for answer engines so AI summaries, featured snippets, and overviews cite your brand first.
+              Align your content for answer engines so AI summaries, featured snippets, and overviews cite your brand
+              first.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0003_Layer-5.png" alt="SEO for AI Answers icon" width="1013" height="948" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0003_Layer-5.png" alt="SEO for AI Answers icon" width="1013"
+                height="948" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -322,10 +355,12 @@ schema_services:
           <article class="eco-card">
             <h3 class="eco-title-3">Growth Strategies</h3>
             <p class="eco-copy">
-              Plan and test smart bets: positioning, offers, price, landing pages and funnels—experiments backed by analytics to find traction and scale what works up. 
+              Plan and test smart bets: positioning, offers, price, landing pages and funnels—experiments backed by
+              analytics to find traction and scale what works up.
             </p>
             <figure class="eco-figure">
-              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Growth Strategies icon" width="1011" height="1011" loading="lazy" decoding="async" />
+              <img src="{{ site.baseurl }}/assets/icons_0004_Layer-4.png" alt="Growth Strategies icon" width="1011"
+                height="1011" loading="lazy" decoding="async" />
             </figure>
           </article>
         </a>
@@ -337,4 +372,5 @@ schema_services:
 
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
 </body>
+
 </html>
