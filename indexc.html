@@ -1,0 +1,875 @@
+---
+layout: null
+body_class: home
+meta_title: "Business Strategy, Process Optimization & Digital Systems - Doop UX"
+meta_description: "Doop UX helps small businesses run like enterprise teams: strategy, process design, AI automation,
+and digital platforms. Websites are delivered as part of a broader growth system."
+meta_keywords: "business strategy, process optimization, operations, ai automation, digital transformation, ux consulting,
+website development, seo, growth"
+schema_services:
+- name: "Business Process Optimization"
+description: "Process mapping, SOPs, and automation that remove operational drag."
+service_type: "Operations and process design"
+- name: "Growth Strategies"
+description: "Positioning, research, and execution roadmaps for sustainable growth."
+service_type: "Business strategy"
+- name: "AI Automation"
+description: "AI agents and workflows that connect your stack and reduce busywork."
+service_type: "AI automation"
+- name: "UX Consulting"
+description: "Service design and UX research aligned to business outcomes."
+service_type: "UX consulting"
+- name: "Website Development"
+description: "Web platforms delivered as part of a full business strategy."
+service_type: "Web development"
+- name: "SEO"
+description: "Technical SEO and content systems that build long-term visibility."
+service_type: "SEO"
+- name: "Comprehensive Digital Marketing"
+description: "Full-funnel campaigns with analytics and lifecycle automation."
+service_type: "Digital marketing"
+- name: "SEO for AI Answers"
+description: "Answer engine optimization so AI summaries cite your brand."
+service_type: "SEO for AI answers"
+faq:
+- question: "What kind of businesses does Doop UX partner with?"
+answer: "We partner with small and mid-sized teams that need corporate-grade strategy and operations without heavy
+agency overhead."
+- question: "Where do we start on a new engagement?"
+answer: "We begin with a diagnostic: goals, customer journey, operational bottlenecks, and the data you already
+have. That becomes the roadmap for delivery."
+- question: "How fast can we see progress?"
+answer: "We typically deliver a strategy and first operational wins in 2-4 weeks, then execute in focused sprints."
+- question: "Do you still build websites?"
+answer: "Yes. We treat websites as part of the broader system: brand, UX, SEO, and conversion aligned to business
+goals."
+- question: "Can you integrate AI automation into our existing stack?"
+answer: "Yes. We map workflows and integrate AI agents, automations, and data pipelines with tools like Zapier,
+Make, n8n, and custom APIs so you stay in control."
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  {% assign lcp_media = site.data['image-manifest'].portfolio1 %}
+  {% if lcp_media %}
+  {% capture lcp_avif_srcset %}
+  {% for source in lcp_media.sources.avif %}
+  {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  {% endcapture %}
+  {% assign lcp_primary = lcp_media.sources.avif | last %}
+  <link rel="preload" as="image" href="{{ site.baseurl }}{{ lcp_primary.path }}"
+    imagesrcset="{{ lcp_avif_srcset | strip }}" imagesizes="(max-width: 640px) 72vw, 360px" type="image/avif"
+    fetchpriority="high">
+  {% endif %}
+  <style>
+    :root {
+      --bg-start: #be4fc1;
+      --bg-middle: #8c62d6;
+      --bg-end: #77b5d6;
+      --grid-color: 255, 255, 255;
+      --grid-opacity: .06;
+      --grid-size: 48px;
+      --text: #fff;
+      --accent: #f09cff;
+      --toast-min-height: 48px;
+      --content-max: 1220px;
+      --header-max: 1320px;
+      --header-h: clamp(88px, 11vh, 144px);
+      --section-pad: clamp(56px, 9vw, 140px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Satoshi", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        repeating-linear-gradient(0deg,
+          rgba(var(--grid-color), var(--grid-opacity)) 0,
+          rgba(var(--grid-color), var(--grid-opacity)) 1px,
+          transparent 1px,
+          transparent var(--grid-size)),
+        repeating-linear-gradient(90deg,
+          rgba(var(--grid-color), var(--grid-opacity)) 0,
+          rgba(var(--grid-color), var(--grid-opacity)) 1px,
+          transparent 1px,
+          transparent var(--grid-size));
+      -webkit-mask-image:
+        radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
+        linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
+      mask-image:
+        radial-gradient(130% 90% at 50% 26%, #000 28%, transparent 60%),
+        linear-gradient(to bottom, #000 0 58%, transparent 72% 100%);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    header.container-wide {
+      position: relative;
+      z-index: 2;
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding-block: clamp(16px, 2.6vw, 34px);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .brand img {
+      display: block;
+      width: 120px;
+      height: auto;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 16px;
+      opacity: .95;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      min-height: calc(100dvh - var(--header-h));
+      display: grid;
+      grid-template-rows: 1fr auto 1fr 40dvh;
+      gap: 0;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 18px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      opacity: .95;
+    }
+
+    .eyebrow .dot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1;
+      color: #ee64ff;
+    }
+
+    .copy {
+      grid-row: 2;
+    }
+
+    .copy h1 {
+      margin: 0.5ch auto;
+      text-align: center;
+      line-height: 1.06;
+      font-size: clamp(42px, 5.3vw, 89px);
+      max-width: 22ch;
+    }
+
+    .projects-inline {
+      grid-row: 4;
+      position: relative;
+      width: 100svw;
+      height: 100%;
+      margin-left: calc(50% - 50svw);
+      overflow: hidden;
+      align-self: end;
+      min-height: clamp(220px, 40svh, 420px);
+    }
+
+    .projects-clip {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .sheet {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
+    }
+
+    .marquee {
+      display: flex;
+      gap: 0;
+      height: 100%;
+      width: max-content;
+      animation: scrollX 60s linear infinite;
+      will-change: transform;
+      line-height: 0;
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .marquee {
+        animation: none;
+      }
+    }
+
+    @keyframes scrollX {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .project {
+      flex: 0 0 auto;
+      display: block;
+      width: clamp(200px, 32vw, 360px);
+      aspect-ratio: var(--project-aspect, 3 / 4);
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, .08);
+      background-image: var(--project-placeholder, none);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width:640px) {
+      .project {
+        width: clamp(180px, 72vw, 280px);
+      }
+    }
+
+    #toast-anchor {
+      min-height: var(--toast-min-height);
+      pointer-events: none;
+    }
+  </style>
+  <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  </noscript>
+
+  <!-- FAVICONS -->
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#151515">
+  <meta name="theme-color" content="#151515">
+
+  {% assign meta_title = page.meta_title | default: site.title %}
+  {% assign meta_description = page.meta_description | default: site.description %}
+  {% assign canonical = page.url | absolute_url %}
+  {% assign robots = page.meta_robots | default: site.seo_defaults.robots | default: 'index,follow' %}
+  {% assign keywords = page.meta_keywords %}
+  {% assign raw_meta_image = page.meta_image | default: site.default_meta_image %}
+  {% if raw_meta_image %}
+  {% if raw_meta_image contains '://' %}
+  {% assign meta_image = raw_meta_image %}
+  {% else %}
+  {% assign meta_image = raw_meta_image | absolute_url %}
+  {% endif %}
+  {% endif %}
+  {% assign site_logo_path = site.organization.logo | default: '/assets/logo.png' %}
+  {% if site_logo_path contains '://' %}
+  {% assign site_logo = site_logo_path %}
+  {% else %}
+  {% assign site_logo = site_logo_path | absolute_url %}
+  {% endif %}
+  {% assign site_root = '/' | absolute_url %}
+  {% assign locale = site.locale | default: 'en_US' %}
+
+  <title>{{ meta_title }}</title>
+  <meta name="title" content="{{ meta_title }}">
+  <meta name="description" content="{{ meta_description }}">
+  {% if keywords %}
+  <meta name="keywords" content="{{ keywords }}">{% endif %}
+  <meta name="robots" content="{{ robots }}">
+  <meta name="googlebot" content="{{ robots }}">
+  <meta name="bingbot" content="{{ robots }}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="{{ canonical }}">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ meta_title }}">
+  <meta property="og:description" content="{{ meta_description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ locale }}">
+  {% if meta_image %}
+  <meta property="og:image" content="{{ meta_image }}">
+  <meta property="og:image:secure_url" content="{{ meta_image }}">
+  <meta property="og:image:alt" content="{{ meta_title }}">
+  {% endif %}
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="{{ site.seo_defaults.twitter_card | default: 'summary_large_image' }}">
+  <meta name="twitter:title" content="{{ meta_title }}">
+  <meta name="twitter:description" content="{{ meta_description }}">
+  {% if site.twitter_username %}
+  <meta name="twitter:site" content="@{{ site.twitter_username | replace: '@','' }}">
+  {% endif %}
+  {% if meta_image %}
+  <meta name="twitter:image" content="{{ meta_image }}">
+  <meta name="twitter:image:alt" content="{{ meta_title }}">
+  {% endif %}
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site_root }}#organization",
+        "name": {{ site.organization.name | default: site.title | jsonify }},
+        "legalName": {{ site.organization.legal_name | default: site.organization.name | jsonify }},
+        "url": {{ site.organization.url | default: site_root | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ site_logo | jsonify }}
+        },
+        "sameAs": {{ site.organization.same_as | jsonify }}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site_root }}#website",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site_root | jsonify }},
+        "description": {{ site.description | jsonify }},
+        "publisher": {
+          "@id": "{{ site_root }}#organization"
+        },
+        "inLanguage": "{{ locale }}"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ canonical }}#webpage",
+        "url": {{ canonical | jsonify }},
+        "name": {{ meta_title | jsonify }},
+        "description": {{ meta_description | jsonify }},
+        "isPartOf": {
+          "@id": "{{ site_root }}#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": {{ meta_image | jsonify }}
+        },
+        "inLanguage": "{{ locale }}"
+      }{% if page.schema_services %}
+      ,
+      {
+        "@type": "ItemList",
+        "@id": "{{ canonical }}#serviceList",
+        "name": "Doop UX Core Services",
+        "itemListElement": [
+          {% for service in page.schema_services %}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "item": {
+              "@type": "Service",
+              "name": {{ service.name | jsonify }},
+              "serviceType": {{ service.service_type | jsonify }},
+              "description": {{ service.description | jsonify }},
+              "provider": {
+                "@id": "{{ site_root }}#organization"
+              },
+              "areaServed": {{ site.organization.area_served | default: 'Global' | jsonify }}
+            }
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }{% if page.faq %},
+      {
+        "@type": "FAQPage",
+        "@id": "{{ canonical }}#faq",
+        "mainEntity": [
+          {% for item in page.faq %}
+          {
+            "@type": "Question",
+            "name": {{ item.question | strip_newlines | jsonify }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ item.answer | strip_newlines | jsonify }}
+            }
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }{% endif %}
+      {% endif %}
+    ]
+  }
+  </script>
+</head>
+
+<body class="{{ page.body_class }}">
+  <div class="bg-grid" aria-hidden="true"></div>
+
+
+  <header class="container-wide">
+    <div class="row">
+      <div class="brand">
+        <a href="{{ site.baseurl }}/">
+          <picture>
+            <source
+              srcset="{{ site.baseurl }}/assets/generated/logo/logo-200.webp 200w, {{ site.baseurl }}/assets/generated/logo/logo-320.webp 320w, {{ site.baseurl }}/assets/generated/logo/logo-480.webp 480w, {{ site.baseurl }}/assets/generated/logo/logo-640.webp 640w"
+              type="image/webp" sizes="120px">
+            <source
+              srcset="{{ site.baseurl }}/assets/generated/logo/logo-200.png 200w, {{ site.baseurl }}/assets/generated/logo/logo-320.png 320w, {{ site.baseurl }}/assets/generated/logo/logo-480.png 480w, {{ site.baseurl }}/assets/generated/logo/logo-640.png 640w"
+              type="image/png" sizes="120px">
+            <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="120" height="59" decoding="async"
+              loading="eager" />
+          </picture>
+        </a>
+      </div>
+
+      <!-- Hamburger menu -->
+      <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="bars"></span>
+      </button>
+
+      <nav id="siteNav" class="nav">
+        <a href="{{ site.baseurl }}/solutions">Solutions</a>
+        <a href="{{ site.baseurl }}/showcase">Showcase</a>
+        <a href="{{ site.baseurl }}/contact">Contact</a>
+        <button class="nav-close" aria-label="Close menu">
+          <span class="x"></span>
+          <span class="nav-close-label">Close</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container hero">
+    <div></div>
+    <div class="copy">
+      <div class="eyebrow"><span class="dot">•</span> Corporate-grade execution for small teams <span
+          class="dot">•</span></div>
+      <h1>Strategy, process, and digital systems for small business leaders</h1>
+    </div>
+    <div></div>
+
+    <div class="projects-inline" aria-label="Featured projects">
+      <div class="projects-clip">
+        <div class="sheet">
+          <div class="marquee" id="marquee">
+            {% assign manifest = site.data['image-manifest'] %}
+            <!-- Set A -->
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" loading="eager" fetchpriority="high" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw,
+              (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
+              sizes="(max-width: 640px) 72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <!-- Set B (dup) -->
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw,
+              (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px)
+              72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+            <figure class="project"
+              style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
+              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
+              sizes="(max-width: 640px) 72vw, (max-width: 1125px) 32vw, 360px" %}
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slice-light">
+    <div class="container about-block">
+      <p class="about-lede">
+        We help small and mid-sized businesses align strategy, operations, and digital delivery.
+        We map processes, design SOPs, and implement systems that make teams faster and more consistent.
+        Websites are built as part of the broader business strategy, not as isolated projects.
+      </p>
+
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-value">15+</div>
+          <div class="stat-label">Years of experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">80+</div>
+          <div class="stat-label">Satisfied clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Projects delivered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slice-light process">
+    <div class="container">
+      <h2 class="process-title">Our process</h2>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <h3 class="card-title">Align the business</h3>
+          <p class="card-copy">
+            We start with a diagnostic: goals, customer journey, revenue levers, and operational
+            bottlenecks. This becomes the brief for every decision.
+          </p>
+          <span class="step-number strong">01</span>
+        </article>
+
+        <article class="process-card">
+          <h3 class="card-title">Design the operating system</h3>
+          <p class="card-copy">
+            We translate strategy into processes, SOPs, roles, and tooling so execution is
+            consistent and measurable.
+          </p>
+          <span class="step-number soft">02</span>
+        </article>
+
+        <article class="process-card">
+          <h3 class="card-title">Implement and optimize</h3>
+          <p class="card-copy">
+            We build the digital layer (automation, dashboards, websites, CRM) and iterate based
+            on real performance, not assumptions.
+          </p>
+          <span class="step-number softer">03</span>
+        </article>
+      </div>
+
+      <div class="process-cta">
+
+        <a class="btn-primary" href="{{ site.baseurl }}/contact">Get started</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slice-light solutions">
+    <div class="container-wide">
+      <header class="solutions-head">
+        <h2 class="solutions-title">Service snapshots</h2>
+        <p class="solutions-subtitle">
+          We combine strategy, operations, and digital growth into one system for small business
+          teams. Websites are one component of the broader transformation.
+        </p>
+      </header>
+
+      <div class="solutions-grid">
+        <figure class="solution">
+          {% include picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>Boatique Marine</h3>
+            <p>Premium customer journey aligned to positioning, revenue, and booking efficiency.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>Prana Ecotherapy</h3>
+            <p>Service architecture and content system that improved clarity and conversion.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, (max-width:
+          1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>Northgate</h3>
+            <p>Lead pipeline, content system, and sales enablement for a high-end builder.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation site" sizes="(max-width:
+          960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>Beyond Limits Children's Foundation</h3>
+            <p>Donation workflow optimized for repeat giving and operational clarity.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, (max-width:
+          1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>Calida Ellora</h3>
+            <p>Brand system and launch plan to scale programs with consistency.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio8" alt="Electric Vibes experience" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>Electric Vibes</h3>
+            <p>Commerce strategy and merchandising flows that raise basket value.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, (max-width:
+          1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>NTT Pilates</h3>
+            <p>Membership operations, scheduling, and retention-focused experience.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="solution">
+          {% include picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw,
+          (max-width: 1440px) 45vw, 560px" %}
+          <figcaption>
+            <h3>The One</h3>
+            <p>Go-to-market landing page that validated positioning and demand.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="slice-logos">
+    <div class="container-wide">
+      <header class="logos-head section-head">
+        <h2 class="logos-title section-title">PLATFORMS WE CONNECT</h2>
+      </header>
+
+      <div class="logos-grid" aria-label="Expert platforms">
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace"
+            width="592" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce"
+            width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slice-light testimonials" aria-labelledby="tst-title">
+    <div class="container">
+      <header class="tst-head">
+        <h2 id="tst-title" class="tst-title">Voices of satisfaction and success</h2>
+        <p class="tst-subtitle">
+          We take pride in building lasting partnerships and delivering solutions that exceed expectations.
+        </p>
+      </header>
+
+      <div class="tst-carousel" id="tstCarousel">
+        <button class="tst-nav tst-prev" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div class="tst-viewport" aria-live="polite">
+          <div class="tst-track">
+            <article class="tst-card is-active">
+              <blockquote class="tst-quote">
+                We came in for a website, but Doop UX reframed the work around our business model and lead pipeline.
+                The strategy made every channel perform better and aligned the team.
+              </blockquote>
+              <footer class="tst-meta">
+                <div>
+                  <div class="tst-name">Daniel S.</div>
+                  <div class="tst-project">Project: <strong>Northgate Marketing Strategy</strong></div>
+                </div>
+                <div class="tst-stars" aria-label="5 out of 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="tst-card">
+              <blockquote class="tst-quote">
+                They mapped our workflows, automated handoffs, and built dashboards we actually use.
+                The business runs tighter and the team is finally aligned.
+              </blockquote>
+              <footer class="tst-meta">
+                <div>
+                  <div class="tst-name">Alicia R.</div>
+                  <div class="tst-project">Project: <strong>Business Process Optimization</strong></div>
+                </div>
+                <div class="tst-stars" aria-label="5 out of 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="tst-card">
+              <blockquote class="tst-quote">
+                We validated pricing and demand before investing in a full build. Clear roadmap, fast execution,
+                and decisions grounded in data.
+              </blockquote>
+              <footer class="tst-meta">
+                <div>
+                  <div class="tst-name">Miguel T.</div>
+                  <div class="tst-project">Project: <strong>Market Research & Pricing</strong></div>
+                </div>
+                <div class="tst-stars" aria-label="5 out of 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </div>
+
+        <button class="tst-nav tst-next" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slice-light faq" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="faq-head">
+        <div class="eyebrow"><span class="dot">•</span> QUESTIONS WE HEAR OFTEN <span class="dot">•</span></div>
+        <h2 id="faq-title" class="sr-only">Frequently asked questions</h2>
+      </header>
+
+      <div class="faq-accordion" role="list">
+        <details class="faq-panel" open>
+          <summary><span>What kind of businesses does Doop UX partner with?</span></summary>
+          <div class="faq-panel__content">
+            We partner with small and mid-sized teams that need corporate-grade strategy and operations without heavy
+            agency overhead.
+          </div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>Where do we start on a new engagement?</span></summary>
+          <div class="faq-panel__content">
+            We start with a diagnostic: goals, customer journey, operational bottlenecks, and the data you already have.
+            That becomes the roadmap for delivery.
+          </div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>How fast can we see progress?</span></summary>
+          <div class="faq-panel__content">
+            We typically deliver a strategy and first operational wins in 2-4 weeks, then execute in focused sprints.
+          </div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>Do you still build websites?</span></summary>
+          <div class="faq-panel__content">
+            Yes. We treat websites as part of the broader system: brand, UX, SEO, and conversion aligned to business
+            goals.
+          </div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>Can you integrate AI automation into our existing stack?</span></summary>
+          <div class="faq-panel__content">
+            Yes. We map workflows and integrate AI agents, automations, and data pipelines with tools like Zapier, Make,
+            n8n, and custom APIs so you stay in control.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  {% include_relative partials/footer.html %}
+
+  <script src="{{ site.baseurl }}/scripts.js" defer></script>
+
+</body>
+
+</html>
