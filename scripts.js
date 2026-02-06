@@ -284,6 +284,13 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
   showToast(msg, { variant: 'error', timeoutMs });
 }
 
+function setDynamicYear(root = document) {
+  const year = new Date().getFullYear();
+  root.querySelectorAll('.js-year').forEach((el) => {
+    el.textContent = String(year);
+  });
+}
+
 /* ============ LOAD FOOTER PARTIAL ============ */
 (async () => {
   const slot = document.getElementById('footer-slot');
@@ -298,14 +305,17 @@ function showErrorToast(msg = 'Submission failed. Please try again.', timeoutMs 
 
     slot.insertAdjacentHTML('afterend', html);
     slot.remove();
+    setDynamicYear(document);
   } catch (err) {
     console.error('Footer load failed:', err);
-    slot.outerHTML = '<footer class="site-footer"><div class="container-wide foot-wrap"><p class="foot-copy">© 2025</p></div></footer>';
+    const year = new Date().getFullYear();
+    slot.outerHTML = `<footer class="site-footer"><div class="container-wide foot-wrap"><p class="foot-copy">© <span class="js-year">${year}</span></p></div></footer>`;
   }
 })();
 
 /* ============ MOBILE NAV ============ */
 document.addEventListener('DOMContentLoaded', () => {
+  setDynamicYear(document);
   const header = document.querySelector('header.container-wide');
   const btn = header?.querySelector('.nav-toggle');
   const nav = header?.querySelector('.nav');
