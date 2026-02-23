@@ -1,2 +1,8 @@
 node_modules/
 .DS_Store
+
+# Project documentation
+SCREENSHOTS_NEEDED.md
+
+# Notion knowledge base (private)
+Notion-knowladge/
