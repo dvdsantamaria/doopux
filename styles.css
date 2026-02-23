@@ -1510,6 +1510,19 @@ body.service-detail-page {
     z-index: 3
 }
 
+/* Dark-safe overrides for indexb - no light sections */
+.slice-light,
+.slice-light.process,
+.slice-light.solutions,
+.slice-light.testimonials,
+.solutions,
+.testimonials,
+.process,
+.service-eco {
+  background: transparent !important;
+  color: #fff !important;
+}
+
 /* Additional styles for indexb */
 .pillars { display: flex; justify-content: center; gap: clamp(16px, 3vw, 32px); margin-top: clamp(24px, 3vw, 40px); flex-wrap: wrap; padding: 0 20px; }
 .pillar { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.12); backdrop-filter: blur(10px); padding: 12px 22px; border-radius: 999px; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border: 1px solid rgba(255,255,255,.2); transition: transform .2s ease, background .2s ease; }
@@ -1528,6 +1541,19 @@ body.service-detail-page {
   body:not(.theme-light) .pillar { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); }
   body:not(.theme-light) .pillar:hover { background: rgba(255,255,255,.12); }
   body:not(.theme-light) .project-link { color: #f09cff !important; }
+  
+  /* Dark-safe sections */
+  body:not(.theme-light) .slice-light,
+  body:not(.theme-light) .slice-light.process,
+  body:not(.theme-light) .slice-light.solutions,
+  body:not(.theme-light) .slice-light.testimonials,
+  body:not(.theme-light) .solutions,
+  body:not(.theme-light) .testimonials,
+  body:not(.theme-light) .process,
+  body:not(.theme-light) .service-eco {
+    background: transparent !important;
+    color: #fff !important;
+  }
 }
 
 @media (prefers-color-scheme:dark) {
