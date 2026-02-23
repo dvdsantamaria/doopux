@@ -252,6 +252,34 @@ faq:
       scrollbar-width: none;
     }
     .web-carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: #111;
+      transition: all .2s ease;
+      z-index: 10;
+    }
+    .carousel-nav:hover {
+      background: #ee64ff;
+      color: #fff;
+      border-color: #ee64ff;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .carousel-prev { left: 8px; }
+    .carousel-next { right: 8px; }
+    @media (max-width: 640px) {
+      .carousel-nav { display: none; }
+    }
     body.home .web-project {
       flex: 0 0 auto;
       width: clamp(300px, 45vw, 480px);
@@ -601,6 +629,17 @@ faq:
       body.home .web-project p { color: rgba(255,255,255,.85); }
       body.home .web-project .project-link { color: #f09cff; }
 
+      .carousel-nav {
+        background: rgba(255,255,255,.15);
+        color: #fff;
+        border-color: rgba(255,255,255,.25);
+        box-shadow: 0 4px 16px rgba(0,0,0,.3);
+      }
+      .carousel-nav:hover {
+        background: #ee64ff;
+        border-color: #ee64ff;
+      }
+
       body.home .process-card {
         background: rgba(255,255,255,.12);
         border: 1px solid rgba(255,255,255,.2);
@@ -792,22 +831,13 @@ faq:
   <section class="container hero">
     <div></div>
     <div class="copy">
-      <div class="eyebrow"><span class="dot">•</span> Corporate-grade execution <span class="dot">•</span></div>
-      <h1>Strategy, process, and digital systems for growing businesses</h1>
+      <div class="eyebrow"><span class="dot">•</span> Corporate-grade execution for small teams <span class="dot">•</span></div>
+      <h1>Strategy, process, and digital systems for small business leaders</h1>
       
       <div class="pillars">
-        <div class="pillar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
-          Web Development
-        </div>
-        <div class="pillar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          Process Optimization
-        </div>
-        <div class="pillar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
-          Growth Strategies
-        </div>
+        <div class="pillar">Web Development</div>
+        <div class="pillar">Process Optimization</div>
+        <div class="pillar">Growth Strategies</div>
       </div>
     </div>
     <div></div>
@@ -960,6 +990,12 @@ faq:
             </figcaption>
           </figure>
         </div>
+        <button class="carousel-nav carousel-prev" aria-label="Previous projects">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-nav carousel-next" aria-label="Next projects">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -1224,5 +1260,27 @@ faq:
   {% include_relative partials/footer.html %}
 
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
+  <script>
+    // Carousel navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousels = document.querySelectorAll('.web-carousel');
+      carousels.forEach(function(carousel) {
+        const track = carousel.querySelector('.web-carousel-track');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        if (!track || !prevBtn || !nextBtn) return;
+        
+        const scrollAmount = 400;
+        
+        prevBtn.addEventListener('click', function() {
+          track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        
+        nextBtn.addEventListener('click', function() {
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
