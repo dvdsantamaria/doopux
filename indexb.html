@@ -142,28 +142,25 @@ faq:
     .project img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     @media (max-width:640px) { .project { width: clamp(180px, 72vw, 280px); } }
 
-    /* Dark Sections (All sections are dark-safe) */
-    .section-dark {
-      background: transparent;
-      color: #fff;
+    /* Light/Gray Sections (non-hero) */
+    .slice-light {
+      background: #efefef;
+      color: #111;
       padding-block: var(--section-pad);
       position: relative;
       z-index: 1;
     }
-    .section-dark .section-subtitle {
-      color: rgba(255,255,255,.85);
+    .slice-light .section-subtitle {
+      color: rgba(17,17,17,.72);
     }
-    
-    .section-dark-alt {
-      background: rgba(0,0,0,.08);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      padding-block: var(--section-pad);
-      position: relative;
-      z-index: 1;
+    .slice-light .stat-label {
+      color: rgba(17,17,17,.65);
     }
-    .section-dark-alt .section-subtitle {
-      color: rgba(255,255,255,.85);
+    .slice-light .eyebrow {
+      color: rgba(17,17,17,.7);
+    }
+    .slice-light .eyebrow .dot {
+      color: #ee64ff;
     }
 
     .section-head {
@@ -177,6 +174,7 @@ faq:
       font-size: clamp(28px, 3.2vw, 44px);
       line-height: 1.15;
       margin: 0 0 clamp(12px, 1.6vw, 16px);
+      color: #111;
     }
     .section-subtitle {
       margin: 0;
@@ -184,10 +182,10 @@ faq:
       margin-inline: auto;
       font-size: 16px;
       line-height: 1.6;
-      opacity: .8;
+      color: rgba(17,17,17,.72);
     }
 
-    /* About Block - Dark */
+    /* About Block */
     .about-block {
       display: grid;
       gap: clamp(40px, 6vw, 80px);
@@ -199,6 +197,7 @@ faq:
       text-align: center;
       max-width: 48ch;
       margin: 0 auto;
+      color: #111;
     }
     .about-stats {
       display: grid;
@@ -483,6 +482,7 @@ faq:
       margin-inline: auto;
       font-size: 15px;
       line-height: 1.65;
+      color: rgba(17,17,17,.72);
     }
     .tst-carousel { position: relative; }
     .tst-viewport { position: relative; }
@@ -721,13 +721,25 @@ faq:
       body.home .faq-panel[open] summary::after { color: rgba(255,255,255,.8); }
       body.home .faq-panel__content { color: rgba(255,255,255,.85); }
 
+      /* Light sections in dark mode */
+      body.home .slice-light,
+      body.home .slice-light.process {
+        background: #0f1115;
+        color: #e9eef5;
+      }
+      body.home .slice-light .section-title { color: #e9eef5; }
+      body.home .slice-light .section-subtitle,
+      body.home .slice-light .tst-subtitle,
+      body.home .slice-light .card-copy { color: #c7cfdbb3; }
+      body.home .slice-light .stat-label { color: #c7cfdbb3; }
+      body.home .slice-light .eyebrow { color: #c7cfdbb3; }
+      body.home .slice-light .about-lede { color: #e9eef5; }
+      
       /* WE ARE EXPERTS - Dark mode */
       body.home .slice-logos {
-        background: rgba(255,255,255,.08);
-        backdrop-filter: blur(12px);
+        background: #0f1115;
       }
       body.home .slice-logos .logos-title { color: #fff; }
-      body.home .stat-label { color: rgba(255,255,255,.8); }
       body.home .slice-logos .logo {
         background: #fff;
         border-radius: 12px;
@@ -887,7 +899,7 @@ faq:
   </section>
 
   <!-- About -->
-  <section class="section-dark">
+  <section class="slice-light">
     <div class="container about-block">
       <p class="about-lede">
         We specialize in delivering exceptional digital solutions for growing brands. We analyze your business end to end and deliver measurable results, from digital strategy to offline operations. Our work spans strategy, process optimization, and digital execution, helping small teams operate with the clarity and structure of enterprise companies while staying aligned with your goals and budget.
@@ -902,7 +914,7 @@ faq:
 
 
   <!-- PILLAR 1: Web Development -->
-  <section class="section-dark-alt">
+  <section class="slice-light">
     <div class="container-wide">
       <header class="section-head">
         <h2 class="section-title">Web Development</h2>
@@ -1021,8 +1033,8 @@ faq:
     </div>
   </section>
 
-  <!-- We Are Experts -->
-  <section class="slice-logos">
+  <!-- We Are Experts (White background for contrast) -->
+  <section class="slice-logos" style="background:#fff;">
     <div class="container-wide">
       <header class="logos-head section-head">
         <h2 class="logos-title section-title">WE ARE EXPERTS</h2>
@@ -1044,7 +1056,7 @@ faq:
   </section>
 
   <!-- PILLAR 2: Business Process Optimization -->
-  <section class="section-dark">
+  <section class="slice-light">
     <div class="container-wide">
       <header class="section-head">
         <h2 class="section-title">Business Process Optimization</h2>
@@ -1109,7 +1121,7 @@ faq:
   </section>
 
   <!-- PILLAR 3: Growth Strategies -->
-  <section class="section-dark-alt">
+  <section class="slice-light">
     <div class="container-wide">
       <header class="section-head">
         <h2 class="section-title">Growth Strategies</h2>
@@ -1179,7 +1191,7 @@ faq:
   </section>
 
   <!-- Process Section -->
-  <section class="section-dark">
+  <section class="slice-light process">
     <div class="container">
       <header class="section-head">
         <div class="eyebrow"><span class="dot">•</span> How we work <span class="dot">•</span></div>
@@ -1211,7 +1223,7 @@ faq:
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials" aria-labelledby="tst-title">
+  <section class="testimonials slice-light" aria-labelledby="tst-title">
     <div class="container">
       <header class="tst-head">
         <h2 id="tst-title" class="tst-title">Voices of satisfaction and success</h2>
@@ -1268,7 +1280,7 @@ faq:
   </section>
 
   <!-- FAQ -->
-  <section class="faq" aria-labelledby="faq-title">
+  <section class="faq slice-light" aria-labelledby="faq-title">
     <div class="container">
       <header class="faq-head">
         <div class="eyebrow"><span class="dot">•</span> QUESTIONS WE HEAR OFTEN <span class="dot">•</span></div>
