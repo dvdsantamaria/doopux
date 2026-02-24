@@ -150,6 +150,9 @@ faq:
       position: relative;
       z-index: 1;
     }
+    .section-dark .section-subtitle {
+      color: rgba(255,255,255,.85);
+    }
     
     .section-dark-alt {
       background: rgba(0,0,0,.08);
@@ -158,6 +161,9 @@ faq:
       padding-block: var(--section-pad);
       position: relative;
       z-index: 1;
+    }
+    .section-dark-alt .section-subtitle {
+      color: rgba(255,255,255,.85);
     }
 
     .section-head {
@@ -225,6 +231,8 @@ faq:
     }
     body.home .case-study-box h3 { color: #111; }
     body.home .case-study-box p { color: rgba(17,17,17,.75); }
+    body.home .case-study-box .eyebrow { color: rgba(17,17,17,.7); }
+    body.home .case-study-box .eyebrow .dot { color: #ee64ff; }
     body.home .case-study-mini {
       padding: clamp(28px, 3vw, 36px);
       background: #fff;
@@ -718,8 +726,11 @@ faq:
         backdrop-filter: blur(12px);
       }
       body.home .slice-logos .logos-title { color: #fff; }
-      body.home .slice-logos .logo img {
-        filter: brightness(0) invert(1);
+      body.home .stat-label { color: rgba(255,255,255,.8); }
+      body.home .slice-logos .logo {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
       }
     }
 
@@ -896,7 +907,7 @@ faq:
         <h2 class="section-title">Web Development</h2>
         <p class="section-subtitle">
           Websites that drive business results. Each project includes strategy, conversion optimization, 
-          and integration with your sales process — not just pretty pixels.
+          and integration with your sales process, not just pretty pixels.
         </p>
       </header>
 
@@ -1037,8 +1048,8 @@ faq:
       <header class="section-head">
         <h2 class="section-title">Business Process Optimization</h2>
         <p class="section-subtitle">
-          We analyze your operations end-to-end, then optimize. From SOPs and automation 
-          to offline process redesign — we make your business run smoother.
+          We analyze your operations end to end, then optimize. From SOPs and automation 
+          to offline process redesign, we make your business run smoother.
         </p>
       </header>
 
@@ -1103,7 +1114,7 @@ faq:
         <h2 class="section-title">Growth Strategies</h2>
         <p class="section-subtitle">
           Market research, positioning, and go-to-market strategy. We validate demand 
-          before you invest — including offline strategy and channel mix.
+          before you invest, including offline strategy and channel mix.
         </p>
       </header>
 
@@ -1129,7 +1140,7 @@ faq:
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Growth Experiments</h3>
-          <p>Tested campaigns across channels — digital ads, partnerships, even print/DM when relevant. Small bets, measured results, then scale.</p>
+          <p>Tested campaigns across channels: digital ads, partnerships, even print/DM when relevant. Small bets, measured results, then scale.</p>
         </div>
 
         <div class="feature-card">
@@ -1225,7 +1236,7 @@ faq:
             </article>
 
             <article class="tst-card">
-              <blockquote class="tst-quote">They didn't just automate — they restructured how we work. New SOPs, better tools, and a CRM that actually fits our process. The business runs tighter and the team is aligned.</blockquote>
+              <blockquote class="tst-quote">They didn't just automate. They restructured how we work. New SOPs, better tools, and a CRM that actually fits our process. The business runs tighter and the team is aligned.</blockquote>
               <footer class="tst-meta">
                 <div>
                   <div class="tst-name">Alicia R.</div>
