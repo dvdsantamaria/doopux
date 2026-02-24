@@ -790,6 +790,24 @@ faq:
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="{{ site.baseurl }}/styles.css"></noscript>
 
+  <!-- Override styles.css for slice-light background -->
+  <style>
+    .slice-light,
+    .slice-light.process,
+    .slice-light.solutions,
+    .slice-light.testimonials {
+      background: #efefef !important;
+    }
+    @media (prefers-color-scheme: dark) {
+      body.home .slice-light,
+      body.home .slice-light.process,
+      body.home .slice-light.solutions,
+      body.home .slice-light.testimonials {
+        background: #0f1115 !important;
+      }
+    }
+  </style>
+
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
   <meta name="theme-color" content="#151515">
