@@ -74,7 +74,10 @@ faq:
     }
 
     header.container-wide {
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 2;
       min-height: var(--header-h);
       display: flex;
@@ -89,20 +92,19 @@ faq:
       position: relative;
       z-index: 1;
       padding: 0;
-      min-height: calc(100dvh - var(--header-h));
+      min-height: 100dvh;
       display: grid;
-      grid-template-rows: 1fr auto 1fr 35dvh;
+      grid-template-rows: var(--header-h) 1fr auto 1fr 35dvh;
       gap: 0;
       background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-      margin-top: calc(-1 * var(--header-h));
-      padding-top: var(--header-h);
     }
+    .hero-spacer { grid-row: 1; }
+    .copy { grid-row: 3; }
     .eyebrow {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       font-size: 18px; letter-spacing: 1.4px; text-transform: uppercase; opacity: .95;
     }
     .eyebrow .dot { display: inline-flex; align-items: center; justify-content: center; font-size: 16px; color: #ee64ff; }
-    .copy { grid-row: 2; }
     .copy h1 {
       margin: 0 auto; text-align: center; line-height: 1.06;
       font-size: clamp(42px, 5.3vw, 89px); max-width: 22ch;
@@ -128,7 +130,7 @@ faq:
 
     /* Projects Marquee - Hero Only */
     .projects-inline {
-      grid-row: 4; position: relative; width: 100svw; height: 100%;
+      grid-row: 5; position: relative; width: 100svw; height: 100%;
       margin-left: calc(50% - 50svw); overflow: hidden; align-self: end;
       min-height: clamp(220px, 35svh, 380px);
     }
@@ -890,6 +892,7 @@ faq:
 
   <!-- Hero -->
   <section class="container hero">
+    <div class="hero-spacer"></div>
     <div></div>
     <div class="copy">
       <div class="eyebrow"><span class="dot">•</span> Corporate-grade execution for small teams <span class="dot">•</span></div>
