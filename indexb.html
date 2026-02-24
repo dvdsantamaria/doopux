@@ -139,7 +139,7 @@ faq:
       aspect-ratio: 4/3; overflow: hidden;
       background-color: rgba(255,255,255,.08); border-radius: 8px; margin: 0 8px;
     }
-    .project img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .project img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     @media (max-width:640px) { .project { width: clamp(180px, 72vw, 280px); } }
 
     /* Dark Sections (All sections are dark-safe) */
@@ -310,6 +310,7 @@ faq:
       width: 100%;
       aspect-ratio: 16/10;
       object-fit: cover;
+      object-position: top;
       display: block;
     }
     .web-project figcaption { padding: 20px 24px 24px; }
