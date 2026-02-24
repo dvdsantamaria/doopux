@@ -1335,9 +1335,10 @@ n8n, and custom APIs."
 
   <!-- Override styles.css for slice-light background -->
   <style>
-    /* Force body gradient to match static reference - must override styles.css */
+    /* Force body gradient to match static reference - fixed to viewport */
     body {
       background: linear-gradient(135deg, #be4fc1, #77b5d6) !important;
+      background-attachment: fixed !important;
     }
 
     .slice-light,
