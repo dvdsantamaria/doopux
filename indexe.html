@@ -1,0 +1,2043 @@
+---
+layout: null
+body_class: home
+meta_title: "Strategy, Process & Digital Growth — Doop UX Agency"
+meta_description: "Doop UX helps ambitious businesses align strategy, operations, and digital execution. Three pillars:
+Web Development, Business Process Optimization, and Growth Strategies."
+meta_keywords: "business strategy, process optimization, web development, growth strategies, digital transformation, UX
+consulting, AI automation, small business"
+schema_services:
+- name: "Web Development"
+description: "High-performing websites engineered for speed, accessibility, and conversion."
+service_type: "Web development"
+- name: "Business Process Optimization"
+description: "Process mapping, SOPs, and automation that remove operational drag."
+service_type: "Operations"
+- name: "Growth Strategies"
+description: "Positioning, research, and execution roadmaps for sustainable growth."
+service_type: "Strategy"
+faq:
+- question: "What kind of businesses does Doop UX partner with?"
+answer: "We partner with small and mid-sized teams that need corporate-grade strategy and operations without heavy
+agency overhead."
+- question: "How do you approach a new project?"
+answer: "We start with a diagnostic: goals, customer journey, operational bottlenecks, and existing data. This becomes
+the roadmap for delivery."
+- question: "Do you work with non-profits?"
+answer: "Yes, we have extensive experience with non-profits, including secure data handling, grant systems, and donation
+workflows."
+- question: "Can you integrate AI and automation?"
+answer: "Yes. We map workflows and integrate AI agents, automations, and data pipelines with tools like Zapier, Make,
+n8n, and custom APIs."
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    :root {
+      --bg-start: #be4fc1;
+      --bg-middle: #8c62d6;
+      --bg-end: #77b5d6;
+      --grid-color: 255, 255, 255;
+      --grid-opacity: .06;
+      --grid-size: 48px;
+      --text: #fff;
+      --accent: #f09cff;
+      --toast-min-height: 48px;
+      --content-max: 1220px;
+      --header-max: 1320px;
+      --header-h: clamp(88px, 11vh, 144px);
+      --section-pad: clamp(56px, 9vw, 140px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Satoshi", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(var(--grid-color), var(--grid-opacity)) 0, rgba(var(--grid-color), var(--grid-opacity)) 1px, transparent 1px, transparent var(--grid-size)),
+        repeating-linear-gradient(90deg, rgba(var(--grid-color), var(--grid-opacity)) 0, rgba(var(--grid-color), var(--grid-opacity)) 1px, transparent 1px, transparent var(--grid-size));
+      -webkit-mask-image: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 80%);
+      mask-image: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 80%);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    header.container-wide {
+      position: relative;
+      z-index: 2;
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding-block: clamp(16px, 2.6vw, 34px);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .brand img {
+      display: block;
+      width: 120px;
+      height: auto;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 16px;
+      opacity: .95;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      min-height: calc(100dvh - var(--header-h));
+      display: grid;
+      grid-template-rows: 1fr auto 1fr 40dvh;
+      gap: 0;
+    }
+
+    .copy {
+      grid-row: 2;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 18px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      opacity: .95;
+    }
+
+    .eyebrow .dot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #ee64ff;
+    }
+
+    .copy h1 {
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.06;
+      font-size: clamp(42px, 5.3vw, 89px);
+      max-width: 22ch;
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+    }
+
+    /* Three Pillars - Hero */
+    .pillars {
+      display: flex;
+      justify-content: center;
+      gap: clamp(16px, 3vw, 32px);
+      margin-top: clamp(24px, 3vw, 40px);
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .pillar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, .12);
+      backdrop-filter: blur(10px);
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .pillar:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, .18);
+    }
+
+    .pillar svg {
+      width: 18px;
+      height: 18px;
+      opacity: .9;
+      flex-shrink: 0;
+    }
+
+    /* Hero Video - replaces carousel */
+    .hero-video {
+      grid-row: 4;
+      position: relative;
+      width: 100svw;
+      height: 100%;
+      margin-left: calc(50% - 50svw);
+      overflow: hidden;
+      align-self: end;
+      min-height: clamp(220px, 35svh, 380px);
+    }
+
+    .hero-video::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.75) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(190, 79, 193, 0.25) 0%, rgba(140, 98, 214, 0.15) 50%, rgba(119, 181, 214, 0.25) 100%);
+      z-index: 2;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+
+    /* Projects Marquee - Hero Only */
+    .projects-inline {
+      grid-row: 4;
+      position: relative;
+      width: 100svw;
+      height: 100%;
+      margin-left: calc(50% - 50svw);
+      overflow: hidden;
+      align-self: end;
+      min-height: clamp(220px, 35svh, 380px);
+    }
+
+    .projects-clip {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .sheet {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
+    }
+
+    .marquee {
+      display: flex;
+      gap: 0;
+      height: 100%;
+      width: max-content;
+      animation: scrollX 60s linear infinite;
+      will-change: transform;
+      line-height: 0;
+    }
+
+    @keyframes scrollX {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .project {
+      flex: 0 0 auto;
+      display: block;
+      width: clamp(200px, 28vw, 340px);
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, .08);
+      border-radius: 8px;
+      margin: 0 8px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    @media (max-width:640px) {
+      .project {
+        width: clamp(180px, 72vw, 280px);
+      }
+    }
+
+    /* Light/Gray Sections (non-hero) */
+    .slice-light {
+      background: #efefef !important;
+      color: #111;
+      padding-block: var(--section-pad);
+      position: relative;
+      z-index: 1;
+    }
+
+    .slice-light .section-subtitle {
+      color: rgba(17, 17, 17, .72);
+    }
+
+    .slice-light .stat-label {
+      color: rgba(17, 17, 17, .65);
+    }
+
+    .slice-light .eyebrow {
+      color: rgba(17, 17, 17, .7);
+    }
+
+    .slice-light .eyebrow .dot {
+      color: #ee64ff;
+    }
+
+    .section-head {
+      text-align: center;
+      margin: 0 auto clamp(40px, 5vw, 60px);
+      max-width: 90ch;
+    }
+
+    .section-title {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.15;
+      margin: 0 auto clamp(12px, 1.6vw, 16px);
+      color: #111;
+      max-width: 72ch;
+    }
+
+    .section-subtitle {
+      margin: 0 auto;
+      max-width: 72ch;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(17, 17, 17, .72);
+    }
+
+    /* About Block */
+    .about-block {
+      display: grid;
+      gap: clamp(40px, 6vw, 80px);
+    }
+
+    .about-lede {
+      font-family: "Satoshi", sans-serif;
+      font-size: clamp(22px, 2.6vw, 40px);
+      line-height: 1.3;
+      text-align: center;
+      max-width: 48ch;
+      margin: 0 auto;
+      color: #111;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 4vw, 40px);
+      align-items: start;
+      text-align: center;
+    }
+
+    .stat {
+      display: grid;
+      gap: 8px;
+    }
+
+    .stat-value {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      font-size: clamp(42px, 7vw, 96px);
+      line-height: 1;
+      color: #111;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: rgba(17, 17, 17, .65);
+    }
+
+    @media (max-width:720px) {
+      .about-stats {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    /* ===== LIGHT MODE (Default) - Cards blancas sólidas ===== */
+
+    /* Case Study Boxes */
+    body.home .case-study-box {
+      padding: clamp(32px, 4vw, 48px);
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    body.home .case-study-box h3 {
+      color: #111;
+    }
+
+    body.home .case-study-box p {
+      color: rgba(17, 17, 17, .75);
+    }
+
+    body.home .case-study-box .eyebrow {
+      color: rgba(17, 17, 17, .7);
+    }
+
+    body.home .case-study-box .eyebrow .dot {
+      color: #ee64ff;
+    }
+
+    body.home .case-study-mini {
+      padding: clamp(28px, 3vw, 36px);
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    body.home .case-study-mini h3 {
+      color: #111;
+    }
+
+    body.home .case-study-mini p {
+      color: rgba(17, 17, 17, .75);
+    }
+
+    /* Web Development Carousel */
+    .web-carousel {
+      position: relative;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+
+    .web-carousel-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px clamp(16px, 5vw, 40px);
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .web-carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: #111;
+      transition: all .2s ease;
+      z-index: 10;
+    }
+
+    .carousel-nav:hover {
+      background: #ee64ff;
+      color: #fff;
+      border-color: #ee64ff;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-prev {
+      left: 8px;
+    }
+
+    .carousel-next {
+      right: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .carousel-nav {
+        display: none;
+      }
+    }
+
+    body.home .web-project {
+      flex: 0 0 auto;
+      width: clamp(300px, 45vw, 480px);
+      scroll-snap-align: center;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    body.home .web-project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .12);
+    }
+
+    body.home .web-project h3 {
+      color: #111;
+    }
+
+    body.home .web-project p {
+      color: rgba(17, 17, 17, .75);
+    }
+
+    body.home .web-project .project-link {
+      color: #ee64ff;
+    }
+
+    .web-project img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .web-project figcaption {
+      padding: 20px 24px 24px;
+    }
+
+    .web-project h3 {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .web-project p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ee64ff;
+      transition: gap .2s ease;
+    }
+
+    .project-link:hover {
+      gap: 10px;
+    }
+
+    /* Process Cards */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(24px, 3vw, 40px);
+    }
+
+    body.home .process-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: clamp(28px, 3.6vw, 48px);
+      min-height: clamp(280px, 36vw, 420px);
+      overflow: hidden;
+      display: grid;
+      align-content: start;
+      gap: 16px;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    body.home .process-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .12);
+    }
+
+    body.home .process-card .card-title {
+      color: #111;
+    }
+
+    body.home .process-card .card-copy {
+      color: rgba(17, 17, 17, .75);
+    }
+
+    .card-title {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 500;
+      font-size: clamp(18px, 1.8vw, 24px);
+      margin: 0;
+    }
+
+    .card-copy {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 42ch;
+    }
+
+    body.home .step-number {
+      position: absolute;
+      left: clamp(24px, 3vw, 40px);
+      bottom: clamp(20px, 3vw, 36px);
+      font-family: "Satoshi", sans-serif;
+      line-height: .9;
+      font-size: clamp(88px, 10vw, 180px);
+      user-select: none;
+      pointer-events: none;
+      color: rgba(0, 0, 0, .08);
+      transition: color .8s ease;
+    }
+
+    body.home .process-card:hover .step-number {
+      color: rgba(0, 0, 0, .15);
+    }
+
+    @media (max-width:960px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-copy {
+        max-width: none;
+      }
+    }
+
+    /* Feature Cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(20px, 3vw, 32px);
+    }
+
+    body.home .feature-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: clamp(24px, 3vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    body.home .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .12);
+    }
+
+    body.home .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 0, 0, .06);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 8px;
+    }
+
+    body.home .feature-icon svg {
+      width: 22px;
+      height: 22px;
+      color: #111;
+    }
+
+    body.home .feature-card h3 {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      margin: 0;
+      color: #111;
+    }
+
+    body.home .feature-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(17, 17, 17, .75);
+    }
+
+    @media (max-width:720px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CTA Button */
+    .btn-primary {
+      width: 20ch;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-inline: auto;
+      padding: 16px 22px;
+      border-radius: 999px;
+      line-height: 1;
+      font-weight: 600;
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      text-align: center;
+      background: rgba(255, 255, 255, .9);
+      color: #111;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
+      transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding-block: var(--section-pad);
+    }
+
+    .tst-head {
+      text-align: center;
+      max-width: 90ch;
+      margin: 0 auto var(--section-gap);
+    }
+
+    .tst-title {
+      margin: 0 0 clamp(12px, 1.6vw, 16px);
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      font-size: clamp(26px, 5.4vw, 56px);
+      line-height: 1.12;
+      color: #111;
+    }
+
+    .tst-subtitle {
+      margin: 0;
+      max-width: 72ch;
+      margin-inline: auto;
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(17, 17, 17, .72);
+    }
+
+    .tst-carousel {
+      position: relative;
+    }
+
+    .tst-viewport {
+      position: relative;
+    }
+
+    .tst-track {
+      display: grid;
+      gap: 0;
+    }
+
+    body.home .tst-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
+      padding: clamp(24px, 5vw, 44px);
+      margin-inline: auto;
+      max-width: 1060px;
+      min-height: clamp(260px, 32vw, 340px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.home .tst-quote {
+      color: #111;
+    }
+
+    body.home .tst-name {
+      color: #111;
+    }
+
+    body.home .tst-project {
+      color: rgba(17, 17, 17, .6);
+    }
+
+    body.home .tst-subtitle {
+      color: rgba(17, 17, 17, .75);
+    }
+
+    .tst-card.is-active {
+      display: flex;
+    }
+
+    .tst-quote {
+      margin: 0;
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.55;
+      font-style: italic;
+      flex: 1 1 auto;
+    }
+
+    .tst-meta {
+      margin-top: auto;
+      padding-top: clamp(10px, 1.6vw, 16px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .tst-name {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .tst-project {
+      font-size: 15px;
+      opacity: .6;
+    }
+
+    .tst-stars {
+      display: flex;
+      align-items: flex-end;
+      margin-left: auto;
+    }
+
+    .tst-stars span {
+      color: #ee64ff;
+      font-size: 22px;
+    }
+
+    .tst-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: #111;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+      cursor: pointer;
+      transition: all .2s ease;
+      z-index: 3;
+    }
+
+    .tst-prev {
+      left: calc(50% - 640px);
+    }
+
+    .tst-next {
+      right: calc(50% - 640px);
+    }
+
+    .tst-nav:hover {
+      background: #ee64ff;
+      color: #fff;
+      border-color: #ee64ff;
+      transform: translateY(-50%) translateY(-1px);
+    }
+
+    @media (max-width:760px) {
+      .tst-nav {
+        display: none;
+      }
+
+      .tst-card {
+        max-width: 100%;
+        border-radius: 16px;
+        height: auto;
+      }
+    }
+
+    /* FAQ */
+    .faq {
+      padding-block: var(--section-pad);
+      text-align: center;
+    }
+
+    .faq .container {
+      display: grid;
+      gap: 32px;
+      justify-items: center;
+    }
+
+    .faq-head {
+      display: grid;
+      gap: 16px;
+      justify-items: center;
+    }
+
+    .faq-accordion {
+      width: min(720px, 100%);
+      display: grid;
+      gap: 16px;
+      text-align: left;
+    }
+
+    body.home .faq-panel {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      transition: border-color .2s ease, box-shadow .2s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+    }
+
+    body.home .faq-panel:hover {
+      border-color: #d0d0d0;
+    }
+
+    body.home .faq-panel[open] {
+      border-color: #c0c0c0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
+    }
+
+    body.home .faq-panel summary {
+      list-style: none;
+      padding: 22px 24px;
+      font-family: "Satoshi", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.45;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      color: #111;
+    }
+
+    .faq-panel summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-panel summary span {
+      flex: 1 1 auto;
+    }
+
+    body.home .faq-panel summary::after {
+      content: "+";
+      font-size: 24px;
+      line-height: 1;
+      color: rgba(0, 0, 0, .4);
+      transition: transform .2s ease, color .2s ease;
+    }
+
+    body.home .faq-panel[open] summary::after {
+      transform: rotate(45deg);
+      color: rgba(0, 0, 0, .7);
+    }
+
+    body.home .faq-panel__content {
+      padding: 0 24px 24px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(17, 17, 17, .75);
+    }
+
+    /* ===== DARK MODE - Cards translúcidas ===== */
+    @media (prefers-color-scheme: dark) {
+
+      body.home .case-study-box,
+      body.home .case-study-mini {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+        backdrop-filter: blur(12px);
+      }
+
+      body.home .case-study-box h3,
+      body.home .case-study-mini h3 {
+        color: #fff;
+      }
+
+      body.home .case-study-box p,
+      body.home .case-study-mini p {
+        color: rgba(255, 255, 255, .85);
+      }
+
+      body.home .web-project {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+        backdrop-filter: blur(12px);
+      }
+
+      body.home .web-project:hover {
+        background: rgba(255, 255, 255, .2);
+        border-color: rgba(255, 255, 255, .35);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, .35);
+      }
+
+      body.home .web-project h3 {
+        color: #fff;
+      }
+
+      body.home .web-project p {
+        color: rgba(255, 255, 255, .85);
+      }
+
+      body.home .web-project .project-link {
+        color: #f09cff;
+      }
+
+      .carousel-nav {
+        background: rgba(255, 255, 255, .15);
+        color: #fff;
+        border-color: rgba(255, 255, 255, .25);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+      }
+
+      .carousel-nav:hover {
+        background: #ee64ff;
+        border-color: #ee64ff;
+      }
+
+      body.home .process-card {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+        backdrop-filter: blur(12px);
+      }
+
+      body.home .process-card:hover {
+        background: rgba(255, 255, 255, .2);
+        border-color: rgba(255, 255, 255, .35);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
+      }
+
+      body.home .process-card .card-title {
+        color: #fff;
+      }
+
+      body.home .process-card .card-copy {
+        color: rgba(255, 255, 255, .85);
+      }
+
+      body.home .step-number {
+        color: rgba(255, 255, 255, .1);
+      }
+
+      body.home .process-card:hover .step-number {
+        color: rgba(255, 255, 255, .18);
+      }
+
+      body.home .feature-card {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+        backdrop-filter: blur(12px);
+      }
+
+      body.home .feature-card:hover {
+        background: rgba(255, 255, 255, .2);
+        border-color: rgba(255, 255, 255, .35);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
+      }
+
+      body.home .feature-icon {
+        background: rgba(255, 255, 255, .15);
+      }
+
+      body.home .feature-icon svg {
+        color: #fff;
+      }
+
+      body.home .feature-card h3 {
+        color: #fff;
+      }
+
+      body.home .feature-card p {
+        color: rgba(255, 255, 255, .85);
+      }
+
+      body.home .tst-card {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+        backdrop-filter: blur(12px);
+      }
+
+      body.home .tst-quote {
+        color: #fff;
+      }
+
+      body.home .tst-name {
+        color: #fff;
+      }
+
+      body.home .tst-project {
+        color: rgba(255, 255, 255, .7);
+      }
+
+      body.home .tst-subtitle {
+        color: rgba(255, 255, 255, .85);
+      }
+
+      .tst-nav {
+        background: rgba(255, 255, 255, .15);
+        color: #fff;
+        border-color: rgba(255, 255, 255, .25);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+      }
+
+      .tst-nav:hover {
+        background: #ee64ff;
+        border-color: #ee64ff;
+      }
+
+      body.home .faq-panel {
+        background: rgba(255, 255, 255, .12);
+        border: 1px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+        backdrop-filter: blur(12px);
+      }
+
+      body.home .faq-panel:hover {
+        background: rgba(255, 255, 255, .18);
+        border-color: rgba(255, 255, 255, .3);
+      }
+
+      body.home .faq-panel[open] {
+        background: rgba(255, 255, 255, .15);
+        border-color: rgba(255, 255, 255, .35);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
+      }
+
+      body.home .faq-panel summary {
+        color: #fff;
+      }
+
+      body.home .faq-panel summary::after {
+        color: rgba(255, 255, 255, .5);
+      }
+
+      body.home .faq-panel[open] summary::after {
+        color: rgba(255, 255, 255, .8);
+      }
+
+      body.home .faq-panel__content {
+        color: rgba(255, 255, 255, .85);
+      }
+
+      /* Light sections in dark mode */
+      body.home .slice-light,
+      body.home .slice-light.process {
+        background: #0f1115 !important;
+        color: #e9eef5;
+      }
+
+      body.home .slice-light .section-title {
+        color: #e9eef5;
+      }
+
+      body.home .slice-light .section-subtitle,
+      body.home .slice-light .tst-subtitle,
+      body.home .slice-light .card-copy {
+        color: #c7cfdbb3;
+      }
+
+      body.home .slice-light .stat-value {
+        color: #e9eef5;
+      }
+
+      body.home .slice-light .stat-label {
+        color: #c7cfdbb3;
+      }
+
+      body.home .slice-light .eyebrow {
+        color: #c7cfdbb3;
+      }
+
+      body.home .slice-light .about-lede {
+        color: #e9eef5;
+      }
+
+      body.home .slice-light .tst-title {
+        color: #e9eef5;
+      }
+
+      /* WE ARE EXPERTS - Dark mode */
+      body.home .slice-logos {
+        background: #0f1115;
+      }
+
+      body.home .slice-logos .logos-title {
+        color: #fff;
+      }
+
+      body.home .slice-logos .logo {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Process CTA */
+    .process-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(40px, 5vw, 60px);
+    }
+
+    #toast-anchor {
+      min-height: var(--toast-min-height);
+      pointer-events: none;
+    }
+
+    /* Mobile Nav */
+    .nav-toggle,
+    .nav-close {
+      display: none;
+    }
+
+    @media (max-width:768px) {
+      .nav-toggle {
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, .3);
+        color: #fff;
+        border-radius: 10px;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .nav-toggle .bars {
+        position: relative;
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+      }
+
+      .nav-toggle .bars::before,
+      .nav-toggle .bars::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+        transition: transform .2s ease;
+      }
+
+      .nav-toggle .bars::before {
+        top: -7px;
+      }
+
+      .nav-toggle .bars::after {
+        top: 7px;
+      }
+
+      .nav {
+        position: fixed;
+        inset: 0;
+        padding: calc(var(--header-h) + 20px) 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: rgba(8, 10, 14, .95);
+        backdrop-filter: blur(10px);
+        transform: translateY(-8%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 10;
+        transition: all .3s ease;
+      }
+
+      header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav {
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav a {
+        font-size: clamp(34px, 10vw, 56px);
+        line-height: 1.15;
+        padding: 8px 4px;
+      }
+
+      .nav-close {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border: 0;
+        background: transparent;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: auto;
+      }
+
+      .nav-close .x {
+        position: relative;
+        width: 22px;
+        height: 22px;
+      }
+
+      .nav-close .x::before,
+      .nav-close .x::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+        transform-origin: center;
+      }
+
+      .nav-close .x::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .nav-close .x::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  </style>
+  <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  </noscript>
+
+  <!-- Override styles.css for slice-light background -->
+  <style>
+    /* Force body gradient to match static reference - fixed to viewport */
+    body {
+      background: linear-gradient(135deg, #be4fc1, #77b5d6) !important;
+      background-attachment: fixed !important;
+    }
+
+    .slice-light,
+    .slice-light.process,
+    .slice-light.solutions,
+    .slice-light.testimonials {
+      background: #efefef !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      body.home .slice-light,
+      body.home .slice-light.process,
+      body.home .slice-light.solutions,
+      body.home .slice-light.testimonials {
+        background: #0f1115 !important;
+      }
+    }
+  </style>
+
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <meta name="theme-color" content="#151515">
+
+  <title>{{ page.meta_title }}</title>
+  <meta name="title" content="{{ page.meta_title }}">
+  <meta name="description" content="{{ page.meta_description }}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.meta_title }}">
+  <meta property="og:description" content="{{ page.meta_description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ '/' | absolute_url }}#organization",
+        "name": "Doop UX",
+        "url": "{{ '/' | absolute_url }}",
+        "logo": { "@type": "ImageObject", "url": "{{ '/assets/logo.png' | absolute_url }}" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ '/' | absolute_url }}#website",
+        "name": "Doop UX",
+        "url": "{{ '/' | absolute_url }}"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}#webpage",
+        "url": "{{ page.url | absolute_url }}",
+        "name": "{{ page.meta_title }}"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="home">
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="container-wide">
+    <div class="row">
+      <div class="brand">
+        <a href="{{ site.baseurl }}/">
+          <picture>
+            <source
+              srcset="{{ site.baseurl }}/assets/generated/logo/logo-200.webp 200w, {{ site.baseurl }}/assets/generated/logo/logo-320.webp 320w"
+              type="image/webp" sizes="120px">
+            <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="120" height="59" decoding="async"
+              loading="eager" />
+          </picture>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="bars"></span>
+      </button>
+      <nav id="siteNav" class="nav">
+        <a href="{{ site.baseurl }}/solutions">Solutions</a>
+        <a href="{{ site.baseurl }}/showcase">Showcase</a>
+        <a href="{{ site.baseurl }}/contact">Contact</a>
+        <button class="nav-close" aria-label="Close menu">
+          <span class="x"></span>
+          <span class="nav-close-label">Close</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container hero">
+    <div></div>
+    <div class="copy">
+      <div class="eyebrow"><span class="dot">•</span> Corporate-grade execution for small teams <span
+          class="dot">•</span></div>
+      <h1>Strategy, process, and digital systems for small business leaders</h1>
+
+      <div class="pillars">
+        <div class="pillar">Web Development</div>
+        <div class="pillar">Process Optimization</div>
+        <div class="pillar">Growth Strategies</div>
+      </div>
+    </div>
+    <div></div>
+
+    <div class="hero-video" aria-label="Featured projects">
+      <video autoplay muted loop playsinline poster="{{ site.baseurl }}/assets/video-poster.jpg">
+        <source src="{{ site.baseurl }}/assets/Buildings.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="slice-light">
+    <div class="container about-block">
+      <p class="about-lede">
+        We specialize in delivering exceptional digital solutions for growing brands. We analyze your business end to
+        end and deliver measurable results, from digital strategy to offline operations. Our work spans strategy,
+        process optimization, and digital execution, helping small teams operate with the clarity and structure of
+        enterprise companies while staying aligned with your goals and budget.
+      </p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-value">15+</div>
+          <div class="stat-label">Years of experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">80+</div>
+          <div class="stat-label">Satisfied clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">100+</div>
+          <div class="stat-label">Projects delivered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PILLAR 1: Web Development -->
+  <section class="slice-light">
+    <div class="container-wide">
+      <header class="section-head">
+        <h2 class="section-title">Web Development</h2>
+        <p class="section-subtitle">
+          Websites that drive business results. Each project includes strategy, conversion optimization,
+          and integration with your sales process, not just pretty pixels.
+        </p>
+      </header>
+
+      <!-- Web Dev Carousel -->
+      <div class="web-carousel">
+        <div class="web-carousel-track">
+          <!-- Boatique Marine -->
+          <figure class="web-project">
+            <a href="https://boatiquemarine.com/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio1.jpg" alt="Boatique Marine" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Boatique Marine</h3>
+              <p>End-to-end digital strategy for luxury marine charter. Integrated booking system, brand positioning,
+                and partnership with Filippetti Yachts ecosystem.</p>
+              <a href="https://boatiquemarine.com/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
+
+          <!-- Northgate Building -->
+          <figure class="web-project">
+            <a href="https://northgatebuilding.com.au/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio4.jpg" alt="Northgate Building" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Northgate Building Group</h3>
+              <p>Business transformation: lead magnet strategy, sales pipeline redesign, SharePoint integration, and
+                offline marketing materials. Result: 40% increase in qualified inquiries.</p>
+              <a href="https://northgatebuilding.com.au/" target="_blank" rel="noopener" class="project-link">Visit
+                website →</a>
+            </figcaption>
+          </figure>
+
+          <!-- Fernando Filippetti -->
+          <figure class="web-project">
+            <a href="https://fernandofilippetti.com/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio5.jpg" alt="Fernando Filippetti" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Fernando Filippetti</h3>
+              <p>Personal branding for aerospace engineer behind NASA's Artemis 2 satellite. Authority positioning,
+                speaking engagement funnel, and media kit strategy.</p>
+              <a href="https://fernandofilippetti.com/" target="_blank" rel="noopener" class="project-link">Visit
+                website →</a>
+            </figcaption>
+          </figure>
+
+          <!-- Electric Vibes -->
+          <figure class="web-project">
+            <a href="https://electricvibes.au/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio8.jpg" alt="Electric Vibes" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Electric Vibes</h3>
+              <p>E-commerce strategy with strong visual identity. Merchandising optimization increased average order
+                value by 35%.</p>
+              <a href="https://electricvibes.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
+
+          <!-- Beyond Limits -->
+          <figure class="web-project">
+            <a href="https://beyondlimitscf.org.au/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio6.jpg" alt="Beyond Limits" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Beyond Limits Foundation</h3>
+              <p>Digital transformation + compliance infrastructure. Secure AWS grant system handling sensitive medical
+                data, donation strategy, and offline fundraising support.</p>
+              <a href="https://beyondlimitscf.org.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
+
+          <!-- LIV Migration -->
+          <figure class="web-project">
+            <a href="https://livmigration.com.au/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio3.jpg" alt="LIV Migration" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>LIV Migration</h3>
+              <p>Lead qualification system that pre-screens clients before consultation. High-intent SEO strategy +
+                automated booking = 60% reduction in unqualified calls.</p>
+              <a href="https://livmigration.com.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
+
+          <!-- Ralph Kerles Art -->
+          <figure class="web-project">
+            <a href="https://www.ralphkerlesart.com/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio9.jpg" alt="Ralph Kerles Art" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Ralph Kerles Art</h3>
+              <p>Luxury positioning strategy for contemporary artist. AR "view on your wall" feature + white-glove
+                service tier increased high-value sales by 50%.</p>
+              <a href="https://www.ralphkerlesart.com/" target="_blank" rel="noopener" class="project-link">Visit
+                website →</a>
+            </figcaption>
+          </figure>
+
+          <!-- Ramage Services -->
+          <figure class="web-project">
+            <a href="https://ramageservices.com.au/" target="_blank" rel="noopener">
+              <img src="{{ site.baseurl }}/assets/portfolio2.jpg" alt="Ramage Services" loading="lazy">
+            </a>
+            <figcaption>
+              <h3>Ramage Services</h3>
+              <p>Complete business rebrand + operations overhaul. CRM implementation, service restructuring, and
+                acquisition-ready documentation package.</p>
+              <a href="https://ramageservices.com.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="carousel-nav carousel-prev" aria-label="Previous projects">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="carousel-nav carousel-next" aria-label="Next projects">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- We Are Experts (White background for contrast) -->
+  <section class="slice-logos" style="background:#fff;">
+    <div class="container-wide">
+      <header class="logos-head section-head">
+        <h2 class="logos-title section-title">WE ARE EXPERTS</h2>
+      </header>
+
+      <div class="logos-grid" aria-label="Expert platforms">
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace"
+            width="592" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce"
+            width="589" height="128" loading="lazy" decoding="async"></div>
+        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589"
+            height="128" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: Business Process Optimization -->
+  <section class="slice-light">
+    <div class="container-wide">
+      <header class="section-head">
+        <h2 class="section-title">Business Process Optimization</h2>
+        <p class="section-subtitle">
+          We analyze your operations end to end, then optimize. From SOPs and automation
+          to offline process redesign, we make your business run smoother.
+        </p>
+      </header>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </div>
+          <h3>Process Documentation</h3>
+          <p>Standard Operating Procedures (SOPs) that work in the real world. We map current state, identify
+            bottlenecks, then document the optimized flow.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>Workflow Automation</h3>
+          <p>Smart automation using Zapier, Make, n8n. We automate repetitive tasks while keeping the human touch where
+            it matters.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20v-6M6 20V10M18 20V4" />
+            </svg>
+          </div>
+          <h3>Performance Dashboards</h3>
+          <p>Real-time visibility into what matters. Custom dashboards that surface insights, not just data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h3>Tech Stack Audits</h3>
+          <p>Evaluation of your current tools, elimination of redundancies, and integration strategy. Often saves 30%+
+            on software costs.</p>
+        </div>
+      </div>
+
+      <!-- Case Study -->
+      <div class="case-study-box" style="margin-top: clamp(48px, 6vw, 72px);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center;">
+          <div>
+            <div class="eyebrow" style="justify-content:flex-start;margin-bottom:16px;"><span class="dot">•</span> Case
+              Study</div>
+            <h3
+              style="font-family:Satoshi,sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:500;margin:0 0 16px;">
+              Ramage Services Rebrand</h3>
+            <p style="line-height:1.7;margin:0 0 20px;">
+              Complete business transformation: service restructuring, CRM implementation (Monday.com),
+              Google Workspace setup, and acquisition-ready documentation. Reduced admin time by 60%.
+            </p>
+            <a href="https://ramageservices.com.au/" target="_blank" rel="noopener" class="project-link">See the result
+              →</a>
+          </div>
+          <div style="border-radius: 12px; overflow: hidden;">
+            <img src="{{ site.baseurl }}/assets/portfolio2.jpg" alt="Ramage Services" style="width:100%;display:block;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: Growth Strategies -->
+  <section class="slice-light">
+    <div class="container-wide">
+      <header class="section-head">
+        <h2 class="section-title">Growth Strategies</h2>
+        <p class="section-subtitle">
+          Market research, positioning, and go-to-market strategy. We validate demand
+          before you invest, including offline strategy and channel mix.
+        </p>
+      </header>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </div>
+          <h3>Market Research</h3>
+          <p>Competitor analysis, pricing studies, and demand validation. We test assumptions with real data before you
+            commit budget.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Brand Positioning</h3>
+          <p>Message strategy that differentiates. We find your unique angle and translate it to both digital and
+            offline channels.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3>Growth Experiments</h3>
+          <p>Tested campaigns across channels: digital ads, partnerships, even print/DM when relevant. Small bets,
+            measured results, then scale.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          <h3>Content Strategy</h3>
+          <p>SEO + authority content that ranks. Including optimization for AI Answers and thought leadership
+            positioning.</p>
+        </div>
+      </div>
+
+      <!-- Case Studies -->
+      <div
+        style="margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(24px, 3vw, 32px);">
+        <div class="case-study-mini">
+          <div class="eyebrow" style="justify-content:flex-start;margin-bottom:12px;"><span class="dot">•</span>
+            Influencer Growth</div>
+          <h3 style="font-family:Satoshi,sans-serif;font-size:20px;font-weight:500;margin:0 0 12px;">Casaca Films</h3>
+          <p style="line-height:1.65;margin:0 0 16px;font-size:14px;">
+            Brand growth strategy for @casaca.films. Product catalog, digital sales funnel,
+            and collaboration management system for influencer monetization.
+          </p>
+          <a href="https://products.casacafilms.com/" target="_blank" rel="noopener" class="project-link">View case
+            →</a>
+        </div>
+
+        <div class="case-study-mini">
+          <div class="eyebrow" style="justify-content:flex-start;margin-bottom:12px;"><span class="dot">•</span>
+            E-commerce Growth</div>
+          <h3 style="font-family:Satoshi,sans-serif;font-size:20px;font-weight:500;margin:0 0 12px;">Ralph Kerles Art
+          </h3>
+          <p style="line-height:1.65;margin:0 0 16px;font-size:14px;">
+            Digital growth for contemporary artist. AR "view on your wall" feature,
+            white-glove positioning, and performance marketing strategy.
+          </p>
+          <a href="https://www.ralphkerlesart.com/" target="_blank" rel="noopener" class="project-link">View case →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="slice-light process">
+    <div class="container">
+      <header class="section-head">
+        <div class="eyebrow"><span class="dot">•</span> How we work <span class="dot">•</span></div>
+        <h2 class="section-title">Our integrated approach</h2>
+      </header>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <h3 class="card-title">Align the business</h3>
+          <p class="card-copy">Deep diagnostic: goals, customer journey, revenue levers, operational bottlenecks, and
+            offline touchpoints. This becomes our roadmap.</p>
+          <span class="step-number">01</span>
+        </article>
+        <article class="process-card">
+          <h3 class="card-title">Design the operating system</h3>
+          <p class="card-copy">Strategy becomes processes, SOPs, automation, and tooling. Both digital and offline
+            workflows designed for consistency.</p>
+          <span class="step-number">02</span>
+        </article>
+        <article class="process-card">
+          <h3 class="card-title">Implement and optimize</h3>
+          <p class="card-copy">Build, launch, measure. We track business metrics (not just vanity metrics) and iterate
+            based on real performance data.</p>
+          <span class="step-number">03</span>
+        </article>
+      </div>
+
+      <div class="process-cta">
+        <a class="btn-primary" href="{{ site.baseurl }}/contact">Start a project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials slice-light" aria-labelledby="tst-title">
+    <div class="container">
+      <header class="tst-head">
+        <h2 id="tst-title" class="tst-title">Voices of satisfaction and success</h2>
+        <p class="tst-subtitle">We take pride in building lasting partnerships and delivering solutions that exceed
+          expectations.</p>
+      </header>
+
+      <div class="tst-carousel" id="tstCarousel">
+        <button class="tst-nav tst-prev" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div class="tst-viewport" aria-live="polite">
+          <div class="tst-track">
+            <article class="tst-card is-active">
+              <blockquote class="tst-quote">We came in for a website, but Doop UX audited our entire sales process. They
+                found opportunities we didn't see — online and offline. The strategy made every channel perform better.
+              </blockquote>
+              <footer class="tst-meta">
+                <div>
+                  <div class="tst-name">Daniel S.</div>
+                  <div class="tst-project">Project: <strong>Northgate Business Strategy</strong></div>
+                </div>
+                <div class="tst-stars" aria-label="5 out of 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="tst-card">
+              <blockquote class="tst-quote">They didn't just automate. They restructured how we work. New SOPs, better
+                tools, and a CRM that actually fits our process. The business runs tighter and the team is aligned.
+              </blockquote>
+              <footer class="tst-meta">
+                <div>
+                  <div class="tst-name">Alicia R.</div>
+                  <div class="tst-project">Project: <strong>Operations Overhaul</strong></div>
+                </div>
+                <div class="tst-stars" aria-label="5 out of 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="tst-card">
+              <blockquote class="tst-quote">They validated our product-market fit before we spent a dollar on
+                development. Market research, pricing tests, and a go-to-market plan that included offline channels.
+              </blockquote>
+              <footer class="tst-meta">
+                <div>
+                  <div class="tst-name">Miguel T.</div>
+                  <div class="tst-project">Project: <strong>Go-to-Market Strategy</strong></div>
+                </div>
+                <div class="tst-stars" aria-label="5 out of 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </div>
+
+        <button class="tst-nav tst-next" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq slice-light" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="faq-head">
+        <div class="eyebrow"><span class="dot">•</span> QUESTIONS WE HEAR OFTEN <span class="dot">•</span></div>
+        <h2 id="faq-title" class="sr-only">Frequently asked questions</h2>
+      </header>
+
+      <div class="faq-accordion" role="list">
+        <details class="faq-panel" open>
+          <summary><span>What kind of businesses does Doop UX partner with?</span></summary>
+          <div class="faq-panel__content">We partner with small and mid-sized teams that need corporate-grade strategy
+            and operations without heavy agency overhead.</div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>Where do we start on a new engagement?</span></summary>
+          <div class="faq-panel__content">We start with a diagnostic: goals, customer journey, operational bottlenecks,
+            and the data you already have. That becomes the roadmap for delivery.</div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>Do you work with non-profits?</span></summary>
+          <div class="faq-panel__content">Absolutely. We have deep experience with non-profits, including secure grant
+            application systems, sensitive data handling on AWS, donation workflows, and compliance with Australian
+            privacy legislation.</div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>Can you integrate AI automation into our existing stack?</span></summary>
+          <div class="faq-panel__content">Yes. We map workflows and integrate AI agents, automations, and data pipelines
+            with tools like Zapier, Make, n8n, and custom APIs so you stay in control.</div>
+        </details>
+        <details class="faq-panel">
+          <summary><span>How fast can we see progress?</span></summary>
+          <div class="faq-panel__content">We typically deliver a strategy and first operational wins in 2-4 weeks, then
+            execute in focused sprints.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  {% include_relative partials/footer.html %}
+
+  <script src="{{ site.baseurl }}/scripts.js" defer></script>
+  <script>
+    // Carousel navigation
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousels = document.querySelectorAll('.web-carousel');
+      carousels.forEach(function (carousel) {
+        const track = carousel.querySelector('.web-carousel-track');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const scrollAmount = 400;
+
+        prevBtn.addEventListener('click', function () {
+          track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', function () {
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
