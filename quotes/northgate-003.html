@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEO Quote — Northgate Building Group</title>
+
+  <!-- Satoshi from Fontshare (same as doopux.com) -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css2?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f3f4f7;
+      --bg-top: #f7f8fb;
+      --bg-bot: #f2f3f6;
+      --white:    #fff;
+      --border:   #e5e5e5;
+      --text:     #111;
+      --muted:    rgba(17,17,17,.68);
+      --accent:   #ee64ff;
+      --accent2:  #8c62d6;
+      --r-card:   20px;
+      --r-sm:     14px;
+      --font:     "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 42%, var(--bg-bot) 100%);
+      overflow-x: hidden;
+      min-height: 100%;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(600px 380px at 12% 0%, rgba(244, 201, 52, 0.18), transparent 60%),
+        radial-gradient(720px 460px at 92% 18%, rgba(125, 162, 255, 0.14), transparent 62%),
+        radial-gradient(520px 420px at 72% 98%, rgba(189, 210, 255, 0.16), transparent 62%);
+      filter: blur(0.2px);
+      opacity: 0.9;
+    }
+
+    /* BG GRID OVERLAY - removed, using roadmap-v2 style background instead */
+
+    /* LAYOUT */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100% - 48px);
+      margin: 0 auto;
+      padding-bottom: 72px;
+    }
+
+    /* HEADER */
+    header.brand-header {
+      padding: clamp(20px,3vw,36px) 0 clamp(40px,5vw,64px);
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .brand-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-subtitle {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: #7b8393;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .brand-icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      display: grid;
+      place-items: center;
+      padding: 6px;
+    }
+    .brand-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: clamp(48px,6vw,72px);
+      text-align: left;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #374151;
+    }
+    .hero-tag .dot { color: var(--accent); font-size: 14px; }
+    .hero-date {
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 4.5vw, 60px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 14px;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 1.4vw, 17px);
+      color: #717a8a;
+      font-weight: 400;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-card);
+      padding: clamp(24px, 3.2vw, 40px);
+      margin-bottom: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .section-eyebrow {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(17,17,17,.5);
+      margin-bottom: 6px;
+    }
+    .card h2 {
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 500;
+      letter-spacing: -0.018em;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .badge-done  { background: rgba(34,197,94,.1);  color: #15803d; border: 1px solid rgba(34,197,94,.25); }
+    .badge-scope { background: #fffbeb; color: #92400e; border: 1px solid #fcd34d; }
+    .badge-time  { background: rgba(20,184,166,.1); color: #0f766e; border: 1px solid rgba(20,184,166,.25); }
+
+    hr.divider { border: 0; border-top: 1px solid var(--border); margin: 0 0 20px; }
+
+    /* PROSE */
+    .prose {
+      color: var(--muted);
+      font-size: clamp(13px, 1.1vw, 15px);
+      line-height: 1.7;
+    }
+    .prose p { margin-bottom: 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* SECTION GROUP */
+    .section-group { margin-bottom: clamp(32px, 4vw, 52px); }
+
+    /* PHASE CARD (dark header) */
+    .phase-card {
+      border-radius: var(--r-card);
+      background: #1b1f26;
+      border: 1px solid #2a2f38;
+      padding: clamp(20px, 2.6vw, 32px);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .phase-icon {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      display: grid;
+      place-items: center;
+      padding: 10px;
+    }
+    .phase-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .phase-eyebrow {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 5px;
+    }
+    .phase-eyebrow.c-accent  { color: var(--accent); }
+    .phase-eyebrow.c-purple  { color: #d8b4fe; }
+    .phase-eyebrow.c-teal    { color: #6ee7b7; }
+    .phase-title {
+      font-size: clamp(17px, 1.9vw, 24px);
+      font-weight: 500;
+      color: #f8fafc;
+      letter-spacing: -0.016em;
+      line-height: 1.15;
+    }
+
+    /* SUB-HEADINGS IN CARDS */
+    h3.sub {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17,17,17,.45);
+      margin: 22px 0 10px;
+    }
+    h3.sub:first-child { margin-top: 0; }
+
+    /* ITEM LIST (dots) */
+    .item-list {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+    .item-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .item-list li::before {
+      content: "·";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      color: var(--accent2);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
+    }
+    .item-list li strong { color: var(--text); font-weight: 600; }
+
+    /* CHECKMARK LIST */
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+    .check-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .check-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: #22c55e;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .check-list li strong { color: var(--text); font-weight: 600; }
+
+    /* CROSS LIST */
+    .cross-list {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+    .cross-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: rgba(17,17,17,.5);
+    }
+    .cross-list li::before {
+      content: "×";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #d1d5db;
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    /* LIGHTHOUSE SCORES */
+    .lh-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .lh-group-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(17,17,17,.45);
+      margin-bottom: 12px;
+    }
+    .lh-scores { display: grid; gap: 9px; }
+    .lh-row { display: flex; align-items: center; gap: 10px; }
+    .lh-label { font-size: 13px; font-weight: 500; color: var(--muted); width: 108px; flex-shrink: 0; }
+    .lh-bar-wrap { flex: 1; height: 4px; background: #f0f0f0; border-radius: 99px; overflow: hidden; min-width: 30px; }
+    .lh-bar { height: 100%; border-radius: 99px; transition: width .6s ease; }
+    .lh-bar.good { background: #22c55e; }
+    .lh-bar.ok   { background: #f59e0b; }
+    .lh-score { font-size: 14px; font-weight: 700; min-width: 28px; text-align: right; }
+    .lh-score.good { color: #15803d; }
+    .lh-score.ok   { color: #b45309; }
+    .lh-source { margin-top: 14px; font-size: 12px; color: rgba(17,17,17,.45); }
+    .lh-source a { color: var(--accent2); font-weight: 600; text-decoration: none; }
+    .lh-source a:hover { text-decoration: underline; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      margin-top: 20px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(135deg, rgba(140,98,214,.07), rgba(119,181,214,.07));
+      border: 1px solid rgba(140,98,214,.18);
+      padding: 18px 22px;
+    }
+    .highlight-box p {
+      font-size: 14px;
+      font-weight: 500;
+      color: #3d2e70;
+      line-height: 1.65;
+    }
+
+    /* NOTICE */
+    .notice {
+      margin-top: 16px;
+      border-radius: var(--r-sm);
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+    .notice-amber { background: #fffbeb; border: 1px solid #fcd34d; color: #78350f; }
+    .notice-green { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+
+    /* TIMEFRAME TABLE */
+    .tf-table { width: 100%; border-collapse: collapse; }
+    .tf-table th {
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17,17,17,.45);
+      padding: 0 12px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tf-table td {
+      padding: 12px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.45;
+    }
+    .tf-table tr:last-child td { border-bottom: 0; }
+    .tf-table td:first-child { font-weight: 600; color: var(--text); width: 58%; }
+    .tf-table td:last-child { white-space: nowrap; font-weight: 500; }
+
+    /* CODE INLINE */
+    code {
+      background: #f3f4f7;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+
+    /* FOOTER */
+    footer.page-footer {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100% - 48px);
+      margin: 56px auto 32px;
+    }
+    .footer-top {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .footer-locs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #3b3f46;
+    }
+    .footer-locs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .footer-locs .flag {
+      width: 18px;
+      height: 12px;
+      border-radius: 2px;
+      object-fit: cover;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.12);
+    }
+    .footer-email {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2f333a;
+      text-decoration: none;
+      padding-left: 16px;
+      border-left: 1px solid #d6d9df;
+    }
+    .footer-copy {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .wrap { width: min(900px, 100% - 24px); }
+      footer.page-footer { width: min(900px, 100% - 24px); margin: 20px auto 28px; }
+      .brand-header { padding-bottom: clamp(28px,6vw,44px); }
+      .brand-logo img { height: 28px; }
+      .brand-subtitle { font-size: 10px; }
+      .brand-icon-wrap { width: 38px; height: 38px; border-radius: 12px; }
+      .card { border-radius: 16px; }
+      .card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .phase-card { border-radius: 16px; gap: 14px; }
+      .phase-icon { width: 48px; height: 48px; border-radius: 12px; }
+      .lh-grid { grid-template-columns: 1fr; }
+      .lh-label { width: 96px; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-email { padding-left: 0; border-left: 0; color: #2f333a; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <!-- HEADER -->
+  <div class="wrap">
+    <header class="brand-header">
+      <div class="brand-row">
+        <a href="https://doopux.com" class="brand-logo">
+          <img src="assets/logocolor.png" alt="Doop UX" height="36">
+        </a>
+        <div class="brand-right">
+          <p class="brand-subtitle">SEO Proposal</p>
+          <div class="brand-icon-wrap" aria-hidden="true">
+            <img src="assets/icons_0002_Layer-6.png" alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-meta">
+        <span class="hero-tag"><span class="dot">•</span> Quote</span>
+        <span class="hero-date">February 2026</span>
+      </div>
+      <h1>SEO for Northgate<br>Building Group</h1>
+      <p class="hero-sub">Prepared by Doop UX &nbsp;·&nbsp; northgatebuilding.com.au</p>
+    </div>
+
+    <!-- WHERE THE SITE STANDS TODAY -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Current State</span>
+            <h2>Where the Site Stands Today</h2>
+          </div>
+          <span class="badge badge-done">Already Done</span>
+        </div>
+        <hr class="divider">
+        <div class="prose"><p>The site was built with SEO foundations already included across all pages:</p></div>
+
+        <ul class="check-list" style="margin-top:16px;">
+          <li><strong>Structured metadata:</strong> tags in the <code>&lt;head&gt;</code> of each page telling Google what the page is about before it reads the content. Title, description, keywords. This is what appears in search results.</li>
+          <li><strong>Canonical URLs:</strong> tell Google which is the official version of each page, preventing content accessible from multiple URLs from being penalised for duplication.</li>
+          <li><strong>Open Graph tags:</strong> control how the site looks when shared on Facebook, LinkedIn or WhatsApp. Without these, the social network picks whatever it wants to show.</li>
+          <li><strong>X cards:</strong> same as Open Graph but specific to X/Twitter.</li>
+          <li><strong>Schema.org markup:</strong> structured language that tells Google not just what the page says, but what each thing is. For Northgate: business type, service areas, services offered, phone, email. Implemented with <code>HomeAndConstructionBusiness</code> and <code>Service</code> types per service area.</li>
+          <li><strong>robots.txt:</strong> tells Google's crawlers which pages to index and which to ignore.</li>
+          <li><strong>Performance-optimised assets:</strong> images in WebP format, compressed with lazy loading. A slow site ranks lower, especially on mobile.</li>
+          <li><strong>Alt text:</strong> all WebP assets across every page have descriptive alt text, reviewed and confirmed.</li>
+          <li><strong>Heading hierarchy:</strong> H1 tags confirmed per page. Index, Services and Projects pages had missing H1s, corrected during site handoff.</li>
+          <li><strong>Title tags and meta descriptions:</strong> reviewed across all 5 pages with keyword intent aligned to Sydney and Newcastle residential building.</li>
+        </ul>
+
+        <div class="lh-grid">
+          <div>
+            <p class="lh-group-label">Desktop · February 2026</p>
+            <div class="lh-scores">
+              <div class="lh-row">
+                <span class="lh-label">Performance</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:97%"></div></div>
+                <span class="lh-score good">97</span>
+              </div>
+              <div class="lh-row">
+                <span class="lh-label">Accessibility</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:88%"></div></div>
+                <span class="lh-score good">88</span>
+              </div>
+              <div class="lh-row">
+                <span class="lh-label">Best Practices</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:96%"></div></div>
+                <span class="lh-score good">96</span>
+              </div>
+              <div class="lh-row">
+                <span class="lh-label">SEO</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:92%"></div></div>
+                <span class="lh-score good">92</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="lh-group-label">Mobile · February 2026</p>
+            <div class="lh-scores">
+              <div class="lh-row">
+                <span class="lh-label">Performance</span>
+                <div class="lh-bar-wrap"><div class="lh-bar ok" style="width:65%"></div></div>
+                <span class="lh-score ok">65</span>
+              </div>
+              <div class="lh-row">
+                <span class="lh-label">Accessibility</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:88%"></div></div>
+                <span class="lh-score good">88</span>
+              </div>
+              <div class="lh-row">
+                <span class="lh-label">Best Practices</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:96%"></div></div>
+                <span class="lh-score good">96</span>
+              </div>
+              <div class="lh-row">
+                <span class="lh-label">SEO</span>
+                <div class="lh-bar-wrap"><div class="lh-bar good" style="width:92%"></div></div>
+                <span class="lh-score good">92</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="lh-source">Full report: <a href="https://pagespeed.web.dev/analysis/https-northgatebuilding-com-au/llj5623o7g?form_factor=desktop" target="_blank" rel="noopener">pagespeed.web.dev</a></p>
+
+        <div class="highlight-box">
+          <p>Desktop is in excellent shape. SEO score is strong on both. The remaining opportunity is mobile performance, which directly affects Google's ranking signals since mobile-first indexing became the default. The foundation is done. What this proposal covers is connecting it to Google's measurement tools, closing the mobile performance gap, and then maintaining consistent upward pressure on rankings week by week.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0002_Layer-6.png" alt="SEO icon">
+        </div>
+        <div>
+          <p class="phase-eyebrow c-accent">Phase 1 · One-Time</p>
+          <p class="phase-title">Activation &amp; Mobile Performance</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="sub">Messaging Alignment</h3>
+        <ul class="item-list">
+          <li>Review of active paid and social agency outputs: creative copy, nurturing campaigns, lead magnet, ad messaging</li>
+          <li>Establish a unified messaging brief so the same brand voice and keyword pillars used in paid and social become the foundation for all SEO work</li>
+          <li>This ensures search, ads, and social are pulling in the same direction. Google rewards consistency across signals.</li>
+        </ul>
+
+        <h3 class="sub">Google Search Console Setup</h3>
+        <ul class="item-list">
+          <li>Property verification for northgatebuilding.com.au</li>
+          <li>Sitemap submission and indexing confirmation</li>
+          <li>Coverage report: crawl errors, excluded URLs, any indexing issues</li>
+          <li>Performance baseline: impressions, clicks, average position by page from day one</li>
+        </ul>
+
+        <h3 class="sub">Mobile Performance Optimisation</h3>
+        <ul class="item-list">
+          <li>Lighthouse mobile audit to identify what's dragging performance from 97 (desktop) to 65 (mobile)</li>
+          <li>Likely candidates: render-blocking resources, hero video loading strategy, image lazy loading thresholds</li>
+          <li>Fixes applied directly in the codebase</li>
+          <li><strong>Target:</strong> mobile performance above 85, bringing it in line with desktop</li>
+        </ul>
+
+        <h3 class="sub">Technical Validation</h3>
+        <ul class="item-list">
+          <li>Schema markup testing via Google's Rich Results Test: HomeAndConstructionBusiness and all Service schemas</li>
+          <li>Core Web Vitals confirmation post-fixes (LCP, CLS, FCP, TBT)</li>
+          <li>Internal linking review across all 5 pages</li>
+        </ul>
+
+        <h3 class="sub">Keyword Gap Analysis</h3>
+        <ul class="item-list">
+          <li>Identify what high-intent searches Northgate should be ranking for but isn't yet</li>
+          <li>FAQ schema opportunities on About and Services pages (Google is currently weighting FAQ content heavily in local search)</li>
+        </ul>
+
+        <h3 class="sub">Local SEO</h3>
+        <ul class="item-list">
+          <li>Google Business Profile audit and optimisation brief</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0002_Layer-6.png" alt="SEO Retainer icon">
+        </div>
+        <div>
+          <p class="phase-eyebrow c-purple">Phase 2 · Ongoing</p>
+          <p class="phase-title">Weekly Retainer</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="prose" style="margin-bottom:20px;">
+          <p>A fixed 2 hours per week, every week. The work adapts based on what Search Console shows each week.</p>
+        </div>
+
+        <h3 class="sub">Weekly Activities</h3>
+        <ul class="check-list">
+          <li>Search Console monitoring: impressions, clicks, average position, CTR by page</li>
+          <li>Keyword ranking tracking for core terms across all service areas</li>
+          <li>On-page copy updates and optimisation tweaks</li>
+          <li>New page or content section recommendations as opportunities appear</li>
+          <li>Technical fixes as flagged by Search Console</li>
+          <li>FAQ content additions as Google surfaces new question patterns</li>
+          <li>Backlink monitoring</li>
+          <li>Local SEO maintenance</li>
+        </ul>
+
+        <h3 class="sub">Weekly Report (Every Monday)</h3>
+        <ul class="check-list">
+          <li>Top ranking movements for tracked keywords</li>
+          <li>Impressions and clicks vs previous week</li>
+          <li>Contact page traffic as conversion signal</li>
+          <li>One key win and one recommended action for the week ahead</li>
+          <li>Cumulative trend charts from week 4 onwards</li>
+        </ul>
+
+        <div class="notice notice-amber">
+          Built for a builder, not an SEO agency. One page, plain English, directly actionable.<br>
+          Month-to-month. No lock-in. Cancel with 2 weeks notice.
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0003_Layer-5.png" alt="SEO for AI Answers icon">
+        </div>
+        <div>
+          <p class="phase-eyebrow c-teal">Phase 3 · Add-On</p>
+          <p class="phase-title">SEO for AI Answers</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="prose" style="margin-bottom:20px;">
+          <p>Search behaviour is shifting. A growing share of homeowners now start their research not on Google, but by asking ChatGPT, Perplexity, Claude, or Google's AI Overviews a direct question: "who are the best custom home builders in Sydney?" or "what should I look for in a knockdown rebuild builder?" These models don't rank pages. They cite sources, mention brands, and surface answers. If Northgate isn't structured to be referenced by these systems, it's invisible to that audience.</p>
+        </div>
+
+        <h3 class="sub">llms.txt Implementation</h3>
+        <ul class="item-list">
+          <li>Create and deploy a <code>/llms.txt</code> file, an emerging standard that signals to AI crawlers exactly what the site is, what it does, who it serves, and what content is authoritative</li>
+          <li>Analogous to <code>robots.txt</code> but built for AI agents, not search bots</li>
+        </ul>
+
+        <h3 class="sub">Entity Clarity</h3>
+        <ul class="item-list">
+          <li>Ensure Northgate Building Group is unambiguously defined as a named entity across all on-site content: name, location, services, service areas, credentials, and differentiators stated explicitly and consistently</li>
+          <li>LLMs build knowledge from patterns of consistent, factual statements. Ambiguity gets ignored.</li>
+        </ul>
+
+        <h3 class="sub">Citeable Content Structure</h3>
+        <ul class="item-list">
+          <li>Write or restructure key page sections as direct, factual answers to the questions AI models are likely to be asked about residential building in Sydney and Newcastle</li>
+          <li>Format content in ways LLMs can extract and cite cleanly: clear claims, attributed expertise, no filler</li>
+          <li>FAQ expansion on About and Services pages, both for Google's featured snippets and for AI answer surfaces</li>
+        </ul>
+
+        <h3 class="sub">Schema Depth</h3>
+        <ul class="item-list">
+          <li>Extend existing schema.org markup with additional types that LLMs weight: <code>FAQPage</code>, <code>Review</code>, <code>Person</code> (for team), <code>Award</code></li>
+          <li>The site already has a 2025 award badge that should be marked up</li>
+          <li>Strengthen <code>sameAs</code> links to authoritative external sources</li>
+        </ul>
+
+        <h3 class="sub">External Presence Signals</h3>
+        <ul class="item-list">
+          <li>Identify and brief high-value directories, industry bodies, and editorial sources where Northgate should appear to be picked up by AI training and retrieval pipelines</li>
+          <li>LLMs learn from what's written about a business across the web, not just the business's own site</li>
+        </ul>
+
+        <div class="notice notice-green">
+          This phase can run in parallel with Phase 2 or be activated separately.
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT'S NOT INCLUDED -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Scope</span>
+            <h2>What's Not Included</h2>
+          </div>
+          <span class="badge badge-scope">Out of Scope</span>
+        </div>
+        <hr class="divider">
+        <ul class="cross-list">
+          <li>Content writing or blogging (available as add-on)</li>
+          <li>Paid ads / Google Ads management</li>
+          <li>Social media management</li>
+          <li>Link building campaigns</li>
+          <li>Website development (separate scope)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TIMEFRAME -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Schedule</span>
+            <h2>Timeframe</h2>
+          </div>
+          <span class="badge badge-time">Upon Sign-off</span>
+        </div>
+        <hr class="divider">
+        <table class="tf-table">
+          <thead>
+            <tr>
+              <th>Milestone</th>
+              <th>Timeframe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Phase 1 kickoff</td><td>Week 1, upon sign-off</td></tr>
+            <tr><td>Search Console live + baseline report</td><td>End of Week 1</td></tr>
+            <tr><td>Mobile performance fixes deployed</td><td>End of Week 2</td></tr>
+            <tr><td>Full audit delivered</td><td>End of Week 2</td></tr>
+            <tr><td>Phase 2 weekly rhythm begins</td><td>Week 3</td></tr>
+            <tr><td>First meaningful ranking data</td><td>Weeks 6–8</td></tr>
+            <tr><td>Noticeable organic growth</td><td>Months 3–5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- WHY THIS WORKS -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Why Us</span>
+            <h2>Why This Works</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="prose">
+          <p>The site was built by Doop UX: schema, metadata, asset structure, page architecture, all of it. There's no reverse-engineering, no onboarding lag, and no risk of recommendations that break what's already working. We pick up exactly where the build left off.</p>
+          <p>The SEO foundation is strong. The next step is making sure Google can measure it, mobile performance matches desktop, and rankings compound over time.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.wrap -->
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-top">
+      <div class="footer-locs">
+        <span>
+          <img class="flag" src="assets/australia.png" alt="AU">
+          HQ North Sydney, NSW
+        </span>
+        <span>
+          <img class="flag" src="assets/germany.png" alt="DE">
+          Berlin, Germany
+        </span>
+        <span>
+          <img class="flag" src="assets/argentina.png" alt="AR">
+          Buenos Aires, Argentina
+        </span>
+      </div>
+      <a class="footer-email" href="mailto:hello@doopux.com">hello@doopux.com</a>
+    </div>
+    <p class="footer-copy">Copyright &copy; 2026 Doop UX</p>
+  </footer>
+
+</body>
+</html>
