@@ -572,7 +572,7 @@
           <li><strong>robots.txt:</strong> defines which parts of the site search engine crawlers can access. It must not block key assets like CSS, JS, or images, otherwise Google cannot properly render the page and measure performance metrics such as Core Web Vitals.</li>
           <li><strong>Performance-optimised assets:</strong> images in WebP format, compressed with lazy loading. A slow site ranks lower, especially on mobile.</li>
           <li><strong>Alt text:</strong> all WebP assets across every page have descriptive alt text.</li>
-          <li><strong>Heading hierarchy:</strong> H1 tags confirmed per page. Index, Services and Projects pages had missing H1s, corrected during site handoff.</li>
+          <li><strong>Heading hierarchy:</strong> H1 hierarchy confirmed and validated across all pages during final QA.</li>
           <li><strong>Title tags and meta descriptions:</strong> reviewed all website pages with keyword intent aligned to Sydney and Newcastle residential building.</li>
         </ul>
 
@@ -666,7 +666,7 @@
 
         <h3 class="sub">Mobile Performance Optimisation</h3>
         <ul class="item-list">
-          <li>Lighthouse mobile audit to identify what's dragging performance from 97 (desktop) to 65 (mobile)</li>
+          <li>Lighthouse mobile audit to identify what's creating the gap between desktop (97) and mobile (65) performance</li>
           <li>Likely candidates: render-blocking resources, hero video loading strategy, image lazy loading thresholds</li>
           <li>Fixes applied directly in the codebase</li>
           <li><strong>Target:</strong> mobile performance above 85, bringing it in line with desktop</li>
@@ -737,7 +737,7 @@
 
         <h3 class="sub" style="margin-top:40px;">SEO for AI Answers (Add-on)</h3>
         <div class="prose" style="margin-bottom:20px;">
-          <p>Search behaviour is shifting. A growing share of homeowners now start their research not on Google, but by asking ChatGPT, Perplexity, Claude, or Google's AI Overviews a direct question. These models don't rank pages — they cite sources and surface answers. If Northgate isn't structured to be referenced by these systems, it's invisible to that audience.</p>
+          <p>Search behaviour is shifting. A growing share of homeowners now start their research not on Google, but by asking ChatGPT, Perplexity, Claude, or Google's AI Overviews a direct question. These models don't rank pages, they cite sources and surface answers. Structuring for these systems now puts Northgate ahead of most competitors in the category — it's early-mover territory.</p>
         </div>
 
         <h3 class="sub">llms.txt Implementation</h3>
@@ -762,7 +762,7 @@
         <h3 class="sub">Schema Depth</h3>
         <ul class="item-list">
           <li>Extend existing schema.org markup with additional types that LLMs weight: <code>FAQPage</code>, <code>Review</code>, <code>Person</code> (for team), <code>Award</code></li>
-          <li>The site already has a 2025 award badge that should be marked up</li>
+          <li>The 2025 award the site already features is a strong schema signal — adding <code>Award</code> markup amplifies its SEO value directly</li>
           <li>Strengthen <code>sameAs</code> links to authoritative external sources</li>
         </ul>
 
