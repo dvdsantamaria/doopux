@@ -9,3 +9,4 @@ Notion-knowladge/
 
 # Static prototypes (private)
 _static/
+.env

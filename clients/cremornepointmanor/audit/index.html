@@ -1,16 +1,1368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auditoria Instagram - Cremorne Point Manor</title>
-    <meta http-equiv="refresh" content="0; url=/audits/social-media-cpm.html">
-    <script>
-        window.location.href = '/audits/social-media-cpm.html';
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram Audit | Cremorne Point Manor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f4f7;
+      --bg-top: #f7f8fb;
+      --bg-bot: #f2f3f6;
+      --line: #d9dde6;
+      --card: #fbfcfe;
+      --card-border: #eceef3;
+      --text: #111827;
+      --muted: #717a8a;
+      --badge-text: #9aa2b1;
+      --demo: #f7d86b;
+      --milestone-bg: #1b1f26;
+      --milestone-border: #2a2f38;
+      --milestone-accent: #f05bff;
+      --shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04);
+      --radius-card: 26px;
+      --radius-badge: 22px;
+      --status-excelente: #22c55e;
+      --status-bueno: #3b82f6;
+      --status-advertencia: #f59e0b;
+      --status-critico: #ef4444;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 42%, var(--bg-bot) 100%);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(600px 380px at 12% 0%, rgba(244, 201, 52, 0.18), transparent 60%),
+        radial-gradient(720px 460px at 92% 18%, rgba(125, 162, 255, 0.14), transparent 62%),
+        radial-gradient(520px 420px at 72% 98%, rgba(189, 210, 255, 0.16), transparent 62%);
+      filter: blur(0.2px);
+      opacity: 0.9;
+    }
+
+    .wrap {
+      width: min(990px, 100% - 56px);
+      margin: 22px auto 46px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-header {
+      margin: 4px 0 40px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      border-radius: 14px;
+      padding: 6px;
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: #7b8393;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(22px, 2.5vw, 32px);
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin: 0 0 38px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .global-score {
+      background: linear-gradient(135deg, #1b1f26 0%, #2a2f38 100%);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .score-main {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .score-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: conic-gradient(var(--status-advertencia) 0% 78.6%, rgba(255,255,255,0.1) 78.6% 100%);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .score-circle::before {
+      content: "";
+      width: 74px;
+      height: 74px;
+      background: #1b1f26;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .score-number {
+      position: relative;
+      z-index: 1;
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .score-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 4px;
+    }
+
+    .score-status {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--status-advertencia);
+    }
+
+    .score-meta {
+      text-align: right;
+      color: #9aa2b1;
+      font-size: 13px;
+    }
+
+    .score-meta p {
+      margin: 0 0 4px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 20px;
+      padding: 4px 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 37px;
+      top: 38px;
+      bottom: 38px;
+      width: 2px;
+      border-radius: 2px;
+      background: linear-gradient(to bottom, rgba(206, 210, 220, 0.95), rgba(197, 203, 216, 0.75));
+    }
+
+    .row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .sprint-id {
+      width: 76px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sprint-id span {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #d1d5db;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .card {
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      background: var(--card);
+      padding: 30px 30px 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .focus {
+      margin: 0;
+      font-size: clamp(18px, 1.6vw, 26px);
+      letter-spacing: -0.028em;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .demo {
+      border-radius: 999px;
+      padding: 6px 12px;
+      line-height: 1;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+    }
+
+    .demo.excelente {
+      background: #dcfce7;
+      color: #166534;
+      border-color: #bbf7d0;
+    }
+
+    .demo.bueno {
+      background: #dbeafe;
+      color: #1e40af;
+      border-color: #bfdbfe;
+    }
+
+    .demo.advertencia {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    .demo.critico {
+      background: #fee2e2;
+      color: #991b1b;
+      border-color: #fecaca;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--card-border);
+      margin: 6px 0 16px;
+    }
+
+    .label {
+      margin: 0 0 10px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #6f7686;
+      letter-spacing: 0.11em;
+    }
+
+    .deliverable {
+      margin: 0;
+      color: #3d4655;
+      font-size: clamp(13px, 1.05vw, 18px);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      font-weight: 500;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .metric-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .findings-list {
+      list-style: none;
+      margin: 16px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .findings-list li {
+      margin: 0;
+      position: relative;
+      padding-left: 28px;
+      color: #3d4655;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .findings-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--status-advertencia);
+    }
+
+    .findings-list li.critico::before {
+      background: var(--status-critico);
+    }
+
+    .findings-list li.excelente::before {
+      background: var(--status-excelente);
+    }
+
+    .row.milestone {
+      align-items: center;
+    }
+
+    .milestone-dot {
+      width: 76px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .milestone-dot span {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #0a0c10;
+      border: 3px solid var(--milestone-accent);
+      box-shadow: none;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .milestone-card {
+      border-radius: var(--radius-card);
+      border: 1px solid var(--milestone-border);
+      background: var(--milestone-bg);
+      color: #f3f4f6;
+      padding: 24px 28px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: none;
+    }
+
+    .milestone-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      border: 1px solid #303641;
+      background: rgba(255, 255, 255, 0.06);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .milestone-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--milestone-accent);
+    }
+
+    .milestone-code {
+      margin: 0 0 6px;
+      color: var(--milestone-accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .milestone-title {
+      margin: 0;
+      color: #f8fafc;
+      font-size: clamp(18px, 1.6vw, 24px);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .priority-high { color: var(--status-critico); font-weight: 700; }
+    .priority-medium { color: var(--status-advertencia); font-weight: 700; }
+    .priority-low { color: var(--status-excelente); font-weight: 700; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+
+    .insight-box.critico {
+      background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    }
+
+    .insight-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #92400e;
+      margin: 0 0 8px;
+    }
+
+    .insight-box.critico .insight-title {
+      color: #991b1b;
+    }
+
+    .insight-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #451a03;
+      margin: 0;
+    }
+
+    .insight-box.critico .insight-text {
+      color: #450a0a;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    td {
+      font-weight: 500;
+      color: #3d4655;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    .research-context {
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      background: var(--card);
+      padding: 22px 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .research-label {
+      margin: 0 0 6px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: #6f7686;
+    }
+
+    .research-desc {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: #3d4655;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .research-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .research-stat {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .research-stat-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .research-stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .page-footer {
+      margin: 56px auto 32px;
+      width: min(990px, 100% - 56px);
+      color: #4b5563;
+      font-size: 12px;
+    }
+
+    .footer-top {
+      background: #f2f3f5;
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .footer-locations {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      color: #3b3f46;
+      font-weight: 600;
+    }
+
+    .footer-locations span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-flag {
+      width: 18px;
+      height: 12px;
+      border-radius: 2px;
+      object-fit: cover;
+      display: inline-block;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+
+    .footer-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #2f333a;
+      font-weight: 700;
+      text-decoration: none;
+      padding-left: 14px;
+      border-left: 1px solid #d6d9df;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 10px;
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .wrap {
+        width: min(990px, 100% - 24px);
+        margin-top: 16px;
+      }
+
+      .brand-header {
+        margin-bottom: 32px;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+      }
+
+      .global-score {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .score-main {
+        flex-direction: column;
+      }
+
+      .score-meta {
+        text-align: center;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 26px;
+        top: 27px;
+        bottom: 27px;
+      }
+
+      .row {
+        grid-template-columns: 56px 1fr;
+        gap: 10px;
+      }
+
+      .sprint-id,
+      .milestone-dot {
+        width: 54px;
+        height: 54px;
+      }
+
+      .sprint-id span {
+        width: 14px;
+        height: 14px;
+      }
+
+      .milestone-dot span {
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+      }
+
+      .card {
+        border-radius: 18px;
+        padding: 18px 16px 16px;
+      }
+
+      .top {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 14px;
+        gap: 10px;
+      }
+
+      .demo {
+        font-size: 11px;
+        padding: 5px 10px;
+      }
+
+      .label {
+        margin-bottom: 8px;
+      }
+
+      .milestone-card {
+        border-radius: 18px;
+        min-height: 80px;
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .milestone-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+
+      .milestone-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .milestone-code {
+        font-size: 10px;
+        margin-bottom: 4px;
+      }
+
+      .page-footer {
+        width: min(990px, 100% - 24px);
+        margin: 20px auto 28px;
+        font-size: 10px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      th, td {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <p>Redirigiendo a la auditoria...</p>
-    <p>Si no eres redirigido automaticamente, <a href="/audits/social-media-cpm.html">hace click aqui</a>.</p>
+  <main class="wrap">
+    <header class="brand-header">
+      <div class="brand-row">
+        <div class="brand-logo" aria-label="Doopux">
+          <img src="/logocolor.png" alt="Doopux logo">
+        </div>
+        <div class="brand-right">
+          <p class="brand-subtitle">Social Media Audit</p>
+          <div class="brand-icon" aria-hidden="true">
+            <img src="/icons_0004_Layer-4.png" alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <h1>Cremorne Point Manor · Integrated Instagram Audit</h1>
+    <p class="subtitle">Framework: Instagram Algorithm 2026 | Posts analyzed: 50 | Stories: Not analyzed (no recent activity)</p>
+
+    <div class="research-context">
+      <p class="research-label">Based on previous research</p>
+      <p class="research-desc">Before this audit, the profile social media, web positioning, and content strategy were analyzed. A benchmark was also conducted against 10 directly competing boutique hotels in the Sydney market, including <strong>Hotel Palisade</strong>, <strong>Pier One Sydney Harbour</strong>, <strong>Watsons Bay Boutique Hotel</strong>, <strong>Spicers Potts Point</strong>, and <strong>The Old Clare Hotel</strong>, covering pricing, amenities, and brand positioning. Result: Cremorne has a real value proposition but is not communicating it where it matters.</p>
+      <div class="research-stats">
+        <div class="research-stat">
+          <span class="research-stat-value">10</span>
+          <span class="research-stat-label">Direct competitors analyzed</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">$96–$185</span>
+          <span class="research-stat-label">Per night, the most accessible in the Sydney heritage boutique segment</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">90%</span>
+          <span class="research-stat-label">Use Instagram for inspiration among brides, key segment not captured</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">3,497</span>
+          <span class="research-stat-label">Instagram followers with an engagement rate of only 0.17%, the real gap</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">253</span>
+          <span class="research-stat-label">Positive reviews (88% satisfaction) not converted into social content</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">9 of 10</span>
+          <span class="research-stat-label">Direct competitors have on-site dining, a key amenity gap identified in the benchmark</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="global-score">
+      <div class="score-main">
+        <div class="score-circle">
+          <span class="score-number">78.6</span>
+        </div>
+        <div>
+          <p class="score-label">Overall Score</p>
+          <p class="score-status">Good</p>
+        </div>
+      </div>
+      <div class="score-meta">
+        <p>Profile: @cremornepointmanor</p>
+        <p>Date: April 7, 2026</p>
+      </div>
+    </div>
+
+    <section class="timeline">
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Discovery</h2>
+            <span class="demo excelente">100/100</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Key Metrics</p>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value">245</div>
+              <div class="metric-label">Keywords</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">96%</div>
+              <div class="metric-label">Coverage</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">3.5</div>
+              <div class="metric-label">Hashtags/post</div>
+            </div>
+          </div>
+          <div class="insight-box">
+            <p class="insight-title">Insight</p>
+            <p class="insight-text">Excellent technical optimization. The profile is perfectly positioned to be discovered by the algorithm.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Content</h2>
+            <span class="demo advertencia">72/100</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Findings</p>
+          <p class="deliverable">Thematic consistency: 100% in the last 12 posts. Posts with text in images: 80%. Identified issue: only 12% are Reels.</p>
+          <ul class="findings-list">
+            <li>Prioritize Reels: higher organic reach potential, currently not unlocked due to low volume and no spoken audio</li>
+            <li>Add spoken audio in Reels (automatic transcription)</li>
+            <li>Check descriptive alt text in all images</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Reels Analysis</h2>
+            <span class="demo critico">6 Reels · 12% of Posts</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Key Metrics</p>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value">281</div>
+              <div class="metric-label">Total Views</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">3.76x</div>
+              <div class="metric-label">Avg Rewatch Rate</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">0/6</div>
+              <div class="metric-label">Spoken CTAs</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Reel</th>
+                <th>Type</th>
+                <th>Views</th>
+                <th>Rewatch</th>
+                <th>Quality</th>
+              </tr>
+              <tr>
+                <td>Robertson Point Lighthouse + Penthouse views</td>
+                <td>View</td>
+                <td>58</td>
+                <td>4.67x</td>
+                <td class="priority-low">0.84 ↑</td>
+              </tr>
+              <tr>
+                <td>Walk through Cremorne + Harbour Bridge</td>
+                <td>View</td>
+                <td>74</td>
+                <td>2.93x</td>
+                <td class="priority-low">0.80</td>
+              </tr>
+              <tr>
+                <td>Bushwalking trails + harbour views</td>
+                <td>View</td>
+                <td>55</td>
+                <td>3.15x</td>
+                <td class="priority-low">0.80</td>
+              </tr>
+              <tr>
+                <td>Bubble bath self-care</td>
+                <td>Promotional</td>
+                <td>28</td>
+                <td>3.21x</td>
+                <td class="priority-low">0.80</td>
+              </tr>
+              <tr>
+                <td>Cozy stay, interior and exterior</td>
+                <td>Promotional</td>
+                <td>48</td>
+                <td>3.29x</td>
+                <td class="priority-medium">0.64</td>
+              </tr>
+              <tr>
+                <td>5-star reviews slideshow</td>
+                <td>Reviews</td>
+                <td>18</td>
+                <td>5.33x</td>
+                <td class="priority-high">0.16 ↓</td>
+              </tr>
+            </table>
+          </div>
+          <ul class="findings-list">
+            <li class="critico">0/6 Reels have spoken audio. Instagram 2026 uses audio transcription for indexing and organic reach</li>
+            <li class="excelente">Top performer: lighthouse and penthouse views (quality 0.84, rewatch 4.67x). Harbour content is consistently the strongest format</li>
+            <li class="critico">Reviews slideshow: lowest visual quality (0.16) but highest rewatch rate (5.33x). Social proof has demand but the execution needs a full rethink</li>
+            <li>Rewatch rate of 3.76x is healthy — those who find the Reels watch them more than once. The problem is reach: 46 avg views from 3,497 followers is only 1.3% reach, which improves significantly with spoken audio and higher posting volume</li>
+            <li>View-based Reels (3) consistently outperform promotional ones (2) in both quality score and views</li>
+          </ul>
+          <div class="insight-box critico">
+            <p class="insight-title">The biggest missed opportunity in the entire profile</p>
+            <p class="insight-text">Every single Reel is silent. No voiceover, no spoken CTA, no narration. Instagram 2026 transcribes audio automatically and uses it to index content. A Reel about harbour views with a narrated script ranks significantly higher in search and Explore than the same Reel with background music only. Adding spoken audio to Reels is the single highest-leverage change available right now.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">High Value Engagement</h2>
+            <span class="demo advertencia">58/100</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Critical Findings</p>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td>Posts encouraging saves</td>
+                <td>0/50 (0%)</td>
+                <td class="priority-high">Critical</td>
+              </tr>
+              <tr>
+                <td>Posts encouraging shares</td>
+                <td>7/50 (14%)</td>
+                <td class="priority-medium">Low</td>
+              </tr>
+              <tr>
+                <td>Educational and saveable content</td>
+                <td>0 posts</td>
+                <td class="priority-high">Critical</td>
+              </tr>
+              <tr>
+                <td>Average video views (1.3% of followers)</td>
+                <td>46</td>
+                <td class="priority-medium">Low reach</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Identity</h2>
+            <span class="demo bueno">80/100</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Analysis</p>
+          <p class="deliverable">Clear and searchable username. Visible name includes "Boutique Hotel". Detected CTAs: only 2/50 (4%).</p>
+          <ul class="findings-list">
+            <li>Ensure the bio includes keywords: "boutique hotel Sydney", "harbour views"</li>
+            <li class="critico">Add more clear CTAs in captions</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Metrics</h2>
+            <span class="demo critico">30/100</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Critical Status</p>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value">1.7</div>
+              <div class="metric-label">Likes/post</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">0.17%</div>
+              <div class="metric-label">Engagement rate</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">2</div>
+              <div class="metric-label">Comments/50 posts</div>
+            </div>
+          </div>
+          <div class="insight-box critico">
+            <p class="insight-title">Diagnosis</p>
+            <p class="insight-text">The profile is well configured so the algorithm can find it (SEO, hashtags, keywords in captions), but there is an important gap: people see the content but do not interact. The current engagement rate is 0.17%, while the hotel industry average is 1% to 3%. This means that even though your content reaches people, it is not creating enough value for them to save, share, or comment. The good news is that this is not a visibility problem. It is a connection problem with the audience, and it can be improved with the changes proposed in this audit.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Visual Analysis</h2>
+            <span class="demo bueno">Average</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Average Score (Last 20 posts)</p>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value">0.54</div>
+              <div class="metric-label">Quality Score</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">0.50</div>
+              <div class="metric-label">Engagement Potential</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">0.58</div>
+              <div class="metric-label">Brand Coherence</div>
+            </div>
+          </div>
+          <div class="insight-box">
+            <p class="insight-title">Visual Analysis</p>
+            <p class="insight-text">Evaluation of the last 20 published posts based on composition, lighting, and engagement potential criteria.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Stories</h2>
+            <span class="demo critico">No activity</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Status</p>
+          <p class="deliverable">Stories were not analyzed because none were posted in recent days.</p>
+          <div class="insight-box critico">
+            <p class="insight-title">Why it matters</p>
+            <p class="insight-text">Stories are the most direct engagement channel with your audience. The 2026 algorithm prioritizes profiles with daily Story activity.</p>
+          </div>
+          <ul class="findings-list">
+            <li class="critico">Recommendation: Post 1 to 3 Stories daily</li>
+            <li>They keep the profile active in the top followers bar</li>
+            <li>They create daily touchpoints without saturating the main feed</li>
+            <li>They allow raw and spontaneous content (2026 trend)</li>
+            <li>They improve follower retention rate</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row milestone">
+        <div class="milestone-dot"><span></span></div>
+        <div class="milestone-card">
+          <div class="milestone-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <p class="milestone-code">Core Problem</p>
+            <p class="milestone-title">Good Visibility. No Engagement.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">The Ignored Differentiator</h2>
+            <span class="demo advertencia">Opportunity</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Visual Content Analysis</p>
+          <p class="deliverable">85% of the content is interior and promotional. Only 10% shows exterior views (harbour views). 0% is experience or real people content.</p>
+          <ul class="findings-list">
+            <li class="excelente">Top performer: Fireworks plus Harbour Bridge (only exterior view image)</li>
+            <li class="critico">Bottom performers: Bathroom, very functional, low emotion, text review posts, staff photos without context</li>
+            <li>Images with emotional elements (romance, cozy, warm) perform better</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Weeks 1 to 2: Foundations</h2>
+            <span class="demo advertencia">Priority 1</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Immediate Actions</p>
+          <p class="deliverable">Create 3 saveable posts, add save and share CTAs, plan 2 Reels with spoken audio, audit alt text from the last 20 images.</p>
+          <ul class="findings-list">
+            <li>Create the first guide: "5 secret spots near Cremorne Point"</li>
+            <li>Film and edit 1 Reel with spoken audio</li>
+            <li>Take 3 Harbour Views photos from the hotel</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Month 1: Content</h2>
+            <span class="demo advertencia">Priority 2</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Goals</p>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Metric</th>
+                <th>Current</th>
+                <th>Target</th>
+              </tr>
+              <tr>
+                <td>Reels ratio</td>
+                <td>12%</td>
+                <td>30%</td>
+              </tr>
+              <tr>
+                <td>Harbour Views</td>
+                <td>10%</td>
+                <td>1 post/week</td>
+              </tr>
+              <tr>
+                <td>Content with people</td>
+                <td>0%</td>
+                <td>2 posts/week</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Months 2 to 3: Engagement</h2>
+            <span class="demo bueno">Priority 3</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Strategy</p>
+          <p class="deliverable">Launch a UGC campaign, create a "Guest Stories" series, implement save CTAs in 100% of posts.</p>
+          <ul class="findings-list">
+            <li>Contact 3 guests for UGC</li>
+            <li>Implement a saves and shares tracking system</li>
+            <li>Target: Engagement rate 1.0%</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row milestone">
+        <div class="milestone-dot"><span></span></div>
+        <div class="milestone-card">
+          <div class="milestone-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <p class="milestone-code">90 day goal</p>
+            <p class="milestone-title">Engagement Rate 1%+</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <div class="top">
+            <h2 class="focus">Success KPIs</h2>
+            <span class="demo bueno">Tracking</span>
+          </div>
+          <hr class="divider">
+          <p class="label">Metrics to Monitor</p>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>KPI</th>
+                <th>Current</th>
+                <th>30d</th>
+                <th>90d</th>
+              </tr>
+              <tr>
+                <td>Engagement Rate</td>
+                <td>0.17%</td>
+                <td>0.5%</td>
+                <td>1.0%</td>
+              </tr>
+              <tr>
+                <td>Saves/post</td>
+                <td>~0</td>
+                <td>5</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Shares/post</td>
+                <td>~0</td>
+                <td>2</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Quality Score</td>
+                <td>0.54</td>
+                <td>0.65</td>
+                <td>0.75</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="row milestone">
+        <div class="milestone-dot"><span></span></div>
+        <div class="milestone-card">
+          <div class="milestone-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"/></svg>
+          </div>
+          <div>
+            <p class="milestone-code">Final Verdict</p>
+            <p class="milestone-title">General Conclusion</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="sprint-id"><span></span></div>
+        <div class="card">
+          <p class="label">Integrated Diagnosis</p>
+          <p class="deliverable">@cremornepointmanor has a strong technical base that most competitors do not have. The profile is correctly optimized to be found, and that is significant. The issue is what happens afterward: the content does not convert visibility into connection.</p>
+
+          <div class="metrics-grid" style="margin-top: 20px;">
+            <div class="metric-box">
+              <div class="metric-value" style="color: var(--status-excelente);">Strong</div>
+              <div class="metric-label">SEO and Discovery</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value" style="color: var(--status-critico);">Critical</div>
+              <div class="metric-label">Engagement and Connection</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value" style="color: var(--status-advertencia);">Potential</div>
+              <div class="metric-label">Visual Identity</div>
+            </div>
+          </div>
+
+          <hr class="divider" style="margin-top: 20px;">
+          <p class="label">What is working</p>
+          <ul class="findings-list">
+            <li class="excelente">Complete algorithmic optimization: keywords, hashtags, bio, and username are well executed (100/100)</li>
+            <li class="excelente">100% thematic consistency in recent posts, the feed clearly communicates "boutique hotel"</li>
+            <li class="excelente">Harbour view content (Harbour Bridge plus fireworks) is the profile top organic performer</li>
+          </ul>
+
+          <hr class="divider" style="margin-top: 8px;">
+          <p class="label">What needs urgent change</p>
+          <ul class="findings-list">
+            <li class="critico">0.17% engagement rate, 6x below the hotel industry average (1% to 3%)</li>
+            <li class="critico">0 posts with save or share prompts in the last 50 posts, the algorithm penalizes missing saves and shares</li>
+            <li class="critico">Stories are fully inactive, the highest daily audience contact channel is abandoned</li>
+            <li class="critico">0% content with real people, the hotel has no human face, and emotion drives conversion</li>
+            <li>Only 12% of content is Reels, the highest organic reach format in 2026 is underused</li>
+          </ul>
+
+          <div class="insight-box" style="margin-top: 20px;">
+            <p class="insight-title">The most valuable asset that is not being used</p>
+            <p class="insight-text">Cremorne Point Manor has a unique location on the North Shore: the penthouse has direct views of the Harbour Bridge and the Opera House, while most rooms overlook Mosman Bay. That is a world class differentiator that currently represents only 10% of published content. A boutique hotel with this environment should feature that landscape in at least 30% to 40% of its posts. The opportunity is not to create something new. The opportunity is to show what already exists more effectively.</p>
+          </div>
+
+          <div class="insight-box critico" style="margin-top: 12px;">
+            <p class="insight-title">The most important action in the next 7 days</p>
+            <p class="insight-text">Film and post the first Reel with spoken audio featuring harbour or Mosman Bay views. Add a save CTA to the caption. Start posting Stories daily. These three actions directly address the two biggest algorithm gaps (format and engagement signals) and are executable this week. With the technical base already in place, the 90 day goal of 1%+ engagement rate is achievable.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer-top">
+      <div class="footer-locations">
+        <span><img class="footer-flag" src="/australia.png" alt="Australia flag">HQ North Sydney, NSW, Australia.</span>
+        <span><img class="footer-flag" src="/germany.png" alt="Germany flag">Berlin, Germany.</span>
+        <span><img class="footer-flag" src="/argentina.png" alt="Argentina flag">Buenos Aires, Argentina.</span>
+      </div>
+      <a class="footer-contact" href="mailto:hello@doopux.com">Get in touch</a>
+    </div>
+    <div class="footer-bottom">Audit generated: April 7, 2026 | Framework: Instagram Algorithm 2026 | Next review: 30 days</div>
+  </footer>
 </body>
 </html>
