@@ -1,0 +1,21 @@
+---
+layout: null
+---
+# robots.txt for Doop UX
+# https://doopux.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
+
+# Crawl rate (optional, helps control crawler traffic)
+# Crawl-delay: 10
+
+# Block common development/admin paths (if they exist)
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /draft/
+Disallow: /tmp/
