@@ -1,0 +1,430 @@
+# Editorial Calendar 2026 - Doop UX Blog
+# 30 Artículos para posicionamiento SEO y thought leadership
+
+# ============================================================
+# CATEGORÍA 1: WEB DESIGN WORLD CLASS - SMALL BUSINESSES (5)
+# ============================================================
+web_design_small_business:
+  - slug: "web-design-small-business-2026-trends"
+    title: "Web Design for Small Businesses: 5 Trends That Actually Drive Revenue in 2026"
+    category: "Website Development"
+    target_audience: "Small business owners, startups"
+    focus_keywords: "web design small business 2026, affordable web design, small business website"
+    content_angle: >
+      Tendencias 2026: AI-powered personalization, conversion-focused micro-interactions, 
+      mobile-first indexing 2.0, Core Web Vitals 2026 standards. Caso de éxito de cliente 
+      de Doop UX que aumentó conversiones 40% con redesign enfocado en velocidad.
+    publish_date: "2026-01-15"
+    status: "draft"
+    
+  - slug: "why-small-businesses-lose-customers-website-mistakes"
+    title: "Why 68% of Small Businesses Lose Customers Within 5 Seconds (And How to Fix It)"
+    category: "Website Development"
+    target_audience: "Small business owners"
+    focus_keywords: "website mistakes small business, high bounce rate fix, website optimization"
+    content_angle: >
+      Análisis de errores comunes en sitios de pequeños negocios: loading lento, 
+      navegación confusa, CTA débiles. Soluciones prácticas que implementamos en 
+      Doop UX. Resultados medibles de cliente real.
+    publish_date: "2026-02-01"
+    status: "draft"
+    
+  - slug: "squarespace-vs-custom-web-design-small-business-2026"
+    title: "Squarespace vs Custom Web Design: What Small Businesses Need to Know in 2026"
+    category: "Website Development"
+    target_audience: "Small business owners comparing options"
+    focus_keywords: "squarespace vs custom website, small business web design cost, website builder vs agency"
+    content_angle: >
+      Comparativa honesta 2026: cuándo usar DIY builders vs invertir en diseño 
+      custom. Break-even analysis, ROI timeline. Caso de cliente Doop que migró 
+      de Squarespace y triplicó leads cualificados.
+    publish_date: "2026-02-15"
+    status: "draft"
+    
+  - slug: "conversion-rate-optimization-small-business-website"
+    title: "From 1.2% to 4.8%: How We Optimized a Small Business Website for Conversions"
+    category: "Website Development"
+    target_audience: "Small business owners, marketers"
+    focus_keywords: "conversion rate optimization small business, CRO website, increase website conversions"
+    content_angle: >
+      Case study detallado de cliente Doop UX. Análisis de heatmaps, A/B testing 
+      de CTAs, form optimization, trust signals. Estrategias aplicables a cualquier 
+      pequeño negocio.
+    publish_date: "2026-03-01"
+    status: "draft"
+    
+  - slug: "affordable-web-design-sydney-small-business-2026"
+    title: "Affordable Web Design in Sydney: Getting Enterprise Quality on a Small Business Budget"
+    category: "Website Development"
+    target_audience: "Sydney small businesses"
+    focus_keywords: "affordable web design sydney, web design small business sydney, cheap website design"
+    content_angle: >
+      Guía de budgeting para SMBs en Sydney 2026. Qué esperar en cada rango de 
+      precio. Cómo Doop UX entrega calidad enterprise a precios accesibles sin 
+      sacrificar resultados. Testimonios de clientes locales.
+    publish_date: "2026-03-15"
+    status: "draft"
+
+# ============================================================
+# CATEGORÍA 2: AUTOMATIZACIÓN PARA EMPRESAS MEDIANAS - SYDNEY/AUSTRALIA (5)
+# ============================================================
+ai_automation_mid_sydney:
+  - slug: "ai-automation-mid-size-business-sydney-2026"
+    title: "AI Automation for Mid-Size Sydney Businesses: The 2026 Playbook for 40% Efficiency Gains"
+    category: "AI Automation"
+    target_audience: "Mid-size businesses in Sydney, operations managers"
+    focus_keywords: "AI automation sydney, business automation australia, mid size business automation"
+    content_angle: >
+      Panorama de automatización AI en Australia 2026. Herramientas disponibles, 
+      ROI típico, casos de uso por industria. Cómo Doop UX implementó automatización 
+      para cliente Sydney reduciendo costos operativos 35%.
+    publish_date: "2026-01-22"
+    status: "draft"
+    
+  - slug: "crm-automation-sales-pipeline-sydney-businesses"
+    title: "From Chaos to Closed Deals: Automating Your Sales Pipeline in 2026"
+    category: "AI Automation"
+    target_audience: "Sales managers, business owners Sydney"
+    focus_keywords: "CRM automation sydney, sales automation australia, automated sales pipeline"
+    content_angle: >
+      Estrategias de automatización de ventas 2026: lead scoring automático, 
+      nurturing sequences, follow-ups automatizados. Implementación real en 
+      empresa Sydney con 50+ empleados. Resultados: 60% más leads cualificados.
+    publish_date: "2026-02-08"
+    status: "draft"
+    
+  - slug: "customer-support-automation-australia-2026"
+    title: "AI Customer Support That Actually Works: An Australian Business Guide for 2026"
+    category: "AI Automation"
+    target_audience: "Customer support directors, business owners"
+    focus_keywords: "AI customer support australia, chatbot automation sydney, automated customer service"
+    content_angle: >
+      Estado de AI support en 2026: agentic AI, hybrid workflows, cuando usar 
+      bots vs humanos. Caso de empresa australiana que redujo tickets manuales 
+      70% manteniendo CSAT alto. Implementación paso a paso.
+    publish_date: "2026-02-22"
+    status: "draft"
+    
+  - slug: "marketing-automation-mid-size-business-australia"
+    title: "Marketing Automation for Australian Mid-Size Businesses: Beyond Basic Email"
+    category: "AI Automation"
+    target_audience: "Marketing managers, CMOs"
+    focus_keywords: "marketing automation australia, automated marketing sydney, mid size marketing automation"
+    content_angle: >
+      Automatización avanzada 2026: personalización AI, predictive lead scoring, 
+      cross-channel orchestration. Cómo Doop UX configuró stack de automatización 
+      para cliente australiano resultando en 3x ROAS.
+    publish_date: "2026-03-08"
+    status: "draft"
+    
+  - slug: "business-process-optimization-sydney-case-study"
+    title: "Saving 20 Hours Weekly: How a Sydney Business Optimized Operations with AI"
+    category: "Business Process Optimization"
+    target_audience: "Operations managers, COOs"
+    focus_keywords: "business process optimization sydney, operational efficiency australia, workflow automation"
+    content_angle: >
+      Case study completo de cliente Doop UX en Sydney. Análisis de procesos 
+      manuales vs automatizados. Implementación de agentic workflows, document 
+      processing AI, automated reporting. ROI detallado.
+    publish_date: "2026-03-22"
+    status: "draft"
+
+# ============================================================
+# CATEGORÍA 3: SEO FOR AI ANSWERS - GEMINI, GOOGLE MAPS, TENDENCIAS (5)
+# ============================================================
+seo_ai_answers_gemini:
+  - slug: "seo-ai-answers-2026-complete-guide"
+    title: "SEO for AI Answers: The Complete 2026 Guide to Ranking in ChatGPT, Gemini & Perplexity"
+    category: "SEO for AI Answers"
+    target_audience: "SEO managers, digital marketers"
+    focus_keywords: "SEO for AI answers, chatgpt optimization, AI search optimization"
+    content_angle: >
+      Estado de AI search 2026: cómo optimizar para ser citado en respuestas 
+      generativas. Estrategias de contenido estructurado, schema markup avanzado, 
+      E-E-A-T para AI. Resultados de clientes Doop UX apareciendo en AI Overviews.
+    publish_date: "2026-01-29"
+    status: "draft"
+    
+  - slug: "google-gemini-optimization-local-businesses-2026"
+    title: "How to Optimize for Google Gemini in 2026: Local Business Edition"
+    category: "SEO for AI Answers"
+    target_audience: "Local business owners, local SEO specialists"
+    focus_keywords: "google gemini optimization, gemini local SEO, AI local search"
+    content_angle: >
+      Cómo Gemini cambia búsqueda local en 2026. Optimización de Google Business 
+      Profile para AI, generative location results. Estrategias que Doop UX 
+      implementa para clientes locales. Casos de éxito con datos.
+    publish_date: "2026-02-12"
+    status: "draft"
+    
+  - slug: "google-maps-seo-2026-ai-generation"
+    title: "Google Maps SEO in 2026: Ranking When AI Generates Your Business Description"
+    category: "SEO"
+    target_audience: "Local businesses, SEO professionals"
+    focus_keywords: "google maps SEO 2026, local pack ranking, GBP optimization AI"
+    content_angle: >
+      Cambios en Maps 2026 con AI generativa. Cómo optimizar para que AI describa 
+      tu negocio favorablemente. Estrategias de reviews, fotos, posts. Caso de 
+      cliente Doop que saltó del #7 al #3 en local pack.
+    publish_date: "2026-02-26"
+    status: "draft"
+    
+  - slug: "voice-search-seo-2026-optimization"
+    title: "Voice Search SEO 2026: Optimizing for Conversational AI and Smart Speakers"
+    category: "SEO for AI Answers"
+    target_audience: "SEO specialists, content marketers"
+    focus_keywords: "voice search SEO 2026, conversational search optimization, voice SEO"
+    content_angle: >
+      Tendencias de búsqueda por voz 2026: 5G voice search, natural language 
+      processing. Cómo estructurar contenido para queries conversacionales. 
+      Implementación Doop UX con resultados de tráfico voice search.
+    publish_date: "2026-03-12"
+    status: "draft"
+    
+  - slug: "zero-click-seo-2026-ai-overviews"
+    title: "Zero-Click SEO 2026: How to Win When Google Answers Without Clicks"
+    category: "SEO for AI Answers"
+    target_audience: "SEO managers, content strategists"
+    focus_keywords: "zero click SEO, AI overviews optimization, featured snippets 2026"
+    content_angle: >
+      Realidad de zero-click 2026: estrategias para ganar visibilidad y branding 
+      aunque no haya click. Optimización para AI Overviews, featured snippets 
+      avanzados. Métricas alternativas de éxito. Estrategia Doop UX probada.
+    publish_date: "2026-03-26"
+    status: "draft"
+
+# ============================================================
+# CATEGORÍA 4: UX CONSULTING & PRODUCT STRATEGY (4)
+# ============================================================
+ux_consulting:
+  - slug: "ux-audit-2026-methodology"
+    title: "The 2026 UX Audit Methodology: Finding Conversion Killers in 48 Hours"
+    category: "UX Consulting"
+    target_audience: "Product managers, UX designers"
+    focus_keywords: "UX audit 2026, conversion optimization audit, UX review methodology"
+    content_angle: >
+      Framework de UX audit actualizado para 2026: AI-assisted heuristic evaluation, 
+      behavioral analytics, usability testing remoto. Cómo Doop UX entrega audits 
+      en 48h con actionable insights. Caso de cliente con 50% mejora en task completion.
+    publish_date: "2026-04-05"
+    status: "draft"
+    
+  - slug: "user-research-small-business-budget"
+    title: "User Research on a Budget: Getting Enterprise Insights for Small Business Costs"
+    category: "UX Consulting"
+    target_audience: "Small business owners, product managers"
+    focus_keywords: "user research small business, affordable UX research, customer research methods"
+    content_angle: >
+      Métodos de research accesibles 2026: AI-moderated interviews, unmoderated 
+      testing tools, analytics cualitativos. Cómo Doop UX adapta research enterprise 
+      a presupuestos SMB sin perder calidad. Resultados reales.
+    publish_date: "2026-04-19"
+    status: "draft"
+    
+  - slug: "design-systems-scale-startups-2026"
+    title: "Design Systems That Scale: From MVP to Enterprise Without the Technical Debt"
+    category: "UX Consulting"
+    target_audience: "Startup founders, design leaders"
+    focus_keywords: "design system startup, scalable design system, design system 2026"
+    content_angle: >
+      Arquitectura de design systems para crecimiento 2026. Tokens, componentes 
+      flexibles, documentación viva. Implementación Doop UX para startup que 
+      escaló de 10 a 100 empleados sin redesign. ROI del design system.
+    publish_date: "2026-05-03"
+    status: "draft"
+    
+  - slug: "accessibility-ux-2026-compliance"
+    title: "Accessibility as Conversion: Why Inclusive Design Increases Revenue in 2026"
+    category: "UX Consulting"
+    target_audience: "UX designers, business owners"
+    focus_keywords: "accessible design 2026, inclusive UX, WCAG compliance revenue"
+    content_angle: >
+      Business case de accesibilidad 2026: mercado de personas con discapacidad, 
+      SEO benefits, legal compliance Australia. Cómo Doop UX implementa accessibility 
+      first. Caso de aumento de conversión 15% tras mejoras de accesibilidad.
+    publish_date: "2026-05-17"
+    status: "draft"
+
+# ============================================================
+# CATEGORÍA 5: GROWTH STRATEGIES & DIGITAL MARKETING (4)
+# ============================================================
+growth_strategies:
+  - slug: "growth-experiments-framework-2026"
+    title: "The Growth Experiment Framework That Delivered 200% Revenue Increase in 6 Months"
+    category: "Growth Strategies"
+    target_audience: "Growth managers, startup founders"
+    focus_keywords: "growth experiments 2026, growth marketing framework, growth hacking"
+    content_angle: >
+      Sistema de growth experiments 2026: ideación, priorización ICE mejorado, 
+      ejecución rápida, análisis estadístico. Caso detallado de cliente Doop UX 
+      que implementó 40 experiments en 6 meses con resultados cuantificables.
+    publish_date: "2026-04-12"
+    status: "draft"
+    
+  - slug: "conversion-funnel-optimization-2026"
+    title: "From Awareness to Advocacy: Optimizing Every Stage of Your Funnel in 2026"
+    category: "Growth Strategies"
+    target_audience: "Marketing managers, CMOs"
+    focus_keywords: "conversion funnel optimization, full funnel marketing 2026, funnel strategy"
+    content_angle: >
+      Funnel optimization holístico 2026: tácticas específicas por etapa (TOFU, 
+      MOFU, BOFU), metrics que importan, attribution modeling. Estrategia Doop UX 
+      que mejoró CAC/LTV ratio 40% para cliente.
+    publish_date: "2026-04-26"
+    status: "draft"
+    
+  - slug: "email-marketing-automation-2026-ai"
+    title: "Email Marketing 2026: AI-Powered Personalization That Actually Converts"
+    category: "Comprehensive Digital Marketing"
+    target_audience: "Email marketers, digital marketers"
+    focus_keywords: "email marketing 2026, AI email automation, personalized email campaigns"
+    content_angle: >
+      Estado de email marketing 2026: hyper-personalization AI, send time optimization, 
+      predictive content. Caso de cliente Doop con 65% increase en revenue de email 
+      tras implementación de sequences automatizadas inteligentes.
+    publish_date: "2026-05-10"
+    status: "draft"
+    
+  - slug: "ppc-roi-optimization-2026"
+    title: "Beyond Clicks: How We Achieved 5:1 ROAS on Paid Media in 2026"
+    category: "Comprehensive Digital Marketing"
+    target_audience: "PPC managers, marketing directors"
+    focus_keywords: "PPC optimization 2026, paid media ROI, google ads strategy"
+    content_angle: >
+      Estrategias avanzadas de paid media 2026: AI bidding strategies, audience 
+      layering, creative optimization. Caso de cliente Doop UX con ROAS 5:1 en 
+      campaign compleja multi-channel. Budget optimization frameworks.
+    publish_date: "2026-05-24"
+    status: "draft"
+
+# ============================================================
+# CATEGORÍA 6: IDEA TO PROJECT & MVP DEVELOPMENT (3)
+# ============================================================
+idea_to_project:
+  - slug: "mvp-development-2026-guide"
+    title: "MVP Development in 2026: Launching Faster Without Sacrificing Quality"
+    category: "Idea to Project"
+    target_audience: "Startup founders, product managers"
+    focus_keywords: "MVP development 2026, minimum viable product, startup launch"
+    content_angle: >
+      Guía actualizada de MVP 2026: no-code/low-code vs custom, scope definition 
+      con AI assistance, lean validation methods. Cómo Doop UX ayuda founders a 
+      lanzar en 4-6 semanas. Casos de MVPs exitosos.
+    publish_date: "2026-06-07"
+    status: "draft"
+    
+  - slug: "product-market-fit-validation-2026"
+    title: "Product-Market Fit Validation: The 2026 Framework for Confident Launches"
+    category: "Idea to Project"
+    target_audience: "Startup founders, product managers"
+    focus_keywords: "product market fit 2026, startup validation, PMF framework"
+    content_angle: >
+      Framework de validación PMF 2026: métricas cuantitativas y cualitativas, 
+      smoke tests, concierge MVPs. Metodología Doop UX para reducir riesgo de 
+      lanzamiento. Caso de cliente que evitó pivot costoso mediante validación 
+      temprana.
+    publish_date: "2026-06-21"
+    status: "draft"
+    
+  - slug: "prototype-to-production-2026"
+    title: "From Prototype to Production: Scaling Your Digital Product in 2026"
+    category: "Idea to Project"
+    target_audience: "Startup founders, tech leads"
+    focus_keywords: "prototype to production, product scaling, startup growth 2026"
+    content_angle: >
+      Transición de prototipo a producto escalable 2026: arquitectura, tech stack 
+      decisions, technical debt management. Roadmap Doop UX para scaling sin 
+      rewrite. Caso de cliente que escaló de 1k a 100k usuarios.
+    publish_date: "2026-07-05"
+    status: "draft"
+
+# ============================================================
+# CATEGORÍA 7: TECNOLOGÍA Y DESARROLLO WEB AVANZADO (4)
+# ============================================================
+web_development_tech:
+  - slug: "core-web-vitals-2026-optimization"
+    title: "Core Web Vitals 2026: The New Performance Standards Killing Your Rankings"
+    category: "Website Development"
+    target_audience: "Web developers, technical SEOs"
+    focus_keywords: "core web vitals 2026, page speed optimization, web performance"
+    content_angle: >
+      Nuevos thresholds de CWV 2026, métricas INP, LCP mejorado. Técnicas avanzadas 
+      de optimización. Cómo Doop UX logra 90+ en todas las métricas. Casos de 
+      mejoras de ranking post-optimización.
+    publish_date: "2026-06-14"
+    status: "draft"
+    
+  - slug: "headless-cms-comparison-2026"
+    title: "Headless CMS Comparison 2026: Choosing the Right Backend for Your Business"
+    category: "Website Development"
+    target_audience: "Tech leads, developers"
+    focus_keywords: "headless CMS 2026, CMS comparison, content management system"
+    content_angle: >
+      Análisis comparativo de headless CMS 2026: Strapi, Contentful, Sanity, 
+      directus. Cuándo usar cada uno. Caso de migración exitosa de cliente Doop 
+      UX a arquitectura headless.
+    publish_date: "2026-06-28"
+    status: "draft"
+    
+  - slug: "web-security-2026-best-practices"
+    title: "Web Security for Businesses: Essential Practices for 2026"
+    category: "Website Development"
+    target_audience: "Business owners, tech leads"
+    focus_keywords: "web security 2026, website security best practices, cybersecurity"
+    content_angle: >
+      Amenazas de seguridad web 2026 y protección: CSP, HSTS, secure headers, 
+      automated security scanning. Checklist de seguridad Doop UX. Caso de 
+      prevención de breach para cliente.
+    publish_date: "2026-07-12"
+    status: "draft"
+    
+  - slug: "j vs-no-code-2026-business-guide"
+    title: "Low-Code vs No-Code vs Custom: Choosing Your Development Path in 2026"
+    category: "Website Development"
+    target_audience: "Business owners, product managers"
+    focus_keywords: "low code no code 2026, custom development, web development options"
+    content_angle: >
+      Guía de decisión 2026: cuándo usar cada enfoque, pros/cons, costos a largo 
+      plazo. Framework de decisión Doop UX. Casos reales de cada tipo de proyecto.
+    publish_date: "2026-07-26"
+    status: "draft"
+
+# ============================================================
+# CALENDARIO RESUMIDO
+# ============================================================
+publication_schedule:
+  january: ["web-design-small-business-2026-trends", "ai-automation-mid-size-business-sydney-2026", "seo-ai-answers-2026-complete-guide"]
+  february: ["why-small-businesses-lose-customers-website-mistakes", "crm-automation-sales-pipeline-sydney-businesses", "google-gemini-optimization-local-businesses-2026"]
+  march: ["squarespace-vs-custom-web-design-small-business-2026", "customer-support-automation-australia-2026", "google-maps-seo-2026-ai-generation"]
+  april: ["conversion-rate-optimization-small-business-website", "marketing-automation-mid-size-business-australia", "voice-search-seo-2026-optimization", "ux-audit-2026-methodology", "growth-experiments-framework-2026"]
+  may: ["affordable-web-design-sydney-small-business-2026", "business-process-optimization-sydney-case-study", "zero-click-seo-2026-ai-overviews", "user-research-small-business-budget", "conversion-funnel-optimization-2026"]
+  june: ["design-systems-scale-startups-2026", "email-marketing-automation-2026-ai", "mvp-development-2026-guide", "core-web-vitals-2026-optimization", "ppc-roi-optimization-2026"]
+  july: ["accessibility-ux-2026-compliance", "idea-to-project-2026-guide", "product-market-fit-validation-2026", "prototype-to-production-2026", "headless-cms-comparison-2026", "web-security-2026-best-practices", "low-code-no-code-2026-business-guide"]
+
+# ============================================================
+# METADATOS DE CONTENIDO
+# ============================================================
+content_guidelines:
+  word_count: "1200-2000 palabras"
+  tone: "Profesional pero accesible, experto pero no arrogante"
+  structure: "Intro hook → problema → solución → case study Doop → actionable takeaways → CTA"
+  seo_requirements:
+    - "Keyword principal en H1, primer párrafo, y al menos un H2"
+    - "Meta description 150-160 caracteres con CTA"
+    - "Alt text descriptivo en todas las imágenes"
+    - "Internal links a servicios de Doop UX"
+    - "External links a fuentes autorizadas 2026"
+    - "Schema markup: Article, FAQ cuando aplique"
+  
+client_testimonials_to_include:
+  - "Boatique Marine - Website Development"
+  - "Prana Ecotherapy - UX Redesign" 
+  - "Beyond Limits Children's Foundation - UX + Automation"
+  - "Northgate - Content System"
+  - "NTT Pilates - Local SEO"
+  - "Electric Vibes - Ecommerce"
+
+competitor_references:
+  - "No mencionar agencias competidoras directamente"
+  - "Enfocarse en metodología propia de Doop UX"
+  - "Usar 'algunas agencias' o 'la industria' para referencias generales"
