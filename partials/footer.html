@@ -1,15 +1,52 @@
 <footer class="footer">
   <div class="container foot-wrap">
-    <img class="foot-logo" src="{{ '/assets/logocolor.png' | relative_url }}" alt="Doop UX logo" width="230" height="113" loading="lazy" decoding="async" />
+    <div class="foot-grid">
+      <!-- Brand Column -->
+      <div class="foot-brand">
+        <a href="{{ '/' | relative_url }}">
+          <img class="foot-logo" src="{{ '/assets/logocolor.png' | relative_url }}" alt="Doop UX" width="230" height="113" loading="lazy" decoding="async" />
+        </a>
+        <p class="foot-tagline">Enterprise Level Expertise for Growing your Business</p>
+      </div>
 
-    <ul class="foot-locations" aria-label="Locations">
-      <li><img class="flag" src="{{ '/assets/australia.png' | relative_url }}" alt="Australia flag" width="374" height="249" loading="lazy" decoding="async"><span>HQ North Sydney, NSW, Australia.</span></li>
-      <li><img class="flag" src="{{ '/assets/germany.png'  | relative_url }}" alt="Germany flag" width="512" height="512" loading="lazy" decoding="async"><span>Berlin, Germany.</span></li>
-      <li><img class="flag" src="{{ '/assets/argentina.png' | relative_url }}" alt="Argentina flag" width="512" height="512" loading="lazy" decoding="async"><span>Buenos Aires, Argentina.</span></li>
-      <li class="foot-contact"><a href="{{ '/contact/' | relative_url }}">Get in touch</a></li>
-  
-    </ul>
+      <!-- Main Navigation -->
+      <div class="foot-nav-section">
+        <h3 class="foot-nav-title">Navigate</h3>
+        <nav class="foot-nav" aria-label="Footer navigation">
+          <ul>
+            <li><a href="{{ '/solutions/' | relative_url }}">Solutions</a></li>
+            <li><a href="{{ '/showcase/' | relative_url }}">Showcase</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
 
-    <p class="foot-copy">Copyright © <span class="js-year">2025</span></p>
+      <!-- Services -->
+      <div class="foot-nav-section">
+        <h3 class="foot-nav-title">Services</h3>
+        <nav class="foot-nav" aria-label="Services">
+          <ul>
+            <li><a href="{{ '/solutions/website-development/' | relative_url }}">Website Development</a></li>
+            <li><a href="{{ '/solutions/ux-consulting/' | relative_url }}">UX Consulting</a></li>
+            <li><a href="{{ '/solutions/ai-automation/' | relative_url }}">AI Automation</a></li>
+            <li><a href="{{ '/solutions/seo/' | relative_url }}">SEO</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Locations -->
+      <div class="foot-nav-section">
+        <h3 class="foot-nav-title">Locations</h3>
+        <ul class="foot-locations" aria-label="Locations">
+          <li><img class="flag" src="{{ '/assets/australia.png' | relative_url }}" alt="" width="374" height="249" loading="lazy" decoding="async"><span>HQ North Sydney, NSW, Australia.</span></li>
+          <li><img class="flag" src="{{ '/assets/germany.png'  | relative_url }}" alt="" width="512" height="512" loading="lazy" decoding="async"><span>Berlin, Germany.</span></li>
+          <li><img class="flag" src="{{ '/assets/argentina.png' | relative_url }}" alt="" width="512" height="512" loading="lazy" decoding="async"><span>Buenos Aires, Argentina.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p class="foot-copy">Copyright © <span class="js-year">2025</span> Doop UX. All rights reserved.</p>
+    </div>
   </div>
 </footer>

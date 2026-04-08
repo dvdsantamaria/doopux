@@ -10,15 +10,19 @@ schema_services:
 - name: "Website Development"
 description: "High-performing sites engineered for speed, accessibility, CRO and technical SEO."
 service_type: "Web development"
+url: "/solutions/website-development/"
 - name: "UX Consulting"
 description: "Customer research, UX audits and product strategy to guide confident decisions."
 service_type: "UX consulting"
+url: "/solutions/ux-consulting/"
 - name: "AI Automation"
 description: "Agents and workflows that connect your stack, eliminate busywork and surface insights."
 service_type: "AI automation"
+url: "/solutions/ai-automation/"
 - name: "SEO for AI Answers"
 description: "Content and structured data tuned for search engines, AI overviews and answer engines."
 service_type: "SEO for AI answers"
+url: "/solutions/seo-for-ai-answers/"
 faq:
 - question: "What kind of teams does Doop UX partner with?"
 answer: "We work with founders, marketing leaders, and product teams that need enterprise-level execution without bulky
@@ -400,6 +404,7 @@ Make, n8n, and custom APIs so you stay in control."
               "name": {{ service.name | jsonify }},
               "serviceType": {{ service.service_type | jsonify }},
               "description": {{ service.description | jsonify }},
+              "url": "{{ site_root }}{{ service.url }}",
               "provider": {
                 "@id": "{{ site_root }}#organization"
               },
@@ -407,6 +412,18 @@ Make, n8n, and custom APIs so you stay in control."
             }
           }{% unless forloop.last %},{% endunless %}
           {% endfor %}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ canonical }}#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site_root }}"
+          }
         ]
       }{% if page.faq %},
       {
