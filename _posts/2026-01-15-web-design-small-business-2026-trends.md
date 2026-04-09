@@ -7,6 +7,7 @@ tags: ["web design", "small business", "2026 trends", "conversion optimization"]
 author: "Doop UX Team"
 date: 2026-01-15
 featured_image: "/assets/blog/web-design-small-business-2026.jpg"
+sitemap: false
 ---
 
 # Web Design for Small Businesses: 5 Trends That Actually Drive Revenue in 2026

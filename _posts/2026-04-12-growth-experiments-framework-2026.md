@@ -7,6 +7,7 @@ tags: ["growth experiments", "growth marketing", "growth framework 2026", "reven
 author: "Doop UX Team"
 date: 2026-04-12
 featured_image: "/assets/blog/growth-experiments-2026.jpg"
+sitemap: false
 ---
 
 # The Growth Experiment Framework That Delivered 200% Revenue Increase in 6 Months

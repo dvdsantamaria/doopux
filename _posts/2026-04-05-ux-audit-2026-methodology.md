@@ -7,6 +7,7 @@ tags: ["UX audit", "conversion optimization", "UX methodology", "website audit 2
 author: "Doop UX Team"
 date: 2026-04-05
 featured_image: "/assets/blog/ux-audit-2026.jpg"
+sitemap: false
 ---
 
 # The 2026 UX Audit Methodology: Finding Conversion Killers in 48 Hours

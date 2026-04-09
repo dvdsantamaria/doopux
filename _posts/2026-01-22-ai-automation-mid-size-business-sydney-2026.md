@@ -7,6 +7,7 @@ tags: ["AI automation", "Sydney business", "mid-size business", "business automa
 author: "Doop UX Team"
 date: 2026-01-22
 featured_image: "/assets/blog/ai-automation-sydney-2026.jpg"
+sitemap: false
 ---
 
 # AI Automation for Mid-Size Sydney Businesses: The 2026 Playbook for 40% Efficiency Gains

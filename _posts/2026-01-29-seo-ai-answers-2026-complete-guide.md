@@ -7,6 +7,7 @@ tags: ["SEO for AI answers", "AI search optimization", "ChatGPT SEO", "Gemini op
 author: "Doop UX Team"
 date: 2026-01-29
 featured_image: "/assets/blog/seo-ai-answers-2026.jpg"
+sitemap: false
 ---
 
 # SEO for AI Answers: The Complete 2026 Guide to Ranking in ChatGPT, Gemini & Perplexity
