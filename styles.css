@@ -1623,16 +1623,24 @@ body.service-detail-page {
 }
 
 /* Dark-safe overrides for indexb - no light sections */
-.slice-light,
-.slice-light.process,
-.slice-light.solutions,
-.slice-light.testimonials,
-.solutions,
-.testimonials,
-.process,
-.service-eco {
+/* Only apply on dark background pages (home) */
+body.home .slice-light,
+body.home .slice-light.process,
+body.home .slice-light.solutions,
+body.home .slice-light.testimonials,
+body.home .solutions,
+body.home .testimonials,
+body.home .process,
+body.home .service-eco {
   background: transparent !important;
   color: #fff !important;
+}
+
+/* Light theme pages should keep dark text on light backgrounds */
+body:not(.home) .slice-light,
+body:not(.home) .service-eco {
+  background: #efefef !important;
+  color: #111 !important;
 }
 
 /* Additional styles for indexb */
