@@ -1,8 +1,36 @@
 baseurl: ""
 includes_dir: partials
 
+# Disable default theme - we use custom layouts
+theme: null
+
 # Blog posts configuration
 permalink: /:year/:month/:day/:title/
+
+# Plugins for GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - README.md
+  - package.json
+  - package-lock.json
 
 defaults:
   - scope:
