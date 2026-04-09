@@ -307,21 +307,21 @@ a {
 }
 
 .foot-locations li {
-    display: flex;
+    display: grid;
+    grid-template-columns: 24px 1fr;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-size: clamp(13px, 1.3vw, 14px);
     color: rgba(17, 17, 17, .7);
     text-align: left;
-    justify-content: flex-start;
 }
 
 .foot-locations li img.flag {
-    flex-shrink: 0;
-    width: 18px;
-    height: 12px;
+    width: 24px;
+    height: 16px;
     object-fit: cover;
     display: block;
+    border-radius: 2px;
 }
 
 .foot-bottom {
