@@ -162,110 +162,73 @@ a {
     filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0))
 }
 
-.foot-locations {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(10px, 2vw, 24px);
-    column-gap: clamp(16px, 3vw, 32px);
-    font-size: clamp(12px, 1.4vw, 16px);
-    line-height: 1.6;
-    color: rgba(17, 17, 17, .85)
-}
-
-.foot-locations li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap
-}
-
-.flag {
-    width: 18px;
-    height: 12px;
-    object-fit: cover;
-    border-radius: 2px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, .08)
-}
-
-.flag-emoji {
-    font-size: 16px;
-    line-height: 1;
-    display: inline-block;
-    transform: translateY(1px)
-}
-
-.foot-contact {
-    position: relative;
-    padding-left: clamp(10px, 2vw, 18px);
-    margin-left: clamp(6px, 1.2vw, 12px)
-}
-
-@media (min-width:720px) {
-    .foot-contact::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        translate: 0 -50%;
-        width: 1px;
-        height: 1.1em;
-        background: rgba(0, 0, 0, .15)
-    }
-}
-
-.foot-contact a {
-    color: #111;
-    text-decoration: none;
-    font-weight: 500
-}
-
-.foot-contact a:hover {
-    text-decoration: underline
-}
-
-.foot-copy {
-    margin: 0;
-    font-size: clamp(11px, 1.2vw, 14px);
-    color: rgba(17, 17, 17, .7)
-}
-
 /* Enhanced Footer for Sitelinks Optimization */
+/* ==========================================
+   FOOTER STYLES - Consolidated & Responsive
+   ========================================== */
+
+/* Footer wrapper */
+.footer {
+    background: #efefef;
+}
+
+/* Main grid layout */
 .foot-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: clamp(32px, 5vw, 64px);
     width: 100%;
     max-width: 1100px;
     text-align: left;
-    padding: clamp(40px, 6vw, 64px) 0
+    padding: clamp(40px, 6vw, 64px) 0;
+    align-items: start;
 }
 
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+    .foot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+    .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* Brand column */
 .foot-brand {
     display: flex;
     flex-direction: column;
-    gap: 16px
+    gap: 16px;
 }
 
 .foot-brand a {
-    display: inline-block
+    display: inline-block;
+}
+
+.foot-logo {
+    display: block;
+    width: clamp(96px, 14vw, 140px);
+    height: auto;
 }
 
 .foot-tagline {
     font-size: clamp(14px, 1.4vw, 16px);
     color: rgba(17, 17, 17, .7);
     margin: 0;
-    max-width: 280px
+    max-width: 280px;
+    line-height: 1.5;
 }
 
+/* Navigation sections */
 .foot-nav-section {
     display: flex;
     flex-direction: column;
-    gap: clamp(16px, 2vw, 20px)
+    gap: clamp(16px, 2vw, 20px);
 }
 
 .foot-nav-title {
@@ -274,7 +237,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #111;
-    margin: 0
+    margin: 0;
 }
 
 .foot-nav ul {
@@ -283,55 +246,68 @@ a {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
 }
 
 .foot-nav a {
     color: rgba(17, 17, 17, .75);
     text-decoration: none;
     font-size: clamp(14px, 1.3vw, 15px);
-    transition: color .2s ease
+    transition: color .2s ease;
 }
 
 .foot-nav a:hover {
-    color: #111
+    color: #111;
 }
 
+/* Locations - ALIGNED WITH CSS GRID */
 .foot-locations {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px
+    gap: 12px;
 }
 
 .foot-locations li {
     display: grid;
-    grid-template-columns: 24px 1fr;
+    grid-template-columns: 20px 1fr;
     align-items: center;
     gap: 10px;
     font-size: clamp(13px, 1.3vw, 14px);
     color: rgba(17, 17, 17, .7);
-    text-align: left;
+    line-height: 1.5;
 }
 
 .foot-locations li img.flag {
-    width: 24px;
-    height: 16px;
+    width: 20px;
+    height: 14px;
     object-fit: cover;
     display: block;
     border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
 }
 
+/* Footer bottom */
 .foot-bottom {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, .08);
     padding: clamp(20px, 3vw, 28px) 0;
-    text-align: center
+    text-align: center;
 }
 
-/* Light theme footer (solutions, showcase, contact, blog pages) */
+.foot-copy {
+    margin: 0;
+    font-size: clamp(11px, 1.2vw, 14px);
+    color: rgba(17, 17, 17, .7);
+}
+
+/* ==========================================
+   FOOTER THEME OVERRIDES
+   ========================================== */
+
+/* Light theme (solutions, showcase, contact, blog) */
 body.theme-light .foot-nav-title {
     color: #111;
 }
@@ -348,39 +324,41 @@ body.theme-light .foot-locations li {
     color: rgba(17, 17, 17, .7);
 }
 
-body.theme-light .foot-tagline {
-    color: rgba(17, 17, 17, .7);
-}
-
+body.theme-light .foot-tagline,
 body.theme-light .foot-copy {
     color: rgba(17, 17, 17, .7);
 }
 
-/* Dark theme adjustments for enhanced footer */
-body:not(.theme-light) .foot-tagline {
-    color: rgba(255, 255, 255, .6)
-}
-
+/* Dark theme (homepage) */
 body:not(.theme-light) .foot-nav-title {
-    color: #fff
+    color: #fff;
 }
 
 body:not(.theme-light) .foot-nav a {
-    color: rgba(255, 255, 255, .65)
+    color: rgba(255, 255, 255, .75);
 }
 
 body:not(.theme-light) .foot-nav a:hover {
-    color: #fff
+    color: #fff;
 }
 
 body:not(.theme-light) .foot-locations li {
-    color: rgba(255, 255, 255, .6)
+    color: rgba(255, 255, 255, .7);
+}
+
+body:not(.theme-light) .foot-tagline,
+body:not(.theme-light) .foot-copy {
+    color: rgba(255, 255, 255, .7);
 }
 
 body:not(.theme-light) .foot-bottom {
-    border-top-color: rgba(255, 255, 255, .1)
+    border-top-color: rgba(255, 255, 255, .1);
 }
 
+/* Legacy footer compatibility */
+.site-footer {
+    background: #efefef;
+}
 .hero {
     position: relative;
     z-index: 1;
