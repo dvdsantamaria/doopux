@@ -321,6 +321,37 @@ a {
     text-align: center
 }
 
+/* Light theme footer - ensure dark text on light background */
+body:not(.home) .footer,
+body:not(.home) .site-footer {
+    background: #efefef !important;
+    color: #111 !important;
+}
+
+body:not(.home) .foot-nav-title {
+    color: #111 !important;
+}
+
+body:not(.home) .foot-nav a {
+    color: rgba(17, 17, 17, .75) !important;
+}
+
+body:not(.home) .foot-nav a:hover {
+    color: #111 !important;
+}
+
+body:not(.home) .foot-locations li {
+    color: rgba(17, 17, 17, .7) !important;
+}
+
+body:not(.home) .foot-tagline {
+    color: rgba(17, 17, 17, .7) !important;
+}
+
+body:not(.home) .foot-copy {
+    color: rgba(17, 17, 17, .7) !important;
+}
+
 /* Dark theme adjustments for enhanced footer */
 body:not(.theme-light) .foot-tagline {
     color: rgba(255, 255, 255, .6)
