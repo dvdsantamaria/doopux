@@ -1,9 +1,7 @@
-permalink: pretty
 baseurl: ""
 includes_dir: partials
 
 # Blog posts configuration
-posts_dir: _posts
 permalink: /:year/:month/:day/:title/
 
 defaults:
