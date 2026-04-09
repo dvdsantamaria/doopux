@@ -2,6 +2,18 @@ permalink: pretty
 baseurl: ""
 includes_dir: partials
 
+# Blog posts configuration
+posts_dir: _posts
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Doop UX Team"
+
 title: "Doop UX"
 description: "Doop UX blends UX strategy, performant web development, AI automation and growth execution so brands launch faster and scale smarter."
 url: "https://doopux.com"
