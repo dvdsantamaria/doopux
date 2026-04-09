@@ -344,35 +344,69 @@ a {
     text-align: center
 }
 
-/* Light theme footer - ensure dark text on light background */
-body:not(.home) .footer,
-body:not(.home) .site-footer {
-    background: #efefef !important;
-    color: #111 !important;
+/* Light theme footer - pages with light backgrounds (solutions, showcase, contact, blog) */
+body.theme-light .footer,
+body.theme-light .site-footer {
+    color: #111;
 }
 
-body:not(.home) .foot-nav-title {
-    color: #111 !important;
+body.theme-light .foot-nav-title {
+    color: #111;
 }
 
-body:not(.home) .foot-nav a {
-    color: rgba(17, 17, 17, .75) !important;
+body.theme-light .foot-nav a {
+    color: rgba(17, 17, 17, .75);
 }
 
-body:not(.home) .foot-nav a:hover {
-    color: #111 !important;
+body.theme-light .foot-nav a:hover {
+    color: #111;
 }
 
-body:not(.home) .foot-locations li {
-    color: rgba(17, 17, 17, .7) !important;
+body.theme-light .foot-locations li {
+    color: rgba(17, 17, 17, .7);
 }
 
-body:not(.home) .foot-tagline {
-    color: rgba(17, 17, 17, .7) !important;
+body.theme-light .foot-tagline {
+    color: rgba(17, 17, 17, .7);
 }
 
-body:not(.home) .foot-copy {
-    color: rgba(17, 17, 17, .7) !important;
+body.theme-light .foot-copy {
+    color: rgba(17, 17, 17, .7);
+}
+
+/* Dark theme footer - ensure light text on dark background */
+body:not(.theme-light) .footer,
+body:not(.theme-light) .site-footer {
+    background: transparent;
+    color: #e9eef5;
+}
+
+body:not(.theme-light) .foot-nav-title {
+    color: #fff;
+}
+
+body:not(.theme-light) .foot-nav a {
+    color: rgba(255, 255, 255, .75);
+}
+
+body:not(.theme-light) .foot-nav a:hover {
+    color: #fff;
+}
+
+body:not(.theme-light) .foot-locations li {
+    color: rgba(255, 255, 255, .7);
+}
+
+body:not(.theme-light) .foot-tagline {
+    color: rgba(255, 255, 255, .7);
+}
+
+body:not(.theme-light) .foot-copy {
+    color: rgba(255, 255, 255, .7);
+}
+
+body:not(.theme-light) .foot-bottom {
+    border-top-color: rgba(255, 255, 255, .1);
 }
 
 /* Dark theme adjustments for enhanced footer */
@@ -1691,8 +1725,8 @@ body.home .service-eco {
 }
 
 /* Light theme pages should keep dark text on light backgrounds */
-body:not(.home) .slice-light,
-body:not(.home) .service-eco {
+body.theme-light .slice-light,
+body.theme-light .service-eco {
   background: #efefef !important;
   color: #111 !important;
 }
