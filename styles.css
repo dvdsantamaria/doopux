@@ -237,25 +237,12 @@ a {
 /* Enhanced Footer for Sitelinks Optimization */
 .foot-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: clamp(32px, 5vw, 64px);
     width: 100%;
     max-width: 1100px;
     text-align: left;
-    padding: clamp(40px, 6vw, 64px) 0;
-    align-items: start;
-}
-
-@media (max-width: 900px) {
-    .foot-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .foot-grid {
-        grid-template-columns: 1fr;
-    }
+    padding: clamp(40px, 6vw, 64px) 0
 }
 
 .foot-brand {
@@ -320,21 +307,11 @@ a {
 }
 
 .foot-locations li {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     font-size: clamp(13px, 1.3vw, 14px);
-    color: rgba(17, 17, 17, .7);
-    text-align: left;
-    justify-content: flex-start;
-}
-
-.foot-locations li img.flag {
-    flex-shrink: 0;
-    width: 18px;
-    height: 12px;
-    object-fit: cover;
-    display: block;
+    color: rgba(17, 17, 17, .7)
 }
 
 .foot-bottom {
@@ -342,71 +319,6 @@ a {
     border-top: 1px solid rgba(0, 0, 0, .08);
     padding: clamp(20px, 3vw, 28px) 0;
     text-align: center
-}
-
-/* Light theme footer - pages with light backgrounds (solutions, showcase, contact, blog) */
-body.theme-light .footer,
-body.theme-light .site-footer {
-    color: #111;
-}
-
-body.theme-light .foot-nav-title {
-    color: #111;
-}
-
-body.theme-light .foot-nav a {
-    color: rgba(17, 17, 17, .75);
-}
-
-body.theme-light .foot-nav a:hover {
-    color: #111;
-}
-
-body.theme-light .foot-locations li {
-    color: rgba(17, 17, 17, .7);
-}
-
-body.theme-light .foot-tagline {
-    color: rgba(17, 17, 17, .7);
-}
-
-body.theme-light .foot-copy {
-    color: rgba(17, 17, 17, .7);
-}
-
-/* Dark theme footer - ensure light text on dark background */
-body:not(.theme-light) .footer,
-body:not(.theme-light) .site-footer {
-    background: transparent;
-    color: #e9eef5;
-}
-
-body:not(.theme-light) .foot-nav-title {
-    color: #fff;
-}
-
-body:not(.theme-light) .foot-nav a {
-    color: rgba(255, 255, 255, .75);
-}
-
-body:not(.theme-light) .foot-nav a:hover {
-    color: #fff;
-}
-
-body:not(.theme-light) .foot-locations li {
-    color: rgba(255, 255, 255, .7);
-}
-
-body:not(.theme-light) .foot-tagline {
-    color: rgba(255, 255, 255, .7);
-}
-
-body:not(.theme-light) .foot-copy {
-    color: rgba(255, 255, 255, .7);
-}
-
-body:not(.theme-light) .foot-bottom {
-    border-top-color: rgba(255, 255, 255, .1);
 }
 
 /* Dark theme adjustments for enhanced footer */
@@ -1711,24 +1623,16 @@ body.service-detail-page {
 }
 
 /* Dark-safe overrides for indexb - no light sections */
-/* Only apply on dark background pages (home) */
-body.home .slice-light,
-body.home .slice-light.process,
-body.home .slice-light.solutions,
-body.home .slice-light.testimonials,
-body.home .solutions,
-body.home .testimonials,
-body.home .process,
-body.home .service-eco {
+.slice-light,
+.slice-light.process,
+.slice-light.solutions,
+.slice-light.testimonials,
+.solutions,
+.testimonials,
+.process,
+.service-eco {
   background: transparent !important;
   color: #fff !important;
-}
-
-/* Light theme pages should keep dark text on light backgrounds */
-body.theme-light .slice-light,
-body.theme-light .service-eco {
-  background: #efefef !important;
-  color: #111 !important;
 }
 
 /* Additional styles for indexb */
