@@ -1,0 +1,160 @@
+---
+layout: null
+meta_title: "Blog | Doop UX — Insights on UX, Web Development & AI Automation"
+meta_description: "Expert insights on UX strategy, web development, AI automation, and growth marketing for Australian businesses."
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/styles.css" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  </noscript>
+  <style>
+    body {
+      background: #efefef;
+      color: #151515;
+    }
+    .brand img {
+      filter: invert(64%);
+    }
+    .nav {
+      color: #151515;
+    }
+    .blog-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .blog-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .blog-header h1 {
+      font-size: clamp(36px, 5vw, 52px);
+      margin-bottom: 16px;
+    }
+    .blog-header p {
+      font-size: 20px;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .blog-grid {
+      display: grid;
+      gap: 32px;
+    }
+    .blog-card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .blog-card a {
+      color: #151515;
+      text-decoration: none;
+    }
+    .blog-card h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #151515;
+    }
+    .blog-card .excerpt {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .blog-card .meta {
+      font-size: 14px;
+      color: #999;
+    }
+    .blog-card .category {
+      display: inline-block;
+      background: linear-gradient(135deg, #be4fc1, #8c62d6);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+  </style>
+
+  {% assign meta_title = page.meta_title | default: site.title %}
+  {% assign meta_description = page.meta_description | default: site.description %}
+  {% assign canonical = page.url | absolute_url %}
+
+  <title>{{ meta_title }}</title>
+  <meta name="title" content="{{ meta_title }}">
+  <meta name="description" content="{{ meta_description }}">
+  <link rel="canonical" href="{{ canonical }}">
+</head>
+
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="container-wide">
+    <div class="row">
+      <div class="brand">
+        <a href="{{ site.baseurl }}/">
+          <img src="{{ site.baseurl }}/assets/logo.png" alt="Doop UX" width="653" height="322" decoding="async" loading="eager" />
+        </a>
+      </div>
+
+      <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+        <span class="bars"></span>
+      </button>
+
+      <nav id="siteNav" class="nav">
+        <a href="{{ site.baseurl }}/solutions">Solutions</a>
+        <a href="{{ site.baseurl }}/showcase">Showcase</a>
+        <a href="{{ site.baseurl }}/contact">Contact</a>
+        <button class="nav-close" aria-label="Close menu">
+          <span class="x"></span>
+          <span class="nav-close-label">Close</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="slice-light">
+    <div class="blog-container">
+      <div class="blog-header">
+        <h1>Insights & Resources</h1>
+        <p>Expert perspectives on UX strategy, web development, AI automation, and growth marketing for forward-thinking businesses.</p>
+      </div>
+
+      <div class="blog-grid">
+        {% for post in site.posts %}
+        <article class="blog-card">
+          <a href="{{ post.url | relative_url }}">
+            <span class="category">{{ post.category }}</span>
+            <h2>{{ post.title }}</h2>
+            <p class="excerpt">{{ post.description }}</p>
+            <div class="meta">
+              {{ post.date | date: "%B %d, %Y" }} • {{ post.author }}
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% include_relative partials/footer.html %}
+
+  <script src="{{ site.baseurl }}/scripts.js" defer></script>
+</body>
+</html>
