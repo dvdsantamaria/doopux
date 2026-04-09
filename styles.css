@@ -307,11 +307,21 @@ a {
 }
 
 .foot-locations li {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
     font-size: clamp(13px, 1.3vw, 14px);
-    color: rgba(17, 17, 17, .7)
+    color: rgba(17, 17, 17, .7);
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.foot-locations li img.flag {
+    flex-shrink: 0;
+    width: 18px;
+    height: 12px;
+    object-fit: cover;
+    display: block;
 }
 
 .foot-bottom {
@@ -319,6 +329,31 @@ a {
     border-top: 1px solid rgba(0, 0, 0, .08);
     padding: clamp(20px, 3vw, 28px) 0;
     text-align: center
+}
+
+/* Light theme footer (solutions, showcase, contact, blog pages) */
+body.theme-light .foot-nav-title {
+    color: #111;
+}
+
+body.theme-light .foot-nav a {
+    color: rgba(17, 17, 17, .75);
+}
+
+body.theme-light .foot-nav a:hover {
+    color: #111;
+}
+
+body.theme-light .foot-locations li {
+    color: rgba(17, 17, 17, .7);
+}
+
+body.theme-light .foot-tagline {
+    color: rgba(17, 17, 17, .7);
+}
+
+body.theme-light .foot-copy {
+    color: rgba(17, 17, 17, .7);
 }
 
 /* Dark theme adjustments for enhanced footer */
@@ -1622,15 +1657,15 @@ body.service-detail-page {
     z-index: 3
 }
 
-/* Dark-safe overrides for indexb - no light sections */
-.slice-light,
-.slice-light.process,
-.slice-light.solutions,
-.slice-light.testimonials,
-.solutions,
-.testimonials,
-.process,
-.service-eco {
+/* Dark-safe overrides for indexb - only on homepage (dark background) */
+body.home .slice-light,
+body.home .slice-light.process,
+body.home .slice-light.solutions,
+body.home .slice-light.testimonials,
+body.home .solutions,
+body.home .testimonials,
+body.home .process,
+body.home .service-eco {
   background: transparent !important;
   color: #fff !important;
 }
