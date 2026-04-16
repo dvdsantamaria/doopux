@@ -330,29 +330,31 @@ body.theme-light .foot-copy {
 }
 
 /* Dark theme (homepage) */
-body:not(.theme-light) .foot-nav-title {
-    color: #fff;
-}
+@media (prefers-color-scheme:dark) {
+    body:not(.theme-light) .foot-nav-title {
+        color: #fff;
+    }
 
-body:not(.theme-light) .foot-nav a {
-    color: rgba(255, 255, 255, .75);
-}
+    body:not(.theme-light) .foot-nav a {
+        color: rgba(255, 255, 255, .75);
+    }
 
-body:not(.theme-light) .foot-nav a:hover {
-    color: #fff;
-}
+    body:not(.theme-light) .foot-nav a:hover {
+        color: #fff;
+    }
 
-body:not(.theme-light) .foot-locations li {
-    color: rgba(255, 255, 255, .7);
-}
+    body:not(.theme-light) .foot-locations li {
+        color: rgba(255, 255, 255, .7);
+    }
 
-body:not(.theme-light) .foot-tagline,
-body:not(.theme-light) .foot-copy {
-    color: rgba(255, 255, 255, .7);
-}
+    body:not(.theme-light) .foot-tagline,
+    body:not(.theme-light) .foot-copy {
+        color: rgba(255, 255, 255, .7);
+    }
 
-body:not(.theme-light) .foot-bottom {
-    border-top-color: rgba(255, 255, 255, .1);
+    body:not(.theme-light) .foot-bottom {
+        border-top-color: rgba(255, 255, 255, .1);
+    }
 }
 
 /* Legacy footer compatibility */
@@ -1943,6 +1945,11 @@ body.theme-light .nav-toggle {
 
     .nav-close .x::after {
         transform: translate(-50%, -50%) rotate(-45deg)
+    }
+
+    body.home .nav-toggle {
+        color: #fff;
+        border-color: #ffffff40
     }
 }
 
