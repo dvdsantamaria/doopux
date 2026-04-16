@@ -1730,8 +1730,8 @@ body.home .service-eco {
 }
 
 body.theme-light .nav-toggle {
-    color: #555;
-    border-color: #00000026;
+    color: #fff;
+    border-color: #ffffff40;
     background: transparent
 }
 
@@ -1753,6 +1753,11 @@ body.theme-light .nav-toggle {
         border-radius: 10px;
         background: transparent;
         cursor: pointer
+    }
+
+    body.theme-light .nav-toggle {
+        color: #fff;
+        border-color: #ffffff40
     }
 
     .nav-toggle:focus-visible {
@@ -1873,8 +1878,8 @@ body.theme-light .nav-toggle {
 
     body.theme-light header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
     body.theme-light header.container-wide.nav-open .nav-toggle {
-        color: #151515;
-        border-color: #00000033
+        color: #fff;
+        border-color: #ffffff60
     }
 
     body:not(.theme-light) header.container-wide:has(.nav-toggle[aria-expanded="true"]) .nav-toggle,
