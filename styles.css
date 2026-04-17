@@ -2212,6 +2212,11 @@ html body.home .nav-toggle {
         box-shadow: inset 0 0 0 100px #151821 !important
     }
 
+    body.theme-light .footer,
+    body.theme-light .site-footer {
+        background: #0f1115 !important
+    }
+
     body.theme-light .foot-nav-title {
         color: #fff
     }
