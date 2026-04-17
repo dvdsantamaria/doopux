@@ -48,6 +48,20 @@
     margin-inline: auto
 }
 
+/* Light theme base styles */
+body.theme-light {
+    background: #efefef;
+    color: #111
+}
+
+body.theme-light .brand img {
+    filter: invert(64%)
+}
+
+body.theme-light .nav {
+    color: #151515
+}
+
 .container-wide {
     width: min(100%, var(--header-max));
     margin-inline: auto;
@@ -1947,13 +1961,13 @@ body.theme-light .nav-toggle {
         transform: translate(-50%, -50%) rotate(-45deg)
     }
 
-    body.home .nav-toggle {
+    html body.home .nav-toggle {
         color: #fff;
         border-color: #ffffff40
     }
 }
 
-body.home .nav-toggle {
+html body.home .nav-toggle {
     color: #fff;
     border-color: #ffffff40
 }
