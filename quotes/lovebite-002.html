@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web App Quote - Lovebite Speed Dating</title>
+
+  <!-- Satoshi from Fontshare (same as doopux.com) -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css2?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f3f4f7;
+      --bg-top: #f7f8fb;
+      --bg-bot: #f2f3f6;
+      --white: #fff;
+      --border: #e5e5e5;
+      --text: #111;
+      --muted: rgba(17, 17, 17, .68);
+      --accent: #ee64ff;
+      --accent2: #8c62d6;
+      --r-card: 20px;
+      --r-sm: 14px;
+      --font: "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 42%, var(--bg-bot) 100%);
+      overflow-x: hidden;
+      min-height: 100%;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(600px 380px at 12% 0%, rgba(244, 201, 52, 0.18), transparent 60%),
+        radial-gradient(720px 460px at 92% 18%, rgba(125, 162, 255, 0.14), transparent 62%),
+        radial-gradient(520px 420px at 72% 98%, rgba(189, 210, 255, 0.16), transparent 62%);
+      filter: blur(0.2px);
+      opacity: 0.9;
+    }
+
+    /* LAYOUT */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100% - 48px);
+      margin: 0 auto;
+      padding-bottom: 72px;
+    }
+
+    /* HEADER */
+    header.brand-header {
+      padding: clamp(20px, 3vw, 36px) 0 clamp(40px, 5vw, 64px);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: #7b8393;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      display: grid;
+      place-items: center;
+      padding: 6px;
+    }
+
+    .brand-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: clamp(48px, 6vw, 72px);
+      text-align: left;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #374151;
+    }
+
+    .hero-tag .dot {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .hero-date {
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.5vw, 60px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.4vw, 17px);
+      color: #717a8a;
+      font-weight: 400;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-card);
+      padding: clamp(32px, 4vw, 48px);
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-eyebrow {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(17, 17, 17, .5);
+      margin-bottom: 6px;
+    }
+
+    .card h2 {
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 500;
+      letter-spacing: -0.018em;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .badge-done {
+      background: rgba(34, 197, 94, .1);
+      color: #15803d;
+      border: 1px solid rgba(34, 197, 94, .25);
+    }
+
+    .badge-scope {
+      background: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+    }
+
+    .badge-time {
+      background: rgba(20, 184, 166, .1);
+      color: #0f766e;
+      border: 1px solid rgba(20, 184, 166, .25);
+    }
+
+    hr.divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 0 0 28px;
+    }
+
+    /* PROSE */
+    .prose {
+      color: var(--muted);
+      font-size: clamp(13px, 1.1vw, 15px);
+      line-height: 1.7;
+    }
+
+    .prose p {
+      margin-bottom: 14px;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* SECTION GROUP */
+    .section-group {
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+
+    /* PHASE CARD (dark header) */
+    .phase-card {
+      border-radius: var(--r-card);
+      background: #1b1f26;
+      border: 1px solid #2a2f38;
+      padding: clamp(24px, 3vw, 36px);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .phase-icon {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      display: grid;
+      place-items: center;
+      padding: 10px;
+    }
+
+    .phase-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .phase-eyebrow {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 5px;
+    }
+
+    .phase-eyebrow.c-accent {
+      color: var(--accent);
+    }
+
+    .phase-eyebrow.c-purple {
+      color: #d8b4fe;
+    }
+
+    .phase-eyebrow.c-teal {
+      color: #6ee7b7;
+    }
+
+    .phase-title {
+      font-size: clamp(17px, 1.9vw, 24px);
+      font-weight: 500;
+      color: #f8fafc;
+      letter-spacing: -0.016em;
+      line-height: 1.15;
+    }
+
+    /* SUB-HEADINGS IN CARDS */
+    h3.sub {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17, 17, 17, .45);
+      margin: 32px 0 14px;
+    }
+
+    h3.sub:first-child {
+      margin-top: 0;
+    }
+
+    /* ITEM LIST (dots) */
+    .item-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .item-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .item-list li::before {
+      content: "·";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      color: var(--accent2);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .item-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* CHECKMARK LIST */
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: #22c55e;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .check-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* CROSS LIST */
+    .cross-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .cross-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: rgba(17, 17, 17, .5);
+    }
+
+    .cross-list li::before {
+      content: "×";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #d1d5db;
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    /* NUMBERED LIST */
+    .numbered-list {
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .numbered-list li {
+      position: relative;
+      padding-left: 32px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .numbered-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent2);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+
+    .numbered-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* LIGHTHOUSE SCORES */
+    .lh-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .lh-group-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(17, 17, 17, .45);
+      margin-bottom: 12px;
+    }
+
+    .lh-scores {
+      display: grid;
+      gap: 12px;
+    }
+
+    .lh-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lh-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      width: 108px;
+      flex-shrink: 0;
+    }
+
+    .lh-bar-wrap {
+      flex: 1;
+      height: 4px;
+      background: #f0f0f0;
+      border-radius: 99px;
+      overflow: hidden;
+      min-width: 30px;
+    }
+
+    .lh-bar {
+      height: 100%;
+      border-radius: 99px;
+      transition: width .6s ease;
+    }
+
+    .lh-bar.good {
+      background: #22c55e;
+    }
+
+    .lh-bar.ok {
+      background: #f59e0b;
+    }
+
+    .lh-score {
+      font-size: 14px;
+      font-weight: 700;
+      min-width: 28px;
+      text-align: right;
+    }
+
+    .lh-score.good {
+      color: #15803d;
+    }
+
+    .lh-score.ok {
+      color: #b45309;
+    }
+
+    .lh-source {
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(17, 17, 17, .45);
+    }
+
+    .lh-source a {
+      color: var(--accent2);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lh-source a:hover {
+      text-decoration: underline;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      margin-top: 32px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(135deg, rgba(140, 98, 214, .07), rgba(119, 181, 214, .07));
+      border: 1px solid rgba(140, 98, 214, .18);
+      padding: 22px 26px;
+    }
+
+    .highlight-box p {
+      font-size: 14px;
+      font-weight: 500;
+      color: #3d2e70;
+      line-height: 1.65;
+    }
+
+    /* NOTICE */
+    .notice {
+      margin-top: 28px;
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .notice-amber {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      color: #78350f;
+    }
+
+    .notice-green {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+    }
+
+    /* TIMEFRAME TABLE */
+    .tf-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tf-table th {
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17, 17, 17, .45);
+      padding: 0 12px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tf-table td {
+      padding: 12px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .tf-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .tf-table td:first-child {
+      font-weight: 600;
+      color: var(--text);
+      width: 58%;
+    }
+
+    .tf-table td:last-child {
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    /* CODE INLINE */
+    code {
+      background: #f3f4f7;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+
+    /* FOOTER */
+    footer.page-footer {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100% - 48px);
+      margin: 56px auto 32px;
+    }
+
+    .footer-top {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+    }
+
+    .footer-locs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #3b3f46;
+    }
+
+    .footer-locs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .footer-locs .flag {
+      width: 18px;
+      height: 12px;
+      border-radius: 2px;
+      object-fit: cover;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .12);
+    }
+
+    .footer-email {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2f333a;
+      text-decoration: none;
+      padding-left: 16px;
+      border-left: 1px solid #d6d9df;
+    }
+
+    .footer-copy {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(900px, 100% - 24px);
+      }
+
+      footer.page-footer {
+        width: min(900px, 100% - 24px);
+        margin: 20px auto 28px;
+      }
+
+      .brand-header {
+        padding-bottom: clamp(28px, 6vw, 44px);
+      }
+
+      .brand-logo img {
+        height: 28px;
+      }
+
+      .brand-subtitle {
+        font-size: 10px;
+      }
+
+      .brand-icon-wrap {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+      }
+
+      .card {
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .phase-card {
+        border-radius: 16px;
+        gap: 14px;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+
+      .phase-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+      }
+
+      .lh-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      .lh-label {
+        width: 96px;
+      }
+
+      .section-group {
+        margin-bottom: clamp(36px, 5vw, 48px);
+      }
+
+      .item-list,
+      .check-list,
+      .cross-list,
+      .numbered-list {
+        gap: 12px;
+      }
+
+      h3.sub {
+        margin: 24px 0 12px;
+      }
+
+      .highlight-box {
+        margin-top: 24px;
+        padding: 18px;
+      }
+
+      .notice {
+        margin-top: 20px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-email {
+        padding-left: 0;
+        border-left: 0;
+        color: #2f333a;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="wrap">
+    <header class="brand-header">
+      <div class="brand-row">
+        <a href="https://doopux.com" class="brand-logo">
+          <img src="assets/logocolor.png" alt="Doop UX" height="36">
+        </a>
+        <div class="brand-right">
+          <p class="brand-subtitle">Web App Proposal</p>
+          <div class="brand-icon-wrap" aria-hidden="true">
+            <img src="assets/icons_0004_Layer-4.png" alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-meta">
+        <span class="hero-tag"><span class="dot">•</span> Quote</span>
+        <span class="hero-date">April 2026</span>
+      </div>
+      <h1>Speed Dating Web App<br>for Lovebite</h1>
+      <p class="hero-sub">Prepared by Doop UX &nbsp;·&nbsp; Mobile-first event management platform</p>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Overview</span>
+            <h2>What We're Building</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="prose">
+          <p>A mobile-first web application to manage in-person speed dating events, replacing the current manual process with a simple, private, and scalable digital experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUNCTIONAL SCOPE -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Scope</span>
+            <h2>Functional Scope</h2>
+          </div>
+        </div>
+        <hr class="divider">
+
+        <h3 class="sub">For Participants</h3>
+        <ul class="check-list">
+          <li><strong>QR check-in:</strong> upon arriving at the event, they scan a QR code that takes them directly to the event app.</li>
+          <li><strong>Quick registration:</strong> name, phone number, gender, real-time selfie (no gallery upload), and creation of a 4-digit PIN to access later.</li>
+          <li><strong>Profile browsing:</strong> during the event, each participant sees profiles of the opposite gender with photo and name.</li>
+          <li><strong>Preference selection:</strong> for each person they choose between Match (romantic), Friend (friendship), or Not Interested.</li>
+          <li><strong>Results the next day:</strong> they log in with phone number + PIN and see only mutual matches.</li>
+        </ul>
+
+        <h3 class="sub">Privacy Model — Key Feature</h3>
+        <ul class="item-list">
+          <li>In a mutual match, the woman automatically receives the man's phone number.</li>
+          <li>The man only knows there was a match if the woman decides to contact him.</li>
+          <li>If the woman does nothing, the match remains invisible to the man, reducing pressure and giving the woman full control.</li>
+        </ul>
+
+        <h3 class="sub">For the Organizer (Admin Panel)</h3>
+        <ul class="check-list">
+          <li>View of all event participants.</li>
+          <li><strong>Match processing with one click:</strong> the system evaluates all mutual selections and publishes the results.</li>
+          <li>Access to phones and profiles of all attendees.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DELIVERABLES -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Deliverables</span>
+            <h2>What You Get</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <ul class="check-list">
+          <li>Mobile-first web application</li>
+          <li>Backend API + database</li>
+          <li>Image storage</li>
+          <li>Private and secure admin panel</li>
+          <li>Deploy on cloud infrastructure with estimated cost of ~$10 AUD/month</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PHASE 1 — MVP -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0001_Layer-7.png" alt="MVP icon">
+        </div>
+        <div>
+          <p class="phase-eyebrow c-accent">Phase 1 · One-Time</p>
+          <p class="phase-title">MVP</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="prose" style="margin-bottom:20px;">
+          <p>The foundation. Everything needed to run a single speed dating event end-to-end.</p>
+        </div>
+
+        <ul class="check-list">
+          <li>Mobile app for participants (registration, PIN login, browse, selection, results)</li>
+          <li>Complete backend + database</li>
+          <li>Basic admin panel</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p>Investment: <strong>$750 AUD</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 — SCALABILITY -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0003_Layer-5.png" alt="Scalability icon">
+        </div>
+        <div style="flex:1;">
+          <p class="phase-eyebrow c-purple">Phase 2 · Optional</p>
+          <p class="phase-title">Scalability</p>
+        </div>
+        <span class="badge badge-scope" style="flex-shrink:0;">Optional</span>
+      </div>
+
+      <div class="card">
+        <div class="prose" style="margin-bottom:20px;">
+          <p>Quoted and scheduled once the MVP is approved and validated. Expand the platform to handle growth.</p>
+        </div>
+
+        <ul class="check-list">
+          <li>Multiple simultaneous events</li>
+          <li>Integration with Eventbrite</li>
+          <li>UI/UX improvements</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p>Investment: <strong>$250 AUD</strong></p>
+        </div>
+
+        <div class="notice notice-amber">
+          Does not include: recurring monthly maintenance, new functionalities outside the agreed scope, or cloud infrastructure costs (estimated at ~$10 AUD/month).
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Timeline</span>
+            <h2>MVP Delivery — 1 Week</h2>
+          </div>
+          <span class="badge badge-time">1 Week</span>
+        </div>
+        <hr class="divider">
+        <table class="tf-table">
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 1–2:</strong> Technical setup, screen design, and user flow</td>
+              <td>2 days</td>
+            </tr>
+            <tr>
+              <td><strong>Day 3–4:</strong> Frontend development (registration, PIN login, profile browsing, selections)</td>
+              <td>2 days</td>
+            </tr>
+            <tr>
+              <td><strong>Day 5:</strong> Backend development (API, database, matching logic, admin panel) + deploy</td>
+              <td>1 day</td>
+            </tr>
+            <tr>
+              <td><strong>Day 6–7:</strong> End-to-end testing, final adjustments, and delivery</td>
+              <td>2 days</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="notice notice-green" style="margin-top:24px;">
+          Phase 2 (Scalability) is quoted and scheduled once the MVP is approved and validated.
+        </div>
+      </div>
+    </div>
+
+    <!-- TERMS -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Terms</span>
+            <h2>Terms &amp; Conditions</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <ul class="item-list">
+          <li><strong>50% upfront</strong> payment to start the project.</li>
+          <li><strong>50% remaining</strong> upon delivery and final approval of the MVP.</li>
+          <li>The MVP scope is <strong>frozen</strong> at the start of development. Subsequent changes are quoted separately.</li>
+          <li>Post-launch support: <strong>14 days included</strong> for critical MVP bugs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NEXT STEPS -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Next Steps</span>
+            <h2>How to Start</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <ul class="numbered-list">
+          <li>Client approves this proposal.</li>
+          <li>Agreement is signed and the upfront payment is made (<strong>50% = $375 AUD</strong>).</li>
+          <li>Start of MVP development (1 week).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COSTS -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Investment</span>
+            <h2>Costs</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <table class="tf-table">
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Phase 1:</strong> MVP (one-time)</td>
+              <td>$750 AUD</td>
+            </tr>
+            <tr>
+              <td><strong>Phase 2:</strong> Scalability (optional)</td>
+              <td>$250 AUD</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="notice notice-amber" style="margin-top:24px;">
+          Does not include recurring monthly maintenance, new functionalities outside the agreed scope, or cloud infrastructure costs (estimated at ~$10 AUD/month).
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.wrap -->
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-top">
+      <div class="footer-locs">
+        <span>
+          <img class="flag" src="assets/australia.png" alt="AU">
+          HQ North Sydney, NSW
+        </span>
+        <span>
+          <img class="flag" src="assets/germany.png" alt="DE">
+          Berlin, Germany
+        </span>
+        <span>
+          <img class="flag" src="assets/argentina.png" alt="AR">
+          Buenos Aires, Argentina
+        </span>
+      </div>
+      <a class="footer-email" href="mailto:hello@doopux.com">hello@doopux.com</a>
+    </div>
+    <p class="footer-copy">Copyright &copy; 2026 Doop UX</p>
+  </footer>
+
+</body>
+
+</html>
