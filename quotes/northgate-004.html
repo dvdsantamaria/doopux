@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automation &amp; SEO Quote - Northgate Building Group</title>
+
+  <!-- Satoshi from Fontshare (same as doopux.com) -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css2?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f3f4f7;
+      --bg-top: #f7f8fb;
+      --bg-bot: #f2f3f6;
+      --white: #fff;
+      --border: #e5e5e5;
+      --text: #111;
+      --muted: rgba(17, 17, 17, .68);
+      --accent: #ee64ff;
+      --accent2: #8c62d6;
+      --r-card: 20px;
+      --r-sm: 14px;
+      --font: "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 42%, var(--bg-bot) 100%);
+      overflow-x: hidden;
+      min-height: 100%;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(600px 380px at 12% 0%, rgba(244, 201, 52, 0.18), transparent 60%),
+        radial-gradient(720px 460px at 92% 18%, rgba(125, 162, 255, 0.14), transparent 62%),
+        radial-gradient(520px 420px at 72% 98%, rgba(189, 210, 255, 0.16), transparent 62%);
+      filter: blur(0.2px);
+      opacity: 0.9;
+    }
+
+    /* LAYOUT */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100% - 48px);
+      margin: 0 auto;
+      padding-bottom: 72px;
+    }
+
+    /* HEADER */
+    header.brand-header {
+      padding: clamp(20px, 3vw, 36px) 0 clamp(40px, 5vw, 64px);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: #7b8393;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      display: grid;
+      place-items: center;
+      padding: 6px;
+    }
+
+    .brand-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: clamp(48px, 6vw, 72px);
+      text-align: left;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid #eceef3;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #374151;
+    }
+
+    .hero-tag .dot {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .hero-date {
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.5vw, 60px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.4vw, 17px);
+      color: #717a8a;
+      font-weight: 400;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-card);
+      padding: clamp(32px, 4vw, 48px);
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-eyebrow {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(17, 17, 17, .5);
+      margin-bottom: 6px;
+    }
+
+    .card h2 {
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 500;
+      letter-spacing: -0.018em;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .badge-done {
+      background: rgba(34, 197, 94, .1);
+      color: #15803d;
+      border: 1px solid rgba(34, 197, 94, .25);
+    }
+
+    .badge-scope {
+      background: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+    }
+
+    .badge-time {
+      background: rgba(20, 184, 166, .1);
+      color: #0f766e;
+      border: 1px solid rgba(20, 184, 166, .25);
+    }
+
+    hr.divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 0 0 28px;
+    }
+
+    /* PROSE */
+    .prose {
+      color: var(--muted);
+      font-size: clamp(13px, 1.1vw, 15px);
+      line-height: 1.7;
+    }
+
+    .prose p {
+      margin-bottom: 14px;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* SECTION GROUP */
+    .section-group {
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+
+    /* PHASE CARD (dark header) */
+    .phase-card {
+      border-radius: var(--r-card);
+      background: #1b1f26;
+      border: 1px solid #2a2f38;
+      padding: clamp(24px, 3vw, 36px);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .phase-icon {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      display: grid;
+      place-items: center;
+      padding: 10px;
+    }
+
+    .phase-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .phase-eyebrow {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 5px;
+    }
+
+    .phase-eyebrow.c-accent {
+      color: var(--accent);
+    }
+
+    .phase-eyebrow.c-purple {
+      color: #d8b4fe;
+    }
+
+    .phase-eyebrow.c-teal {
+      color: #6ee7b7;
+    }
+
+    .phase-title {
+      font-size: clamp(17px, 1.9vw, 24px);
+      font-weight: 500;
+      color: #f8fafc;
+      letter-spacing: -0.016em;
+      line-height: 1.15;
+    }
+
+    /* SUB-HEADINGS IN CARDS */
+    h3.sub {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17, 17, 17, .45);
+      margin: 32px 0 14px;
+    }
+
+    h3.sub:first-child {
+      margin-top: 0;
+    }
+
+    /* ITEM LIST (dots) */
+    .item-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .item-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .item-list li::before {
+      content: "·";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      color: var(--accent2);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .item-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* CHECKMARK LIST */
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: #22c55e;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .check-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* CROSS LIST */
+    .cross-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .cross-list li {
+      position: relative;
+      padding-left: 26px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.5;
+      color: rgba(17, 17, 17, .5);
+    }
+
+    .cross-list li::before {
+      content: "×";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #d1d5db;
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    /* NUMBERED LIST */
+    .numbered-list {
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .numbered-list li {
+      position: relative;
+      padding-left: 32px;
+      font-size: clamp(13px, 1.05vw, 15px);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .numbered-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent2);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+
+    .numbered-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      margin-top: 32px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(135deg, rgba(140, 98, 214, .07), rgba(119, 181, 214, .07));
+      border: 1px solid rgba(140, 98, 214, .18);
+      padding: 22px 26px;
+    }
+
+    .highlight-box p {
+      font-size: 14px;
+      font-weight: 500;
+      color: #3d2e70;
+      line-height: 1.65;
+    }
+
+    /* NOTICE */
+    .notice {
+      margin-top: 28px;
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .notice-amber {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      color: #78350f;
+    }
+
+    .notice-green {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+    }
+
+    /* TIMEFRAME TABLE */
+    .tf-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tf-table th {
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17, 17, 17, .45);
+      padding: 0 12px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tf-table td {
+      padding: 12px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .tf-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .tf-table td:first-child {
+      font-weight: 600;
+      color: var(--text);
+      width: 58%;
+    }
+
+    .tf-table td:last-child {
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    /* CODE INLINE */
+    code {
+      background: #f3f4f7;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+
+    /* FOOTER */
+    footer.page-footer {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100% - 48px);
+      margin: 56px auto 32px;
+    }
+
+    .footer-top {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+    }
+
+    .footer-locs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #3b3f46;
+    }
+
+    .footer-locs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .footer-locs .flag {
+      width: 18px;
+      height: 12px;
+      border-radius: 2px;
+      object-fit: cover;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .12);
+    }
+
+    .footer-email {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2f333a;
+      text-decoration: none;
+      padding-left: 16px;
+      border-left: 1px solid #d6d9df;
+    }
+
+    .footer-copy {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(900px, 100% - 24px);
+      }
+
+      footer.page-footer {
+        width: min(900px, 100% - 24px);
+        margin: 20px auto 28px;
+      }
+
+      .brand-header {
+        padding-bottom: clamp(28px, 6vw, 44px);
+      }
+
+      .brand-logo img {
+        height: 28px;
+      }
+
+      .brand-subtitle {
+        font-size: 10px;
+      }
+
+      .brand-icon-wrap {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+      }
+
+      .card {
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .phase-card {
+        border-radius: 16px;
+        gap: 14px;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+
+      .phase-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+      }
+
+      .section-group {
+        margin-bottom: clamp(36px, 5vw, 48px);
+      }
+
+      .item-list,
+      .check-list,
+      .cross-list,
+      .numbered-list {
+        gap: 12px;
+      }
+
+      h3.sub {
+        margin: 24px 0 12px;
+      }
+
+      .highlight-box {
+        margin-top: 24px;
+        padding: 18px;
+      }
+
+      .notice {
+        margin-top: 20px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-email {
+        padding-left: 0;
+        border-left: 0;
+        color: #2f333a;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="wrap">
+    <header class="brand-header">
+      <div class="brand-row">
+        <a href="https://doopux.com" class="brand-logo">
+          <img src="assets/logocolor.png" alt="Doop UX" height="36">
+        </a>
+        <div class="brand-right">
+          <p class="brand-subtitle">Automation &amp; SEO Proposal</p>
+          <div class="brand-icon-wrap" aria-hidden="true">
+            <img src="assets/icons_0006_Layer-2.png" alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-meta">
+        <span class="hero-tag"><span class="dot">•</span> Quote</span>
+        <span class="hero-date">April 2026</span>
+      </div>
+      <h1>Automation &amp; SEO Growth<br>Program for Northgate</h1>
+      <p class="hero-sub">Prepared by Doop UX &nbsp;·&nbsp; northgatebuilding.com.au</p>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Program Overview</span>
+            <h2>Two Connected Pillars</h2>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="prose">
+          <p>This proposal covers two systems that reinforce each other. Workflow automations save hours every week by moving data between your tools without manual copying. SEO and AI search build the inbound channel so those saved hours translate into more qualified leads, not just less admin.</p>
+          <p>Both systems share one database. Every workflow knows what the other did because they all query the same source.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 1: AUTOMATIONS -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0003_Layer-5.png" alt="Automation icon">
+        </div>
+        <div>
+          <p class="phase-eyebrow c-accent">Phase 1 · Setup + Ongoing</p>
+          <p class="phase-title">Workflow Automations</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="prose" style="margin-bottom:20px;">
+          <p>n8n connects your existing tools — Outlook, GoHighLevel, Xero, SharePoint, Zoom — so data moves between them without anyone copying and pasting.</p>
+        </div>
+
+        <h3 class="sub">Recommended Starting Point</h3>
+        <ul class="check-list">
+          <li><strong>Meeting summaries.</strong> Fathom records your calls and transcribes them. n8n takes that transcript, sends it to an AI model for a structured summary, stores everything in a PostgreSQL database, and emails you the result. I recommend Fathom over Fireflies because the API is more complete and better documented.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p>This is the fastest way to prove value: every call becomes searchable, summarised, and stored automatically.</p>
+        </div>
+
+        <h3 class="sub">Automation Roadmap</h3>
+        <ul class="item-list">
+          <li><strong>Lead intake.</strong> Emails to <code>leads@northgatebuilding.com.au</code> get read automatically. n8n extracts the info, creates the contact in GHL, tags it, and notifies you. Specific actions go to specific addresses so the orchestrator knows exactly what to do. Accurate and controlled.</li>
+          <li><strong>Variation drafts.</strong> Forward a client change request to <code>variations@</code>. n8n pulls the project from GHL and the contract from SharePoint, drafts the variation document, saves it as a draft in GHL, and flags it for your review. You add pricing and decide. The AI never contacts the client.</li>
+          <li><strong>Progress claims.</strong> When a claim is ready in Xero, n8n drafts the client email and sends it to you for approval. Same with expense categorisation: receipts get read, categories get suggested, you bulk-approve weekly.</li>
+          <li><strong>Document search.</strong> Eventually the system reads your SharePoint contracts and can answer questions about scope or flag differences between document versions.</li>
+        </ul>
+
+        <div class="notice notice-green">
+          Everything writes to the same database. One workflow knows what the other did because they all query the same source.
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2: SEO + AI SEO -->
+    <div class="section-group">
+      <div class="phase-card">
+        <div class="phase-icon">
+          <img src="assets/icons_0002_Layer-6.png" alt="SEO icon">
+        </div>
+        <div style="flex:1;">
+          <p class="phase-eyebrow c-purple">Phase 2 · Ongoing</p>
+          <p class="phase-title">SEO &amp; AI Search</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="prose" style="margin-bottom:20px;">
+          <p>Northgate is a new business with no domain authority yet. You won't hit page 1 for "custom home builder Sydney" in three weeks. Anyone who tells you that is lying. What we can do is build the foundation properly and stack small wins every week. This isn't writing blog posts and hoping. There's actual technical work behind it.</p>
+        </div>
+
+        <h3 class="sub">Technical Monitoring Every Week</h3>
+        <ul class="check-list">
+          <li><strong>Search Console:</strong> what queries get impressions but no clicks, what pages have indexing errors, what Core Web Vitals are failing in reality.</li>
+          <li><strong>CrUX (Chrome UX Report):</strong> how real users experience your site on real devices and real connections. A site can score 100 in Lighthouse and still be slow for actual visitors.</li>
+          <li><strong>INP (Interaction to Next Paint):</strong> measures if the site responds when someone clicks "Get a Quote" or fills a form. If it lags, they leave. I track this and fix it.</li>
+        </ul>
+
+        <h3 class="sub">Performance Optimisation Based on Field Data</h3>
+        <ul class="check-list">
+          <li><strong>TTFB:</strong> server response time from Australia. Every millisecond here multiplies downstream.</li>
+          <li><strong>LCP:</strong> the main image or hero section loading fast enough that the user doesn't bounce.</li>
+          <li><strong>Third-party script audit:</strong> that chat widget or analytics tool you installed might be killing your speed. I identify it and either lazy-load it or replace it.</li>
+        </ul>
+
+        <h3 class="sub">Schema &amp; Structured Data</h3>
+        <ul class="check-list">
+          <li><strong>LocalBusiness schema</strong> with specific service areas: Coogee, Mosman, Kiama — we will need to rank them first.</li>
+          <li><strong>FAQPage schema</strong> for common questions.</li>
+          <li><strong>HowTo schema</strong> for processes like "how to plan a knockdown rebuild".</li>
+          <li><strong>BreadcrumbList</strong> for navigation clarity.</li>
+          <li><strong>Review and AggregateRating schema</strong> once you have more client reviews.</li>
+        </ul>
+
+        <h3 class="sub">Content Strategy — Conversion Pages</h3>
+        <ul class="check-list">
+          <li><strong>Service pages by location:</strong> "Custom Home Builder Coogee", "Knockdown Rebuild Bondi". These rank for local intent and convert better than generic homepages.</li>
+          <li><strong>Comparison pages:</strong> e.g. "Knockdown rebuild vs renovation". The idea is to find leads that are already in decision mode.</li>
+          <li><strong>Content gap analysis:</strong> what your competitors rank for that you don't, and building those pages.</li>
+          <li><strong>Refresh cycle:</strong> existing content gets updated every 1–3 months so Google knows the site is active and with updated content.</li>
+        </ul>
+
+        <h3 class="sub">AI Search</h3>
+        <ul class="check-list">
+          <li><strong>Perplexity, ChatGPT, Gemini:</strong> do they mention Northgate when someone asks "best builder Sydney" or "who builds custom homes in the Eastern Suburbs"?</li>
+          <li><strong>llms.txt</strong> maintenance and updates as content grows.</li>
+          <li><strong>Citations</strong> in directories and media that LLMs read and trust.</li>
+        </ul>
+
+        <h3 class="sub">Local SEO</h3>
+        <ul class="check-list">
+          <li><strong>Google Business Profile:</strong> weekly posts, project photos, Q&amp;A management.</li>
+          <li><strong>Review strategy:</strong> how to ask, when to ask, how to respond to negative ones.</li>
+          <li><strong>NAP consistency:</strong> your name, address, phone identical everywhere.</li>
+          <li><strong>Citation building</strong> in Australian construction directories (Houzz, Hipages, TrueLocal, etc.).</li>
+          <li><strong>Local pack optimisation:</strong> appearing in the map results when someone searches "builder near me".</li>
+        </ul>
+
+        <h3 class="sub">Reporting</h3>
+        <ul class="item-list">
+          <li>What I fixed technically.</li>
+          <li>What moved in Search Console.</li>
+          <li>What didn't move and why.</li>
+          <li>New content and conversion metrics for each one.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INVESTMENT -->
+    <div class="section-group">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Investment</span>
+            <h2>Costs</h2>
+          </div>
+        </div>
+        <hr class="divider">
+
+        <table class="tf-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Automation &amp; SEO Program</strong> (ongoing)</td>
+              <td>$850 AUD / fortnight</td>
+            </tr>
+            <tr>
+              <td><strong>Minimum commitment</strong></td>
+              <td>3 months</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box" style="margin-top:24px;">
+          <p>The rate is reduced in exchange for a 3-month commitment. After 3 months we review and decide what follows.</p>
+        </div>
+
+        <div class="notice notice-green" style="margin-top:20px;">
+          No lock-in after the initial 3 months. Pause with two weeks' notice.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.wrap -->
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-top">
+      <div class="footer-locs">
+        <span>
+          <img class="flag" src="assets/australia.png" alt="AU">
+          HQ North Sydney, NSW
+        </span>
+        <span>
+          <img class="flag" src="assets/germany.png" alt="DE">
+          Berlin, Germany
+        </span>
+        <span>
+          <img class="flag" src="assets/argentina.png" alt="AR">
+          Buenos Aires, Argentina
+        </span>
+      </div>
+      <a class="footer-email" href="mailto:hello@doopux.com">hello@doopux.com</a>
+    </div>
+    <p class="footer-copy">Copyright &copy; 2026 Doop UX</p>
+  </footer>
+
+</body>
+
+</html>
