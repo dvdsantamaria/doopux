@@ -777,22 +777,23 @@
           <p>n8n connects your existing tools - Outlook, GoHighLevel, Xero, SharePoint, Zoom - so data moves between them without anyone copying and pasting.</p>
         </div>
 
-        <h3 class="sub">Recommended Starting Point</h3>
-        <ul class="check-list">
-          <li><strong>Meeting summaries.</strong> Fathom records your calls and transcribes them. n8n takes that transcript, sends it to an AI model for a structured summary, stores everything in a PostgreSQL database, and emails you the result. I recommend Fathom over Fireflies because the API is more complete and better documented, and Fathom is free.</li>
+        <h3 class="sub">Meeting Summaries</h3>
+        <ul class="item-list">
+          <li><strong>Meeting summaries.</strong> Fathom records your calls and transcribes them. n8n takes that transcript, sends it to an AI model for a structured summary, stores everything in a PostgreSQL database, and emails you the result. I recommend Fathom over Fireflies because the API is more complete and better documented, and Fathom is free. This is the fastest way to prove value: every call becomes searchable, summarised, and stored automatically.</li>
         </ul>
-
-        <div class="highlight-box">
-          <p>This is the fastest way to prove value: every call becomes searchable, summarised, and stored automatically.</p>
-        </div>
 
         <h3 class="sub">Automation Roadmap</h3>
         <ul class="item-list">
           <li><strong>Lead intake.</strong> Emails to <code>leads@northgatebuilding.com.au</code> get read automatically. n8n extracts the info, creates the contact in GHL, tags it, and notifies you. Specific actions go to specific addresses so the orchestrator knows exactly what to do. Accurate and controlled.</li>
-          <li><strong>Variation drafts.</strong> Forward a client change request to <code>variations@</code>. n8n pulls the project from GHL and the contract from SharePoint, drafts the variation document, saves it as a draft in GHL, and flags it for your review. You add pricing and decide. The AI never contacts the client.</li>
-          <li><strong>Progress claims.</strong> When a claim is ready in Xero, n8n drafts the client email and sends it to you for approval. Same with expense categorisation: receipts get read, categories get suggested, you bulk-approve weekly.</li>
+          <li><strong>Quote tracking.</strong> When you export an estimate from Cubit to Xero as a Purchase Order, n8n detects it, reads the client and amount, and drafts a follow-up email for your approval. No need to touch Cubit directly - we read the financial data from Xero, which Cubit already connects to.</li>
+          <li><strong>Variation drafts.</strong> Forward a client change request to <code>variations@</code>. n8n reads the project context from Xero (where Wunderbuild and Cubit both push financial data), pulls the contract from SharePoint, drafts the variation document, and emails it to you for review. You add pricing and decide. The AI never contacts the client.</li>
+          <li><strong>Progress claims.</strong> When Wunderbuild pushes a claim to Xero, n8n detects the new invoice, drafts the client email with the breakdown, and sends it to you for approval. Same with expense categorisation: receipts get read, categories get suggested, you bulk-approve weekly.</li>
           <li><strong>Document search.</strong> Eventually the system reads your SharePoint contracts and can answer questions about scope or flag differences between document versions.</li>
         </ul>
+
+        <div class="prose" style="margin-top:28px;">
+          <p><strong>What I need to confirm with you:</strong> Do you currently export your Cubit estimates to Xero as Purchase Orders? And does Wunderbuild sync invoices and progress claims to Xero automatically? If yes to both, Xero becomes our single source of truth for project financials - and we can automate around both Cubit and Wunderbuild without needing APIs from either. If not, we adjust the plan: Cubit stays manual for now, and we build the bridge when the data flow is there.</p>
+        </div>
 
         <div class="prose" style="margin-top:28px;">
           <p>Everything writes to the same database. One workflow knows what the other did because they all query the same source.</p>
