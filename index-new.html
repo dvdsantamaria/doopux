@@ -175,9 +175,9 @@ faq:
 
   <style>
     /* ================================================================
-       AIX — self-contained design system for the AI-focused homepage.
-       Scoped under .aix to avoid colliding with the rest of the site.
-       Forces a single theme regardless of prefers-color-scheme.
+       AIX — premium AI-consultancy design system, scoped under .aix.
+       Inspired by aura.build, Linear, Vercel, Anthropic.
+       Forces dark theme regardless of the site-wide theme.
     ================================================================ */
     :root {
       --aix-bg: #0a0b14;
@@ -197,17 +197,62 @@ faq:
       --aix-radius: 18px;
       --aix-radius-sm: 12px;
       --aix-shadow: 0 30px 80px rgba(8,9,18,.55), 0 8px 30px rgba(8,9,18,.35);
+      --aix-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
     }
 
     /* Hard reset of the page chrome to dark — overrides body class & dark mode */
     html, body { background: var(--aix-bg) !important; }
     body { color: var(--aix-text); }
-    body.home .bg-grid { display: none !important; } /* page draws its own */
+    body.home .bg-grid { display: none !important; }
 
     /* Header on top of dark hero */
     body.home header.container-wide { color: var(--aix-text); }
     body.home header.container-wide .nav a { color: var(--aix-text-soft); }
     body.home header.container-wide .nav a:hover { color: var(--aix-text); }
+
+    /* ===== Scroll progress bar ===== */
+    .aix-scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px;
+      z-index: 200; pointer-events: none;
+      background: transparent;
+    }
+    .aix-scroll-progress > i {
+      display: block; height: 100%; width: 0%;
+      background: var(--aix-grad);
+      transition: width .12s ease-out;
+      box-shadow: 0 0 14px rgba(217,108,224,.5);
+    }
+
+    /* ===== Sticky-blur header on scroll ===== */
+    body.home header.container-wide {
+      position: sticky; top: 0; z-index: 100;
+      transition: background-color .25s ease, backdrop-filter .25s ease, border-color .25s ease;
+      border-bottom: 1px solid transparent;
+    }
+    body.home.is-scrolled header.container-wide {
+      background: rgba(10,11,20,.72);
+      backdrop-filter: saturate(1.4) blur(14px);
+      -webkit-backdrop-filter: saturate(1.4) blur(14px);
+      border-bottom-color: rgba(255,255,255,.08);
+    }
+    body.home header.container-wide .nav { gap: 28px; align-items: center; }
+    body.home header.container-wide .nav a {
+      font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 500;
+    }
+    .aix-nav-cta {
+      display: inline-flex !important; align-items: center; gap: 8px;
+      padding: 9px 16px !important; border-radius: 999px;
+      background: var(--aix-grad);
+      color: #18091e !important;
+      font-weight: 600 !important;
+      letter-spacing: .04em !important;
+      text-transform: none !important;
+      font-size: 13px !important;
+      box-shadow: 0 10px 28px rgba(217,108,224,.3);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .aix-nav-cta:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(217,108,224,.4); color: #18091e !important; }
 
     /* ===== Layout ===== */
     .aix { color: var(--aix-text); font-family: "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing: antialiased; }
@@ -221,13 +266,15 @@ faq:
       background: rgba(255,255,255,.05);
       border: 1px solid var(--aix-border);
       backdrop-filter: blur(10px);
-      font-size: 12.5px; letter-spacing: 1.4px; text-transform: uppercase;
+      font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
       color: var(--aix-text-soft);
+      font-family: var(--aix-mono);
+      font-weight: 500;
     }
     .aix-eyebrow::before { content:''; width:7px; height:7px; border-radius:999px; background: var(--aix-pink); box-shadow: 0 0 14px rgba(217,108,224,.85); }
 
     .aix h1, .aix h2, .aix h3 { letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
-    .aix h2 { font-size: clamp(34px, 4.4vw, 60px); font-weight: 600; }
+    .aix h2 { font-size: clamp(34px, 4.4vw, 60px); font-weight: 600; letter-spacing: -0.03em; }
     .aix h3 { font-size: clamp(20px, 1.8vw, 24px); font-weight: 600; }
     .aix p { margin: 0; color: var(--aix-text-soft); line-height: 1.6; }
 
@@ -236,14 +283,32 @@ faq:
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
 
+    /* Section chapter label */
+    .aix-chapter {
+      display: flex; align-items: center; gap: 14px;
+      max-width: 1240px; margin: 0 auto; padding: 0 24px;
+      font-family: var(--aix-mono); font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--aix-text-mute);
+    }
+    .aix-chapter::before, .aix-chapter::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+    }
+    .aix-chapter::before { max-width: 80px; }
+    .aix-chapter span { color: var(--aix-text-soft); }
+    .aix-chapter .num {
+      color: var(--aix-pink);
+      font-weight: 500;
+    }
+
     /* ===== HERO ===== */
     .aix-hero {
       position: relative;
-      padding: clamp(56px, 8vw, 110px) 0 clamp(40px, 6vw, 80px);
+      padding: clamp(64px, 9vw, 130px) 0 clamp(40px, 6vw, 80px);
       overflow: hidden;
       isolation: isolate;
     }
-    .aix-hero::before { /* subtle grid */
+    .aix-hero::before {
       content:''; position:absolute; inset:0; pointer-events:none;
       background-image:
         linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
@@ -254,9 +319,9 @@ faq:
       z-index: 0;
     }
     .aix-orb { position:absolute; border-radius:50%; filter: blur(80px); opacity:.55; pointer-events:none; z-index:0; }
-    .aix-orb--pink { width: 560px; height: 560px; background: radial-gradient(circle, #d96ce0, transparent 60%); top: -180px; left: -160px; }
-    .aix-orb--blue { width: 620px; height: 620px; background: radial-gradient(circle, #6da4d4, transparent 60%); top: -120px; right: -200px; opacity:.45; }
-    .aix-orb--violet { width: 720px; height: 720px; background: radial-gradient(circle, #8c62d6, transparent 60%); bottom: -380px; left: 30%; opacity:.35; }
+    .aix-orb--pink { width: 580px; height: 580px; background: radial-gradient(circle, #d96ce0, transparent 60%); top: -200px; left: -180px; }
+    .aix-orb--blue { width: 640px; height: 640px; background: radial-gradient(circle, #6da4d4, transparent 60%); top: -120px; right: -200px; opacity:.45; }
+    .aix-orb--violet { width: 720px; height: 720px; background: radial-gradient(circle, #8c62d6, transparent 60%); bottom: -380px; left: 30%; opacity:.32; }
 
     .aix-hero-grid {
       display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
@@ -264,7 +329,7 @@ faq:
     }
     @media (max-width: 980px) { .aix-hero-grid { grid-template-columns: 1fr; } }
 
-    .aix-h1 { font-size: clamp(40px, 5.6vw, 78px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.02; }
+    .aix-h1 { font-size: clamp(42px, 6vw, 86px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.0; }
     .aix-h1 em { font-style: normal; background: var(--aix-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .aix-lede { margin-top: 22px; max-width: 56ch; font-size: clamp(16px, 1.2vw, 18.5px); color: var(--aix-text-soft); }
 
@@ -272,7 +337,7 @@ faq:
     .aix-btn {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 14px 22px; border-radius: 999px; font-weight: 500; font-size: 15px;
-      text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease, background-color .2s ease;
       white-space: nowrap;
     }
     .aix-btn--primary { background: var(--aix-grad); color: #1b0f1f; box-shadow: 0 14px 40px rgba(217,108,224,.32); }
@@ -281,6 +346,7 @@ faq:
     .aix-btn--ghost:hover { background: rgba(255,255,255,.08); }
     .aix-btn .arrow { transition: transform .2s ease; }
     .aix-btn:hover .arrow { transform: translateX(3px); }
+    .aix-btn:focus-visible { outline: 2px solid var(--aix-pink); outline-offset: 3px; }
 
     .aix-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top: 28px; }
     .aix-pill { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius: 999px;
@@ -291,7 +357,7 @@ faq:
     .aix-hero-card {
       position: relative;
       border-radius: 22px;
-      padding: 28px;
+      padding: 24px;
       background:
         radial-gradient(120% 80% at 0% 0%, rgba(217,108,224,.16), transparent 50%),
         radial-gradient(120% 80% at 100% 100%, rgba(109,164,212,.16), transparent 55%),
@@ -300,59 +366,97 @@ faq:
       box-shadow: var(--aix-shadow);
       backdrop-filter: blur(14px);
       overflow: hidden;
-      min-height: 440px;
     }
     .aix-hero-card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom: 18px; }
-    .aix-hero-card-head .label { font-size: 12px; color: var(--aix-text-mute); letter-spacing: .12em; text-transform: uppercase; }
+    .aix-hero-card-head .label { font-family: var(--aix-mono); font-size: 12px; color: var(--aix-text-mute); letter-spacing: .04em; }
     .aix-dots { display:flex; gap:6px; }
     .aix-dots span { width:9px; height:9px; border-radius:999px; background: rgba(255,255,255,.18); }
     .aix-dots span:first-child { background: #ff5f57; }
     .aix-dots span:nth-child(2) { background: #f8c042; }
     .aix-dots span:nth-child(3) { background: #58d258; }
 
-    .aix-flow { display:grid; gap:10px; }
+    .aix-flow { display:grid; gap: 8px; }
     .aix-flow .row {
-      display:flex; align-items:center; gap:12px;
-      padding: 14px 16px; border-radius: 14px;
+      display:grid; grid-template-columns: 32px 1fr auto auto; align-items:center; gap:12px;
+      padding: 12px 14px; border-radius: 12px;
       background: rgba(255,255,255,.04);
       border: 1px solid var(--aix-border);
-      font-size: 14px;
+      font-size: 13.5px;
     }
     .aix-flow .row .ico { width:32px; height:32px; border-radius:10px; display:grid; place-items:center; background: var(--aix-grad-soft); border:1px solid var(--aix-border); flex-shrink:0; }
     .aix-flow .row .ico svg { width:16px; height:16px; }
-    .aix-flow .row .label { flex:1; color: var(--aix-text); }
-    .aix-flow .row .tag { font-size: 11px; padding: 4px 8px; border-radius: 999px; background: rgba(217,108,224,.15); color: #f0bff5; border:1px solid rgba(217,108,224,.28); }
+    .aix-flow .row .label { color: var(--aix-text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .aix-flow .row .ts { font-family: var(--aix-mono); font-size: 11px; color: var(--aix-text-mute); letter-spacing: 0; }
+    .aix-flow .row .tag { font-family: var(--aix-mono); font-size: 10.5px; padding: 3px 7px; border-radius: 6px; background: rgba(217,108,224,.15); color: #f0bff5; border:1px solid rgba(217,108,224,.28); letter-spacing: .04em; text-transform: uppercase; }
     .aix-flow .row .tag.b { background: rgba(109,164,212,.15); color:#bfdcef; border-color: rgba(109,164,212,.32); }
     .aix-flow .row .tag.g { background: rgba(140,98,214,.16); color: #ddcaff; border-color: rgba(140,98,214,.32); }
-    .aix-flow .arrow { display:grid; place-items:center; opacity:.55; height: 8px; }
+    .aix-flow .row.is-running { border-color: rgba(217,108,224,.4); background: rgba(217,108,224,.06); }
+    .aix-flow .row.is-running .tag { background: rgba(217,108,224,.25); }
+    .aix-flow .arrow { display:flex; justify-content:center; opacity:.45; height: 6px; align-items:center; }
+    .aix-flow .arrow svg { width: 12px; height: 12px; }
 
-    .aix-hero-stat-strip { display:flex; gap: 22px; margin-top: 22px; flex-wrap: wrap; }
-    .aix-hero-stat-strip .ms { font-size: 12px; color: var(--aix-text-mute); letter-spacing: .1em; text-transform: uppercase; }
-    .aix-hero-stat-strip .mv { color: var(--aix-text); font-weight: 600; }
-
-    /* ===== Marquee strip ===== */
-    .aix-marquee {
-      position: relative; padding: 24px 0 8px;
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      overflow: hidden;
+    .aix-typing {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--aix-mono); font-size: 11.5px; color: var(--aix-pink);
     }
-    .aix-marquee-track { display:flex; gap: 18px; width: max-content; animation: aixscroll 60s linear infinite; }
-    @keyframes aixscroll { from { transform: translate3d(0,0,0);} to { transform: translate3d(-50%,0,0);} }
-    @media (prefers-reduced-motion: reduce){ .aix-marquee-track { animation: none; } }
-    .aix-marquee figure { margin:0; flex: 0 0 auto; width: clamp(220px, 26vw, 320px); aspect-ratio: 16/10;
-      border-radius: 14px; overflow:hidden; border:1px solid var(--aix-border); background: rgba(255,255,255,.04);
-      box-shadow: 0 18px 40px rgba(8,9,18,.4); }
-    .aix-marquee figure picture, .aix-marquee figure img { width:100%; height:100%; object-fit: cover; display:block; }
+    .aix-typing-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--aix-pink);
+      animation: aix-pulse 1.2s ease-in-out infinite; }
+    @keyframes aix-pulse { 0%, 100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+    @media (prefers-reduced-motion: reduce) { .aix-typing-dot { animation: none; } }
+
+    .aix-hero-stat-strip {
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; margin-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 14px;
+    }
+    .aix-hero-stat-strip > div { padding: 0 4px; border-left: 1px solid rgba(255,255,255,.06); }
+    .aix-hero-stat-strip > div:first-child { border-left: none; padding-left: 0; }
+    .aix-hero-stat-strip .ms { font-family: var(--aix-mono); font-size: 10.5px; color: var(--aix-text-mute); letter-spacing: .12em; text-transform: uppercase; }
+    .aix-hero-stat-strip .mv { color: var(--aix-text); font-weight: 600; font-size: 14.5px; margin-top: 4px; }
+
+    /* ===== Logo wordmark cloud ===== */
+    .aix-logos {
+      padding: clamp(36px, 5vw, 56px) 0 clamp(24px, 4vw, 36px);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,.015), transparent);
+    }
+    .aix-logos-head {
+      display:flex; align-items:center; justify-content:center; gap: 10px;
+      margin-bottom: 26px;
+      font-family: var(--aix-mono); font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--aix-text-mute);
+    }
+    .aix-logos-head::before, .aix-logos-head::after {
+      content: ''; width: 24px; height: 1px; background: rgba(255,255,255,.18);
+    }
+    .aix-logo-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px 28px;
+      align-items: center; justify-items: center;
+    }
+    @media (max-width: 900px) { .aix-logo-grid { grid-template-columns: repeat(3, 1fr); gap: 24px 20px; } }
+    @media (max-width: 480px) { .aix-logo-grid { grid-template-columns: repeat(2, 1fr); } }
+    .aix-logo {
+      font-weight: 600; letter-spacing: -0.01em; font-size: 16px;
+      color: rgba(255,255,255,.55);
+      transition: color .25s ease, transform .25s ease, opacity .25s ease;
+      white-space: nowrap; padding: 8px 4px;
+    }
+    .aix-logo:hover { color: rgba(255,255,255,.92); }
+    .aix-logo--serif { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 500; }
+    .aix-logo--mono { font-family: var(--aix-mono); font-size: 13.5px; letter-spacing: .04em; }
+    .aix-logo--upper { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; }
 
     /* ===== Section wrapper ===== */
     .aix-section { padding: clamp(72px, 10vw, 130px) 0; position: relative; }
     .aix-section--alt { background: linear-gradient(180deg, transparent, rgba(255,255,255,.02) 30%, rgba(255,255,255,.02) 70%, transparent); }
+    .aix-section--tight { padding: clamp(40px, 6vw, 80px) 0; }
     .aix-section-head { display:flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; margin-bottom: clamp(40px, 5vw, 64px); }
     .aix-section-head h2 { max-width: 22ch; }
     .aix-section-head p { max-width: 62ch; color: var(--aix-text-soft); font-size: clamp(15.5px, 1.1vw, 17px); }
 
-    /* ===== Stat strip ===== */
+    /* ===== Stat strip (animated) ===== */
     .aix-stats {
       display:grid; grid-template-columns: repeat(3, 1fr);
       gap: 0;
@@ -361,6 +465,15 @@ faq:
       overflow: hidden;
       background: rgba(255,255,255,.025);
       backdrop-filter: blur(8px);
+      position: relative;
+    }
+    .aix-stats::before {
+      content:''; position:absolute; inset: -1px; border-radius: inherit; padding: 1px;
+      background: linear-gradient(135deg, rgba(217,108,224,.4), transparent 30%, transparent 70%, rgba(109,164,212,.4));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      pointer-events: none;
     }
     @media (max-width: 760px) { .aix-stats { grid-template-columns: 1fr; } }
     .aix-stat { padding: clamp(28px, 3vw, 38px); position: relative; }
@@ -369,27 +482,34 @@ faq:
       .aix-stat + .aix-stat { border-left: none; border-top: 1px solid var(--aix-border); }
     }
     .aix-stat .v {
-      font-size: clamp(34px, 4.2vw, 56px); font-weight: 600; letter-spacing: -0.02em; line-height: 1;
+      font-size: clamp(36px, 4.6vw, 60px); font-weight: 600; letter-spacing: -0.03em; line-height: 1;
       background: var(--aix-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
       white-space: nowrap;
+      font-feature-settings: "tnum";
     }
+    .aix-stat .u { color: var(--aix-text-soft); font-weight: 500; }
     .aix-stat .l { margin-top: 12px; color: var(--aix-text-soft); font-size: 14.5px; }
+    .aix-stat .k { display: block; font-family: var(--aix-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--aix-text-mute); margin-bottom: 14px; }
 
-    /* ===== Services grid (4 cards, asymmetric) ===== */
-    .aix-services { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(16px, 1.6vw, 22px); }
-    @media (max-width: 980px) { .aix-services { grid-template-columns: 1fr; } }
-    .aix-svc {
-      position: relative; padding: clamp(26px, 2.6vw, 36px);
+    /* ===== Bento services grid ===== */
+    .aix-bento {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: clamp(14px, 1.4vw, 20px);
+    }
+    @media (max-width: 980px) { .aix-bento { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .aix-bento { grid-template-columns: 1fr; } }
+    .aix-card {
+      position: relative; padding: clamp(24px, 2.4vw, 32px);
       border-radius: var(--aix-radius);
       background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
       border: 1px solid var(--aix-border);
       overflow: hidden;
       transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
       display: flex; flex-direction: column; gap: 14px;
-      min-height: 320px;
+      min-height: 280px;
     }
-    .aix-svc:hover { transform: translateY(-3px); border-color: var(--aix-border-strong); box-shadow: 0 30px 70px rgba(8,9,18,.5); }
-    .aix-svc::before {
+    .aix-card:hover { transform: translateY(-3px); border-color: var(--aix-border-strong); box-shadow: 0 30px 70px rgba(8,9,18,.5); }
+    .aix-card::before {
       content:''; position:absolute; inset:-1px; border-radius: inherit; padding:1px;
       background: var(--aix-grad);
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -397,55 +517,152 @@ faq:
       -webkit-mask-composite: xor; mask-composite: exclude;
       opacity: 0; transition: opacity .25s ease; pointer-events: none;
     }
-    .aix-svc:hover::before { opacity: .65; }
-    .aix-svc--lead { grid-column: span 6; min-height: 360px; }
-    .aix-svc--small { grid-column: span 6; }
-    @media (max-width: 980px) { .aix-svc--lead, .aix-svc--small { grid-column: span 1; } }
+    .aix-card:hover::before { opacity: .65; }
 
-    .aix-svc-tag { display:inline-flex; align-items:center; gap:8px; align-self: flex-start;
-      padding: 6px 12px; border-radius: 999px; font-size: 11.5px; letter-spacing:.12em; text-transform: uppercase;
-      background: rgba(217,108,224,.12); color:#f3c5f7; border:1px solid rgba(217,108,224,.28); }
-    .aix-svc--alt .aix-svc-tag { background: rgba(109,164,212,.12); color:#c5dff3; border-color: rgba(109,164,212,.30); }
-    .aix-svc--neutral .aix-svc-tag { background: rgba(255,255,255,.05); color: var(--aix-text-soft); border-color: var(--aix-border-strong); }
-    .aix-svc h3 { color: var(--aix-text); }
-    .aix-svc p { color: var(--aix-text-soft); font-size: 15px; }
-    .aix-svc-foot { margin-top: auto; display:flex; align-items:center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px dashed rgba(255,255,255,.10); color: var(--aix-text-mute); font-size: 13px; }
-    .aix-svc-foot .more { display:inline-flex; align-items:center; gap:8px; color: var(--aix-text); font-weight: 500; }
-    .aix-svc-foot .more svg { transition: transform .2s ease; }
-    .aix-svc:hover .aix-svc-foot .more svg { transform: translateX(3px); }
-    .aix-svc-icon {
-      width: 56px; height: 56px; border-radius: 14px; display:grid; place-items:center;
-      background: var(--aix-grad-soft); border:1px solid var(--aix-border-strong);
+    /* Bento sizing: 2 wide-tall + 2 small */
+    .aix-card--lead { grid-column: span 4; min-height: 380px; }
+    .aix-card--tall { grid-column: span 2; min-height: 380px; }
+    .aix-card--wide { grid-column: span 4; }
+    .aix-card--small { grid-column: span 2; }
+    @media (max-width: 980px) {
+      .aix-card--lead, .aix-card--tall, .aix-card--wide, .aix-card--small { grid-column: span 2; }
     }
-    .aix-svc-icon svg { width: 28px; height: 28px; color: #fff; }
+    @media (max-width: 600px) {
+      .aix-card--lead, .aix-card--tall, .aix-card--wide, .aix-card--small { grid-column: span 1; }
+    }
 
-    /* ===== Process timeline ===== */
-    .aix-process { display:grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: step; position: relative; }
-    @media (max-width: 900px) { .aix-process { grid-template-columns: 1fr; } }
-    .aix-step {
-      position: relative; padding: 36px 28px;
+    .aix-card-head { display: flex; align-items: flex-start; gap: 14px; }
+    .aix-card-tag {
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 5px 11px; border-radius: 999px;
+      font-family: var(--aix-mono); font-size: 10.5px; letter-spacing:.14em; text-transform: uppercase;
+      background: rgba(217,108,224,.12); color:#f3c5f7; border:1px solid rgba(217,108,224,.28);
+    }
+    .aix-card--alt .aix-card-tag { background: rgba(109,164,212,.12); color:#c5dff3; border-color: rgba(109,164,212,.30); }
+    .aix-card--neutral .aix-card-tag { background: rgba(255,255,255,.05); color: var(--aix-text-soft); border-color: var(--aix-border-strong); }
+    .aix-card h3 { color: var(--aix-text); }
+    .aix-card p { color: var(--aix-text-soft); font-size: 14.5px; }
+    .aix-card-foot { margin-top: auto; display:flex; align-items:center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px dashed rgba(255,255,255,.10); color: var(--aix-text-mute); font-size: 13px; }
+    .aix-card-foot .more { display:inline-flex; align-items:center; gap:8px; color: var(--aix-text); font-weight: 500; text-decoration: none; }
+    .aix-card-foot .more svg { transition: transform .2s ease; }
+    .aix-card:hover .aix-card-foot .more svg { transform: translateX(3px); }
+    .aix-card-icon {
+      width: 48px; height: 48px; border-radius: 12px; display:grid; place-items:center;
+      background: var(--aix-grad-soft); border:1px solid var(--aix-border-strong); flex-shrink: 0;
+    }
+    .aix-card-icon svg { width: 24px; height: 24px; color: #fff; }
+    .aix-card-stack { display:flex; flex-wrap:wrap; gap:6px; }
+    .aix-card-stack span { font-family: var(--aix-mono); font-size: 11px; padding: 4px 9px; border-radius: 6px;
+      background: rgba(255,255,255,.05); border: 1px solid var(--aix-border); color: var(--aix-text-soft); }
+
+    /* tiny inline diagram for the lead card */
+    .aix-mini-diagram {
+      margin-top: 8px; padding: 14px; border-radius: 12px;
+      background: rgba(0,0,0,.25); border: 1px solid var(--aix-border);
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      font-family: var(--aix-mono); font-size: 11.5px; color: var(--aix-text-soft);
+    }
+    .aix-mini-node {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 10px; border-radius: 6px;
+      background: rgba(255,255,255,.05); border: 1px solid var(--aix-border);
+    }
+    .aix-mini-node.acc { background: rgba(217,108,224,.12); border-color: rgba(217,108,224,.32); color: #f3c5f7; }
+    .aix-mini-arrow { color: var(--aix-text-mute); font-size: 12px; }
+
+    /* ===== Code block ===== */
+    .aix-code {
+      position: relative; border-radius: var(--aix-radius);
+      background: #0c0d18; border: 1px solid var(--aix-border-strong);
+      box-shadow: 0 30px 60px rgba(8,9,18,.5);
+      overflow: hidden;
+    }
+    .aix-code-head {
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+    }
+    .aix-code-head .file { font-family: var(--aix-mono); font-size: 12px; color: var(--aix-text-mute); letter-spacing: .04em; }
+    .aix-code-copy {
+      display:inline-flex; align-items:center; gap:6px;
+      padding: 5px 10px; border-radius: 6px;
+      background: rgba(255,255,255,.04); border: 1px solid var(--aix-border);
+      font-family: var(--aix-mono); font-size: 11px; color: var(--aix-text-soft);
+      cursor: pointer; transition: background .2s ease, color .2s ease;
+    }
+    .aix-code-copy:hover { background: rgba(255,255,255,.08); color: var(--aix-text); }
+    .aix-code-copy.is-copied { background: rgba(140,98,214,.18); border-color: rgba(140,98,214,.4); color: #ddcaff; }
+    .aix-code pre {
+      margin: 0; padding: 20px 22px;
+      font-family: var(--aix-mono); font-size: 13px; line-height: 1.65;
+      color: #e3e6f5; overflow-x: auto;
+      white-space: pre;
+    }
+    .aix-code .tk-key { color: #f3c5f7; }
+    .aix-code .tk-str { color: #c5dff3; }
+    .aix-code .tk-num { color: #ddcaff; }
+    .aix-code .tk-com { color: #6a6f8a; font-style: italic; }
+    .aix-code .tk-fn { color: #f8d29a; }
+
+    /* ===== Process timeline (zig-zag) ===== */
+    .aix-timeline {
+      position: relative;
+      display: grid; grid-template-columns: 1fr 80px 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+    @media (max-width: 900px) { .aix-timeline { grid-template-columns: 1fr; } }
+    .aix-timeline-line {
+      grid-row: 1 / span 5; grid-column: 2;
+      width: 2px; justify-self: center;
+      background: linear-gradient(180deg, transparent 0%, rgba(217,108,224,.35) 10%, rgba(140,98,214,.35) 50%, rgba(109,164,212,.35) 90%, transparent 100%);
+      position: relative;
+    }
+    @media (max-width: 900px) { .aix-timeline-line { display: none; } }
+    .aix-tstep {
+      position: relative; padding: 28px 30px;
       border:1px solid var(--aix-border);
-      background: rgba(255,255,255,.025);
-      counter-increment: step;
+      border-radius: var(--aix-radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      margin-bottom: 22px;
     }
-    .aix-step:first-child { border-top-left-radius: var(--aix-radius); border-bottom-left-radius: var(--aix-radius); }
-    .aix-step:last-child { border-top-right-radius: var(--aix-radius); border-bottom-right-radius: var(--aix-radius); }
-    .aix-step + .aix-step { border-left: none; }
+    .aix-tstep--l { grid-column: 1; text-align: right; align-self: start; }
+    .aix-tstep--r { grid-column: 3; text-align: left; align-self: start; }
     @media (max-width: 900px) {
-      .aix-step:first-child { border-radius: var(--aix-radius) var(--aix-radius) 0 0; }
-      .aix-step:last-child { border-radius: 0 0 var(--aix-radius) var(--aix-radius); }
-      .aix-step + .aix-step { border-left: 1px solid var(--aix-border); border-top: none; }
+      .aix-tstep--l, .aix-tstep--r { grid-column: 1; text-align: left; }
     }
-    .aix-step-num {
+    .aix-tstep-num {
       display:inline-flex; align-items:center; justify-content:center;
-      width: 44px; height: 44px; border-radius: 14px;
+      width: 40px; height: 40px; border-radius: 12px;
       background: rgba(255,255,255,.04); border: 1px solid var(--aix-border-strong);
-      font-weight:600; font-size: 16px; color: var(--aix-text); margin-bottom: 18px;
+      font-family: var(--aix-mono); font-weight: 500; font-size: 13.5px; color: var(--aix-text);
+      margin-bottom: 14px;
     }
-    .aix-step h3 { margin-bottom: 10px; }
-    .aix-step p { color: var(--aix-text-soft); font-size: 15px; }
+    .aix-tstep h3 { margin-bottom: 8px; }
+    .aix-tstep p { font-size: 14.5px; }
+    .aix-tstep-art {
+      margin-top: 14px;
+      display:flex; flex-wrap: wrap; gap: 6px;
+      justify-content: inherit;
+    }
+    .aix-tstep--l .aix-tstep-art { justify-content: flex-end; }
+    .aix-tstep-art span {
+      font-family: var(--aix-mono); font-size: 10.5px; padding: 3px 8px;
+      border-radius: 5px; background: rgba(255,255,255,.04);
+      border: 1px solid var(--aix-border); color: var(--aix-text-soft);
+      letter-spacing: .04em;
+    }
+    /* connector dot on the line */
+    .aix-tstep::after {
+      content:''; position:absolute; top: 38px; width: 12px; height: 12px;
+      background: var(--aix-grad); border-radius: 999px;
+      box-shadow: 0 0 14px rgba(217,108,224,.6);
+    }
+    .aix-tstep--l::after { right: -46px; }
+    .aix-tstep--r::after { left: -46px; }
+    @media (max-width: 900px) { .aix-tstep::after { display: none; } }
 
-    /* ===== Capability deep-dive cards ===== */
+    /* ===== Capability deep-dive (Northgate before/after) ===== */
     .aix-cap { display:grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 2.4vw, 28px); }
     @media (max-width: 900px) { .aix-cap { grid-template-columns: 1fr; } }
     .aix-cap-card {
@@ -461,14 +678,56 @@ faq:
     }
     .aix-cap-card.b::after { background: radial-gradient(circle, rgba(109,164,212,.18), transparent 60%); }
     .aix-cap-tag { display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px;
-      font-size:11.5px; letter-spacing:.12em; text-transform: uppercase;
+      font-family: var(--aix-mono); font-size:10.5px; letter-spacing:.14em; text-transform: uppercase;
       background: rgba(217,108,224,.12); color:#f3c5f7; border:1px solid rgba(217,108,224,.28); }
     .aix-cap-card.b .aix-cap-tag { background: rgba(109,164,212,.12); color:#c5dff3; border-color: rgba(109,164,212,.30); }
     .aix-cap-card h3 { font-size: clamp(22px, 2vw, 28px); margin-top: 16px; }
     .aix-cap-card p { margin-top: 12px; color: var(--aix-text-soft); font-size: 15.5px; }
     .aix-cap-metrics { margin-top: 24px; padding-top: 22px; border-top: 1px dashed rgba(255,255,255,.12); display:flex; flex-wrap: wrap; gap: 22px 36px; }
     .aix-cap-metric .num { font-size: clamp(22px, 2.2vw, 28px); font-weight:600; letter-spacing:-.01em; background: var(--aix-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .aix-cap-metric .lbl { display:block; margin-top: 4px; font-size: 11.5px; letter-spacing:.1em; text-transform: uppercase; color: var(--aix-text-mute); }
+    .aix-cap-metric .lbl { display:block; margin-top: 4px; font-family: var(--aix-mono); font-size: 10.5px; letter-spacing:.14em; text-transform: uppercase; color: var(--aix-text-mute); }
+
+    /* Toggle tabs for before/after */
+    .aix-toggle {
+      display:inline-flex; padding: 4px; border-radius: 999px;
+      background: rgba(0,0,0,.3); border: 1px solid var(--aix-border);
+      margin-top: 18px; margin-bottom: 14px;
+    }
+    .aix-toggle button {
+      appearance: none; border: 0; background: transparent;
+      padding: 8px 16px; border-radius: 999px;
+      font-family: var(--aix-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--aix-text-mute); cursor: pointer; font-weight: 500;
+      transition: color .2s ease, background-color .2s ease;
+    }
+    .aix-toggle button.is-active { background: var(--aix-grad-soft); color: var(--aix-text); border: 1px solid var(--aix-border); }
+    .aix-toggle button:focus-visible { outline: 2px solid var(--aix-pink); outline-offset: 2px; }
+
+    .aix-ba { position: relative; min-height: 180px; }
+    .aix-ba-pane { display: none; animation: aix-fade .25s ease; }
+    .aix-ba-pane.is-active { display: block; }
+    @keyframes aix-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+    .aix-ba-flow {
+      display: grid; gap: 6px;
+      padding: 14px; border-radius: 12px;
+      background: rgba(0,0,0,.25); border: 1px solid var(--aix-border);
+    }
+    .aix-ba-flow .step {
+      display:flex; align-items:center; gap: 10px;
+      padding: 8px 12px; border-radius: 8px;
+      background: rgba(255,255,255,.03); border: 1px solid var(--aix-border);
+      font-family: var(--aix-mono); font-size: 12px; color: var(--aix-text-soft);
+    }
+    .aix-ba-flow .step .dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,.3); }
+    .aix-ba-flow .step.acc { border-color: rgba(217,108,224,.32); background: rgba(217,108,224,.08); color: var(--aix-text); }
+    .aix-ba-flow .step.acc .dot { background: var(--aix-pink); box-shadow: 0 0 10px rgba(217,108,224,.7); }
+    .aix-ba-flow .step.muted { opacity: .55; text-decoration: line-through; }
+    .aix-ba-meta {
+      display:flex; gap: 18px; flex-wrap: wrap; padding-top: 12px; margin-top: 12px;
+      border-top: 1px dashed rgba(255,255,255,.12);
+    }
+    .aix-ba-meta div { font-family: var(--aix-mono); font-size: 11px; color: var(--aix-text-mute); letter-spacing: .04em; }
+    .aix-ba-meta b { display: block; color: var(--aix-text); font-weight: 600; font-size: 13px; margin-top: 3px; letter-spacing: 0; }
 
     /* ===== Showcase grid ===== */
     .aix-showcase { display:grid; grid-template-columns: repeat(6, 1fr); gap: clamp(14px, 1.4vw, 22px); }
@@ -492,45 +751,108 @@ faq:
     .aix-show-meta h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
     .aix-show-meta p { margin: 0; font-size: 13px; color: var(--aix-text-soft); }
 
-    /* ===== Tech stack ===== */
-    .aix-stack { display:grid; gap: 22px; }
-    .aix-stack-row { display:grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center;
-      padding: 22px 26px; border-radius: var(--aix-radius);
-      background: rgba(255,255,255,.03); border: 1px solid var(--aix-border); }
-    @media (max-width: 760px) { .aix-stack-row { grid-template-columns: 1fr; gap: 14px; } }
-    .aix-stack-row .lbl {
-      display: flex; flex-direction: column; gap: 4px;
+    /* ===== Tech stack — orbital + categorized ===== */
+    .aix-stack-frame {
+      display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(20px, 3vw, 40px);
+      align-items: stretch;
     }
-    .aix-stack-row .lbl span:first-child { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--aix-text-mute); }
-    .aix-stack-row .lbl span:last-child { font-size: 16px; color: var(--aix-text); font-weight: 500; }
-    .aix-stack-tags { display:flex; flex-wrap: wrap; gap: 8px; }
-    .aix-stack-tag { display:inline-flex; align-items:center; gap:8px; padding: 8px 14px; border-radius: 999px;
-      background: rgba(255,255,255,.05); border: 1px solid var(--aix-border); color: var(--aix-text-soft); font-size: 13.5px; }
-    .aix-stack-tag::before { content:''; width:6px; height:6px; border-radius:999px; background: var(--aix-pink); }
-    .aix-stack-row.b .aix-stack-tag::before { background: var(--aix-blue); }
-    .aix-stack-row.c .aix-stack-tag::before { background: var(--aix-violet); }
-    .aix-stack-row.d .aix-stack-tag::before { background: rgba(255,255,255,.5); }
+    @media (max-width: 900px) { .aix-stack-frame { grid-template-columns: 1fr; } }
+    .aix-orbit {
+      position: relative; aspect-ratio: 1/1; max-width: 560px; width: 100%; margin: 0 auto;
+      display: grid; place-items: center;
+    }
+    .aix-orbit svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .aix-orbit-core {
+      position: relative; z-index: 2;
+      width: clamp(110px, 14vw, 150px); height: clamp(110px, 14vw, 150px); border-radius: 50%;
+      background: var(--aix-grad);
+      box-shadow: 0 0 50px rgba(217,108,224,.45), inset 0 0 30px rgba(255,255,255,.2);
+      display: grid; place-items: center;
+      font-family: var(--aix-mono); font-size: 12px; color: #18091e; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    }
+    .aix-orbit-core::before {
+      content:''; position: absolute; inset: -8px; border-radius: 50%;
+      border: 1px solid rgba(217,108,224,.3);
+    }
+    .aix-orbit-node {
+      position: absolute; z-index: 2;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(10,11,20,.85); backdrop-filter: blur(8px);
+      border: 1px solid var(--aix-border-strong);
+      font-family: var(--aix-mono); font-size: 12px; color: var(--aix-text); letter-spacing: .04em;
+      box-shadow: 0 8px 24px rgba(8,9,18,.4);
+      white-space: nowrap;
+    }
+    .aix-orbit-node::before {
+      content: ''; width: 6px; height: 6px; border-radius: 999px; display: inline-block;
+      background: var(--aix-pink); margin-right: 8px; vertical-align: middle;
+    }
+    .aix-orbit-node.b::before { background: var(--aix-blue); }
+    .aix-orbit-node.v::before { background: var(--aix-violet); }
+    /* positions — using top/left percentages */
+    .aix-orbit-node:nth-child(2) { top: 6%; left: 18%; }
+    .aix-orbit-node:nth-child(3) { top: 8%; right: 8%; left: auto; }
+    .aix-orbit-node:nth-child(4) { top: 38%; right: -2%; left: auto; }
+    .aix-orbit-node:nth-child(5) { bottom: 12%; right: 12%; left: auto; top: auto; }
+    .aix-orbit-node:nth-child(6) { bottom: 4%; left: 30%; top: auto; }
+    .aix-orbit-node:nth-child(7) { top: 42%; left: -2%; }
+    .aix-orbit-node:nth-child(8) { top: 14%; left: 46%; }
 
-    /* ===== Testimonial ===== */
-    .aix-testimonial {
+    .aix-stack-cats { display: flex; flex-direction: column; gap: 14px; }
+    .aix-stack-cat {
+      padding: 20px 22px; border-radius: var(--aix-radius);
+      background: rgba(255,255,255,.025); border: 1px solid var(--aix-border);
+    }
+    .aix-stack-cat-head {
+      display:flex; align-items: baseline; gap: 12px; margin-bottom: 14px;
+    }
+    .aix-stack-cat-head .n { font-family: var(--aix-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--aix-text-mute); }
+    .aix-stack-cat-head .t { font-size: 16px; font-weight: 600; color: var(--aix-text); }
+    .aix-stack-tags { display:flex; flex-wrap: wrap; gap: 6px; }
+    .aix-stack-tag { display:inline-flex; align-items:center; gap:6px; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.04); border: 1px solid var(--aix-border); color: var(--aix-text-soft); font-size: 12.5px;
+      font-family: var(--aix-mono); letter-spacing: .02em; }
+    .aix-stack-tag::before { content:''; width:5px; height:5px; border-radius:999px; background: var(--aix-pink); }
+    .aix-stack-cat.b .aix-stack-tag::before { background: var(--aix-blue); }
+    .aix-stack-cat.c .aix-stack-tag::before { background: var(--aix-violet); }
+    .aix-stack-cat.d .aix-stack-tag::before { background: rgba(255,255,255,.55); }
+
+    /* ===== Testimonials ===== */
+    .aix-testis { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 2vw, 24px); }
+    @media (max-width: 900px) { .aix-testis { grid-template-columns: 1fr; } }
+    .aix-testi {
       position: relative;
-      padding: clamp(36px, 5vw, 64px);
+      padding: clamp(28px, 3.4vw, 40px);
       border-radius: var(--aix-radius);
       background:
-        radial-gradient(120% 80% at 0% 0%, rgba(217,108,224,.12), transparent 55%),
-        radial-gradient(120% 80% at 100% 100%, rgba(109,164,212,.12), transparent 55%),
+        radial-gradient(120% 80% at 0% 0%, rgba(217,108,224,.10), transparent 55%),
         rgba(255,255,255,.03);
       border: 1px solid var(--aix-border-strong);
-      text-align: center;
     }
-    .aix-testimonial .qmark {
-      font-size: 80px; line-height: .6; background: var(--aix-grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+    .aix-testi.b {
+      background:
+        radial-gradient(120% 80% at 100% 0%, rgba(109,164,212,.12), transparent 55%),
+        rgba(255,255,255,.03);
+    }
+    .aix-testi .qmark {
+      font-size: 56px; line-height: .6; background: var(--aix-grad); -webkit-background-clip:text; background-clip:text; color:transparent;
       font-family: serif;
     }
-    .aix-testimonial blockquote { margin: 14px auto 28px; max-width: 60ch; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.5; font-weight: 400; color: var(--aix-text); }
-    .aix-testimonial .who { display:flex; flex-direction: column; gap: 4px; align-items:center; }
-    .aix-testimonial .who .n { font-weight: 600; }
-    .aix-testimonial .who .r { color: var(--aix-text-mute); font-size: 14px; letter-spacing: .04em; }
+    .aix-testi blockquote { margin: 12px 0 24px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.55; font-weight: 400; color: var(--aix-text); }
+    .aix-testi-who { display:flex; align-items: center; gap: 14px; }
+    .aix-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-weight: 600; font-size: 14px;
+      background: var(--aix-grad);
+      color: #18091e;
+      flex-shrink: 0;
+      letter-spacing: 0;
+    }
+    .aix-avatar.b { background: linear-gradient(135deg, #6da4d4, #8c62d6); color: #f1f2f8; }
+    .aix-avatar.v { background: linear-gradient(135deg, #8c62d6, #d96ce0); color: #f1f2f8; }
+    .aix-testi-who .n { font-weight: 600; color: var(--aix-text); font-size: 14.5px; }
+    .aix-testi-who .r { color: var(--aix-text-mute); font-size: 12.5px; font-family: var(--aix-mono); letter-spacing: .04em; margin-top: 3px; }
 
     /* ===== FAQ ===== */
     .aix-faq { display:grid; gap: 12px; }
@@ -547,6 +869,7 @@ faq:
       font-size: 16.5px; font-weight: 500; color: var(--aix-text);
     }
     .aix-faq summary::-webkit-details-marker { display: none; }
+    .aix-faq summary:focus-visible { outline: 2px solid var(--aix-pink); outline-offset: 2px; border-radius: 10px; }
     .aix-faq summary::after {
       content: '+'; font-size: 22px; color: var(--aix-text-mute);
       transition: transform .25s ease, color .2s ease;
@@ -558,21 +881,55 @@ faq:
     .aix-faq details[open] summary { padding-bottom: 8px; }
     .aix-faq .body { padding: 0 24px 24px; color: var(--aix-text-soft); font-size: 15.5px; line-height: 1.65; }
 
-    /* ===== CTA ===== */
+    /* ===== CTA with email preview ===== */
     .aix-cta {
       position: relative; overflow: hidden;
-      padding: clamp(48px, 6vw, 80px);
+      padding: clamp(40px, 5vw, 64px);
       border-radius: 28px;
       background:
         radial-gradient(120% 90% at 50% 0%, rgba(217,108,224,.20), transparent 55%),
         radial-gradient(120% 90% at 50% 100%, rgba(109,164,212,.18), transparent 55%),
         rgba(255,255,255,.03);
       border: 1px solid var(--aix-border-strong);
-      text-align: center;
     }
-    .aix-cta h2 { font-size: clamp(28px, 3.4vw, 44px); }
-    .aix-cta p { margin: 14px auto 26px; max-width: 56ch; color: var(--aix-text-soft); }
-    .aix-cta .aix-cta-row { justify-content: center; }
+    .aix-cta-grid {
+      display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);
+      gap: clamp(24px, 4vw, 56px); align-items: center;
+    }
+    @media (max-width: 900px) { .aix-cta-grid { grid-template-columns: 1fr; } }
+    .aix-cta h2 { font-size: clamp(28px, 3.6vw, 48px); }
+    .aix-cta p { margin: 14px 0 26px; max-width: 50ch; color: var(--aix-text-soft); }
+
+    .aix-cta-form {
+      padding: 22px;
+      border-radius: var(--aix-radius);
+      background: rgba(0,0,0,.3); border: 1px solid var(--aix-border-strong);
+      box-shadow: 0 30px 70px rgba(8,9,18,.5);
+    }
+    .aix-cta-form .head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 14px;
+    }
+    .aix-cta-form .head .file { font-family: var(--aix-mono); font-size: 12px; color: var(--aix-text-mute); }
+    .aix-cta-form .field {
+      display: grid; gap: 6px;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .aix-cta-form .field:last-of-type { border-bottom: 0; }
+    .aix-cta-form .field .k { font-family: var(--aix-mono); font-size: 11px; color: var(--aix-text-mute); letter-spacing: .14em; text-transform: uppercase; }
+    .aix-cta-form .field .v { font-size: 14px; color: var(--aix-text); }
+    .aix-cta-form .field .v.muted { color: var(--aix-text-mute); }
+    .aix-cta-form .send {
+      margin-top: 18px; width: 100%;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 22px; border-radius: 12px;
+      background: var(--aix-grad); color: #18091e; font-weight: 600; font-size: 14px;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .aix-cta-form .send:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(217,108,224,.35); }
+    .aix-cta-form .send svg { transition: transform .2s ease; }
+    .aix-cta-form .send:hover svg { transform: translateX(3px); }
 
     /* Footer overrides — keep dark */
     body.home .site-footer { background: #0a0b14 !important; border-top: 1px solid rgba(255,255,255,.08); }
@@ -582,17 +939,17 @@ faq:
     body.home .foot-tagline, body.home .foot-copy, body.home .foot-locations li { color: rgba(255,255,255,.55) !important; }
     body.home .foot-bottom { border-top-color: rgba(255,255,255,.08) !important; }
 
-    /* Header tweak: sticky-ish look on dark */
-    header.container-wide { position: relative; z-index: 5; }
-
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
-      .aix-svc, .aix-show img { transition: none; }
+      .aix-card, .aix-show img, .aix-btn, .aix-cta-form .send { transition: none; }
+      .aix-scroll-progress > i { transition: none; }
     }
   </style>
 </head>
 
 <body class="home theme-light">
+
+  <div class="aix-scroll-progress" aria-hidden="true"><i></i></div>
 
   <header class="container-wide">
     <div class="row">
@@ -614,6 +971,7 @@ faq:
         <a href="{{ site.baseurl }}/solutions">Solutions</a>
         <a href="{{ site.baseurl }}/showcase">Showcase</a>
         <a href="{{ site.baseurl }}/contact">Contact</a>
+        <a class="aix-nav-cta" href="{{ site.baseurl }}/contact">Book a call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <button class="nav-close" aria-label="Close menu"><span class="x"></span><span class="nav-close-label">Close</span></button>
       </nav>
     </div>
@@ -655,7 +1013,7 @@ faq:
           </div>
 
           <!-- Hero side: agent flow visual -->
-          <aside class="aix-hero-card" aria-hidden="true">
+          <aside class="aix-hero-card" aria-label="Live agent workflow run">
             <div class="aix-hero-card-head">
               <span class="label">agent.workflow.run</span>
               <span class="aix-dots"><span></span><span></span><span></span></span>
@@ -664,24 +1022,35 @@ faq:
               <div class="row">
                 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f3c5f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span>
                 <span class="label">New email · variation request</span>
+                <span class="ts">09:14</span>
                 <span class="tag">Inbox</span>
               </div>
-              <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
               <div class="row">
                 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ddcaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
                 <span class="label">Reasoning · scope &amp; pricing impact</span>
+                <span class="ts">09:14</span>
                 <span class="tag g">Claude</span>
               </div>
-              <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
-              <div class="row">
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+              <div class="row is-running">
                 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#bfdcef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
                 <span class="label">Draft variation doc + update Xero</span>
+                <span class="aix-typing"><span class="aix-typing-dot"></span> running</span>
                 <span class="tag b">MCP</span>
               </div>
-              <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+              <div class="row">
+                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#a4a8c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+                <span class="label">Cross-check · against quote v3</span>
+                <span class="ts">queued</span>
+                <span class="tag">Rules</span>
+              </div>
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
               <div class="row">
                 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f3c5f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
                 <span class="label">Reply ready · waiting for review</span>
+                <span class="ts">queued</span>
                 <span class="tag">Outlook</span>
               </div>
             </div>
@@ -695,152 +1064,224 @@ faq:
       </div>
     </section>
 
-    <!-- ==================== MARQUEE ==================== -->
-    <section class="aix-marquee" aria-label="Featured projects">
-      <div class="aix-marquee-track">
-        <figure>{% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio4" alt="Northgate platform" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio6" alt="Beyond Limits Foundation site" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio1" alt="" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio2" alt="" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio3" alt="" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio4" alt="" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio5" alt="" sizes="320px" %}</figure>
-        <figure>{% include picture.html id="portfolio6" alt="" sizes="320px" %}</figure>
+    <!-- ==================== LOGO CLOUD ==================== -->
+    <section class="aix-logos" aria-label="Past clients and engagements">
+      <div class="aix-wrap">
+        <div class="aix-logos-head">15+ years shipping product for</div>
+        <div class="aix-logo-grid">
+          <span class="aix-logo aix-logo--upper">Microsoft</span>
+          <span class="aix-logo aix-logo--serif">Deutsche Bahn</span>
+          <span class="aix-logo aix-logo--upper">TELEFE</span>
+          <span class="aix-logo aix-logo--serif">Grupo Clarín</span>
+          <span class="aix-logo aix-logo--mono">LDC</span>
+          <span class="aix-logo aix-logo--upper">Buquebus</span>
+        </div>
       </div>
     </section>
 
     <!-- ==================== STATS ==================== -->
-    <section class="aix-section" style="padding-top: clamp(56px,7vw,90px);">
+    <div class="aix-chapter"><span class="num">01</span> <span>Outcomes</span></div>
+    <section class="aix-section aix-section--tight">
       <div class="aix-wrap">
         <div class="aix-stats">
           <div class="aix-stat">
-            <div class="v">160–300h</div>
+            <span class="k">Per client / month</span>
+            <div class="v"><span data-count-to="160">0</span>–<span data-count-to="300">0</span><span class="u">h</span></div>
             <div class="l">Admin hours saved per month, per client — measured on the Northgate AI workflow programme.</div>
           </div>
           <div class="aix-stat">
-            <div class="v">60–80%</div>
+            <span class="k">Tiered model spend</span>
+            <div class="v"><span data-count-to="60">0</span>–<span data-count-to="80">0</span><span class="u">%</span></div>
             <div class="l">Lower ongoing AI spend with tiered model selection vs. routing everything through one premium LLM.</div>
           </div>
           <div class="aix-stat">
-            <div class="v">4–6 wks</div>
+            <span class="k">Kick-off → live</span>
+            <div class="v"><span data-count-to="4">0</span>–<span data-count-to="6">0</span><span class="u"> wks</span></div>
             <div class="l">From kick-off to a live MVP — automation, SaaS or website — without the agency timeline.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== SERVICES ==================== -->
+    <!-- ==================== SERVICES (BENTO) ==================== -->
+    <div class="aix-chapter"><span class="num">02</span> <span>What we do</span></div>
     <section class="aix-section aix-section--alt" id="services">
       <div class="aix-wrap">
         <header class="aix-section-head">
-          <span class="aix-eyebrow">What we do</span>
+          <span class="aix-eyebrow">Capabilities</span>
           <h2>Built around <span class="aix-grad-text">AI</span>, finished by senior craft.</h2>
           <p>Four services, one team. AI automation and AI-assisted SaaS lead the offering; workflow strategy and
             web design are the muscle that makes them land.</p>
         </header>
 
-        <div class="aix-services">
-          <article class="aix-svc aix-svc--lead">
-            <span class="aix-svc-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-            </span>
-            <span class="aix-svc-tag">Headline service</span>
-            <h3>AI Automation &amp; Agentic Workflows</h3>
-            <p>Autonomous agents that replace stitched-together Zapier or Make rules. Tiered model selection,
-              MCP integrations into Outlook, Xero, SharePoint, CRMs — judgment, not just triggers.</p>
-            <div class="aix-svc-foot">
-              <span>Claude · GPT-4 · Open-weight · MCP</span>
+        <div class="aix-bento">
+          <article class="aix-card aix-card--lead">
+            <div class="aix-card-head">
+              <span class="aix-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </span>
+              <div>
+                <span class="aix-card-tag">Headline</span>
+                <h3 style="margin-top: 10px;">AI Automation &amp; Agentic Workflows</h3>
+              </div>
+            </div>
+            <p>Autonomous agents that replace stitched-together Zapier or Make rules. Tiered model selection, MCP
+              integrations into Outlook, Xero, SharePoint, CRMs — judgment, not just triggers.</p>
+            <div class="aix-mini-diagram" aria-hidden="true">
+              <span class="aix-mini-node">Inbox</span>
+              <span class="aix-mini-arrow">→</span>
+              <span class="aix-mini-node acc">Agent</span>
+              <span class="aix-mini-arrow">→</span>
+              <span class="aix-mini-node">MCP</span>
+              <span class="aix-mini-arrow">→</span>
+              <span class="aix-mini-node">Xero</span>
+            </div>
+            <div class="aix-card-foot">
+              <div class="aix-card-stack">
+                <span>Claude</span><span>GPT-4</span><span>Open-weight</span><span>MCP</span>
+              </div>
               <a class="more" href="{{ site.baseurl }}/solutions/ai-automation">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </article>
 
-          <article class="aix-svc aix-svc--lead aix-svc--alt">
-            <span class="aix-svc-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </span>
-            <span class="aix-svc-tag">Headline service</span>
+          <article class="aix-card aix-card--tall aix-card--alt">
+            <div class="aix-card-head">
+              <span class="aix-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+            </div>
+            <span class="aix-card-tag">Headline</span>
             <h3>AI-Assisted SaaS Development</h3>
-            <p>Idea to production SaaS without agency overhead. Business analysis, functional spec, architecture,
-              then AI-assisted delivery on cost-optimised infra: Next.js, Supabase, Vercel, Stripe.</p>
-            <div class="aix-svc-foot">
-              <span>Next.js · Supabase · Vercel · Stripe</span>
+            <p>Idea to production SaaS without agency overhead. Spec, architecture, then AI-assisted delivery on
+              cost-optimised infra.</p>
+            <div class="aix-card-stack">
+              <span>Next.js</span><span>Supabase</span><span>Vercel</span><span>Stripe</span><span>Clerk</span>
+            </div>
+            <div class="aix-card-foot">
+              <span>Spec → live in weeks</span>
               <a class="more" href="{{ site.baseurl }}/solutions/idea-to-project">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </article>
 
-          <article class="aix-svc aix-svc--small aix-svc--neutral">
-            <span class="aix-svc-icon">
+          <article class="aix-card aix-card--small aix-card--neutral">
+            <span class="aix-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </span>
-            <span class="aix-svc-tag">Strategy</span>
-            <h3>Workflow Strategy &amp; MCP Integrations</h3>
-            <p>Audit current state, prioritise the painful workflows, design the agent and the integration fabric
-              that connects it. Built so your team owns the system, not the vendor.</p>
-            <div class="aix-svc-foot">
-              <span>Audit · Architecture · MCP design</span>
+            <span class="aix-card-tag">Strategy</span>
+            <h3 style="font-size: 19px;">Workflow Strategy &amp; MCP Integrations</h3>
+            <p>Audit current state, prioritise the painful workflows, design the agent and integration fabric.</p>
+            <div class="aix-card-foot">
+              <span>Audit · Architecture</span>
               <a class="more" href="{{ site.baseurl }}/solutions/ai-automation">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </article>
 
-          <article class="aix-svc aix-svc--small aix-svc--neutral">
-            <span class="aix-svc-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </span>
-            <span class="aix-svc-tag">The workhorse</span>
-            <h3>Web Design &amp; Development</h3>
-            <p>Fast, accessible, SEO-tuned sites built on Webflow, Shopify, BigCommerce or custom — often the
-              front door for the AI work we just shipped.</p>
-            <div class="aix-svc-foot">
-              <span>Webflow · Shopify · BigCommerce</span>
+          <article class="aix-card aix-card--wide aix-card--neutral">
+            <div class="aix-card-head">
+              <span class="aix-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </span>
+              <div>
+                <span class="aix-card-tag">The workhorse</span>
+                <h3 style="margin-top: 10px;">Web Design &amp; Development</h3>
+              </div>
+            </div>
+            <p>Fast, accessible, SEO-tuned sites built on Webflow, Shopify, BigCommerce or custom — often the front
+              door for the AI work we just shipped.</p>
+            <div class="aix-card-foot">
+              <div class="aix-card-stack">
+                <span>Webflow</span><span>Shopify</span><span>BigCommerce</span><span>Squarespace</span>
+              </div>
               <a class="more" href="{{ site.baseurl }}/solutions/website-development">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </article>
+        </div>
+
+        <!-- Code block credibility signal -->
+        <div style="margin-top: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(20px, 3vw, 40px); align-items: center;" class="aix-code-row">
+          <div>
+            <span class="aix-eyebrow" style="margin-bottom: 14px;">Under the hood</span>
+            <h3 style="font-size: clamp(22px, 2.4vw, 32px); margin: 16px 0 12px; letter-spacing: -0.025em;">A real agent config — not a marketing diagram.</h3>
+            <p style="font-size: 15.5px; max-width: 50ch;">Every workflow ships with a versioned config: which model
+              handles which step, which MCP servers it can talk to, where guardrails live. Boring is good.
+              Boring is auditable.</p>
+          </div>
+          <div class="aix-code">
+            <div class="aix-code-head">
+              <span class="file">~/agents/variation-handler.toml</span>
+              <button type="button" class="aix-code-copy" data-copy="agent.variation-handler" aria-label="Copy snippet">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy</span>
+              </button>
+            </div>
+<pre><code><span class="tk-com"># tier the work — frontier model only when judgment matters</span>
+<span class="tk-key">[agent]</span>
+name      = <span class="tk-str">"variation-handler"</span>
+goal      = <span class="tk-str">"draft variations, update finance, await review"</span>
+guardrail = <span class="tk-str">"never_send_without_human"</span>
+
+<span class="tk-key">[steps.reason]</span>
+model = <span class="tk-str">"claude-opus-4"</span>
+input = <span class="tk-str">"inbox.email"</span>
+
+<span class="tk-key">[steps.draft]</span>
+model = <span class="tk-str">"open-weight/llama-3-70b"</span>
+tools = [<span class="tk-str">"sharepoint"</span>, <span class="tk-str">"xero"</span>]
+
+<span class="tk-key">[mcp.servers]</span>
+outlook    = <span class="tk-str">"mcp://office365"</span>
+sharepoint = <span class="tk-str">"mcp://sp.northgate"</span>
+xero       = <span class="tk-str">"mcp://xero.payables"</span>
+</code></pre>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==================== PROCESS ==================== -->
+    <div class="aix-chapter"><span class="num">03</span> <span>How we work</span></div>
     <section class="aix-section">
-      <div class="aix-wrap">
+      <div class="aix-wrap aix-wrap--narrow">
         <header class="aix-section-head">
-          <span class="aix-eyebrow">How we work</span>
+          <span class="aix-eyebrow">Process</span>
           <h2>Map. Architect. <span class="aix-grad-text">Ship.</span></h2>
-          <p>A short, honest loop. We start in your real workflows, choose the right model on every step, and
-            put a working system in front of users fast — then keep tightening the loop.</p>
+          <p>A short, honest loop. We start in your real workflows, choose the right model on every step, and put
+            a working system in front of users fast — then keep tightening the loop.</p>
         </header>
 
-        <div class="aix-process">
-          <article class="aix-step">
-            <div class="aix-step-num">01</div>
+        <div class="aix-timeline">
+          <article class="aix-tstep aix-tstep--l">
+            <div class="aix-tstep-num">01</div>
             <h3>Map the workflow</h3>
             <p>We sit with the people doing the work. Quotes, claims, support tickets, ops handoffs — we map
               current state, find the steps that break, and rank them by pain and payoff.</p>
+            <div class="aix-tstep-art"><span>Workshops</span><span>Process map</span><span>Pain · payoff matrix</span></div>
           </article>
-          <article class="aix-step">
-            <div class="aix-step-num">02</div>
+          <div class="aix-timeline-line"></div>
+          <article class="aix-tstep aix-tstep--r">
+            <div class="aix-tstep-num">02</div>
             <h3>Architect with the right model</h3>
             <p>Frontier models for reasoning, open-weight models for routine drafting, plain rules for
               calculations. MCP connectors plug AI into the tools you already pay for — no rip-and-replace.</p>
+            <div class="aix-tstep-art"><span>Tiered model plan</span><span>MCP design</span><span>Guardrails</span></div>
           </article>
-          <article class="aix-step">
-            <div class="aix-step-num">03</div>
+          <article class="aix-tstep aix-tstep--l" style="grid-column: 1; grid-row: 3;">
+            <div class="aix-tstep-num">03</div>
             <h3>Ship lean, measure, iterate</h3>
             <p>AI-assisted development takes us from spec to a production SaaS or site fast. We measure hours
               saved, error rate and cost per task — then keep tightening the loop.</p>
+            <div class="aix-tstep-art"><span>Production deploy</span><span>Hours saved</span><span>Cost / task</span></div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ==================== CAPABILITY DEEP DIVES ==================== -->
+    <div class="aix-chapter"><span class="num">04</span> <span>Capability snapshots</span></div>
     <section class="aix-section aix-section--alt">
       <div class="aix-wrap">
         <header class="aix-section-head">
-          <span class="aix-eyebrow">Recent capability work</span>
+          <span class="aix-eyebrow">Recent work</span>
           <h2>Two snapshots of AI process work in the wild.</h2>
           <p>One on a working business replacing manual admin with autonomous agents. One on a green-field SaaS
             shipped on AI-assisted delivery.</p>
@@ -852,8 +1293,42 @@ faq:
             <h3>Nine workflows, one agent fabric for a Sydney luxury builder.</h3>
             <p>We mapped the nine workflows that run the business — quotes, variations, progress claims, supplier
               comparisons, site meetings, permits, subcontractor coordination, client updates, handover docs —
-              and replaced the worst three with agentic workflows. Tiered models keep cost predictable; MCP
-              connectors plug into Outlook, SharePoint, Xero, Go High Level, Wunderbuild and Cubit.</p>
+              and replaced the worst three with agentic workflows.</p>
+
+            <div class="aix-toggle" role="tablist" aria-label="Workflow comparison">
+              <button type="button" class="is-active" role="tab" aria-selected="true" data-ba="before">Before</button>
+              <button type="button" role="tab" aria-selected="false" data-ba="after">After</button>
+            </div>
+            <div class="aix-ba">
+              <div class="aix-ba-pane is-active" data-pane="before">
+                <div class="aix-ba-flow">
+                  <div class="step"><span class="dot"></span>PM reads variation email</div>
+                  <div class="step"><span class="dot"></span>Cross-checks against quote v3 (manually)</div>
+                  <div class="step"><span class="dot"></span>Drafts variation doc in Word</div>
+                  <div class="step"><span class="dot"></span>Updates Xero invoice line</div>
+                  <div class="step"><span class="dot"></span>Replies to client · waits</div>
+                </div>
+                <div class="aix-ba-meta">
+                  <div>Time per variation<b>~22 min</b></div>
+                  <div>Touches per week<b>30+</b></div>
+                  <div>Admin hours / mo<b>~40h</b></div>
+                </div>
+              </div>
+              <div class="aix-ba-pane" data-pane="after">
+                <div class="aix-ba-flow">
+                  <div class="step muted"><span class="dot"></span>PM reads variation email</div>
+                  <div class="step acc"><span class="dot"></span>Agent reasons over scope &amp; pricing impact</div>
+                  <div class="step acc"><span class="dot"></span>Drafts variation doc + updates Xero (MCP)</div>
+                  <div class="step acc"><span class="dot"></span>Reply ready · PM reviews and sends</div>
+                </div>
+                <div class="aix-ba-meta">
+                  <div>Time per variation<b>~3 min</b></div>
+                  <div>PM action<b>review only</b></div>
+                  <div>Confidence<b>98%</b></div>
+                </div>
+              </div>
+            </div>
+
             <div class="aix-cap-metrics">
               <div class="aix-cap-metric"><span class="num">9</span><span class="lbl">Workflows mapped</span></div>
               <div class="aix-cap-metric"><span class="num">160–300h</span><span class="lbl">Saved monthly</span></div>
@@ -879,10 +1354,11 @@ faq:
     </section>
 
     <!-- ==================== SHOWCASE ==================== -->
+    <div class="aix-chapter"><span class="num">05</span> <span>Selected work</span></div>
     <section class="aix-section">
       <div class="aix-wrap">
         <header class="aix-section-head">
-          <span class="aix-eyebrow">Selected work</span>
+          <span class="aix-eyebrow">Portfolio</span>
           <h2>Fintech, enterprise, consumer — the foundation under the AI work.</h2>
           <p>15+ years of shipped product across digital wallets, BaaS platforms, B2B portals and websites that
             earn their hosting bill.</p>
@@ -918,84 +1394,124 @@ faq:
     </section>
 
     <!-- ==================== STACK ==================== -->
+    <div class="aix-chapter"><span class="num">06</span> <span>Stack</span></div>
     <section class="aix-section aix-section--alt">
       <div class="aix-wrap">
         <header class="aix-section-head">
-          <span class="aix-eyebrow">State-of-the-art stack</span>
+          <span class="aix-eyebrow">Tooling</span>
           <h2>The tools moving the field forward — wired into your business.</h2>
           <p>We pick from the same shortlist serious AI teams use today, and tier them by cost so the ongoing
             spend stays predictable.</p>
         </header>
 
-        <div class="aix-stack">
-          <div class="aix-stack-row">
-            <div class="lbl"><span>Layer 01</span><span>AI models &amp; protocols</span></div>
-            <div class="aix-stack-tags">
-              <span class="aix-stack-tag">Claude</span>
-              <span class="aix-stack-tag">GPT-4</span>
-              <span class="aix-stack-tag">Open-weight LLMs</span>
-              <span class="aix-stack-tag">MCP · Model Context Protocol</span>
-              <span class="aix-stack-tag">Claude Code</span>
-              <span class="aix-stack-tag">Function calling</span>
-            </div>
+        <div class="aix-stack-frame">
+          <div class="aix-orbit" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              <circle cx="50" cy="50" r="22" fill="none" stroke="rgba(255,255,255,.08)" stroke-width=".25"/>
+              <circle cx="50" cy="50" r="34" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".25" stroke-dasharray="1.2 1.5"/>
+              <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.05)" stroke-width=".25"/>
+            </svg>
+            <div class="aix-orbit-core">Doop</div>
+            <span class="aix-orbit-node">Claude</span>
+            <span class="aix-orbit-node b">MCP</span>
+            <span class="aix-orbit-node v">GPT-4</span>
+            <span class="aix-orbit-node">Next.js</span>
+            <span class="aix-orbit-node b">Supabase</span>
+            <span class="aix-orbit-node v">n8n</span>
+            <span class="aix-orbit-node">Stripe</span>
           </div>
-          <div class="aix-stack-row b">
-            <div class="lbl"><span>Layer 02</span><span>Automation &amp; integrations</span></div>
-            <div class="aix-stack-tags">
-              <span class="aix-stack-tag">n8n</span>
-              <span class="aix-stack-tag">Make</span>
-              <span class="aix-stack-tag">Zapier</span>
-              <span class="aix-stack-tag">Outlook · SharePoint</span>
-              <span class="aix-stack-tag">Xero</span>
-              <span class="aix-stack-tag">Go High Level</span>
-              <span class="aix-stack-tag">Wunderbuild · Cubit</span>
+
+          <div class="aix-stack-cats">
+            <div class="aix-stack-cat">
+              <div class="aix-stack-cat-head"><span class="n">Layer 01</span><span class="t">AI models &amp; protocols</span></div>
+              <div class="aix-stack-tags">
+                <span class="aix-stack-tag">Claude</span>
+                <span class="aix-stack-tag">GPT-4</span>
+                <span class="aix-stack-tag">Open-weight LLMs</span>
+                <span class="aix-stack-tag">MCP · Model Context Protocol</span>
+                <span class="aix-stack-tag">Claude Code</span>
+                <span class="aix-stack-tag">Function calling</span>
+              </div>
             </div>
-          </div>
-          <div class="aix-stack-row c">
-            <div class="lbl"><span>Layer 03</span><span>Product &amp; infrastructure</span></div>
-            <div class="aix-stack-tags">
-              <span class="aix-stack-tag">Next.js</span>
-              <span class="aix-stack-tag">Node · Python</span>
-              <span class="aix-stack-tag">Supabase · Postgres</span>
-              <span class="aix-stack-tag">Vercel</span>
-              <span class="aix-stack-tag">Stripe</span>
-              <span class="aix-stack-tag">Clerk · Auth0</span>
+            <div class="aix-stack-cat b">
+              <div class="aix-stack-cat-head"><span class="n">Layer 02</span><span class="t">Automation &amp; integrations</span></div>
+              <div class="aix-stack-tags">
+                <span class="aix-stack-tag">n8n</span>
+                <span class="aix-stack-tag">Make</span>
+                <span class="aix-stack-tag">Zapier</span>
+                <span class="aix-stack-tag">Outlook · SharePoint</span>
+                <span class="aix-stack-tag">Xero</span>
+                <span class="aix-stack-tag">Go High Level</span>
+                <span class="aix-stack-tag">Wunderbuild · Cubit</span>
+              </div>
             </div>
-          </div>
-          <div class="aix-stack-row d">
-            <div class="lbl"><span>Layer 04</span><span>Web platforms</span></div>
-            <div class="aix-stack-tags">
-              <span class="aix-stack-tag">Webflow</span>
-              <span class="aix-stack-tag">Shopify</span>
-              <span class="aix-stack-tag">BigCommerce</span>
-              <span class="aix-stack-tag">Squarespace</span>
-              <span class="aix-stack-tag">Strapi</span>
+            <div class="aix-stack-cat c">
+              <div class="aix-stack-cat-head"><span class="n">Layer 03</span><span class="t">Product &amp; infrastructure</span></div>
+              <div class="aix-stack-tags">
+                <span class="aix-stack-tag">Next.js</span>
+                <span class="aix-stack-tag">Node · Python</span>
+                <span class="aix-stack-tag">Supabase · Postgres</span>
+                <span class="aix-stack-tag">Vercel</span>
+                <span class="aix-stack-tag">Stripe</span>
+                <span class="aix-stack-tag">Clerk · Auth0</span>
+              </div>
+            </div>
+            <div class="aix-stack-cat d">
+              <div class="aix-stack-cat-head"><span class="n">Layer 04</span><span class="t">Web platforms</span></div>
+              <div class="aix-stack-tags">
+                <span class="aix-stack-tag">Webflow</span>
+                <span class="aix-stack-tag">Shopify</span>
+                <span class="aix-stack-tag">BigCommerce</span>
+                <span class="aix-stack-tag">Squarespace</span>
+                <span class="aix-stack-tag">Strapi</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== TESTIMONIAL ==================== -->
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <div class="aix-chapter"><span class="num">07</span> <span>What clients say</span></div>
     <section class="aix-section">
-      <div class="aix-wrap aix-wrap--narrow">
-        <div class="aix-testimonial">
-          <div class="qmark">“</div>
-          <blockquote>
-            We came to David for a website. He quickly showed us we were missing big opportunities beyond that and
-            walked us into a smarter strategy. The workflow audit alone changed how we run admin — variations,
-            progress claims and supplier quotes that used to eat days now happen with the agent doing the heavy
-            lifting and us reviewing.
-          </blockquote>
-          <div class="who">
-            <div class="n">Jordan B. · Northgate Building Group</div>
-            <div class="r">Sydney · AI Automation engagement</div>
+      <div class="aix-wrap">
+        <div class="aix-testis">
+          <div class="aix-testi">
+            <div class="qmark">“</div>
+            <blockquote>
+              We came to David for a website. He quickly showed us we were missing big opportunities beyond that and
+              walked us into a smarter strategy. The workflow audit alone changed how we run admin — variations
+              and progress claims that used to eat days now happen with the agent doing the heavy lifting.
+            </blockquote>
+            <div class="aix-testi-who">
+              <div class="aix-avatar">JB</div>
+              <div>
+                <div class="n">Jordan B. · Northgate Building Group</div>
+                <div class="r">Sydney · AI Automation engagement</div>
+              </div>
+            </div>
+          </div>
+          <div class="aix-testi b">
+            <div class="qmark">“</div>
+            <blockquote>
+              Senior thinking from the first call. We got a spec that actually held up under engineering review and
+              a SaaS in production in a fraction of the time other agencies were quoting — without the usual
+              hand-waving about "AI accelerating things."
+            </blockquote>
+            <div class="aix-testi-who">
+              <div class="aix-avatar b">DS</div>
+              <div>
+                <div class="n">Daniel S. · SaaS founder</div>
+                <div class="r">Melbourne · AI-assisted SaaS build</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==================== FAQ ==================== -->
+    <div class="aix-chapter"><span class="num">08</span> <span>FAQ</span></div>
     <section class="aix-section aix-section--alt">
       <div class="aix-wrap aix-wrap--narrow">
         <header class="aix-section-head">
@@ -1045,16 +1561,33 @@ faq:
     <section class="aix-section" style="padding-top: 0;">
       <div class="aix-wrap">
         <div class="aix-cta">
-          <span class="aix-eyebrow">Let's build</span>
-          <h2 style="margin-top: 18px;">Pick the workflow that hurts most. <br><span class="aix-grad-text">We'll ship the agent.</span></h2>
-          <p>30-minute intro call. Bring a workflow, a SaaS idea, or a website that's not pulling its weight —
-            you'll leave with a sharp opinion and a sketch of what we'd do next.</p>
-          <div class="aix-cta-row">
-            <a class="aix-btn aix-btn--primary" href="{{ site.baseurl }}/contact">
-              Book an intro call
-              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a class="aix-btn aix-btn--ghost" href="{{ site.baseurl }}/showcase">See more work</a>
+          <div class="aix-cta-grid">
+            <div>
+              <span class="aix-eyebrow">Let's build</span>
+              <h2 style="margin-top: 18px;">Pick the workflow that hurts most. <br><span class="aix-grad-text">We'll ship the agent.</span></h2>
+              <p>30-minute intro call. Bring a workflow, a SaaS idea, or a website that's not pulling its weight —
+                you'll leave with a sharp opinion and a sketch of what we'd do next.</p>
+              <div class="aix-cta-row">
+                <a class="aix-btn aix-btn--primary" href="{{ site.baseurl }}/contact">
+                  Book an intro call
+                  <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a class="aix-btn aix-btn--ghost" href="{{ site.baseurl }}/showcase">See more work</a>
+              </div>
+            </div>
+            <aside class="aix-cta-form" aria-hidden="true">
+              <div class="head">
+                <span class="file">draft.intro-call.eml</span>
+                <span class="aix-dots"><span></span><span></span><span></span></span>
+              </div>
+              <div class="field"><span class="k">To</span><span class="v">hello@doopux.com</span></div>
+              <div class="field"><span class="k">Subject</span><span class="v">Workflow worth automating</span></div>
+              <div class="field"><span class="k">Message</span><span class="v muted">A short note about the workflow, the team it's eating, and what good would look like…</span></div>
+              <a class="send" href="{{ site.baseurl }}/contact">
+                Open the form
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </a>
+            </aside>
           </div>
         </div>
       </div>
@@ -1065,6 +1598,99 @@ faq:
   {% include_relative partials/footer.html %}
 
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
+
+  <script>
+    (function () {
+      'use strict';
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Scroll progress bar + sticky header state
+      var progress = document.querySelector('.aix-scroll-progress > i');
+      function onScroll() {
+        var doc = document.documentElement;
+        var max = (doc.scrollHeight - doc.clientHeight) || 1;
+        var pct = Math.max(0, Math.min(100, (doc.scrollTop / max) * 100));
+        if (progress) progress.style.width = pct + '%';
+        if (document.body) document.body.classList.toggle('is-scrolled', doc.scrollTop > 8);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Animated number tickers
+      var counters = document.querySelectorAll('[data-count-to]');
+      function animateCount(el) {
+        var target = parseFloat(el.getAttribute('data-count-to')) || 0;
+        if (reduceMotion) { el.textContent = String(target); return; }
+        var start = performance.now();
+        var dur = 1100;
+        function step(now) {
+          var t = Math.min(1, (now - start) / dur);
+          // easeOutCubic
+          var eased = 1 - Math.pow(1 - t, 3);
+          var val = Math.round(target * eased);
+          el.textContent = String(val);
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      if ('IntersectionObserver' in window && counters.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        counters.forEach(function (c) { io.observe(c); });
+      } else {
+        counters.forEach(function (c) { c.textContent = c.getAttribute('data-count-to'); });
+      }
+
+      // Before / after toggle
+      var toggleButtons = document.querySelectorAll('.aix-toggle button[data-ba]');
+      toggleButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var key = btn.getAttribute('data-ba');
+          var group = btn.closest('.aix-cap-card');
+          if (!group) return;
+          group.querySelectorAll('.aix-toggle button').forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          group.querySelectorAll('.aix-ba-pane').forEach(function (p) {
+            p.classList.toggle('is-active', p.getAttribute('data-pane') === key);
+          });
+        });
+      });
+
+      // Code copy buttons
+      var copyBtns = document.querySelectorAll('.aix-code-copy');
+      copyBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var pre = btn.closest('.aix-code') && btn.closest('.aix-code').querySelector('pre code');
+          if (!pre) return;
+          var text = pre.innerText || pre.textContent || '';
+          var done = function () {
+            btn.classList.add('is-copied');
+            var lbl = btn.querySelector('span');
+            var old = lbl ? lbl.textContent : null;
+            if (lbl) lbl.textContent = 'Copied';
+            setTimeout(function () {
+              btn.classList.remove('is-copied');
+              if (lbl && old) lbl.textContent = old;
+            }, 1600);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function () { done(); });
+          } else {
+            done();
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 
