@@ -8,7 +8,7 @@
 
   <!-- Satoshi from Fontshare (same as doopux.com) -->
   <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css2?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css2?f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -755,7 +755,7 @@
         </div>
         <hr class="divider">
         <div class="prose">
-          <p>End-to-end migration from Shopify to a static-site architecture hosted on Cloudflare, with Decap CMS for in-house content editing.</p>
+          <p>End-to-end migration from Shopify to a static-site architecture hosted on Cloudflare, with Decap CMS for in-house content editing, including the approved Blog collection add-on.</p>
           <p>The scope assumes <strong>22 static HTML pages</strong> have already been designed and will be provided by the client. Our work is strictly <strong>integration and CMS setup</strong>, not design or frontend bug-fixing.</p>
         </div>
       </div>
@@ -799,7 +799,7 @@
 
       <div class="card">
         <div class="prose" style="margin-bottom:20px;">
-          <p>Setup of 6 CMS collections:</p>
+          <p>Setup of 6 CMS collections, including the approved Blog add-on:</p>
         </div>
         <ul class="check-list">
           <li><strong>Home</strong> (Singleton) - covers <code>/</code></li>
@@ -807,7 +807,7 @@
           <li><strong>Legal</strong> (Singletons) - covers <code>/pages/privacy-policy</code>, <code>/pages/terms-and-conditions</code></li>
           <li><strong>Brands</strong> (Folder) - covers 16 brand pages including Alquema, Brax, Foil, Fragonard, Hanro, Ivko, Liverpool, Yerse, Zaket &amp; Plover, Joseph Ribkoff, NYDJ, Raffaello Rossi, Regn, Salus, Vassalli, Velvet</li>
           <li><strong>Settings</strong> (Singleton) - global data: phone, address, hours, social links</li>
-          <li><strong>Blog</strong> (Folder, add-on) - covers <code>/blogs/news/*</code>, <code>/blogs/latest-news/*</code></li>
+          <li><strong>Blog</strong> (Folder, approved add-on) - covers <code>/blogs/news/*</code>, <code>/blogs/latest-news/*</code></li>
         </ul>
         <div class="notice notice-amber" style="margin-top:24px;">
           Assumption: all 16 brand pages share the exact same HTML structure. If any brand page deviates significantly, re-scoping may be required.
@@ -897,7 +897,7 @@
         </div>
         <hr class="divider">
         <ul class="check-list">
-          <li>Decap CMS setup with 6 collections (5 core + 1 optional Blog add-on).</li>
+          <li>Decap CMS setup with 6 collections, including the approved Blog collection add-on.</li>
           <li>CSS consolidation into shared layout + page-specific scoping.</li>
           <li>Static site generation pipeline (11ty / Astro / equivalent).</li>
           <li>Cloudflare Pages deployment + DNS configuration.</li>
@@ -922,7 +922,6 @@
         <ul class="cross-list">
           <li><strong>Frontend bug fixes / responsive fixes</strong> in the provided HTML - can be quoted separately if issues are found.</li>
           <li><strong>Image CDN / optimisation service</strong> (Cloudinary, imgix, etc.) - images must be uploaded at correct size via CMS.</li>
-          <li><strong>Blog setup</strong> - available as an add-on.</li>
           <li><strong>Google Maps iframe editing</strong> - remains hardcoded unless requested.</li>
           <li><strong>Design changes or new page creation</strong>.</li>
           <li><strong>Copywriting or SEO strategy</strong> - existing meta data will be ported as-is.</li>
@@ -1010,9 +1009,30 @@
         <hr class="divider">
 
         <div class="highlight-box" style="margin-top:0; margin-bottom:28px;">
-          <p>Total project fee: <strong>$750 AUD</strong></p>
+          <p>Total approved project fee: <strong>$900 AUD</strong></p>
         </div>
 
+        <h3 class="sub">Approved Cost Breakdown</h3>
+        <table class="tf-table" style="margin-bottom:28px;">
+          <thead>
+            <tr>
+              <th>Approved Scope</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Core migration, CMS setup, deployment, and stabilisation</strong></td>
+              <td>$750 AUD</td>
+            </tr>
+            <tr>
+              <td><strong>Blog collection setup</strong> (<code>/blogs/news</code>, <code>/blogs/latest-news</code>)</td>
+              <td>$150 AUD</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sub">Payment Schedule</h3>
         <table class="tf-table">
           <thead>
             <tr>
@@ -1023,15 +1043,15 @@
           <tbody>
             <tr>
               <td><strong>Deposit</strong> - before work commences</td>
-              <td>$250 AUD</td>
+              <td>$300 AUD</td>
             </tr>
             <tr>
               <td><strong>Mid-payment</strong> - after homepage + 1 brand page + 1 legal page are demo-ready</td>
-              <td>$250 AUD</td>
+              <td>$300 AUD</td>
             </tr>
             <tr>
               <td><strong>Final payment</strong> - upon delivery, DNS cutover, and GSC verification</td>
-              <td>$250 AUD</td>
+              <td>$300 AUD</td>
             </tr>
           </tbody>
         </table>
@@ -1047,7 +1067,7 @@
         <div class="card-header">
           <div>
             <span class="section-eyebrow">Optional</span>
-            <h2>Add-Ons</h2>
+            <h2>Remaining Add-Ons</h2>
           </div>
         </div>
         <hr class="divider">
@@ -1060,14 +1080,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Blog collection setup</strong> (<code>/blogs/news</code>, <code>/blogs/latest-news</code>)</td>
-              <td>$150 AUD</td>
-            </tr>
-            <tr>
               <td><strong>Image CDN integration</strong> (Cloudinary / Cloudflare Images)</td>
               <td>$100 AUD</td>
             </tr>
-           
             <tr>
               <td><strong>Additional brand page template variations</strong> (if structure differs)</td>
               <td>Quote on review</td>
