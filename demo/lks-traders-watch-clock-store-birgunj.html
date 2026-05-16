@@ -1,0 +1,1053 @@
+<html lang="en" class="scroll-smooth bg-[#000000]"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="ai-access" content="allowed">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="description" content="Discover L.K.S. Traders, Birgunj's premier store for premium clocks and watches at unbeatable prices.">
+<meta name="keywords" content="Timepiece store in Birgunj, Authentic wristwatches Nepal, Ajanta wall clocks Nepal, Watch shop Birgunj">
+<title>L.K.S. Traders – Watch and Clock Store in Birgunj</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar { width: 0.375rem; height: 0.375rem; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #222222; border-radius: 0.25rem; }
+::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+.custom-checkbox {
+appearance: none;
+width: 1rem;
+height: 1rem;
+border: 1px solid #333;
+border-radius: 0.125rem;
+background-color: transparent;
+position: relative;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.custom-checkbox:checked {
+background-color: #D4AF37;
+border-color: #D4AF37;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -60%) rotate(45deg);
+width: 0.25rem;
+height: 0.5rem;
+border-right: 1.5px solid #000;
+border-bottom: 1.5px solid #000;
+}
+.glass-panel {
+background: rgba(10, 10, 10, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.hero-gradient {
+background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 1) 70%);
+}
+/* 3D Transform Utilities for Cards */
+.perspective-1000 { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.tilt-card { transition: transform 0.1s ease; }
+/* Scroll Animation Classes */
+.reveal {
+opacity: 0;
+transform: translateY(2rem);
+transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+</style>
+
+<!-- aura-ga4-start -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M6V79H761');
+</script>
+<!-- aura-ga4-end -->
+</head>
+<body class="bg-[#000000] text-white selection:bg-[#D4AF37] selection:text-black overflow-x-hidden min-h-screen flex flex-col">
+
+  <!-- ==================== CUSTOMER WEBSITE ==================== -->
+  <div id="customer-view" class="block w-full min-h-screen transition-opacity duration-500">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-neutral-900 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <a href="#" class="text-lg font-medium tracking-tighter uppercase text-white hover:text-[#D4AF37] transition-colors">
+            LKSTRADERS
+          </a>
+          <div class="hidden md:flex items-center gap-6 text-sm font-normal text-neutral-400">
+            <a href="#store" class="hover:text-white transition-colors">Store</a>
+            <a href="#arrivals" class="hover:text-white transition-colors">New Arrivals</a>
+            <a href="#offers" class="hover:text-white transition-colors">Offers</a>
+            <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="text-neutral-400 hover:text-white transition-colors">
+            <iconify-icon icon="solar:magnifer-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+          </button>
+          <button onclick="toggleCart()" class="text-neutral-400 hover:text-white transition-colors relative">
+            <iconify-icon icon="solar:cart-large-minimalistic-linear" class="text-xl" stroke-width="1.5"></iconify-icon>
+            <span id="cart-count" class="absolute -top-1 -right-1 w-3 h-3 bg-[#D4AF37] rounded-full text-black text-[0.5rem] flex items-center justify-center font-medium">0</span>
+          </button>
+          <div class="w-px h-4 bg-neutral-800 mx-2"></div>
+          <button onclick="toggleLogin()" class="hover:text-[#D4AF37] transition-colors uppercase text-xs font-medium text-neutral-400 tracking-widest">
+            Portal
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 3D Hero Section -->
+    <section class="relative w-full h-screen flex items-center justify-center overflow-hidden hero-gradient">
+      <canvas id="hero-3d-canvas" class="z-0 pointer-events-auto cursor-move opacity-90 w-full h-full absolute top-0 right-0 bottom-0 left-0" width="926" height="636" style="width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22 preserveAspectRatio=%22xMidYMid slice%22%3E%3Cstyle%3E@keyframes pan %7B 0%25 %7B transform: scale(1.1) translate(0,0) rotate(0deg); %7D 50%25 %7B transform: scale(1.15) translate(-1.5%25,-1.5%25) rotate(1.5deg); %7D 100%25 %7B transform: scale(1.1) translate(0,0) rotate(0deg); %7D %7D .bg %7B animation: pan 25s ease-in-out infinite; transform-origin: center; %7D%3C/style%3E%3Cg class=%22bg%22%3E%3Cimage href=%22https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format%26fit=crop%26q=80%26w=1200%22 width=%22100%25%22 height=%22100%25%22 preserveAspectRatio=%22xMidYMid slice%22 opacity=%220.5%22/%3E%3C/g%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23D4AF37%22 opacity=%220.3%22 style=%22mix-blend-mode: color;%22/%3E%3C/svg%3E'); background-size: cover; background-position: center;"></canvas>
+
+      <div class="relative z-10 flex flex-col items-center text-center px-6 mt-16 pointer-events-none">
+        <div class="text-xs font-medium tracking-widest text-[#D4AF37] uppercase mb-4 opacity-80 animate-pulse">Birgunj's Premier Store</div>
+        <h1 class="text-5xl md:text-7xl font-medium tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
+          Timeless Style, <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-yellow-200">Precision and Elegance</span>
+        </h1>
+        <p class="text-sm md:text-base text-neutral-400 max-w-xl font-normal mb-8">
+          Step into our luxury premier store. Discover meticulously crafted wristwatches and decorative wall clocks that define moments.
+        </p>
+        <div class="flex items-center gap-4 pointer-events-auto">
+          <a href="#store" class="px-6 py-3 bg-[#D4AF37] text-black text-xs font-medium uppercase tracking-widest hover:bg-yellow-500 transition-colors rounded-sm flex items-center gap-2">
+            Explore Collection
+            <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
+        <span class="text-[0.65rem] uppercase tracking-widest text-neutral-400 font-medium">Scroll</span>
+        <div class="w-px h-8 bg-gradient-to-b from-neutral-500 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="py-24 px-6 border-t border-neutral-900 bg-[#020202] relative overflow-hidden">
+      <!-- Decor -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37] opacity-[0.03] blur-[100px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto reveal">
+        <div class="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#0a0a0a] to-[#050505] border border-[#D4AF37]/20 rounded-md p-8 md:p-12 relative overflow-hidden perspective-1000">
+          <div class="relative z-10 md:w-1/2 mb-8 md:mb-0">
+            <div class="text-xs font-medium tracking-widest text-[#D4AF37] uppercase mb-3">Limited Time Offer</div>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">The Festive Collection Sale</h2>
+            <p class="text-sm text-neutral-400 font-normal mb-6 leading-relaxed">
+              Elevate your style with our exclusive festive discounts. Get up to 25% off on premium analog watches and heritage wall clocks.
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="glass-panel px-4 py-2 rounded-sm border-dashed border-[#D4AF37]/50 flex items-center gap-3">
+                <span class="text-xs text-neutral-400 uppercase tracking-widest">Code:</span>
+                <span class="text-lg font-medium text-[#D4AF37] tracking-tight">FESTIVE25</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Floating Element -->
+          <div class="relative z-10 md:w-1/2 flex justify-center preserve-3d">
+            <div class="w-64 h-64 relative animate-[spin_20s_linear_infinite] preserve-3d">
+               <div class="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/20 to-transparent rounded-full blur-xl"></div>
+               <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Offer Watch" class="w-full h-full object-cover rounded-full border-2 border-[#D4AF37]/30 shadow-[0_0_50px_rgba(212,175,55,0.1)]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special & New Arrivals -->
+    <section id="arrivals" class="py-24 px-6 border-t border-neutral-900 bg-black">
+      <div class="max-w-7xl mx-auto reveal">
+        <div class="flex items-end justify-between mb-12">
+          <div class="">
+            <h2 class="text-3xl font-medium tracking-tight text-white mb-2">Special Arrivals</h2>
+            <p class="text-sm text-neutral-500 font-normal">The latest masterpieces added to our premier store.</p>
+          </div>
+          <div class="hidden md:flex gap-2">
+            <button class="w-10 h-10 border border-neutral-800 rounded-sm flex items-center justify-center text-neutral-400 hover:text-white hover:border-[#D4AF37] transition-all"><iconify-icon icon="solar:arrow-left-linear" stroke-width="1.5"></iconify-icon></button>
+            <button class="w-10 h-10 border border-neutral-800 rounded-sm flex items-center justify-center text-neutral-400 hover:text-white hover:border-[#D4AF37] transition-all"><iconify-icon icon="solar:arrow-right-linear" stroke-width="1.5"></iconify-icon></button>
+          </div>
+        </div>
+
+        <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar" id="arrivals-container">
+        <div class="tilt-card min-w-[280px] md:min-w-[320px] snap-start group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d cursor-pointer">
+           <div class="absolute top-3 left-3 z-20">
+              <span class="bg-[#D4AF37] text-black text-[0.65rem] font-medium px-2 py-1 uppercase tracking-widest rounded-sm shadow-lg">New</span>
+            </div>
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Obsidian Chronograph" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-6 flex flex-col flex-1 z-10 bg-gradient-to-t from-black to-[#050505] transform translate-z-20">
+            <h3 class="text-base font-medium text-white mb-1 truncate">Obsidian Chronograph</h3>
+            <div class="text-sm font-medium text-[#D4AF37] mb-4">NPR 12,500</div>
+            <button onclick="addToCart(1)" class="w-full border border-neutral-800 py-2 text-xs font-medium text-white hover:text-black hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all rounded-sm uppercase tracking-widest">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+
+        <div class="tilt-card min-w-[280px] md:min-w-[320px] snap-start group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d cursor-pointer">
+           <div class="absolute top-3 left-3 z-20">
+              <span class="bg-[#D4AF37] text-black text-[0.65rem] font-medium px-2 py-1 uppercase tracking-widest rounded-sm shadow-lg">New</span>
+            </div>
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Rose Gold Elegance" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-6 flex flex-col flex-1 z-10 bg-gradient-to-t from-black to-[#050505] transform translate-z-20">
+            <h3 class="text-base font-medium text-white mb-1 truncate">Rose Gold Elegance</h3>
+            <div class="text-sm font-medium text-[#D4AF37] mb-4">NPR 15,000</div>
+            <button onclick="addToCart(3)" class="w-full border border-neutral-800 py-2 text-xs font-medium text-white hover:text-black hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all rounded-sm uppercase tracking-widest">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+
+        <div class="tilt-card min-w-[280px] md:min-w-[320px] snap-start group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d cursor-pointer">
+           <div class="absolute top-3 left-3 z-20">
+              <span class="bg-[#D4AF37] text-black text-[0.65rem] font-medium px-2 py-1 uppercase tracking-widest rounded-sm shadow-lg">New</span>
+            </div>
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Midnight Ceramic" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-6 flex flex-col flex-1 z-10 bg-gradient-to-t from-black to-[#050505] transform translate-z-20">
+            <h3 class="text-base font-medium text-white mb-1 truncate">Midnight Ceramic</h3>
+            <div class="text-sm font-medium text-[#D4AF37] mb-4">NPR 18,500</div>
+            <button onclick="addToCart(5)" class="w-full border border-neutral-800 py-2 text-xs font-medium text-white hover:text-black hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all rounded-sm uppercase tracking-widest">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Premier Store (All Products) -->
+    <section id="store" class="py-24 px-6 border-t border-neutral-900 bg-[#020202]">
+      <div class="max-w-7xl mx-auto reveal">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <h2 class="text-3xl font-medium tracking-tight text-white mb-2">Curated Timepieces</h2>
+            <p class="text-sm text-neutral-500 font-normal">Explore our complete exclusive selection.</p>
+          </div>
+          <div class="flex items-center gap-4 text-xs font-medium text-neutral-400 overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+            <button onclick="filterProducts('All')" class="text-white border-b border-[#D4AF37] pb-1 whitespace-nowrap filter-btn" data-filter="All">All</button>
+            <button onclick="filterProducts('Men Watches')" class="hover:text-white transition-colors pb-1 whitespace-nowrap filter-btn text-neutral-400" data-filter="Men Watches">Men</button>
+            <button onclick="filterProducts('Women Watches')" class="hover:text-white transition-colors pb-1 whitespace-nowrap filter-btn text-neutral-400" data-filter="Women Watches">Women</button>
+            <button onclick="filterProducts('Wall Clocks')" class="hover:text-white transition-colors pb-1 whitespace-nowrap filter-btn text-neutral-400" data-filter="Wall Clocks">Wall Clocks</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-1000" id="products-grid">
+        <div class="tilt-card group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d">
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Obsidian Chronograph" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-5 flex flex-col flex-1 z-10 bg-[#050505] transform translate-z-20">
+            <div class="text-xs text-neutral-500 font-normal mb-1">Men Watches</div>
+            <h3 class="text-sm font-medium text-white mb-3 truncate">Obsidian Chronograph</h3>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="text-sm font-medium text-[#D4AF37]">NPR 12,500</div>
+              <button onclick="addToCart(1)" class="text-xs font-medium text-white hover:text-[#D4AF37] transition-colors flex items-center gap-1 uppercase tracking-widest">
+                Add <iconify-icon icon="solar:cart-plus-linear" stroke-width="1.5"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tilt-card group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d">
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Silver Horizon Minimal" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-5 flex flex-col flex-1 z-10 bg-[#050505] transform translate-z-20">
+            <div class="text-xs text-neutral-500 font-normal mb-1">Men Watches</div>
+            <h3 class="text-sm font-medium text-white mb-3 truncate">Silver Horizon Minimal</h3>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="text-sm font-medium text-[#D4AF37]">NPR 8,200</div>
+              <button onclick="addToCart(2)" class="text-xs font-medium text-white hover:text-[#D4AF37] transition-colors flex items-center gap-1 uppercase tracking-widest">
+                Add <iconify-icon icon="solar:cart-plus-linear" stroke-width="1.5"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tilt-card group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d">
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Rose Gold Elegance" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-5 flex flex-col flex-1 z-10 bg-[#050505] transform translate-z-20">
+            <div class="text-xs text-neutral-500 font-normal mb-1">Women Watches</div>
+            <h3 class="text-sm font-medium text-white mb-3 truncate">Rose Gold Elegance</h3>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="text-sm font-medium text-[#D4AF37]">NPR 15,000</div>
+              <button onclick="addToCart(3)" class="text-xs font-medium text-white hover:text-[#D4AF37] transition-colors flex items-center gap-1 uppercase tracking-widest">
+                Add <iconify-icon icon="solar:cart-plus-linear" stroke-width="1.5"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tilt-card group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d">
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Ajanta Heritage Wall Clock" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-5 flex flex-col flex-1 z-10 bg-[#050505] transform translate-z-20">
+            <div class="text-xs text-neutral-500 font-normal mb-1">Wall Clocks</div>
+            <h3 class="text-sm font-medium text-white mb-3 truncate">Ajanta Heritage Wall Clock</h3>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="text-sm font-medium text-[#D4AF37]">NPR 4,500</div>
+              <button onclick="addToCart(4)" class="text-xs font-medium text-white hover:text-[#D4AF37] transition-colors flex items-center gap-1 uppercase tracking-widest">
+                Add <iconify-icon icon="solar:cart-plus-linear" stroke-width="1.5"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tilt-card group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d">
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Midnight Ceramic" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-5 flex flex-col flex-1 z-10 bg-[#050505] transform translate-z-20">
+            <div class="text-xs text-neutral-500 font-normal mb-1">Women Watches</div>
+            <h3 class="text-sm font-medium text-white mb-3 truncate">Midnight Ceramic</h3>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="text-sm font-medium text-[#D4AF37]">NPR 18,500</div>
+              <button onclick="addToCart(5)" class="text-xs font-medium text-white hover:text-[#D4AF37] transition-colors flex items-center gap-1 uppercase tracking-widest">
+                Add <iconify-icon icon="solar:cart-plus-linear" stroke-width="1.5"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="mt-16 flex justify-center">
+          <button class="px-8 py-3 bg-transparent border border-neutral-800 text-white text-xs font-medium uppercase tracking-widest hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all rounded-sm">
+            Load More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 px-6 border-t border-neutral-900 bg-black overflow-hidden relative">
+      <div class="max-w-7xl mx-auto reveal">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-medium tracking-tight text-white mb-2">Client Experiences</h2>
+          <p class="text-sm text-neutral-500 font-normal">What our valued customers in Birgunj say.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-[#050505] border border-neutral-900 p-8 rounded-sm hover:border-neutral-700 transition-colors">
+            <div class="flex text-[#D4AF37] mb-4 text-sm">
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+            </div>
+            <p class="text-sm text-neutral-400 font-normal italic mb-6">"Purchased a beautiful Ajanta wall clock for my living room. The quality and finishing are outstanding. Best store in Birgunj!"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-xs text-white font-medium tracking-widest">SR</div>
+              <div>
+                <div class="text-xs font-medium text-white">Suman Rai</div>
+                <div class="text-[0.65rem] text-neutral-500 uppercase tracking-widest">Verified Buyer</div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-[#050505] border border-neutral-900 p-8 rounded-sm hover:border-neutral-700 transition-colors">
+            <div class="flex text-[#D4AF37] mb-4 text-sm">
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-line-duotone" stroke-width="1.5"></iconify-icon>
+            </div>
+            <p class="text-sm text-neutral-400 font-normal italic mb-6">"The collection of men's chronographs here is unmatched locally. Excellent customer service and authentic products."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-xs text-white font-medium tracking-widest">AK</div>
+              <div>
+                <div class="text-xs font-medium text-white">Amit Kumar</div>
+                <div class="text-[0.65rem] text-neutral-500 uppercase tracking-widest">Verified Buyer</div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-[#050505] border border-neutral-900 p-8 rounded-sm hover:border-neutral-700 transition-colors">
+            <div class="flex text-[#D4AF37] mb-4 text-sm">
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" stroke-width="1.5"></iconify-icon>
+            </div>
+            <p class="text-sm text-neutral-400 font-normal italic mb-6">"Gifted a rose gold watch to my wife from L.K.S. Traders. They helped me pick the perfect one within my budget."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-xs text-white font-medium tracking-widest">NT</div>
+              <div>
+                <div class="text-xs font-medium text-white">Niraj Tamang</div>
+                <div class="text-[0.65rem] text-neutral-500 uppercase tracking-widest">Verified Buyer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#020202] border-t border-neutral-900 pt-20 pb-10 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1 md:col-span-2">
+          <div class="text-xl font-medium tracking-tighter uppercase text-white mb-4">LKSTRADERS</div>
+          <p class="text-sm text-neutral-500 font-normal max-w-sm mb-6">
+            Birgunj's premier store for premium clocks and watches. Authentic timepieces, exceptional service.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#" class="w-10 h-10 border border-neutral-800 rounded-sm flex items-center justify-center text-neutral-400 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><iconify-icon icon="solar:facebook-linear" class="text-lg"></iconify-icon></a>
+            <a href="#" class="w-10 h-10 border border-neutral-800 rounded-sm flex items-center justify-center text-neutral-400 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><iconify-icon icon="solar:camera-linear" class="text-lg"></iconify-icon></a>
+            <a href="#" class="w-10 h-10 border border-neutral-800 rounded-sm flex items-center justify-center text-neutral-400 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><iconify-icon icon="solar:letter-linear" class="text-lg"></iconify-icon></a>
+            <a href="#" class="w-10 h-10 border border-neutral-800 rounded-sm flex items-center justify-center text-neutral-400 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all"><iconify-icon icon="solar:phone-linear" class="text-lg"></iconify-icon></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-medium uppercase tracking-widest text-white mb-6">Explore</h4>
+          <ul class="space-y-3 text-sm font-normal text-neutral-500">
+            <li><a href="#store" class="hover:text-[#D4AF37] transition-colors">All Collections</a></li>
+            <li><a href="#arrivals" class="hover:text-[#D4AF37] transition-colors">New Arrivals</a></li>
+            <li><a href="#offers" class="hover:text-[#D4AF37] transition-colors">Exclusive Offers</a></li>
+            <li><a href="#testimonials" class="hover:text-[#D4AF37] transition-colors">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-medium uppercase tracking-widest text-white mb-6">Contact</h4>
+          <ul class="space-y-3 text-sm font-normal text-neutral-500">
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:map-point-linear" class="mt-0.5 text-[#D4AF37]"></iconify-icon>
+              Birgunj, Nepal
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="solar:phone-calling-linear" class="text-[#D4AF37]"></iconify-icon>
+              +977 9811222112
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="solar:letter-linear" class="text-[#D4AF37]"></iconify-icon>
+              lkstraders.watches@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-8 border-t border-neutral-900 text-xs text-neutral-600 font-normal">
+        <p>© 2024 L.K.S. Traders. All rights reserved.</p>
+        <div class="flex items-center gap-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+          <a href="#" class="hover:text-white transition-colors">Shipping</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==================== CART DRAWER ==================== -->
+  <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-sm bg-[#050505] border-l border-neutral-900 z-[70] transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <div class="h-16 border-b border-neutral-900 flex items-center justify-between px-6 shrink-0">
+      <div class="text-sm font-medium tracking-tight text-white uppercase">Your Bag</div>
+      <button onclick="toggleCart()" class="text-neutral-500 hover:text-white transition-colors">
+        <iconify-icon icon="solar:close-circle-linear" class="text-xl"></iconify-icon>
+      </button>
+    </div>
+
+    <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4"><div class="text-center text-xs text-neutral-500 mt-10 uppercase tracking-widest">Your bag is empty</div></div>
+
+    <div class="p-6 border-t border-neutral-900 bg-[#020202] shrink-0">
+      <div class="flex items-center justify-between text-sm mb-4">
+        <span class="text-neutral-400 font-medium">Subtotal</span>
+        <span class="text-white font-medium tracking-tight" id="cart-total">NPR 0</span>
+      </div>
+      <button onclick="checkout()" class="w-full bg-[#D4AF37] text-black text-xs font-medium uppercase tracking-widest py-4 rounded-sm hover:bg-yellow-500 transition-colors flex items-center justify-center gap-2">
+        Secure Checkout <iconify-icon icon="solar:lock-keyhole-minimalistic-linear"></iconify-icon>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== AUTH / LOGIN MODAL ==================== -->
+  <div id="login-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-6 opacity-0 transition-opacity duration-300">
+    <div class="w-full max-w-md bg-[#050505] border border-neutral-800 rounded-md p-8 relative shadow-2xl">
+      <button onclick="hideLogin()" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors">
+        <iconify-icon icon="solar:close-circle-linear" class="text-xl"></iconify-icon>
+      </button>
+
+      <div class="text-center mb-8">
+        <div class="text-xl font-medium tracking-tighter uppercase text-white mb-2">LKSTRADERS</div>
+        <p class="text-xs text-neutral-500 font-normal tracking-widest uppercase">Management Portal</p>
+      </div>
+
+      <form onsubmit="handleLogin(event)" class="space-y-5">
+        <div>
+          <label class="block text-xs font-medium text-neutral-400 mb-2">Email Address</label>
+          <input type="email" value="admin@lkstraders.com" class="w-full bg-black border border-neutral-800 rounded-sm px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D4AF37] transition-colors" required="">
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label class="block text-xs font-medium text-neutral-400">Password</label>
+          </div>
+          <input type="password" value="admin123" class="w-full bg-black border border-neutral-800 rounded-sm px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D4AF37] transition-colors" required="">
+        </div>
+        <button type="submit" class="w-full bg-[#D4AF37] text-black text-xs font-medium uppercase tracking-widest py-3 rounded-sm hover:bg-yellow-500 transition-colors mt-6">
+          Authenticate
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== ADMIN DASHBOARD ==================== -->
+  <div id="admin-view" class="hidden w-full h-screen bg-[#020202] flex overflow-hidden opacity-0 transition-opacity duration-500 fixed inset-0 z-[200]">
+
+    <!-- Sidebar -->
+    <aside class="w-64 border-r border-neutral-900 bg-[#000000] flex flex-col z-20 shrink-0">
+      <div class="h-16 flex items-center px-6 border-b border-neutral-900">
+        <div class="text-lg font-medium tracking-tighter uppercase text-white">LKSTRADERS</div>
+      </div>
+
+      <div class="p-6">
+        <div class="text-[0.65rem] font-medium tracking-widest text-neutral-500 uppercase mb-4">System</div>
+        <nav class="space-y-1">
+          <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-black bg-[#D4AF37] rounded-sm transition-colors">
+            <iconify-icon icon="solar:widget-linear" class="text-lg"></iconify-icon>
+            Dashboard
+          </a>
+        </nav>
+      </div>
+
+      <div class="mt-auto p-6 border-t border-neutral-900">
+        <button onclick="logoutAdmin()" class="flex items-center gap-3 w-full px-3 py-2 text-sm font-normal text-neutral-500 hover:text-red-400 hover:bg-red-950/30 rounded-sm transition-colors">
+          <iconify-icon icon="solar:logout-2-linear" class="text-lg"></iconify-icon>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden bg-[#050505] relative">
+      <header class="h-16 flex items-center justify-between px-8 border-b border-neutral-900 bg-[#000000] shrink-0">
+        <div class="text-sm font-medium text-white tracking-tight">Overview</div>
+        <div class="w-8 h-8 rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-xs text-[#D4AF37] font-medium uppercase">
+          AD
+        </div>
+      </header>
+
+      <div class="flex-1 overflow-y-auto p-8">
+        <div class="max-w-6xl mx-auto space-y-8">
+
+          <!-- Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-black border border-neutral-900 p-5 rounded-sm flex flex-col">
+              <div class="text-xs text-neutral-500 font-medium tracking-widest uppercase mb-1">Total Revenue</div>
+              <div class="text-2xl font-medium tracking-tight text-white mt-1" id="admin-revenue">NPR 0</div>
+            </div>
+            <div class="bg-black border border-neutral-900 p-5 rounded-sm flex flex-col">
+              <div class="text-xs text-neutral-500 font-medium tracking-widest uppercase mb-1">Total Orders</div>
+              <div class="text-2xl font-medium tracking-tight text-white mt-1" id="admin-orders-count">0</div>
+            </div>
+            <div class="bg-black border border-neutral-900 p-5 rounded-sm flex flex-col">
+              <div class="text-xs text-neutral-500 font-medium tracking-widest uppercase mb-1">Products</div>
+              <div class="text-2xl font-medium tracking-tight text-white mt-1" id="admin-products-count">0</div>
+            </div>
+            <button onclick="toggleAddProductModal()" class="bg-black border border-neutral-900 p-5 rounded-sm flex flex-col justify-center items-center hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors group">
+              <iconify-icon icon="solar:add-square-linear" class="text-2xl text-neutral-500 group-hover:text-[#D4AF37] mb-2"></iconify-icon>
+              <div class="text-xs text-neutral-400 group-hover:text-[#D4AF37] font-medium tracking-widest uppercase">Add Product</div>
+            </button>
+          </div>
+
+          <!-- Inventory Table -->
+          <div class="bg-black border border-neutral-900 rounded-sm overflow-hidden">
+            <div class="px-6 py-5 border-b border-neutral-900 flex items-center justify-between">
+              <h3 class="text-sm font-medium text-white tracking-tight">Inventory Management</h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-neutral-900 bg-neutral-950/30">
+                    <th class="px-6 py-3 text-[0.65rem] font-medium uppercase tracking-widest text-neutral-500">Product</th>
+                    <th class="px-6 py-3 text-[0.65rem] font-medium uppercase tracking-widest text-neutral-500">Category</th>
+                    <th class="px-6 py-3 text-[0.65rem] font-medium uppercase tracking-widest text-neutral-500">Price (NPR)</th>
+                    <th class="px-6 py-3 text-[0.65rem] font-medium uppercase tracking-widest text-neutral-500 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-table-body" class="text-sm font-normal text-neutral-300 divide-y divide-neutral-900">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Product Modal (Admin) -->
+      <div id="add-product-modal" class="absolute inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-6 opacity-0 transition-opacity duration-300">
+        <div class="w-full max-w-lg bg-[#050505] border border-neutral-800 rounded-md p-8 relative">
+          <button onclick="toggleAddProductModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors">
+            <iconify-icon icon="solar:close-circle-linear" class="text-xl"></iconify-icon>
+          </button>
+          <h3 class="text-lg font-medium text-white tracking-tight mb-6">Add New Product</h3>
+          <form onsubmit="handleAddProduct(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-medium text-neutral-400 mb-1">Name</label>
+              <input type="text" id="add-name" class="w-full bg-black border border-neutral-800 rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required="">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-medium text-neutral-400 mb-1">Category</label>
+                <select id="add-cat" class="w-full bg-black border border-neutral-800 rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required="">
+                  <option value="Men Watches">Men Watches</option>
+                  <option value="Women Watches">Women Watches</option>
+                  <option value="Wall Clocks">Wall Clocks</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-neutral-400 mb-1">Price (NPR)</label>
+                <input type="number" id="add-price" class="w-full bg-black border border-neutral-800 rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required="">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-neutral-400 mb-1">Image URL</label>
+              <input type="url" id="add-img" value="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&amp;fit=crop&amp;q=80&amp;w=600" class="w-full bg-black border border-neutral-800 rounded-sm px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required="">
+            </div>
+            <div class="flex items-center gap-2 pt-2">
+              <input type="checkbox" id="add-special" class="custom-checkbox">
+              <label for="add-special" class="text-xs text-neutral-400 cursor-pointer">Mark as Special Arrival</label>
+            </div>
+            <button type="submit" class="w-full bg-[#D4AF37] text-black text-xs font-medium uppercase tracking-widest py-3 rounded-sm hover:bg-yellow-500 transition-colors mt-4">
+              Save Product
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Javascript Logic (Simulated Backend & UI) -->
+  <script>
+    /* ================= SYSTEM DATA & DB MOCK ================= */
+    const defaultProducts = [
+      { id: 1, name: 'Obsidian Chronograph', category: 'Men Watches', price: 12500, img: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&q=80&w=600', special: true },
+      { id: 2, name: 'Silver Horizon Minimal', category: 'Men Watches', price: 8200, img: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&q=80&w=600', special: false },
+      { id: 3, name: 'Rose Gold Elegance', category: 'Women Watches', price: 15000, img: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=600', special: true },
+      { id: 4, name: 'Ajanta Heritage Wall Clock', category: 'Wall Clocks', price: 4500, img: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&q=80&w=600', special: false },
+      { id: 5, name: 'Midnight Ceramic', category: 'Women Watches', price: 18500, img: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=600', special: true },
+    ];
+
+    let db = {
+      products: JSON.parse(localStorage.getItem('lks_products')) || defaultProducts,
+      cart: JSON.parse(localStorage.getItem('lks_cart')) || [],
+      orders: JSON.parse(localStorage.getItem('lks_orders')) || [],
+      revenue: parseInt(localStorage.getItem('lks_revenue')) || 0
+    };
+
+    function saveDB() {
+      localStorage.setItem('lks_products', JSON.stringify(db.products));
+      localStorage.setItem('lks_cart', JSON.stringify(db.cart));
+      localStorage.setItem('lks_orders', JSON.stringify(db.orders));
+      localStorage.setItem('lks_revenue', db.revenue.toString());
+    }
+
+    /* ================= FORMATTERS ================= */
+    const formatNPR = (num) => new Intl.NumberFormat('en-IN').format(num);
+
+    /* ================= FRONTEND RENDERERS ================= */
+    function renderCustomerProducts(filter = 'All') {
+      const grid = document.getElementById('products-grid');
+      const arrivalsContainer = document.getElementById('arrivals-container');
+
+      grid.innerHTML = '';
+      arrivalsContainer.innerHTML = '';
+
+      // Update Filter Active State
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if(btn.dataset.filter === filter) {
+          btn.classList.add('border-b', 'border-[#D4AF37]', 'text-white');
+          btn.classList.remove('text-neutral-400');
+        } else {
+          btn.classList.remove('border-b', 'border-[#D4AF37]', 'text-white');
+          btn.classList.add('text-neutral-400');
+        }
+      });
+
+      // Filter products
+      const filtered = filter === 'All' ? db.products : db.products.filter(p => p.category === filter);
+      const specials = db.products.filter(p => p.special);
+
+      // Render Store Grid
+      filtered.forEach(p => {
+        grid.innerHTML += createProductCard(p);
+      });
+
+      // Render Arrivals (Horizontal Scroll)
+      specials.forEach(p => {
+        arrivalsContainer.innerHTML += createArrivalCard(p);
+      });
+
+      init3DTiltCards();
+    }
+
+    function createProductCard(p) {
+      return `
+        <div class="tilt-card group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d">
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-5 flex flex-col flex-1 z-10 bg-[#050505] transform translate-z-20">
+            <div class="text-xs text-neutral-500 font-normal mb-1">${p.category}</div>
+            <h3 class="text-sm font-medium text-white mb-3 truncate">${p.name}</h3>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="text-sm font-medium text-[#D4AF37]">NPR ${formatNPR(p.price)}</div>
+              <button onclick="addToCart(${p.id})" class="text-xs font-medium text-white hover:text-[#D4AF37] transition-colors flex items-center gap-1 uppercase tracking-widest">
+                Add <iconify-icon icon="solar:cart-plus-linear" stroke-width="1.5"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function createArrivalCard(p) {
+      return `
+        <div class="tilt-card min-w-[280px] md:min-w-[320px] snap-start group relative bg-[#050505] border border-neutral-900 hover:border-[#D4AF37]/50 transition-all rounded-sm overflow-hidden flex flex-col preserve-3d cursor-pointer">
+           <div class="absolute top-3 left-3 z-20">
+              <span class="bg-[#D4AF37] text-black text-[0.65rem] font-medium px-2 py-1 uppercase tracking-widest rounded-sm shadow-lg">New</span>
+            </div>
+          <div class="aspect-square w-full bg-neutral-900/30 relative overflow-hidden flex items-center justify-center p-8 transform translate-z-10">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+          </div>
+          <div class="p-6 flex flex-col flex-1 z-10 bg-gradient-to-t from-black to-[#050505] transform translate-z-20">
+            <h3 class="text-base font-medium text-white mb-1 truncate">${p.name}</h3>
+            <div class="text-sm font-medium text-[#D4AF37] mb-4">NPR ${formatNPR(p.price)}</div>
+            <button onclick="addToCart(${p.id})" class="w-full border border-neutral-800 py-2 text-xs font-medium text-white hover:text-black hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all rounded-sm uppercase tracking-widest">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    window.filterProducts = (cat) => renderCustomerProducts(cat);
+
+    /* ================= CART LOGIC ================= */
+    function addToCart(id) {
+      const product = db.products.find(p => p.id === id);
+      if(!product) return;
+      const existing = db.cart.find(item => item.id === id);
+      if(existing) {
+        existing.qty += 1;
+      } else {
+        db.cart.push({ ...product, qty: 1 });
+      }
+      saveDB();
+      updateCartUI();
+      toggleCart(); // Open cart automatically
+    }
+
+    function removeFromCart(id) {
+      db.cart = db.cart.filter(item => item.id !== id);
+      saveDB();
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById('cart-count');
+      const itemsEl = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+
+      const totalItems = db.cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = db.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      countEl.innerText = totalItems;
+      totalEl.innerText = `NPR ${formatNPR(totalPrice)}`;
+
+      if(db.cart.length === 0) {
+        itemsEl.innerHTML = `<div class="text-center text-xs text-neutral-500 mt-10 uppercase tracking-widest">Your bag is empty</div>`;
+        return;
+      }
+
+      itemsEl.innerHTML = db.cart.map(item => `
+        <div class="flex items-center gap-4 bg-black border border-neutral-900 p-3 rounded-sm">
+          <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" class="w-16 h-16 object-cover rounded-sm grayscale opacity-80" alt="${item.name}">
+          <div class="flex-1">
+            <div class="text-xs font-medium text-white truncate w-32">${item.name}</div>
+            <div class="text-[0.65rem] text-neutral-500 mt-1">Qty: ${item.qty}</div>
+            <div class="text-xs font-medium text-[#D4AF37] mt-1">NPR ${formatNPR(item.price * item.qty)}</div>
+          </div>
+          <button onclick="removeFromCart(${item.id})" class="text-neutral-500 hover:text-red-400 transition-colors p-2">
+            <iconify-icon icon="solar:trash-bin-trash-linear"></iconify-icon>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('cart-overlay');
+      if (drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        updateCartUI();
+      } else {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function checkout() {
+      if(db.cart.length === 0) return alert("Cart is empty");
+
+      const totalPrice = db.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      db.orders.push({ id: Date.now(), items: [...db.cart], total: totalPrice });
+      db.revenue += totalPrice;
+      db.cart = [];
+      saveDB();
+
+      updateCartUI();
+      toggleCart();
+      alert("Order placed successfully! (Simulated)");
+      renderAdminDashboard(); // Update backend silently
+    }
+
+    /* ================= ADMIN LOGIC ================= */
+    const loginModal = document.getElementById('login-modal');
+    const adminView = document.getElementById('admin-view');
+    const customerView = document.getElementById('customer-view');
+    const addProductModal = document.getElementById('add-product-modal');
+
+    function toggleLogin() {
+      loginModal.classList.remove('hidden');
+      loginModal.classList.add('flex');
+      setTimeout(() => loginModal.classList.remove('opacity-0'), 10);
+    }
+
+    function hideLogin() {
+      loginModal.classList.add('opacity-0');
+      setTimeout(() => {
+        loginModal.classList.add('hidden');
+        loginModal.classList.remove('flex');
+      }, 300);
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      hideLogin();
+      customerView.classList.add('opacity-0');
+      setTimeout(() => {
+        customerView.classList.replace('block', 'hidden');
+        adminView.classList.remove('hidden');
+        renderAdminDashboard();
+        setTimeout(() => adminView.classList.remove('opacity-0'), 50);
+      }, 500);
+    }
+
+    function logoutAdmin() {
+      adminView.classList.add('opacity-0');
+      setTimeout(() => {
+        adminView.classList.add('hidden');
+        customerView.classList.replace('hidden', 'block');
+        renderCustomerProducts();
+        setTimeout(() => customerView.classList.remove('opacity-0'), 50);
+      }, 500);
+    }
+
+    function toggleAddProductModal() {
+      if (addProductModal.classList.contains('hidden')) {
+        addProductModal.classList.remove('hidden');
+        addProductModal.classList.add('flex');
+        setTimeout(() => addProductModal.classList.remove('opacity-0'), 10);
+      } else {
+        addProductModal.classList.add('opacity-0');
+        setTimeout(() => {
+          addProductModal.classList.add('hidden');
+          addProductModal.classList.remove('flex');
+        }, 300);
+      }
+    }
+
+    function handleAddProduct(e) {
+      e.preventDefault();
+      const newProduct = {
+        id: Date.now(),
+        name: document.getElementById('add-name').value,
+        category: document.getElementById('add-cat').value,
+        price: parseInt(document.getElementById('add-price').value),
+        img: document.getElementById('add-img').value,
+        special: document.getElementById('add-special').checked
+      };
+      db.products.push(newProduct);
+      saveDB();
+      toggleAddProductModal();
+      renderAdminDashboard();
+      e.target.reset();
+    }
+
+    function adminDeleteProduct(id) {
+      db.products = db.products.filter(p => p.id !== id);
+      saveDB();
+      renderAdminDashboard();
+    }
+
+    function renderAdminDashboard() {
+      document.getElementById('admin-revenue').innerText = `NPR ${formatNPR(db.revenue)}`;
+      document.getElementById('admin-orders-count').innerText = db.orders.length;
+      document.getElementById('admin-products-count').innerText = db.products.length;
+
+      const tbody = document.getElementById('admin-table-body');
+      tbody.innerHTML = db.products.map(p => `
+        <tr class="hover:bg-neutral-900/20 transition-colors">
+          <td class="px-6 py-4 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-sm bg-neutral-800 overflow-hidden flex-shrink-0">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="${p.name}" class="w-full h-full object-cover grayscale opacity-80">
+            </div>
+            <span class="font-medium text-white truncate max-w-[150px] block">${p.name} ${p.special ? '<span class="text-[0.5rem] bg-[#D4AF37] text-black px-1 rounded-sm ml-1">SPL</span>' : ''}</span>
+          </td>
+          <td class="px-6 py-4 text-neutral-400 whitespace-nowrap">${p.category}</td>
+          <td class="px-6 py-4 text-white">${formatNPR(p.price)}</td>
+          <td class="px-6 py-4 text-right">
+            <button onclick="adminDeleteProduct(${p.id})" class="text-neutral-500 hover:text-red-400 transition-colors p-1"><iconify-icon icon="solar:trash-bin-trash-linear"></iconify-icon></button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    /* ================= EFFECTS & 3D ANIMATIONS ================= */
+    function initScrollReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    function init3DTiltCards() {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -5;
+          const rotateY = ((x - centerX) / centerX) * 5;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+      });
+    }
+
+    // Three.js Abstract Background
+    function init3DExperience() {
+      const canvas = document.getElementById('hero-3d-canvas');
+      if (!canvas) return;
+
+      const scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x000000, 0.035);
+
+      const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 15;
+
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Abstract rings
+      const group = new THREE.Group();
+      const material = new THREE.MeshStandardMaterial({ color: 0xD4AF37, metalness: 0.8, roughness: 0.2, wireframe: true, transparent: true, opacity: 0.3 });
+
+      for(let i=0; i<3; i++) {
+        const geo = new THREE.TorusGeometry(3 + (i*1.5), 0.1, 16, 100);
+        const mesh = new THREE.Mesh(geo, material);
+        mesh.rotation.x = Math.random() * Math.PI;
+        mesh.rotation.y = Math.random() * Math.PI;
+        group.add(mesh);
+      }
+      scene.add(group);
+
+      const particles = new THREE.BufferGeometry();
+      const pCount = 500;
+      const pArr = new Float32Array(pCount * 3);
+      for(let i=0; i<pCount*3; i++) pArr[i] = (Math.random() - 0.5) * 30;
+      particles.setAttribute('position', new THREE.BufferAttribute(pArr, 3));
+      const pMat = new THREE.PointsMaterial({ size: 0.05, color: 0xD4AF37, transparent: true, opacity: 0.5 });
+      const pMesh = new THREE.Points(particles, pMat);
+      scene.add(pMesh);
+
+      const light = new THREE.PointLight(0xD4AF37, 2, 20);
+      light.position.set(0, 0, 5);
+      scene.add(light);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+
+      let mouseX = 0, mouseY = 0;
+      document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX - window.innerWidth / 2) * 0.001;
+        mouseY = (e.clientY - window.innerHeight / 2) * 0.001;
+      });
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      const clock = new THREE.Clock();
+      function animate() {
+        requestAnimationFrame(animate);
+        const t = clock.getElapsedTime();
+        group.rotation.x += 0.001;
+        group.rotation.y += 0.002;
+        group.position.x += (mouseX * 5 - group.position.x) * 0.05;
+        group.position.y += (-mouseY * 5 - group.position.y) * 0.05;
+        pMesh.rotation.y = t * 0.02;
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    /* ================= INITIALIZATION ================= */
+    window.onload = () => {
+      renderCustomerProducts();
+      updateCartUI();
+      initScrollReveal();
+      init3DExperience();
+      // small delay to allow initial cards to load before adding tilt listeners
+      setTimeout(init3DTiltCards, 500);
+    };
+  </script>
+
+</body></html>

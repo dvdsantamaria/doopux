@@ -1,0 +1,383 @@
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASENAI | Lo Inmarcesible</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root {
+--bg-primary: #EFECE6;
+--bg-secondary: #E0DAD0;
+--bg-dark: #111110;
+--text-main: #1A1917;
+--text-muted: #6B6560;
+--accent: #C8BFB2;
+}
+body {
+font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+background-color: var(--bg-primary);
+color: var(--text-main);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+html { scroll-behavior: smooth; }
+/* Subtle noise overlay for organic feel */
+.noise-overlay::before {
+content: "";
+position: absolute;
+top: 0; left: 0; width: 100%; height: 100%;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+pointer-events: none;
+z-index: 10;
+}
+</style><!-- aura-ga4-start -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M6V79H761');
+</script>
+<!-- aura-ga4-end -->
+</head>
+<body class="selection:bg-[#C8BFB2] selection:text-[#111110] overflow-x-hidden">
+
+    <!-- 0. Announcement Bar -->
+    <div class="bg-[#111110] text-[#C8BFB2] text-xs font-extralight tracking-widest py-3 text-center uppercase relative z-50">
+        Envío sin costo en toda la colección.
+    </div>
+
+    <!-- 1. Navigation -->
+    <nav class="absolute top-12 left-0 w-full z-40 px-6 lg:px-12 py-4 flex items-center justify-between text-[#1A1917]">
+        <!-- Left Links -->
+        <div class="hidden md:flex items-center gap-10 text-sm font-extralight tracking-wide">
+            <a href="#" class="hover:opacity-50 transition-opacity duration-300">The Drop</a>
+            <a href="#" class="hover:opacity-50 transition-opacity duration-300">Filosofía</a>
+            <a href="#" class="hover:opacity-50 transition-opacity duration-300">Journal</a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <button class="md:hidden">
+            <i data-lucide="menu" class="w-6 h-6" stroke-width="1.5"></i>
+        </button>
+
+        <!-- Center Logo (Custom Apple-style abstract mark + text) -->
+        <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
+
+            <a href="#" class="text-xl font-light tracking-tight">ASENAI</a>
+        </div>
+
+        <!-- Right Icons -->
+        <div class="flex items-center gap-6">
+            <button class="hover:opacity-50 transition-opacity duration-300 hidden md:block">
+                <i data-lucide="search" class="w-5 h-5" stroke-width="1.5"></i>
+            </button>
+            <button class="hover:opacity-50 transition-opacity duration-300 hidden md:block">
+                <i data-lucide="user" class="w-5 h-5" stroke-width="1.5"></i>
+            </button>
+            <button class="hover:opacity-50 transition-opacity duration-300 relative flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5" stroke-width="1.5"></i>
+                <span class="text-xs font-extralight">(0)</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 2. HERO -->
+    <section class="relative min-h-screen w-full flex flex-col lg:flex-row bg-[#EFECE6] pt-24 lg:pt-0">
+        <!-- Left 40% Image -->
+        <div class="w-full lg:w-[40%] h-[60vh] lg:h-screen relative noise-overlay overflow-hidden">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e41b2970-e159-428d-a954-89f6e98d69aa_1600w.jpg" alt="Woman in stillness" class="grayscale-[20%] sepia-[10%] object-center animate-[imageFade_1.2s_ease-out] tracking-tighter w-full h-full object-cover scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent lg:hidden"></div>
+        </div>
+
+        <!-- Right 60% Content -->
+        <div class="lg:w-[60%] flex flex-col lg:px-24 w-full z-10 pt-16 pr-8 pb-16 pl-8 relative justify-center">
+            <span class="text-xs tracking-widest text-[#6B6560] uppercase mb-12 block reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]">La Colección Esencial →</span>
+
+            <h1 class="text-6xl lg:text-8xl font-light tracking-tight text-[#1A1917] leading-[1.05] mb-12">
+                <span class="block reveal delay-100 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] font-light tracking-tighter">Moving</span>
+                <span class="block reveal delay-200 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] font-light tracking-tighter">with</span>
+                <span class="block reveal delay-300 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] font-thin italic tracking-tighter">purpose.</span>
+            </h1>
+
+            <div class="w-16 h-[1px] bg-[#C8BFB2] mb-8 reveal delay-400 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]"></div>
+
+            <p class="leading-relaxed reveal delay-500 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] text-base text-[#6B6560] font-extralight max-w-sm mb-16">
+                No para llamar la atención.<br>Para habitar tu cuerpo.
+            </p>
+
+            <div class="reveal delay-600 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                <button class="bg-[#111110] text-[#EFECE6] px-8 py-4 rounded-full text-xs tracking-widest font-light hover:scale-[1.02] transition-transform duration-500 uppercase">
+                    Descubrir la pieza
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Product Card -->
+        <div class="hidden lg:flex absolute bottom-12 right-12 bg-white/80 backdrop-blur-xl p-4 rounded-2xl items-center gap-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/20 reveal delay-700 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+            <div class="w-16 h-16 rounded-xl overflow-hidden bg-[#E0DAD0]">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="The Bodysuit" class="w-full h-full object-cover">
+            </div>
+            <div class="pr-4">
+                <p class="text-sm font-light text-[#1A1917] mb-1">The Bodysuit in Onyx</p>
+                <a href="#" class="text-xs font-extralight text-[#6B6560] border-b border-[#6B6560]/30 pb-0.5 hover:text-[#1A1917] transition-colors">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRODUCT SECTION -->
+    <section class="bg-[#E0DAD0] flex flex-col lg:flex-row w-full">
+        <!-- Left Image -->
+        <div class="w-full lg:w-1/2 h-[60vh] lg:min-h-screen overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="The Form Bodysuit" class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-[2s] ease-out">
+        </div>
+
+        <!-- Right Details -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 lg:px-24 py-24 reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+            <span class="text-xs tracking-widest text-[#6B6560] uppercase mb-8 block">01 — La Pieza</span>
+            <h2 class="text-5xl lg:text-6xl font-light tracking-tight text-[#1A1917] mb-4">The Form Bodysuit</h2>
+            <p class="text-lg font-light text-[#6B6560] mb-12">$128</p>
+
+            <div class="w-full h-[1px] bg-[#C8BFB2] mb-12"></div>
+
+            <p class="text-base font-extralight text-[#1A1917] leading-[1.9] mb-16 max-w-md">
+                Comodidad de segunda piel. Soporte estructurado.
+                Construido para moverse contigo, no en tu contra.
+                Para los momentos en que te eliges a ti misma.
+            </p>
+
+            <!-- Color Selector -->
+            <div class="mb-10">
+                <p class="text-xs tracking-widest uppercase font-extralight mb-5 text-[#6B6560]">Color — <span class="text-[#1A1917] font-light">Onyx</span></p>
+                <div class="flex gap-4">
+                    <button class="w-8 h-8 rounded-full bg-[#111110] ring-1 ring-offset-4 ring-offset-[#E0DAD0] ring-[#111110] transition-all"></button>
+                    <button class="w-8 h-8 rounded-full bg-[#EFECE6] border border-[#C8BFB2] hover:ring-1 hover:ring-offset-4 ring-offset-[#E0DAD0] ring-[#C8BFB2] transition-all"></button>
+                    <button class="w-8 h-8 rounded-full bg-[#8A8480] border border-transparent hover:ring-1 hover:ring-offset-4 ring-offset-[#E0DAD0] ring-[#8A8480] transition-all"></button>
+                </div>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="mb-12">
+                <div class="flex justify-between items-center mb-5">
+                    <p class="text-xs tracking-widest uppercase font-extralight text-[#6B6560]">Size</p>
+                </div>
+                <div class="grid grid-cols-5 gap-2">
+                    <button class="py-3 border border-[#C8BFB2] text-sm font-light text-[#1A1917] hover:border-[#1A1917] transition-colors rounded-sm">XS</button>
+                    <button class="py-3 border border-[#C8BFB2] text-sm font-light text-[#1A1917] hover:border-[#1A1917] transition-colors rounded-sm">S</button>
+                    <button class="py-3 bg-[#111110] text-[#EFECE6] border border-[#111110] text-sm font-light rounded-sm shadow-sm">M</button>
+                    <button class="py-3 border border-[#C8BFB2] text-sm font-light text-[#1A1917] hover:border-[#1A1917] transition-colors rounded-sm">L</button>
+                    <button class="py-3 border border-[#C8BFB2] text-sm font-light text-[#1A1917] hover:border-[#1A1917] transition-colors rounded-sm">XL</button>
+                </div>
+            </div>
+
+            <button class="w-full bg-[#111110] text-[#EFECE6] py-5 rounded-md text-xs tracking-widest font-light hover:bg-[#2A2A28] transition-colors duration-300 mb-6 uppercase">
+                Add to Bag
+            </button>
+            <p class="text-xs text-center font-extralight text-[#6B6560]">Ships within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- 4. PHILOSOPHY BREAK -->
+    <section class="bg-[#111110] py-40 px-6 flex flex-col items-center justify-center text-center">
+        <div class="max-w-3xl w-full">
+            <span class="text-xs tracking-widest text-[#C8BFB2] uppercase mb-16 block font-extralight reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">Por qué existimos</span>
+
+            <h2 class="text-5xl lg:text-7xl font-light tracking-tight text-[#EFECE6] leading-[1.15] mb-16 reveal delay-200 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                ASENAI nació<br>para recordar.
+            </h2>
+
+            <p class="text-base lg:text-lg font-extralight text-[#8A8480] leading-[2.2] reveal delay-400 max-w-lg mx-auto transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                No para seguir tendencias.<br>
+                Para lo inmarcesible:<br>
+                aquello que no se marchita con el tiempo,<br>
+                con la opinión, ni con el ruido del mundo.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. FEATURES -->
+    <section class="bg-[#EFECE6] py-40 px-6 lg:px-12 border-b border-[#E0DAD0]">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-xs tracking-widest uppercase font-extralight text-center mb-24 text-[#6B6560] reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">La Arquitectura del Confort</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-[#E8E3DA] p-10 rounded-xl hover:-translate-y-1 transition-transform duration-500 reveal shadow-sm transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                    <i data-lucide="wind" class="w-6 h-6 mb-8 text-[#1A1917]" stroke-width="1.5"></i>
+                    <h4 class="text-xl font-light tracking-tight text-[#1A1917] mb-4">Tejido Respirable</h4>
+                    <p class="text-sm font-extralight text-[#6B6560] leading-[1.8]">Micro-perforaciones que liberan el calor naturalmente.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[#E8E3DA] p-10 rounded-xl hover:-translate-y-1 transition-transform duration-500 reveal delay-100 shadow-sm transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                    <i data-lucide="minimize-2" class="w-6 h-6 mb-8 text-[#1A1917]" stroke-width="1.5"></i>
+                    <h4 class="text-xl font-light tracking-tight text-[#1A1917] mb-4">Núcleo Compresivo</h4>
+                    <p class="text-sm font-extralight text-[#6B6560] leading-[1.8]">Un abrazo suave que sostiene sin restringir tu práctica.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[#E8E3DA] p-10 rounded-xl hover:-translate-y-1 transition-transform duration-500 reveal delay-200 shadow-sm transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                    <i data-lucide="thermometer-sun" class="w-6 h-6 mb-8 text-[#1A1917]" stroke-width="1.5"></i>
+                    <h4 class="text-xl font-light tracking-tight text-[#1A1917] mb-4">Gestión Térmica</h4>
+                    <p class="text-sm font-extralight text-[#6B6560] leading-[1.8]">Se adapta a tu temperatura corporal durante el movimiento.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-[#E8E3DA] p-10 rounded-xl hover:-translate-y-1 transition-transform duration-500 reveal delay-300 shadow-sm transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                    <i data-lucide="layers" class="w-6 h-6 mb-8 text-[#1A1917]" stroke-width="1.5"></i>
+                    <h4 class="text-xl font-light tracking-tight text-[#1A1917] mb-4">Sin Costuras</h4>
+                    <p class="text-sm font-extralight text-[#6B6560] leading-[1.8]">Sin herrajes, sin presión constante, cero distracciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SENSORY STORY -->
+    <section class="bg-[#EFECE6] w-full">
+        <!-- Row 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:min-h-0">
+            <div class="flex flex-col justify-center px-8 lg:px-24 py-24 order-2 lg:order-1 bg-[#E0DAD0] reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                <h3 class="text-4xl lg:text-5xl font-light tracking-tight text-[#1A1917] mb-3 leading-tight">El movimiento no<br>es una métrica.</h3>
+                <h3 class="text-4xl lg:text-5xl font-light tracking-tight text-[#6B6560] mb-10 pl-12">Es un ritual.</h3>
+                <p class="text-base font-extralight text-[#1A1917] leading-[1.9] max-w-md">
+                    Eliminamos el ruido de la ropa deportiva tradicional para enfocarnos en lo que importa: la sensación del tejido contra tu piel, la libertad de una respiración profunda y el poder silencioso de moverte con intención.
+                </p>
+            </div>
+            <div class="order-1 lg:order-2 h-[50vh] lg:h-auto relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Yoga ritual" class="w-full h-full object-cover grayscale contrast-[1.1] hover:grayscale-0 transition-all duration-[2s]">
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:min-h-0">
+            <div class="h-[50vh] lg:h-auto relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Fabric details" class="w-full h-full object-cover opacity-90 mix-blend-multiply hover:scale-105 transition-transform duration-[2s]">
+            </div>
+            <div class="flex flex-col justify-center px-8 lg:px-24 py-24 bg-[#EFECE6] reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                <h3 class="text-4xl lg:text-5xl font-light tracking-tight text-[#1A1917] mb-10 leading-[1.15]">
+                    Fuerza en silencio.<br>Elegancia sin esfuerzo.
+                </h3>
+                <p class="text-base font-extralight text-[#1A1917] leading-[1.9] max-w-md">
+                    Cada pieza es disciplina. Presencia. Respeto propio. No es ropa diseñada para la mirada ajena — es indumentaria creada para habitar tu cuerpo de forma consciente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. EDITORIAL GRID -->
+    <section class="bg-[#1A1917] py-32 px-6 lg:px-12">
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-[1400px] mx-auto space-y-6">
+            <div class="relative group overflow-hidden rounded-lg break-inside-avoid reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full object-cover">
+                <div class="absolute inset-0 bg-[#C8BFB2]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-700"></div>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg break-inside-avoid reveal delay-100 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full object-cover aspect-square">
+                <div class="absolute inset-0 bg-[#C8BFB2]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-700"></div>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg break-inside-avoid reveal delay-200 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full object-cover aspect-[3/4]">
+                <div class="absolute inset-0 bg-[#C8BFB2]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-700"></div>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg break-inside-avoid reveal hidden md:block transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+                <img src="https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full object-cover">
+                <div class="absolute inset-0 bg-[#C8BFB2]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-700"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. MANIFESTO -->
+    <section class="bg-[#EFECE6] py-48 px-6 flex flex-col items-center text-center">
+        <span class="text-[10px] tracking-[0.4em] text-[#1A1917] mb-20 block reveal font-medium uppercase transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">Asenai</span>
+
+        <p class="text-3xl lg:text-4xl font-light tracking-tight text-[#1A1917] leading-[1.6] max-w-2xl mb-24 reveal delay-200 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+            ASENAI fue creada para la mujer que entendió que su valor no depende del mundo externo.<br><br>
+            Para quien ha dejado de compararse.<br>
+            Para quien cumple su palabra.<br>
+            Para quien elige vivir con propósito.
+        </p>
+
+        <p class="text-sm tracking-[0.2em] text-[#6B6560] font-extralight uppercase reveal delay-400 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+            Lo que es verdadero en ti... no se marchita.
+        </p>
+    </section>
+
+    <!-- 9. FINAL CTA -->
+    <section class="bg-[#111110] min-h-[80vh] flex flex-col justify-center items-center px-6 relative overflow-hidden">
+        <div class="relative z-10 flex flex-col items-center reveal transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-0 translate-y-10">
+            <h2 class="text-5xl lg:text-7xl font-light tracking-tight text-[#EFECE6] mb-16 text-center leading-tight">
+                Comienza tu movimiento.
+            </h2>
+
+            <button class="border border-[#C8BFB2] text-[#C8BFB2] px-10 py-5 rounded-full text-xs tracking-[0.2em] font-light hover:bg-[#C8BFB2] hover:text-[#111110] transition-all duration-500 uppercase flex items-center gap-3 group">
+                Descubrir la pieza
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" stroke-width="1.5"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="bg-[#111110] border-t border-white/10 pt-20 pb-12 px-6 lg:px-12 text-[#6B6560] text-sm font-extralight tracking-wide">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center mb-16">
+
+            <!-- Left: Links -->
+            <div class="flex gap-8 justify-center md:justify-start">
+                <a href="#" class="hover:text-[#EFECE6] transition-colors">Shop</a>
+                <a href="#" class="hover:text-[#EFECE6] transition-colors">Filosofía</a>
+                <a href="#" class="hover:text-[#EFECE6] transition-colors">Contacto</a>
+            </div>
+
+            <!-- Center: Logo -->
+            <div class="flex items-center justify-center gap-3 text-[#EFECE6]">
+
+                <span class="text-lg font-light tracking-tight">ASENAI</span>
+            </div>
+
+            <!-- Right: Socials -->
+            <div class="flex gap-6 justify-center md:justify-end">
+                <a href="#" class="hover:text-[#EFECE6] transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5" stroke-width="1.5"></i>
+                </a>
+                <a href="#" class="hover:text-[#EFECE6] transition-colors">
+                    <i data-lucide="twitter" class="w-5 h-5" stroke-width="1.5"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center text-xs text-[#6B6560]/60">
+            © 2025 ASENAI. Hecho con intención.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => {
+                // Set initial state
+                el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-[1200ms]', 'ease-[cubic-bezier(0.25,1,0.5,1)]');
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body></html>
