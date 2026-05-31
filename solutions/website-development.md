@@ -2,8 +2,8 @@
 layout: service
 title: Website Development
 intro: "Clean architecture, fast performance, and SEO baked in from day one."
-meta_description: "Websites built for outcomes — performance, accessibility, and SEO foundations with design systems you can scale."
-meta_title: "Website Development & Platform Selection — Doop UX"
+meta_description: "Websites built for outcomes, performance, accessibility, and SEO foundations with design systems you can scale."
+meta_title: "Website Development & Platform Selection | Doop UX"
 meta_keywords: "website development, webflow, shopify, ecommerce development, headless cms, website migration"
 service_type: "Website development and platform consulting"
 service_audience: "Brands that need scalable, high-performance websites and commerce experiences"
@@ -30,7 +30,7 @@ Webflow is our go-to when you need full design control without sacrificing perfo
 ### Pros
 
 - Full design freedom without rigid templates.
-- Clean, semantic code output — excellent for technical SEO.
+- Clean, semantic code output, excellent for technical SEO.
 - Fast load times and great Core Web Vitals performance.
 - Native animations and interactions without external plugins.
 - Easy visual content editing using Webflow Editor.
@@ -41,11 +41,11 @@ Webflow is our go-to when you need full design control without sacrificing perfo
 - Can require support when working with more advanced content structures (e.g., linking services to related case studies or blog articles).
 - Higher learning curve for clients who want to fully self-manage.
 - Not ideal for robust or complex e-commerce setups.
-- Geared towards larger, design-driven websites with multiple feedback rounds — which usually leads to longer development timelines and higher costs for design iterations.
+- Geared towards larger, design-driven websites with multiple feedback rounds, which usually leads to longer development timelines and higher costs for design iterations.
 
 ### Getting Started
 
-At Doop UX, we start with a clear audit of your goals and content. We define the site map, SEO priorities, wireframes, and design. Then we build everything in Webflow with precision, following best practices in both UX and SEO. You end up with a fast, editable site — solid, scalable, and designed to grow with you.
+At Doop UX, we start with a clear audit of your goals and content. We define the site map, SEO priorities, wireframes, and design. Then we build everything in Webflow with precision, following best practices in both UX and SEO. You end up with a fast, editable site, solid, scalable, and designed to grow with you.
 
 ## Squarespace
 
@@ -57,14 +57,14 @@ Squarespace is ideal for businesses that are just starting out and need a profes
 
 - All-in-one platform with built-in features: hosting, forms, blog, scheduling, e-commerce, newsletter, and more.
 - Great for early-stage businesses or tight budgets.
-- Very easy to maintain — you can edit text, images, and sections without any technical knowledge.
-- Fast to launch with a professional look — if your content is ready, you can go live in 2–3 days.
+- Very easy to maintain, you can edit text, images, and sections without any technical knowledge.
+- Fast to launch with a professional look, if your content is ready, you can go live in 2–3 days.
 - Clean, modern, responsive templates.
 - Solid foundation that’s editable and scalable without technical overhead.
 
 ### Cons
 
-- Limited layout flexibility — you’re confined to pre-defined blocks and templates.
+- Limited layout flexibility, you’re confined to pre-defined blocks and templates.
 - Not suitable for highly custom visual designs or complex integrations.
 - Less control over technical SEO (though we optimize structure and content for best results).
 - Not recommended for large dynamic content structures.
@@ -73,13 +73,13 @@ Squarespace is ideal for businesses that are just starting out and need a profes
 
 ### Getting Started
 
-At Doop UX, we guide you through the essentials — content structure, page hierarchy, and key design priorities. We deliver a clean, flexible site aligned with your brand. Once online, we provide training so you can manage everything yourself: update content, launch new sections, or sell products independently.
+At Doop UX, we guide you through the essentials, content structure, page hierarchy, and key design priorities. We deliver a clean, flexible site aligned with your brand. Once online, we provide training so you can manage everything yourself: update content, launch new sections, or sell products independently.
 
 ## BigCommerce
 
 ### Why choose it
 
-BigCommerce is a robust e-commerce platform built for brands that want to scale their online store from day one. It’s ideal if you have a large product catalog, need advanced inventory logic, and want native integrations with payment gateways, shipping systems, and marketplaces — all without relying on third-party plugins.
+BigCommerce is a robust e-commerce platform built for brands that want to scale their online store from day one. It’s ideal if you have a large product catalog, need advanced inventory logic, and want native integrations with payment gateways, shipping systems, and marketplaces, all without relying on third-party plugins.
 
 ### Pros
 
@@ -100,20 +100,20 @@ BigCommerce is a robust e-commerce platform built for brands that want to scale 
 
 ### Getting Started
 
-At Doop UX, we work closely with you to understand your product structure, business logic, and automation needs. We create a scalable e-commerce foundation with a clear structure, optimized performance, and an intuitive shopping experience — built to grow with your brand.
+At Doop UX, we work closely with you to understand your product structure, business logic, and automation needs. We create a scalable e-commerce foundation with a clear structure, optimized performance, and an intuitive shopping experience, built to grow with your brand.
 
 ## Shopify
 
 ### Why choose it
 
-Shopify is the best choice if you want to sell online professionally without technical complexity. Its intuitive interface and extensive ecosystem make it easy to scale — from a simple shop to a full operation with multiple sales channels. Perfect for entrepreneurs who want clarity, speed, and control over their store.
+Shopify is the best choice if you want to sell online professionally without technical complexity. Its intuitive interface and extensive ecosystem make it easy to scale, from a simple shop to a full operation with multiple sales channels. Perfect for entrepreneurs who want clarity, speed, and control over their store.
 
 ### Pros
 
 - Extremely user-friendly, even for beginners.
 - Great for small to medium-sized stores looking to grow fast.
 - Vast ecosystem of ready-to-use apps and integrations.
-- Built-in support for payments, shipping, taxes — optimized for Australia and international markets.
+- Built-in support for payments, shipping, taxes, optimized for Australia and international markets.
 - Seamless selling on Instagram, Facebook, Google, TikTok, and more.
 - Clean, modern themes with flexible visual customization.
 - Reliable performance, scalability, and security.
@@ -123,11 +123,11 @@ Shopify is the best choice if you want to sell online professionally without tec
 - Less control over the underlying code and technical SEO compared to Webflow or BigCommerce.
 - Many essential features require third-party apps, increasing monthly costs.
 - Advanced design customization requires knowledge of Liquid (Shopify's templating language).
-- Not ideal for very large catalogs with complex stock logic — BigCommerce may be better in that case.
+- Not ideal for very large catalogs with complex stock logic, BigCommerce may be better in that case.
 
 ### Getting Started
 
-At Doop UX, we help you launch with clarity and confidence. From store structure and product setup to payment, shipping, and design — we take care of everything. Once live, we train you to manage your store smoothly so you can focus on growing your business.
+At Doop UX, we help you launch with clarity and confidence. From store structure and product setup to payment, shipping, and design, we take care of everything. Once live, we train you to manage your store smoothly so you can focus on growing your business.
 
 ## Shopify vs BigCommerce: How to Choose
 
@@ -151,7 +151,7 @@ Both platforms are powerful and designed for serious e-commerce. But choosing th
 
 ### Our Take at Doop
 
-We don’t push one over the other — we help you choose based on your actual business needs, future plans, and operational flow. The right platform should support your growth without friction or unnecessary complexity.
+We don’t push one over the other, we help you choose based on your actual business needs, future plans, and operational flow. The right platform should support your growth without friction or unnecessary complexity.
 
 ## Node + Strapi JS
 
@@ -169,30 +169,30 @@ This setup is ideal when:
 
 ### Pros
 
-- 100% custom — from UX wireframes to backend logic.
+- 100% custom, from UX wireframes to backend logic.
 - No platform fees or ecosystem lock-in.
 - Native API integrations and real backend logic from the ground up.
 - Structured content system: multilingual, role-based access, flexible relationships.
 - Full control over SEO technical structure and performance at the server level.
 - Built with open-source technologies used by millions of developers worldwide.
-- Future-proof and scalable — you’re not tied to us or a small dev team.
+- Future-proof and scalable, you’re not tied to us or a small dev team.
 
 ### Cons
 
-- Not plug-and-play — it requires planning, design, and real development work.
+- Not plug-and-play, it requires planning, design, and real development work.
 - Longer development timeline than platforms like Squarespace or Shopify.
 - Not recommended if you just need a quick brochure-style site.
 - Ongoing support is optional but advisable for evolving needs or scaling.
 
 ### Getting Started
 
-At Doop UX, we approach these projects holistically. We define your product architecture, user flows, and visual language — then bring it to life using modern development standards. It’s a serious solution for businesses that see technology as a long-term asset, not just a website.
+At Doop UX, we approach these projects holistically. We define your product architecture, user flows, and visual language, then bring it to life using modern development standards. It’s a serious solution for businesses that see technology as a long-term asset, not just a website.
 
 ## WordPress Migration
 
 ### Why migrate
 
-After 15 years of working with WordPress, we’ve seen its evolution up close. Originally built as a blogging platform, WordPress has grown by stacking features and plugins to meet a wide range of use cases — from e-commerce to memberships, booking systems, directories, and more.
+After 15 years of working with WordPress, we’ve seen its evolution up close. Originally built as a blogging platform, WordPress has grown by stacking features and plugins to meet a wide range of use cases, from e-commerce to memberships, booking systems, directories, and more.
 
 Today, WordPress still powers over 40% of the web*, but that doesn’t necessarily make it the best tool for every business. It was never designed from the ground up to support all these complex functionalities. As a result, most WordPress sites are held together by layers of third-party plugins, workarounds, and visual builders that can lead to serious long-term limitations.
 
@@ -215,7 +215,7 @@ Depending on your business needs, we recommend migrating to:
 - **Squarespace** – if you want simplicity and ease of use.
 - **Strapi or even Laravel** – if you need a fully custom backend and total technical freedom.
 
-We handle your migration carefully: preserving your content, maintaining your SEO ranking, and improving the overall user experience. You won’t just get a “copy” of your old site — you’ll get a cleaner, more efficient, and future-proof version.
+We handle your migration carefully: preserving your content, maintaining your SEO ranking, and improving the overall user experience. You won’t just get a “copy” of your old site, you’ll get a cleaner, more efficient, and future-proof version.
 
 ---
 
