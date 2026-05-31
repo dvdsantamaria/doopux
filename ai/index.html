@@ -2,8 +2,8 @@
 layout: null
 body_class: home theme-light
 meta_title: "AI Automation, Agentic Workflows & AI-Assisted SaaS — Doop UX"
-meta_description: "Doop UX designs agentic workflows, ships AI-assisted SaaS, and runs the web platforms that surround them — built with state-of-the-art tools by a team that has shipped fintech, enterprise and consumer products for 15+ years."
-meta_keywords: "ai automation, agentic workflows, mcp integrations, ai-assisted saas, llm orchestration, model context protocol, workflow analysis, saas development, web design, web development"
+meta_description: "Doop UX designs agentic workflows, ships AI-assisted SaaS, and architects MCP integrations — with tiered model selection and human oversight, built by a team that has shipped fintech, enterprise and consumer products for 15+ years."
+meta_keywords: "ai automation, agentic workflows, mcp integrations, ai-assisted saas, llm orchestration, model context protocol, workflow analysis, tiered model selection, saas development"
 schema_services:
 - name: "AI Automation & Agentic Workflows"
   description: "Map workflows, design autonomous AI agents, select the right model per task and connect to existing tools via MCP."
@@ -17,10 +17,6 @@ schema_services:
   description: "Audit current-state workflows, prioritise the painful ones and architect tiered AI plus MCP connectors that pay back fast."
   service_type: "AI strategy"
   url: "/solutions/ai-automation/"
-- name: "Web Design & Development"
-  description: "High-performing sites engineered for speed, accessibility, CRO and technical SEO — the workhorse around your AI stack."
-  service_type: "Web development"
-  url: "/solutions/website-development/"
 faq:
 - question: "What is an agentic workflow and how is it different from Zapier or Make?"
   answer: "Traditional automation links triggers to actions in a straight line. Agentic workflows give an AI agent a goal, the right tools and the autonomy to handle judgement, exceptions and multi-step reasoning — so you can replace stitched-together rules with one autonomous worker that you can actually trust."
@@ -28,10 +24,10 @@ faq:
   answer: "We tier the work. Frontier models like Claude or GPT-4 only run on tasks that genuinely need reasoning. Open-weight models cover routine drafting and normalisation. Pure rules and scripts handle calculations and reminders. That tiering typically cuts ongoing AI spend by 60–80% versus piping everything through a single premium model."
 - question: "Can you build a SaaS end to end with AI-assisted development?"
   answer: "Yes. We move from business analysis to functional spec to architecture before any code is written, then use AI coding tools under senior review to ship faster than a traditional agency. Stack picks favour cost-efficient infra: Next.js, serverless, managed Postgres, edge functions and Stripe."
-- question: "Do you still do web design and UX?"
-  answer: "Web design is one of the things we do best — it's the workhorse around the AI work. Most engagements still ship a fast, accessible, SEO-tuned site, often as the front door for the automation or SaaS we just built."
-- question: "How fast can a project launch?"
-  answer: "Lean engagements run 4–6 weeks from kick-off to live, whether that's an automation, an MVP SaaS or a website. Larger SaaS builds compress traditional agency timelines roughly in half thanks to AI-assisted delivery."
+- question: "How do you keep humans in control of the agents?"
+  answer: "Every workflow ships with explicit guardrails and a human review step before anything is sent, posted or paid. Agents draft, reason and prepare — a person signs off. The config is versioned and auditable, so you always know which model did what, and where the limits are."
+- question: "How fast can an automation launch?"
+  answer: "Lean engagements run 4–6 weeks from kick-off to live, whether that's an agentic workflow or an MVP SaaS. Larger builds compress traditional agency timelines roughly in half thanks to AI-assisted delivery under senior review."
 ---
 <!doctype html>
 <html lang="en">
@@ -1112,7 +1108,6 @@ faq:
       <button class="nav-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu"><span class="bars"></span></button>
       <nav id="siteNav" class="nav">
         <a href="{{ site.baseurl }}/solutions">Solutions</a>
-        <a href="{{ site.baseurl }}/ai">AI Transformation</a>
         <a href="{{ site.baseurl }}/showcase">Showcase</a>
         <a href="{{ site.baseurl }}/contact">Contact</a>
         <a class="aix-nav-cta" href="{{ site.baseurl }}/contact">Book a call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -1137,7 +1132,7 @@ faq:
               Automate the manual work. <em>Ship the product around it.</em>
             </h1>
             <p class="aix-lede">
-              Agentic AI workflows that replace admin, production SaaS shipped fast, and the web platforms around them — with human oversight on every step and tiered model selection that keeps costs honest.
+              Agentic AI workflows that replace manual admin, production SaaS shipped fast, and MCP integrations into the tools you already run — with human oversight on every step and tiered model selection that keeps costs honest.
             </p>
             <div class="aix-cta-row">
               <a class="aix-btn aix-btn--primary" href="{{ site.baseurl }}/contact">
@@ -1150,7 +1145,7 @@ faq:
               <span class="aix-pill">Agentic workflows</span>
               <span class="aix-pill">MCP integrations</span>
               <span class="aix-pill">AI-assisted SaaS</span>
-              <span class="aix-pill">Web design &amp; UX</span>
+              <span class="aix-pill">Tiered model selection</span>
             </div>
           </div>
 
@@ -1310,39 +1305,23 @@ faq:
             </div>
           </article>
 
-          <article class="aix-card aix-card--small aix-card--neutral">
-            <span class="aix-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </span>
-            <span class="aix-card-tag">Strategy</span>
-            <h3 style="font-size: 19px;">Workflow Strategy &amp; MCP Integrations</h3>
-            <p>Audit current state, prioritise the painful workflows, design the agent and integration fabric.</p>
-            <div class="aix-card-foot">
-              <span>Audit · Architecture</span>
-              <a class="more" href="{{ site.baseurl }}/solutions/ai-automation">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-          </article>
-
-          <article class="aix-card aix-card--wide aix-card--neutral">
+          <article class="aix-card aix-card--neutral" style="grid-column: 1 / -1;">
             <div class="aix-card-head">
               <span class="aix-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
               </span>
               <div>
-                <span class="aix-card-tag">The workhorse</span>
-                <h3 style="margin-top: 10px;">Web Design &amp; Development</h3>
+                <span class="aix-card-tag">Strategy</span>
+                <h3 style="margin-top: 10px;">Workflow Strategy &amp; MCP Integrations</h3>
               </div>
             </div>
-            <p>Fast, accessible, SEO-tuned sites built on Webflow, Shopify, BigCommerce or custom — often the front
-              door for the AI work we just shipped.</p>
-            <div class="aix-card-img aix-card-img--round aix-card-img--glow aix-depth" data-depth="0.025" style="right:-5%; bottom:-8%; width:45%; max-width:260px;">
-              {% include picture.html id="portfolio1" alt="" sizes="260px" loading="lazy" %}
-            </div>
+            <p>Audit current-state workflows, prioritise the painful ones by pain and payoff, then architect the
+              agent fabric and MCP connectors into the tools you already run — Outlook, SharePoint, Xero, CRMs.</p>
             <div class="aix-card-foot">
               <div class="aix-card-stack">
-                <span>Webflow</span><span>Shopify</span><span>BigCommerce</span><span>Squarespace</span>
+                <span>Workflow audit</span><span>Tiered model plan</span><span>MCP design</span><span>Guardrails</span>
               </div>
-              <a class="more" href="{{ site.baseurl }}/solutions/website-development">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              <a class="more" href="{{ site.baseurl }}/solutions/ai-automation">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </article>
         </div>
@@ -1513,48 +1492,8 @@ xero       = <span class="tk-str">"mcp://xero.payables"</span>
       </div>
     </section>
 
-    <!-- ==================== SHOWCASE ==================== -->
-    <div class="aix-chapter"><span class="num">05</span> <span>Selected work</span></div>
-    <section class="aix-section">
-      <div class="aix-wrap">
-        <header class="aix-section-head">
-          <span class="aix-eyebrow">Portfolio</span>
-          <h2>Fintech, enterprise, consumer — the foundation under the AI work.</h2>
-          <p>15+ years of shipped product across digital wallets, BaaS platforms, B2B portals and websites that
-            earn their hosting bill.</p>
-        </header>
-
-        <div class="aix-showcase">
-          <figure class="aix-show aix-show--xl">
-            {% include picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 900px) 100vw, 760px" %}
-            <figcaption class="aix-show-meta"><h4>Northgate Building Group</h4><p>Web platform + nine-workflow AI automation programme.</p></figcaption>
-          </figure>
-          <figure class="aix-show aix-show--md">
-            {% include picture.html id="portfolio2" alt="eFlow Virtual Queue" sizes="(max-width: 900px) 100vw, 380px" %}
-            <figcaption class="aix-show-meta"><h4>eFlow Virtual Queue</h4><p>SaaS on .NET microservices, PO with a 10+ team.</p></figcaption>
-          </figure>
-          <figure class="aix-show aix-show--md">
-            {% include picture.html id="portfolio5" alt="SAMPP wallet" sizes="(max-width: 900px) 100vw, 380px" %}
-            <figcaption class="aix-show-meta"><h4>SAMPP</h4><p>Consumer wallet on a white-label rail, with AR detection.</p></figcaption>
-          </figure>
-          <figure class="aix-show aix-show--md">
-            {% include picture.html id="portfolio1" alt="Boatique Marine" sizes="(max-width: 900px) 100vw, 380px" %}
-            <figcaption class="aix-show-meta"><h4>Boatique Marine</h4><p>Luxury charter site, built for speed and clarity.</p></figcaption>
-          </figure>
-          <figure class="aix-show aix-show--md">
-            {% include picture.html id="portfolio6" alt="Beyond Limits Foundation" sizes="(max-width: 900px) 100vw, 380px" %}
-            <figcaption class="aix-show-meta"><h4>Beyond Limits Foundation</h4><p>Donation journey rebuilt for effortless giving.</p></figcaption>
-          </figure>
-          <figure class="aix-show aix-show--xl">
-            {% include picture.html id="portfolio3" alt="Prana Ecotherapy" sizes="(max-width: 900px) 100vw, 760px" %}
-            <figcaption class="aix-show-meta"><h4>Prana Ecotherapy</h4><p>Site rebuild improving structure, readability and perceived quality.</p></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- ==================== STACK ==================== -->
-    <div class="aix-chapter"><span class="num">06</span> <span>Stack</span></div>
+    <div class="aix-chapter"><span class="num">05</span> <span>Stack</span></div>
     <section class="aix-section aix-section--alt">
       <div class="aix-wrap">
         <header class="aix-section-head">
@@ -1616,23 +1555,13 @@ xero       = <span class="tk-str">"mcp://xero.payables"</span>
                 <span class="aix-stack-tag">Clerk · Auth0</span>
               </div>
             </div>
-            <div class="aix-stack-cat d">
-              <div class="aix-stack-cat-head"><span class="n">Layer 04</span><span class="t">Web platforms</span></div>
-              <div class="aix-stack-tags">
-                <span class="aix-stack-tag">Webflow</span>
-                <span class="aix-stack-tag">Shopify</span>
-                <span class="aix-stack-tag">BigCommerce</span>
-                <span class="aix-stack-tag">Squarespace</span>
-                <span class="aix-stack-tag">Strapi</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==================== TESTIMONIALS ==================== -->
-    <div class="aix-chapter"><span class="num">07</span> <span>What clients say</span></div>
+    <div class="aix-chapter"><span class="num">06</span> <span>What clients say</span></div>
     <section class="aix-section">
       <div class="aix-wrap">
         <div class="aix-testis">
@@ -1671,7 +1600,7 @@ xero       = <span class="tk-str">"mcp://xero.payables"</span>
     </section>
 
     <!-- ==================== FAQ ==================== -->
-    <div class="aix-chapter"><span class="num">08</span> <span>FAQ</span></div>
+    <div class="aix-chapter"><span class="num">07</span> <span>FAQ</span></div>
     <section class="aix-section aix-section--alt">
       <div class="aix-wrap aix-wrap--narrow">
         <header class="aix-section-head">
@@ -1702,16 +1631,16 @@ xero       = <span class="tk-str">"mcp://xero.payables"</span>
               functions and Stripe.</div>
           </details>
           <details>
-            <summary>Do you still do web design and UX?</summary>
-            <div class="body">Web design is one of the things we do best — it's the workhorse around the AI work.
-              Most engagements still ship a fast, accessible, SEO-tuned site, often as the front door for the
-              automation or SaaS we just built.</div>
+            <summary>How do you keep humans in control of the agents?</summary>
+            <div class="body">Every workflow ships with explicit guardrails and a human review step before
+              anything is sent, posted or paid. Agents draft, reason and prepare — a person signs off. The config
+              is versioned and auditable, so you always know which model did what, and where the limits are.</div>
           </details>
           <details>
-            <summary>How fast can a project launch?</summary>
-            <div class="body">Lean engagements run 4–6 weeks from kick-off to live, whether that's an automation,
-              an MVP SaaS or a website. Larger SaaS builds compress traditional agency timelines roughly in half
-              thanks to AI-assisted delivery.</div>
+            <summary>How fast can an automation launch?</summary>
+            <div class="body">Lean engagements run 4–6 weeks from kick-off to live, whether that's an agentic
+              workflow or an MVP SaaS. Larger builds compress traditional agency timelines roughly in half thanks
+              to AI-assisted delivery under senior review.</div>
           </details>
         </div>
       </div>

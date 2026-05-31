@@ -229,3 +229,77 @@ Yes. We plan redirects, preserve structured data, rebuild information architectu
 
 **Do you offer support after the new site goes live?**  
 We provide training, documentation, and optional retainers for iterative improvements, performance monitoring, and new feature rollouts.
+
+---
+
+## Selected work
+
+{% assign manifest = site.data['image-manifest'] %}
+
+<div class="solutions-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 2vw, 24px); margin-top: 32px;">
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>Boatique Marine</strong><br>
+<span style="font-size:14px; opacity:.7;">Luxury marine charter site built for speed, clarity, and effortless enquiries.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>Prana Ecotherapy</strong><br>
+<span style="font-size:14px; opacity:.7;">Site redesign improving structure, readability and perceived quality.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>Northgate Building Group</strong><br>
+<span style="font-size:14px; opacity:.7;">Modular content system to scale fast while keeping consistency.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>Beyond Limits Children's Foundation</strong><br>
+<span style="font-size:14px; opacity:.7;">Donation journey rebuilt to make giving effortless for families and sponsors.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>Calida Ellora</strong><br>
+<span style="font-size:14px; opacity:.7;">Warm wellness brand system with calming visuals and expandable programs.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio8" alt="Electric Vibes" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>Electric Vibes</strong><br>
+<span style="font-size:14px; opacity:.7;">Immersive ecommerce experience for festival gear with dynamic merchandising.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>NTT Pilates</strong><br>
+<span style="font-size:14px; opacity:.7;">Membership flows and scheduling tools tailored for a boutique Pilates studio.</span>
+</figcaption>
+</figure>
+
+<figure style="margin:0; border-radius:12px; overflow:hidden; background:rgba(0,0,0,.04);">
+{% include picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw, 560px" %}
+<figcaption style="padding:14px 16px;">
+<strong>The One</strong><br>
+<span style="font-size:14px; opacity:.7;">Landing page to present the product, capture leads and highlight value quickly.</span>
+</figcaption>
+</figure>
+
+</div>
