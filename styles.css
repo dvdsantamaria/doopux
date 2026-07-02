@@ -2776,3 +2776,16 @@ body.home .slice-light .stat-label {
         color: #e9eef5
     }
 }
+
+/* Keep testimonial arrows inside the viewport (they sat off-screen between 760px and 1280px and caused horizontal page overflow) */
+.tst-prev {
+    left: max(8px, calc(50% - 640px))
+}
+
+.tst-next {
+    right: max(8px, calc(50% - 640px))
+}
+
+body.home .slice-light .tst-subtitle {
+    color: rgba(255, 255, 255, .85)
+}
