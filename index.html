@@ -1,38 +1,37 @@
 ---
 layout: null
 body_class: home
-meta_title: "UX, Web Development, SEO & Growth — Doop UX"
-meta_description: "Doop UX combines UX strategy, fast web development, AI automation and compound SEO to build digital
-products that grow your business."
-meta_keywords: "ux design, web development, ai automation, seo, growth strategy, product strategy, conversion
-optimization"
+meta_title: "Business Process Strategy, Web Development & AI — Doop UX"
+meta_description: "Doop UX designs the process, then builds the system. Business process optimization, growth strategy, web development and AI automation for small teams that want corporate-grade execution."
+meta_keywords: "business process optimization, process strategy, growth strategy, web development, workflow automation, ai automation, sops, small business consulting, sydney"
 schema_services:
-- name: "Website Development"
-description: "High-performing sites engineered for speed, accessibility, CRO and technical SEO."
-service_type: "Web development"
-url: "/solutions/website-development/"
-- name: "UX Consulting"
-description: "Customer research, UX audits and product strategy to guide confident decisions."
-service_type: "UX consulting"
-url: "/solutions/ux-consulting/"
-- name: "AI Automation"
-description: "Agents and workflows that connect your stack, eliminate busywork and surface insights."
-service_type: "AI automation"
-url: "/solutions/ai-automation/"
-- name: "SEO for AI Answers"
-description: "Content and structured data tuned for search engines, AI overviews and answer engines."
-service_type: "SEO for AI answers"
-url: "/solutions/seo-for-ai-answers/"
+  - name: "Web Development"
+    description: "Conversion-focused websites engineered for speed, CRO, technical SEO and sales process integration."
+    service_type: "Web development"
+    url: "solutions/website-development/"
+  - name: "Business Process Optimization"
+    description: "Process mapping, SOPs, workflow automation and tech stack audits that remove operational drag."
+    service_type: "Operations consulting"
+    url: "solutions/business-process-optimization/"
+  - name: "Growth Strategies"
+    description: "Market research, brand positioning and go-to-market strategy validated before you invest."
+    service_type: "Growth strategy"
+    url: "solutions/growth-strategies/"
+  - name: "AI Transformation"
+    description: "AI agents, automations and data pipelines integrated into your existing stack."
+    service_type: "AI automation"
+    url: "ai/"
 faq:
-- question: "What kind of teams does Doop UX partner with?"
-answer: "We work with founders, marketing leaders, and product teams that need enterprise-level execution without bulky
-agency layers—especially when speed, clarity, and measurable outcomes matter."
-- question: "How fast can a new project launch with Doop UX?"
-answer: "Typical engagements move from discovery to launch in 4–6 weeks, with lean sprints that validate direction
-quickly and keep momentum high."
-- question: "Can Doop UX integrate AI automation into our existing stack?"
-answer: "Yes. We map your workflows and integrate AI agents, automations, and data pipelines with tools like Zapier,
-Make, n8n, and custom APIs so you stay in control."
+  - question: "What kind of businesses does Doop UX partner with?"
+    answer: "We partner with small and mid-sized teams that need corporate-grade strategy and operations without heavy agency overhead."
+  - question: "Where do we start on a new engagement?"
+    answer: "We start with a diagnostic: goals, customer journey, operational bottlenecks, and the data you already have. That becomes the roadmap for delivery."
+  - question: "Can you integrate AI automation into our existing stack?"
+    answer: "Yes. We map your workflows and integrate AI agents, automations, and data pipelines with tools like Zapier, Make, n8n, and custom APIs so you stay in control."
+  - question: "How fast can we see progress?"
+    answer: "We typically deliver a strategy and first operational wins in 2 to 4 weeks, then execute in focused sprints."
+  - question: "Do you work with non-profits?"
+    answer: "Yes. We have deep experience with non-profits, including secure grant systems, sensitive data handling, donation workflows, and Privacy Act compliance."
 ---
 <!doctype html>
 <html lang="en">
@@ -41,18 +40,6 @@ Make, n8n, and custom APIs so you stay in control."
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preload" href="{{ site.baseurl }}/assets/fonts/Satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
-  {% assign lcp_media = site.data['image-manifest'].portfolio1 %}
-  {% if lcp_media %}
-  {% capture lcp_avif_srcset %}
-  {% for source in lcp_media.sources.avif %}
-  {{ site.baseurl }}{{ source.path }} {{ source.width }}w{% unless forloop.last %}, {% endunless %}
-  {% endfor %}
-  {% endcapture %}
-  {% assign lcp_primary = lcp_media.sources.avif | last %}
-  <link rel="preload" as="image" href="{{ site.baseurl }}{{ lcp_primary.path }}"
-    imagesrcset="{{ lcp_avif_srcset | strip }}" imagesizes="(max-width: 640px) 72vw, 360px" type="image/avif"
-    fetchpriority="high">
-  {% endif %}
   <style>
     :root {
       --bg-start: #be4fc1;
@@ -192,7 +179,49 @@ Make, n8n, and custom APIs so you stay in control."
       max-width: 22ch;
     }
 
-    .projects-inline {
+    .pillars {
+      display: flex;
+      justify-content: center;
+      gap: clamp(16px, 3vw, 32px);
+      margin-top: clamp(24px, 3vw, 40px);
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .pillar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, .12);
+      backdrop-filter: blur(10px);
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .pillar:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, .18);
+    }
+
+    @media (max-width:768px) {
+      .pillars {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pillar {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+    }
+
+    .hero-video {
       grid-row: 4;
       position: relative;
       width: 100svw;
@@ -200,72 +229,33 @@ Make, n8n, and custom APIs so you stay in control."
       margin-left: calc(50% - 50svw);
       overflow: hidden;
       align-self: end;
-      min-height: clamp(220px, 40svh, 420px);
+      min-height: clamp(220px, 35svh, 380px);
     }
 
-    .projects-clip {
+    .hero-video::before {
+      content: "";
       position: absolute;
       inset: 0;
-      overflow: hidden;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.75) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
-    .sheet {
+    .hero-video::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(190, 79, 193, 0.25) 0%, rgba(140, 98, 214, 0.15) 50%, rgba(119, 181, 214, 0.25) 100%);
+      z-index: 2;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    .hero-video video {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
-    }
-
-    .marquee {
-      display: flex;
-      gap: 0;
-      height: 100%;
-      width: max-content;
-      animation: scrollX 60s linear infinite;
-      will-change: transform;
-      line-height: 0;
-    }
-
-    @media (prefers-reduced-motion:reduce) {
-      .marquee {
-        animation: none;
-      }
-    }
-
-    @keyframes scrollX {
-      from {
-        transform: translate3d(0, 0, 0);
-      }
-
-      to {
-        transform: translate3d(-50%, 0, 0);
-      }
-    }
-
-    .project {
-      flex: 0 0 auto;
-      display: block;
-      width: clamp(200px, 32vw, 360px);
-      aspect-ratio: var(--project-aspect, 3 / 4);
-      overflow: hidden;
-      background-color: rgba(255, 255, 255, .08);
-      background-image: var(--project-placeholder, none);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .project img {
-      width: 100%;
-      height: 100%;
-      max-width: none;
       object-fit: cover;
-      display: block;
-    }
-
-    @media (max-width:640px) {
-      .project {
-        width: clamp(180px, 72vw, 280px);
-      }
+      object-position: center bottom;
     }
 
     #toast-anchor {
@@ -273,10 +263,10 @@ Make, n8n, and custom APIs so you stay in control."
       pointer-events: none;
     }
   </style>
-  <link rel="preload" href="{{ site.baseurl }}/styles.css?v=5" as="style" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v=5" media="print" onload="this.media='all'">
+  <link rel="preload" href="{{ site.baseurl }}/styles.css?v=6" as="style" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v=6" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v=5">
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css?v=6">
   </noscript>
 
   <!-- FAVICONS -->
@@ -476,6 +466,7 @@ Make, n8n, and custom APIs so you stay in control."
 
       <nav id="siteNav" class="nav">
         <a href="{{ site.baseurl }}/solutions">Solutions</a>
+        <a href="{{ site.baseurl }}/ai/">AI</a>
         <a href="{{ site.baseurl }}/showcase">Showcase</a>
         <a href="{{ site.baseurl }}/contact">Contact</a>
         <button class="nav-close" aria-label="Close menu">
@@ -489,104 +480,46 @@ Make, n8n, and custom APIs so you stay in control."
   <section class="container hero">
     <div></div>
     <div class="copy">
-      <div class="eyebrow"><span class="dot">•</span> Clarity over hype <span class="dot">•</span></div>
-      <h1>Enterprise Level Expertise for Growing your Business</h1>
+      <div class="eyebrow"><span class="dot">•</span> Corporate-grade execution for small teams <span
+          class="dot">•</span></div>
+      <h1>We design the process. Then we build the system.</h1>
+
+      <div class="pillars">
+        <div class="pillar">Process Strategy</div>
+        <div class="pillar">Business Optimization</div>
+        <div class="pillar">Digital Execution</div>
+      </div>
     </div>
     <div></div>
 
-    <div class="projects-inline" aria-label="Featured projects">
-      <div class="projects-clip">
-        <div class="sheet">
-          <div class="marquee" id="marquee">
-            {% assign manifest = site.data['image-manifest'] %}
-            <!-- Set A -->
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" loading="eager" fetchpriority="high" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw,
-              (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
-              sizes="(max-width: 640px) 72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <!-- Set B (dup) -->
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio1.width | default: 2000 }} / {{ manifest.portfolio1.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio1.placeholder %}url('{{ manifest.portfolio1.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio1" alt="Boatique Marine homepage preview" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio2.width | default: 1932 }} / {{ manifest.portfolio2.height | default: 1288 }}; --project-placeholder: {% if manifest.portfolio2.placeholder %}url('{{ manifest.portfolio2.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio2" alt="eFlow App product screens" sizes="(max-width: 640px) 72vw,
-              (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio3.width | default: 2000 }} / {{ manifest.portfolio3.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio3.placeholder %}url('{{ manifest.portfolio3.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio3" alt="Prana Ecotherapy website redesign" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio4.width | default: 2000 }} / {{ manifest.portfolio4.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio4.placeholder %}url('{{ manifest.portfolio4.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio4" alt="Northgate modular content system" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio5.width | default: 2418 }} / {{ manifest.portfolio5.height | default: 1614 }}; --project-placeholder: {% if manifest.portfolio5.placeholder %}url('{{ manifest.portfolio5.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio5" alt="SAMPP digital platform preview" sizes="(max-width: 640px)
-              72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-            <figure class="project"
-              style="aspect-ratio: {{ manifest.portfolio6.width | default: 2000 }} / {{ manifest.portfolio6.height | default: 2167 }}; --project-placeholder: {% if manifest.portfolio6.placeholder %}url('{{ manifest.portfolio6.placeholder }}'){% else %}none{% endif %};">
-              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
-              sizes="(max-width: 640px) 72vw, (max-width: 1125px) 32vw, 360px" %}
-            </figure>
-          </div>
-        </div>
-      </div>
+    <div class="hero-video">
+      <video autoplay muted loop playsinline preload="metadata" poster="{{ site.baseurl }}/assets/video-poster.jpg"
+        aria-label="City buildings timelapse">
+        <source src="{{ site.baseurl }}/assets/Buildings.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
   <section class="slice-light">
     <div class="container about-block">
       <p class="about-lede">
-        We specialize in delivering exceptional Digital solutions for growing brands.
-        Our focus is on providing user-centered strategies, efficient project management, and
-        budget-friendly options that align with your goals.
+        We analyze your business end to end and deliver measurable results. From digital strategy
+        to offline operations, we help small teams operate with the clarity and structure of
+        enterprise companies.
       </p>
 
       <div class="about-stats">
         <div class="stat">
-          <div class="stat-value">15+</div>
-          <div class="stat-label">Years of experience</div>
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Years shipping product</div>
         </div>
         <div class="stat">
           <div class="stat-value">80+</div>
-          <div class="stat-label">Satisfied clients</div>
+          <div class="stat-label">Engagements delivered</div>
         </div>
         <div class="stat">
-          <div class="stat-value">100+</div>
-          <div class="stat-label">Projects delivered</div>
+          <div class="stat-value">50%+</div>
+          <div class="stat-label">Avg reduction in operational drag</div>
         </div>
       </div>
     </div>
@@ -598,28 +531,28 @@ Make, n8n, and custom APIs so you stay in control."
 
       <div class="process-grid">
         <article class="process-card">
-          <h3 class="card-title">Cut through the noise</h3>
+          <h3 class="card-title">Align the business</h3>
           <p class="card-copy">
-            We start by questioning assumptions. Not every trend or tool deserves your budget.
-            We focus on what actually drives results and leave out the rest.
+            Deep diagnostic: goals, customer journey, revenue levers, and operational
+            bottlenecks. This becomes the roadmap for everything we build together.
           </p>
           <span class="step-number strong">01</span>
         </article>
 
         <article class="process-card">
-          <h3 class="card-title">Structure with purpose</h3>
+          <h3 class="card-title">Design the operating system</h3>
           <p class="card-copy">
-            We design systems that are intuitive, scalable and aligned with your long term
-            goals. Every element has a reason behind it.
+            Strategy becomes processes, SOPs, automation, and tooling. Digital and offline
+            workflows designed for consistency.
           </p>
           <span class="step-number soft">02</span>
         </article>
 
         <article class="process-card">
-          <h3 class="card-title">Build lean, launch smart</h3>
+          <h3 class="card-title">Implement and optimize</h3>
           <p class="card-copy">
-            We develop only what is necessary to move forward. Whether it is a full site or a
-            simple MVP, we launch fast, clean and ready to grow.
+            Build, launch, measure. We track business metrics, not vanity metrics, and iterate
+            based on real performance data.
           </p>
           <span class="step-number softer">03</span>
         </article>
@@ -627,115 +560,333 @@ Make, n8n, and custom APIs so you stay in control."
 
       <div class="process-cta">
 
-        <a class="btn-primary" href="{{ site.baseurl }}/contact">Get started</a>
+        <a class="btn-primary" href="{{ site.baseurl }}/contact">Start a project</a>
       </div>
     </div>
   </section>
 
-  <section class="slice-light solutions">
+  <!-- PILLAR 1: Web Development -->
+  <section class="slice-light pillar-section">
     <div class="container-wide">
-      <header class="solutions-head">
-        <h2 class="solutions-title">Showcasing Solutions</h2>
-        <p class="solutions-subtitle">
-          We focus our work around three key pillars (strategy, retail, nonprofit).
-          Clear direction, better service and measurable impact.
+      <header class="section-head">
+        <h2 class="section-title">Web Development</h2>
+        <p class="section-subtitle">
+          Conversion machines integrated with your sales process, not just pretty pixels.
+          Strategy-first design, conversion optimization, technical SEO, and integrations.
         </p>
       </header>
 
-      <div class="solutions-grid">
-        <figure class="solution">
-          {% include picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 960px) 90vw,
-          (max-width: 1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>Boatique Marine</h3>
-            <p>Luxury marine charter site built for speed, clarity, and effortless enquiries.</p>
-          </figcaption>
-        </figure>
+      <div class="web-carousel">
+        <div class="web-carousel-track">
+          <figure class="web-project">
+            <a href="https://boatiquemarine.com/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio1" alt="Boatique Marine website" sizes="(max-width: 640px) 85vw,
+              480px" %}
+            </a>
+            <figcaption>
+              <h3>Boatique Marine</h3>
+              <p>End-to-end digital strategy for luxury marine charter. Integrated booking system, brand positioning,
+                and effortless enquiries.</p>
+              <a href="https://boatiquemarine.com/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio3" alt="Prana Ecotherapy website" sizes="(max-width: 960px) 90vw,
-          (max-width: 1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>Prana Ecotherapy</h3>
-            <p>Site redesign improving structure, readability and perceived quality.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://northgatebuilding.com.au/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio-northgate" alt="Northgate Building Group website" sizes="(max-width:
+              640px) 85vw, 480px" %}
+            </a>
+            <figcaption>
+              <h3>Northgate Building Group</h3>
+              <p>Business transformation: lead magnet strategy, sales pipeline redesign, SharePoint integration, and
+                offline marketing materials. Result: 40% increase in qualified inquiries.</p>
+              <a href="https://northgatebuilding.com.au/" target="_blank" rel="noopener" class="project-link">Visit
+                website →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio4" alt="Northgate platform" sizes="(max-width: 960px) 90vw, (max-width:
-          1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>Northgate</h3>
-            <p>Modular content system to scale fast while keeping consistency.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://beyondlimitscf.org.au/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation donation journey"
+              sizes="(max-width: 640px) 85vw, 480px" %}
+            </a>
+            <figcaption>
+              <h3>Beyond Limits Foundation</h3>
+              <p>Digital transformation plus compliance infrastructure. Secure AWS grant system handling sensitive
+                medical data, donation strategy, and offline fundraising support.</p>
+              <a href="https://beyondlimitscf.org.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio6" alt="Beyond Limits Children's Foundation site" sizes="(max-width:
-          960px) 90vw, (max-width: 1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>Beyond Limits Children's Foundation</h3>
-            <p>Donation journey rebuilt to make giving effortless for families and sponsors.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://ramageservices.com.au/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio-ramage" alt="Ramage Property Services website" sizes="(max-width:
+              640px) 85vw, 480px" %}
+            </a>
+            <figcaption>
+              <h3>Ramage Property Services</h3>
+              <p>Complete business rebrand plus operations overhaul. CRM implementation, service restructuring, and
+                acquisition-ready documentation package.</p>
+              <a href="https://ramageservices.com.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio7" alt="Calida Ellora brand" sizes="(max-width: 960px) 90vw, (max-width:
-          1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>Calida Ellora</h3>
-            <p>Warm wellness brand system with calming visuals and expandable programs.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://livmigration.com.au/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio-liv" alt="LIV Migration website" sizes="(max-width: 640px) 85vw,
+              480px" %}
+            </a>
+            <figcaption>
+              <h3>LIV Migration</h3>
+              <p>Lead qualification system that pre-screens clients before consultation. High-intent SEO strategy plus
+                automated booking reduced unqualified calls by 60%.</p>
+              <a href="https://livmigration.com.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio8" alt="Electric Vibes experience" sizes="(max-width: 960px) 90vw,
-          (max-width: 1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>Electric Vibes</h3>
-            <p>Immersive ecommerce experience for festival gear with dynamic merchandising.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://www.ralphkerlesart.com/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio-ralph" alt="Ralph Kerles Art website" sizes="(max-width: 640px)
+              85vw, 480px" %}
+            </a>
+            <figcaption>
+              <h3>Ralph Kerles Art</h3>
+              <p>Luxury positioning for a contemporary artist. AR "view on your wall" feature and white-glove service
+                tier increased high-value sales by 50%.</p>
+              <a href="https://www.ralphkerlesart.com/" target="_blank" rel="noopener" class="project-link">Visit
+                website →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio9" alt="NTT Pilates platform" sizes="(max-width: 960px) 90vw, (max-width:
-          1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>NTT Pilates</h3>
-            <p>Membership flows and scheduling tools tailored for a boutique Pilates studio.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://fernandofilippetti.com/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio-fernando" alt="Fernando Filippetti personal brand website"
+              sizes="(max-width: 640px) 85vw, 480px" %}
+            </a>
+            <figcaption>
+              <h3>Fernando Filippetti</h3>
+              <p>Personal branding for the aerospace engineer behind an Artemis 2 satellite. Authority positioning,
+                speaking engagement funnel, and media kit strategy.</p>
+              <a href="https://fernandofilippetti.com/" target="_blank" rel="noopener" class="project-link">Visit
+                website →</a>
+            </figcaption>
+          </figure>
 
-        <figure class="solution">
-          {% include picture.html id="portfolio10" alt="The One landing page" sizes="(max-width: 960px) 90vw,
-          (max-width: 1440px) 45vw, 560px" %}
-          <figcaption>
-            <h3>The One</h3>
-            <p>Landing page to present the product, capture leads and highlight value quickly.</p>
-          </figcaption>
-        </figure>
+          <figure class="web-project">
+            <a href="https://electricvibes.au/" target="_blank" rel="noopener">
+              {% include picture.html id="portfolio8" alt="Electric Vibes ecommerce experience" sizes="(max-width:
+              640px) 85vw, 480px" %}
+            </a>
+            <figcaption>
+              <h3>Electric Vibes</h3>
+              <p>E-commerce strategy with a strong visual identity. Merchandising optimization increased average order
+                value by 35%.</p>
+              <a href="https://electricvibes.au/" target="_blank" rel="noopener" class="project-link">Visit website
+                →</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <button class="carousel-nav carousel-prev" aria-label="Previous projects">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="carousel-nav carousel-next" aria-label="Next projects">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="pillar-logos-wrap">
+        <p class="pillar-logos-label">Platforms we build on</p>
+        <div class="pillar-logos" aria-label="Platforms we build on">
+          <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589"
+              height="128" loading="lazy" decoding="async"></div>
+          <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589"
+              height="128" loading="lazy" decoding="async"></div>
+          <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce"
+              width="589" height="128" loading="lazy" decoding="async"></div>
+          <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589"
+              height="128" loading="lazy" decoding="async"></div>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <section class="slice-logos">
+  <!-- PILLAR 2: Business Process Optimization -->
+  <section class="slice-light pillar-section">
     <div class="container-wide">
-      <header class="logos-head section-head">
-        <h2 class="logos-title section-title">WE ARE EXPERTS</h2>
+      <header class="section-head">
+        <h2 class="section-title">Business Process Optimization</h2>
+        <p class="section-subtitle">
+          We design processes that work for humans, then we automate. From SOPs and workflow
+          automation to offline process redesign, we make your business run smoother.
+        </p>
       </header>
 
-      <div class="logos-grid" aria-label="Expert platforms">
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-1.png" alt="Webflow" width="589"
-            height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-2.png" alt="Squarespace"
-            width="592" height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-3.png" alt="Shopify" width="589"
-            height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-4.png" alt="BigCommerce"
-            width="589" height="128" loading="lazy" decoding="async"></div>
-        <div class="logo"><img src="{{ site.baseurl }}/assets/platforms-logosArtboard-5.png" alt="Strapi" width="589"
-            height="128" loading="lazy" decoding="async"></div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </div>
+          <h3>Process Documentation</h3>
+          <p>Standard Operating Procedures that work in the real world. We map the current state, identify bottlenecks,
+            then document the optimized flow.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>Workflow Automation</h3>
+          <p>Smart automation with n8n, Make, and custom integrations. We automate repetitive tasks while keeping the
+            human touch where it matters.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20v-6M6 20V10M18 20V4" />
+            </svg>
+          </div>
+          <h3>Performance Dashboards</h3>
+          <p>Real-time visibility into what matters. Custom dashboards that surface insights, not just data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h3>Tech Stack Audits</h3>
+          <p>Evaluation of your current tools, elimination of redundancies, and an integration strategy. Often saves
+            30% or more on software costs.</p>
+        </div>
+      </div>
+
+      <div class="case-study-box">
+        <div class="case-study-grid">
+          <div>
+            <div class="eyebrow case-eyebrow"><span class="dot">•</span> Case Study</div>
+            <h3 class="case-title">Ramage Services Overhaul</h3>
+            <p class="case-copy">
+              Complete business transformation: service restructuring, CRM implementation, Google Workspace setup,
+              and acquisition-ready documentation. Reduced admin time by 60% and left the business ready for sale.
+            </p>
+            <a href="https://ramageservices.com.au/" target="_blank" rel="noopener" class="project-link">See the result
+              →</a>
+          </div>
+          <div class="case-media">
+            {% include picture.html id="portfolio-ramage" alt="Ramage Property Services website" sizes="(max-width:
+            720px) 90vw, 560px" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: Growth Strategies -->
+  <section class="slice-light pillar-section">
+    <div class="container-wide">
+      <header class="section-head">
+        <h2 class="section-title">Growth Strategies</h2>
+        <p class="section-subtitle">
+          Finding and validating sustainable growth channels. Market research, positioning, and
+          go-to-market strategy: we validate demand before you invest, offline channels included.
+        </p>
+      </header>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </div>
+          <h3>Market Research</h3>
+          <p>Competitor analysis, pricing studies, and demand validation. We test assumptions with real data before you
+            commit budget.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Brand Positioning</h3>
+          <p>Message strategy that differentiates. We find your unique angle and translate it to both digital and
+            offline channels.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3>Growth Experiments</h3>
+          <p>Tested campaigns across channels: digital ads, partnerships, even print and direct mail when relevant.
+            Small bets, measured results, then scale.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          <h3>Content Strategy</h3>
+          <p>SEO plus authority content that ranks, including optimization for AI answers and thought leadership
+            positioning.</p>
+        </div>
+      </div>
+
+      <div class="case-mini-grid">
+        <div class="case-study-mini">
+          <div class="eyebrow case-eyebrow"><span class="dot">•</span> Influencer Growth</div>
+          <h3 class="case-mini-title">Casaca Films</h3>
+          <p class="case-mini-copy">
+            Brand growth strategy for @casaca.films. Product catalog, digital sales funnel, and a collaboration
+            management system for influencer monetization.
+          </p>
+          <a href="https://products.casacafilms.com/" target="_blank" rel="noopener" class="project-link">View case
+            →</a>
+        </div>
+
+        <div class="case-study-mini">
+          <div class="eyebrow case-eyebrow"><span class="dot">•</span> E-commerce Growth</div>
+          <h3 class="case-mini-title">Ralph Kerles Art</h3>
+          <p class="case-mini-copy">
+            Digital growth for a contemporary artist. AR "view on your wall" feature, white-glove positioning, and
+            performance marketing strategy.
+          </p>
+          <a href="https://www.ralphkerlesart.com/" target="_blank" rel="noopener" class="project-link">View case →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -761,14 +912,13 @@ Make, n8n, and custom APIs so you stay in control."
           <div class="tst-track">
             <article class="tst-card is-active">
               <blockquote class="tst-quote">
-                We came to David for a website, but he quickly showed us we were missing big opportunities beyond that.
-                He guided us through a smarter marketing strategy, both online and offline. His leadership and clarity
-                made a real difference.
+                We came in for a website, but Doop audited our entire sales process. They found opportunities we
+                didn't see, online and offline. The strategy made every channel perform better.
               </blockquote>
               <footer class="tst-meta">
                 <div>
                   <div class="tst-name">Daniel S.</div>
-                  <div class="tst-project">Project: <strong>Comprehensive Marketing Plan</strong></div>
+                  <div class="tst-project">Project: <strong>Northgate Business Strategy</strong></div>
                 </div>
                 <div class="tst-stars" aria-label="5 out of 5">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -778,13 +928,13 @@ Make, n8n, and custom APIs so you stay in control."
 
             <article class="tst-card">
               <blockquote class="tst-quote">
-                Clear roadmap, clean execution and no fluff. We launched on time with better results than expected.
-                Communication was crisp and decisions were data driven.
+                They didn't just automate. They restructured how we work. New SOPs, better tools, and a CRM that fits
+                our process. The business runs tighter and the team is aligned.
               </blockquote>
               <footer class="tst-meta">
                 <div>
                   <div class="tst-name">Alicia R.</div>
-                  <div class="tst-project">Project: <strong>Ecommerce Redesign</strong></div>
+                  <div class="tst-project">Project: <strong>Operations Overhaul</strong></div>
                 </div>
                 <div class="tst-stars" aria-label="5 out of 5">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -794,13 +944,13 @@ Make, n8n, and custom APIs so you stay in control."
 
             <article class="tst-card">
               <blockquote class="tst-quote">
-                The team focused us on what truly moves the needle. Faster flows, better conversions and a stack that
-                our people can maintain.
+                They validated our product-market fit before we spent a dollar. Market research, pricing tests, and a
+                go-to-market plan that included offline channels.
               </blockquote>
               <footer class="tst-meta">
                 <div>
                   <div class="tst-name">Miguel T.</div>
-                  <div class="tst-project">Project: <strong>Product Funnel Optimization</strong></div>
+                  <div class="tst-project">Project: <strong>Go-to-Market Strategy</strong></div>
                 </div>
                 <div class="tst-stars" aria-label="5 out of 5">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -829,17 +979,17 @@ Make, n8n, and custom APIs so you stay in control."
 
       <div class="faq-accordion" role="list">
         <details class="faq-panel" open>
-          <summary><span>What kind of teams does Doop UX partner with?</span></summary>
+          <summary><span>What kind of businesses does Doop UX partner with?</span></summary>
           <div class="faq-panel__content">
-            We collaborate with founders, marketing leaders, and product squads that want enterprise-level execution
-            without the layers of a traditional agency.
+            We partner with small and mid-sized teams that need corporate-grade strategy and operations without heavy
+            agency overhead.
           </div>
         </details>
         <details class="faq-panel">
-          <summary><span>How fast can a new project launch with Doop UX?</span></summary>
+          <summary><span>Where do we start on a new engagement?</span></summary>
           <div class="faq-panel__content">
-            Discovery to launch typically happens in four to six weeks thanks to lean sprints that validate direction
-            quickly and keep momentum visible for stakeholders.
+            We start with a diagnostic: goals, customer journey, operational bottlenecks, and the data you already
+            have. That becomes the roadmap for delivery.
           </div>
         </details>
         <details class="faq-panel">
@@ -850,17 +1000,17 @@ Make, n8n, and custom APIs so you stay in control."
           </div>
         </details>
         <details class="faq-panel">
-          <summary><span>What results should we expect from a typical engagement?</span></summary>
+          <summary><span>How fast can we see progress?</span></summary>
           <div class="faq-panel__content">
-            Clients see faster user journeys, measurable lift in qualified conversions, and a maintainable design system
-            that scales without technical debt collecting in the background.
+            We typically deliver a strategy and first operational wins in 2 to 4 weeks, then execute in focused
+            sprints that keep momentum visible for stakeholders.
           </div>
         </details>
         <details class="faq-panel">
-          <summary><span>How do you keep communication clear once the project is underway?</span></summary>
+          <summary><span>Do you work with non-profits?</span></summary>
           <div class="faq-panel__content">
-            We operate with transparent weekly readouts, async Loom recaps, and shared dashboards so decisions,
-            blockers, and next steps remain obvious to every stakeholder.
+            Yes. We have deep experience with non-profits, including secure grant application systems, sensitive data
+            handling, donation workflows, and compliance with Australian privacy legislation.
           </div>
         </details>
       </div>
@@ -870,6 +1020,27 @@ Make, n8n, and custom APIs so you stay in control."
   {% include_relative partials/footer.html %}
 
   <script src="{{ site.baseurl }}/scripts.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousels = document.querySelectorAll('.web-carousel');
+      carousels.forEach(function (carousel) {
+        const track = carousel.querySelector('.web-carousel-track');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const scrollAmount = 400;
+
+        prevBtn.addEventListener('click', function () {
+          track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', function () {
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
 
 </body>
 

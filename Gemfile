@@ -2,6 +2,13 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 
+# Stdlib gems removed from default gems in modern Ruby (needed for local builds)
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "webrick"
+gem "logger"
+
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"

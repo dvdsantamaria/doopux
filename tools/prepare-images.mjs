@@ -22,7 +22,12 @@ const PORTFOLIO_SOURCES = [
   'portfolio10.jpg',
   'portfolio11.jpg',
   'portfolio12.jpg',
-  'portfolio13.jpg'];
+  'portfolio13.jpg',
+  'portfolio-northgate.jpg',
+  'portfolio-ramage.jpg',
+  'portfolio-liv.jpg',
+  'portfolio-ralph.jpg',
+  'portfolio-fernando.jpg'];
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
